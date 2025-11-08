@@ -1,145 +1,102 @@
 # Axiomic Curriculum Engine
 
-This repository contains a lightweight graph engine plus adapters/reporters for replaying
-curriculum-style datasets (MIT OCW, YouTube playlists, etc.).  It now supports:
+Domain‑agnostic graph Core + domain adapters and reporters for structured curricula (MIT, YouTube) and conversations.
 
-* Rich MIT curriculum extraction/builders (STEM, psych/humanities, lit/essay profiles)
-* Signal heads for forecast/uncertainty/regime-change analysis
-* Insight and curriculum-focused reporters suitable for human review or LLM tools
+- Core computes q (cohesion), TED (drift), spread, continuity, uncertainty (MC), forecast, and regime changes.
+- Adapters tailor hygiene and step features; reporters present domain‑specific highlights.
 
 ## Project Layout
 
 ```
-adapters/      # Streams and preprocessors (curriculum_stream, conversation, ...)
-builders/      # Dataset builders (curriculum MIT OCW, research_learning, ...)
-configs/       # Dataset configs, core defaults
-core/          # Engine, policies, signal heads, state tracking
-reporters/     # Report generators (insight, curriculum_dynamics)
-scripts/       # CLIs for extraction/build/build+report
-tests/         # Pytest regression suite
-reports/       # Generated outputs (insight + curriculum_dynamics JSON)
+core/          # Engine, policies, signal heads, state tracking (domain‑agnostic)
+adapters/      # Streams + preprocessors (curriculum, conversation)
+reporters/     # Shared + specialized reporters (curriculum_insight, conversation_insight, dynamics)
+pipeline/      # Entry points for each domain + orchestrator (raw->extract->build->preprocess->core->report)
+  curriculum/  # normalize_youtube_playlist, build_youtube, build_mit, run_zipless
+  conversation/# scrub_transcripts, build_datasets, run_health
+  run.py       # manifest‑driven pipeline orchestrator
+manifests/     # Example manifests for orchestrated runs
+docs/          # Pipeline overview + deprecations
+tests/         # Pytest suite
 ```
+
+See `docs/PIPELINE_OVERVIEW.md` for the skeleton.
 
 ## Setup
 
-1. Create a virtual environment (Python 3.10+ recommended) and install deps:
+1) Create a virtual environment (Python 3.10+ recommended):
 
-   ```bash
-   python -m venv .venv
-   .\.venv\Scripts\activate
-   pip install -r requirements.txt  # if present
-   ```
+```bash
+python -m venv .venv
+.\.venv\Scripts\activate
+pip install -r requirements.txt  # if present
+```
 
-2. Place raw MIT OCW zips under `RawOCW/` (see filenames in `scripts/extract_mit_curriculum_html.py`).
+2) Run tests:
 
-3. Run the extractor/builder/test pipeline:
+```bash
+python -m pytest -q
+```
 
-   ```bash
-   # Extract normalized JSON for every course (profile overrides built into script)
-   python -m scripts.extract_mit_curriculum_html --raw-root RawOCW --output-dir datasets/raw_mit_curriculum --profile stem
+## How to Run (recommended)
 
-   # Rebuild zipped datasets (writes to datasets/mit_curriculum_datasets)
-   python -m scripts.build_mit_curriculum_datasets
+Manifest‑driven raw→report orchestration (MIT + YouTube + Conversation in one go):
 
-   # Run the showcase (engine + reporter) across all datasets
-   python -m scripts.run_mit_curriculum_showcase \
-       --compute-spread --compute-locality \
-       --heads monte_carlo forecast regime_change \
-       --reporter insight \
-       --out-dir reports/mit_curriculum_insights
-   ```
+```bash
+python -m pipeline.run --manifest manifests/curriculum_conversation_example.json
+```
 
-## Signal Heads
+This performs:
+- YouTube: normalize playlists from `RawYT/*.raw.json`, build datasets
+- MIT: build datasets from normalized JSON
+- Conversation: scrub PDFs/TXT → cleaned JSON → build datasets
+- Core (zipless): runs insight + dynamics + domain‑specific reporters
 
-Heads are pluggable analyzers that receive each step and emit extra signals.
-Enable them via `core_config["heads"]` or the showcase CLI `--heads` flag.
+Outputs land in:
+- Shared: `reports/mit_curriculum_insights_fs`, `reports/mit_curriculum_dynamics_fs`
+- Curriculum: `reports/curriculum_insight_fs`
+- Conversation: `reports/conversation_insight_fs`
 
-| Head            | Purpose                                             | Config Keys                           |
-|-----------------|-----------------------------------------------------|---------------------------------------|
-| `monte_carlo`   | robustness/uncertainty for q & TED                  | `monte_carlo.num_samples`, `edge_dropout`, `weight_jitter` |
-| `forecast`      | trends + next-step type prediction                  | `forecast.window_size`                |
-| `regime_change` | windowed change-point detection / phase boundaries | `regime_change.window`, `threshold`   |
+## Direct domain entry points
 
-Example `core_config` fragment:
+Curriculum:
+- Normalize playlist: `python -m pipeline.curriculum.normalize_youtube_playlist --input RawYT/<file>.raw.json --output datasets/youtube_raw/<id>.json --course-id <id> --videos-per-step 1`
+- Build YouTube dataset: `python -m pipeline.curriculum.build_youtube --input-json datasets/youtube_raw/<id>.json --output-zip datasets/mit_curriculum_datasets/<id>.zip --profile youtube_series --step-semantics week`
+- Build MIT datasets: `python -m pipeline.curriculum.build_mit`
+- Run Core zipless: `python -m pipeline.curriculum.run_zipless --zip-dir datasets/mit_curriculum_datasets --fs-dir datasets/mit_curriculum_fs --out-dir reports/mit_curriculum_insights_fs --reporter insight --heads monte_carlo forecast regime_change --compute-spread --compute-locality`
 
-```python
-core_cfg = {
-    "capacity": {"max_edges": 400},
-    "heads": ["monte_carlo", "forecast", "regime_change"],
-    "monte_carlo": {"num_samples": 32, "edge_dropout": 0.1, "weight_jitter": 0.1},
-    "forecast": {"window_size": 3},
-    "regime_change": {"window": 3, "threshold": 0.25},
-}
+Conversation:
+- Scrub transcripts: `python -m pipeline.conversation.scrub_transcripts --input-dir RawConversation --out-dir reports/conversation_clean`
+- Build datasets: `python -m pipeline.conversation.build_datasets --input-dir reports/conversation_clean --output-dir datasets/mit_curriculum_datasets --window-size 6`
+- Quick health metrics: `python -m pipeline.conversation.run_health --input-dir reports/conversation_clean --out-dir reports/conversation_metrics --window 6`
+
+## Make targets (optional)
+
+If you have `make` installed, common targets are provided:
+
+```bash
+make test           # run pytest
+make run            # orchestrated run via pipeline.run
+make build-mit      # build MIT datasets
+make build-yt       # normalize+build YouTube datasets defined in manifest
+make scrub-convo    # scrub conversation raw PDFs/TXT
+make build-convo    # build conversation datasets from cleaned transcripts
 ```
 
 ## Reporters
 
-Two reporters are available (`--reporter` flag in showcase script):
+- `insight` (shared): per‑step commentary + aggregates (avg_q, avg_TED, spread, continuity)
+- `curriculum_dynamics` (shared): time‑series with head summaries and regime boundaries
+- `curriculum_insight` (domain): phase counts, avg continuity, avg_ted_trusted
+- `conversation_insight` (domain): avg adjacency ratio, question density, speaker counts
 
-| Reporter              | Output Highlights                                                                                   |
-|-----------------------|-----------------------------------------------------------------------------------------------------|
-| `insight` (default)   | Classic per-step commentary, aggregates (avg_q/TED/spread), recommendations                         |
-| `curriculum_dynamics` | Deep per-step log + course-level dynamics (trend slopes, phase segmentation, uncertainty ranking)  |
+## Signal Heads
 
-Example to generate dynamics reports:
+Enable via `--heads` or core_config:
+- `monte_carlo`: uncertainty/robustness
+- `forecast`: trend slopes + next‑step type
+- `regime_change`: change‑point detection
 
-```bash
-python -m scripts.run_mit_curriculum_showcase \
-  --reporter curriculum_dynamics \
-  --heads monte_carlo forecast regime_change \
-  --compute-spread --compute-locality \
-  --out-dir reports/mit_curriculum_dynamics
-```
+## Deprecations
 
-Each report JSON includes `head_summaries` (from the signal heads) and reporter-specific sections.
-These files are designed to be consumed by LLM tooling or dashboard layers.
-
-## YouTube Curriculum Pipeline
-
-The YouTube ingest flow mirrors the MIT pipeline but starts from playlist metadata:
-
-1. Dump a playlist using `yt-dlp --dump-single-json --flat-playlist` (or the YouTube Data API) into `RawYT/<playlist>.raw.json`.
-2. Normalize it:
-
-   ```bash
-   python -m scripts.normalize_youtube_playlist \
-     --input RawYT/essence_linear_algebra.raw.json \
-     --output datasets/youtube_raw/essence_linear_algebra.json \
-     --course-id essence_linear_algebra \
-     --videos-per-step 1
-   ```
-
-3. Build a dataset zip (reuses the curriculum builder):
-
-   ```bash
-   python -m scripts.build_youtube_curriculum \
-     --input-json datasets/youtube_raw/essence_linear_algebra.json \
-     --output-zip datasets/mit_curriculum_datasets/essence_linear_algebra.zip \
-     --profile youtube_series \
-     --step-semantics week
-   ```
-
-4. Run the showcase with signal heads + the desired reporter (insight or curriculum_dynamics).
-
-The resulting dataset zips share the same structure as the MIT files, so the existing adapters,
-signal heads, and reporters work without modification.
-
-## Testing
-
-Run the full suite (covers extractors, builders, signal heads, reporters, engine regression):
-
-```bash
-.\.venv\Scripts\python.exe -m pytest
-```
-
-Regression fixtures live under `tests/fixtures/`.  The suite now contains 22 tests guarding the curriculum pipeline.
-
-## Useful Scripts
-
-| Script                               | Description                                                    |
-|--------------------------------------|----------------------------------------------------------------|
-| `scripts/extract_mit_curriculum_html.py` | Parses RawOCW zips into normalized JSON per course            |
-| `scripts/build_mit_curriculum_datasets.py` | Converts normalized JSON into canonical dataset zips         |
-| `scripts/run_mit_curriculum_showcase.py`   | Runs the engine across all datasets and writes reports        |
-
-Refer to `python -m scripts.<name> --help` for full argument lists.
+Legacy scripts under `scripts/` are now wrappers. See `docs/DEPRECATIONS.md` for replacements. Use `pipeline/*` modules and `pipeline/run.py` for all new work.

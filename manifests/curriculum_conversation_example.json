@@ -27,13 +27,6 @@
       "output_zip": "datasets/mit_curriculum_datasets/crashcourse_history.zip"
     },
     {
-      "course_id": "essence_calculus",
-      "raw_json": "RawYT/essence_linear_algebra.raw.json",
-      "profile": "youtube_3b1b",
-      "videos_per_step": 1,
-      "output_zip": "datasets/mit_curriculum_datasets/essence_calculus.zip"
-    },
-    {
       "course_id": "essence_linear_algebra_series",
       "raw_json": "RawYT/essence_linear_algebra_series.raw.json",
       "profile": "youtube_3b1b",
