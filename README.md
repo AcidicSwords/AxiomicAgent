@@ -56,6 +56,7 @@ Outputs land in:
 - Shared: `reports/mit_curriculum_insights_fs`, `reports/mit_curriculum_dynamics_fs`
 - Curriculum: `reports/curriculum_insight_fs`
 - Conversation: `reports/conversation_insight_fs`
+ - Combined + sidecars: `reports/comprehensive` (includes `combined.json`, `perf_summary.json`, optional `graph_units/` and `topics_js/`)
 
 ## Data Layout
 
@@ -68,7 +69,7 @@ See `docs/PIPELINE_LAYOUT.md` for the full map. In short:
 
 Curriculum:
 - Normalize playlist: `python -m pipeline.curriculum.normalize_youtube_playlist --input RAWDATA/RawYT/<file>.raw.json --output RAWDATA/RawYT/<id>.json --course-id <id> --videos-per-step 1`
-- Build YouTube dataset: `python -m pipeline.curriculum.build_youtube --input-json RAWDATA/RawYT/<id>.json --output-zip datasets/mit_curriculum_datasets/<id>.zip --profile youtube_series --step-semantics week`
+- Build YouTube dataset: `python -m pipeline.curriculum.build_youtube --input-json RAWDATA/RawYT/<id>.json --output-zip datasets/youtube_curriculum_datasets/<id>.zip --profile youtube_series --step-semantics week`
 - Build MIT datasets: `python -m pipeline.curriculum.build_mit --raw-dir RAWDATA/raw_mit_curriculum --out-dir datasets/mit_curriculum_datasets`
 - Run Core zipless: `python -m pipeline.curriculum.run_zipless --zip-dir datasets/mit_curriculum_datasets --fs-dir datasets/mit_curriculum_fs --out-dir reports/mit_curriculum_insights_fs --reporter insight --heads monte_carlo forecast regime_change --compute-spread --compute-locality`
 
@@ -76,6 +77,15 @@ Conversation:
 - Scrub transcripts: `python -m pipeline.conversation.scrub_transcripts --input-dir RAWDATA/RawConversation --out-dir RAWDATA/ConversationClean`
 - Build datasets: `python -m pipeline.conversation.build_datasets --input-dir RAWDATA/ConversationClean --output-dir datasets/conversation_datasets --window-size 6`
 - Quick health metrics: `python -m pipeline.conversation.run_health --input-dir RAWDATA/ConversationClean --out-dir reports/conversation_insight_fs --window 6`
+
+## Advanced Options
+
+- Parallel builds: set in manifest `{ "orchestrator": { "parallel": 4 } }`.
+- Skip phases: YouTube entries support `skip_normalize` / `skip_build`; conversation supports `skip_scrub` / `skip_build`.
+- ANN thematic edges (YouTube/curriculum): set env `AXIOM_FAISS_ENABLED=1` to add forward-only top‑k edges via sentence‑transformers+FAISS (falls back to cosine).
+- Sidecar analyses:
+  - Units/community counts: `python -m pipeline.reporting.graph_units --fs-dir datasets/mit_curriculum_fs --out-dir reports/comprehensive/graph_units`
+  - Topics + JS drift: `python -m pipeline.reporting.topics_js --fs-dir datasets/mit_curriculum_fs --out-dir reports/comprehensive/topics_js`
 
 ## Make targets (optional)
 

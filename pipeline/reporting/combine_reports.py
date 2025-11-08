@@ -20,7 +20,7 @@ def _read_json_files(dir_path: Path) -> Dict[str, Any]:
     return out
 
 
-def summarize_courses(insights: Dict[str, Any]) -> List[Dict[str, Any]]:
+def summarize_courses(insights: Dict[str, Any], units_map: Dict[str, Any] | None = None, topics_map: Dict[str, Any] | None = None) -> List[Dict[str, Any]]:
     rows = []
     for name, rep in insights.items():
         if name == "comparison":
@@ -29,13 +29,18 @@ def summarize_courses(insights: Dict[str, Any]) -> List[Dict[str, Any]]:
         if isinstance(rep, list):
             continue
         agg = (rep or {}).get("aggregates") or {}
-        rows.append({
+        row = {
             "course": name,
             "avg_q": agg.get("avg_q"),
             "avg_ted": agg.get("avg_ted"),
             "avg_spread": agg.get("avg_spread"),
             "steps": agg.get("steps") or (rep.get("run_meta") or {}).get("steps"),
-        })
+        }
+        if units_map and name in units_map and isinstance(units_map[name], dict):
+            row["avg_unit_count"] = units_map[name].get("avg_unit_count")
+        if topics_map and name in topics_map and isinstance(topics_map[name], dict):
+            row["avg_ted_js"] = topics_map[name].get("avg_ted_js")
+        rows.append(row)
     return rows
 
 
@@ -59,14 +64,22 @@ def main() -> None:
     cur_ins = _read_json_files(cur_ins_dir)
     con_ins = _read_json_files(con_ins_dir)
 
+    # Optional sidecars
+    units_dir = Path("reports/comprehensive/graph_units")
+    topics_dir = Path("reports/comprehensive/topics_js")
+    units = _read_json_files(units_dir) if units_dir.exists() else {}
+    topics = _read_json_files(topics_dir) if topics_dir.exists() else {}
+
     # Light summary tables
-    cur_summary = summarize_courses(cur_ins)
+    cur_summary = summarize_courses(cur_ins, units, topics)
     con_summary = summarize_courses(con_ins)
 
     combined = {
         "curriculum": {
             "summary": cur_summary,
             "comparison": cur_ins.get("comparison"),
+            "units": {k: (v.get("avg_unit_count") if isinstance(v, dict) else None) for k, v in units.items()} if units else None,
+            "topics": {k: (v.get("avg_ted_js") if isinstance(v, dict) else None) for k, v in topics.items()} if topics else None,
         },
         "conversation": {
             "summary": con_summary,
@@ -91,7 +104,12 @@ def main() -> None:
         "## Curriculum Summary",
     ]
     for r in cur_summary:
-        md_lines.append(f"- {r['course']}: avg_q={r['avg_q']}, avg_ted={r['avg_ted']}, steps={r['steps']}")
+        parts = [f"avg_q={r.get('avg_q')}", f"avg_ted={r.get('avg_ted')}", f"steps={r.get('steps')}"]
+        if r.get("avg_unit_count") is not None:
+            parts.append(f"units≈{round(r['avg_unit_count'],2)}")
+        if r.get("avg_ted_js") is not None:
+            parts.append(f"ted_js≈{round(r['avg_ted_js'],3)}")
+        md_lines.append(f"- {r['course']}: " + ", ".join(parts))
     md_lines += ["", "## Conversation Summary"]
     for r in con_summary:
         md_lines.append(f"- {r['course']}: avg_q={r.get('avg_q')}, avg_ted={r.get('avg_ted')}, steps={r.get('steps')}")

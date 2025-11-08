@@ -7,6 +7,7 @@ import subprocess
 import sys
 from pathlib import Path
 from typing import Any, Dict, List, Optional
+import time
 
 
 def _read_manifest(path: Path) -> Dict[str, Any]:
@@ -47,13 +48,13 @@ def process_youtube_entry(entry: Dict[str, Any]) -> Optional[Path]:
     profile = entry.get("profile") or "youtube_series"
     videos_per_step = int(entry.get("videos_per_step") or 1)
 
-    if playlist_url:
+    if playlist_url and not entry.get("skip_normalize"):
         payload = fetch_youtube_raw(playlist_url)
         ensure_dir(normalized_out.parent)
         raw_path = normalized_out.parent / f"{course_id}.raw.json"
         raw_path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
         _run([sys.executable, "-m", "pipeline.curriculum.normalize_youtube_playlist", "--input", str(raw_path), "--output", str(normalized_out), "--course-id", course_id, "--profile", profile, "--videos-per-step", str(videos_per_step)])
-    elif raw_json:
+    elif raw_json and not entry.get("skip_normalize"):
         raw_path = Path(raw_json)
         _run([sys.executable, "-m", "pipeline.curriculum.normalize_youtube_playlist", "--input", str(raw_path), "--output", str(normalized_out), "--course-id", course_id, "--profile", profile, "--videos-per-step", str(videos_per_step)])
     elif normalized_out.exists():
@@ -63,7 +64,8 @@ def process_youtube_entry(entry: Dict[str, Any]) -> Optional[Path]:
         return None
 
     ensure_dir(output_zip.parent)
-    _run([sys.executable, "-m", "pipeline.curriculum.build_youtube", "--input-json", str(normalized_out), "--output-zip", str(output_zip), "--profile", profile, "--step-semantics", entry.get("step_semantics") or "week"])
+    if not entry.get("skip_build"):
+        _run([sys.executable, "-m", "pipeline.curriculum.build_youtube", "--input-json", str(normalized_out), "--output-zip", str(output_zip), "--profile", profile, "--step-semantics", entry.get("step_semantics") or "week"])
     return output_zip
 
 
@@ -84,7 +86,7 @@ def _merge_zips_into(zip_paths: List[Path], dest_dir: Path) -> None:
 
 
 def process_mit_group(entry: Dict[str, Any]) -> None:
-    if entry.get("rebuild"):
+    if entry.get("rebuild") and not entry.get("skip_build"):
         _run([sys.executable, "-m", "pipeline.curriculum.build_mit"])  # builds into default dir
     else:
         print("[mit] Using existing datasets; set rebuild=true to rebuild")
@@ -106,8 +108,10 @@ def process_conversation(entry: Dict[str, Any], default_zip_dir: Path) -> Path:
     build_zip_dir = Path(entry.get("zip_dir") or default_zip_dir)
 
     ensure_dir(clean_out); ensure_dir(metrics_out)
-    _run([sys.executable, "-m", "pipeline.conversation.scrub_transcripts", "--input-dir", str(raw_dir), "--out-dir", str(clean_out)])
-    build_conversation_datasets(clean_out, build_zip_dir, window_size, prefix)
+    if not entry.get("skip_scrub"):
+        _run([sys.executable, "-m", "pipeline.conversation.scrub_transcripts", "--input-dir", str(raw_dir), "--out-dir", str(clean_out)])
+    if not entry.get("skip_build"):
+        build_conversation_datasets(clean_out, build_zip_dir, window_size, prefix)
     _run([sys.executable, "-m", "pipeline.conversation.run_health", "--input-dir", str(clean_out), "--out-dir", str(metrics_out), "--window", str(window_size)])
     return metrics_out
 
@@ -155,11 +159,34 @@ def main() -> None:
     compute_spread = bool(curriculum_cfg.get("compute_spread", True))
     compute_locality = bool(curriculum_cfg.get("compute_locality", True))
 
+    perf: Dict[str, Any] = {"timings": {}, "counts": {}}
+    t0 = time.time()
     yt_built: List[Path] = []
-    for yt in manifest.get("youtube", []) or []:
-        zp = process_youtube_entry(yt)
-        if zp is not None:
-            yt_built.append(zp)
+    # Parallelize YouTube builds if requested
+    yt_entries = manifest.get("youtube", []) or []
+    par = int((manifest.get("orchestrator") or {}).get("parallel", 1))
+    if par > 1 and yt_entries:
+        try:
+            from joblib import Parallel, delayed  # type: ignore
+            t_y0 = time.time()
+            results = Parallel(n_jobs=par)(delayed(process_youtube_entry)(yt) for yt in yt_entries)
+            yt_built.extend([r for r in results if r is not None])
+            perf["timings"]["youtube_total"] = round(time.time() - t_y0, 3)
+        except Exception as e:
+            print(f"[parallel] joblib unavailable or failed: {e}; falling back to serial")
+            t_y0 = time.time()
+            for yt in yt_entries:
+                zp = process_youtube_entry(yt)
+                if zp is not None:
+                    yt_built.append(zp)
+            perf["timings"]["youtube_total"] = round(time.time() - t_y0, 3)
+    else:
+        t_y0 = time.time()
+        for yt in yt_entries:
+            zp = process_youtube_entry(yt)
+            if zp is not None:
+                yt_built.append(zp)
+        perf["timings"]["youtube_total"] = round(time.time() - t_y0, 3)
 
     if manifest.get("mit"):
         process_mit_group(manifest["mit"])
@@ -173,7 +200,9 @@ def main() -> None:
     except Exception as e:
         print(f"[merge] Unable to merge YouTube zips into {zip_dir}: {e}")
 
+    t_rep0 = time.time()
     run_zipless_curriculum(zip_dir, fs_dir, insights_out, dynamics_out, heads, compute_spread, compute_locality)
+    perf["timings"]["reports_curriculum"] = round(time.time() - t_rep0, 3)
     # Split conversation dynamics into its own folder
     try:
         _move_conversation_dynamics(dynamics_out, conversation_dynamics_out)
@@ -184,14 +213,32 @@ def main() -> None:
 
     # Build a combined comprehensive analysis (curriculum + conversation)
     try:
+        t_comb0 = time.time()
         _run([sys.executable, "-m", "pipeline.reporting.combine_reports",
               "--curriculum-insights", str(insights_out),
               "--curriculum-dynamics", str(dynamics_out),
               "--conversation-insights", str(conversation_insight_out),
               "--conversation-dynamics", str(conversation_dynamics_out),
               "--out-dir", "reports/comprehensive" ])
+        perf["timings"]["combine_reports"] = round(time.time() - t_comb0, 3)
+        # Optional: regime smoothing sidecar
+        t_smooth0 = time.time()
+        _run([sys.executable, "-m", "pipeline.reporting.smooth_regimes",
+              "--dynamics-dir", str(dynamics_out),
+              "--out-dir", "reports/comprehensive/regime_smoothed" ])
+        perf["timings"]["regime_smoothing"] = round(time.time() - t_smooth0, 3)
     except Exception as e:
         print(f"[combine] Failed to write comprehensive report: {e}")
+
+    # Persist perf summary
+    try:
+        import json
+        perf["timings"]["total_wall"] = round(time.time() - t0, 3)
+        out_perf = Path("reports/comprehensive/perf_summary.json")
+        out_perf.parent.mkdir(parents=True, exist_ok=True)
+        out_perf.write_text(json.dumps(perf, indent=2), encoding="utf-8")
+    except Exception as e:
+        print(f"[perf] Failed to write perf summary: {e}")
 
     print("\nOrchestration complete.")
 

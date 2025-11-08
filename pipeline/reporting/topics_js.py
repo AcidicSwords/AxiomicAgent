@@ -1,0 +1,131 @@
+#!/usr/bin/env python
+from __future__ import annotations
+
+import argparse
+import csv
+import json
+from pathlib import Path
+from typing import Dict, List
+
+
+def _collect_texts_by_step(ds_dir: Path) -> Dict[int, List[str]]:
+    nodes_file = ds_dir / "nodes.csv"
+    if not nodes_file.exists():
+        return {}
+    texts: Dict[int, List[str]] = {}
+    # load step per node via edges (first occurrence)
+    step_by_node: Dict[int, int] = {}
+    edges_file = ds_dir / "edges_obs.csv"
+    if edges_file.exists():
+        with edges_file.open("r", encoding="utf-8") as f:
+            reader = csv.DictReader(f)
+            step_key = "step" if "step" in reader.fieldnames else ("step_id" if "step_id" in reader.fieldnames else None)
+            for row in reader:
+                try:
+                    s = int(row.get(step_key) or 0) if step_key else 0
+                    a = int(row.get("from_node_id") or row.get("src") or 0)
+                    b = int(row.get("to_node_id") or row.get("dst") or 0)
+                    if a not in step_by_node:
+                        step_by_node[a] = s
+                    if b not in step_by_node:
+                        step_by_node[b] = s
+                except Exception:
+                    continue
+    with nodes_file.open("r", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            try:
+                nid = int(row.get("id") or row.get("node_id") or 0)
+                label = (row.get("label") or "").strip()
+                s = step_by_node.get(nid, 0)
+                if label:
+                    texts.setdefault(s, []).append(label)
+            except Exception:
+                continue
+    return texts
+
+
+def _js_divergence(p, q):
+    import numpy as np
+    from scipy.spatial.distance import jensenshannon
+    return float(jensenshannon(p, q))
+
+
+def analyze_dataset(ds_dir: Path) -> Dict:
+    texts_by_step = _collect_texts_by_step(ds_dir)
+    if not texts_by_step:
+        return {}
+    steps = sorted(texts_by_step.keys())
+    corpus = [" ".join(texts_by_step[s]) for s in steps]
+    from sklearn.feature_extraction.text import TfidfVectorizer
+    from sklearn.decomposition import NMF
+    import numpy as np
+    tfidf = TfidfVectorizer(min_df=2, max_features=5000)
+    X = tfidf.fit_transform(corpus)
+    # Guard for tiny corpora
+    if X.shape[0] < 2 or X.shape[1] == 0:
+        return {
+            "dataset": ds_dir.name,
+            "steps": steps,
+            "avg_ted_js": 0.0,
+            "topic_terms": {}
+        }
+    n_topics = min(20, max(5, X.shape[0] // 2))
+    nmf = NMF(n_components=n_topics, init="nndsvda", random_state=0, max_iter=300)
+    W = nmf.fit_transform(X)
+    H = nmf.components_
+    # normalize topic distributions per step safely
+    row_sums = W.sum(axis=1, keepdims=True)
+    row_sums[row_sums == 0] = 1.0
+    Wn = W / row_sums
+    ted_js = []
+    for i in range(1, len(steps)):
+        a = Wn[i - 1]
+        b = Wn[i]
+        # Ensure valid distributions
+        a = a / (a.sum() + 1e-12)
+        b = b / (b.sum() + 1e-12)
+        val = _js_divergence(a, b)
+        if val == val:  # not NaN
+            ted_js.append(val)
+    avg_ted_js = float(np.mean(ted_js)) if ted_js else 0.0
+    # top terms per topic
+    terms = tfidf.get_feature_names_out()
+    top_terms = {}
+    for k in range(n_topics):
+        idx = np.argsort(H[k])[::-1][:8]
+        top_terms[str(k)] = [terms[j] for j in idx]
+    return {
+        "dataset": ds_dir.name,
+        "steps": steps,
+        "avg_ted_js": avg_ted_js,
+        "topic_terms": top_terms,
+    }
+
+
+def main() -> None:
+    ap = argparse.ArgumentParser(description="Compute per-course topics and JS drift")
+    ap.add_argument("--fs-dir", required=True)
+    ap.add_argument("--out-dir", required=True)
+    args = ap.parse_args()
+
+    fs_root = Path(args.fs_dir)
+    out_dir = Path(args.out_dir)
+    out_dir.mkdir(parents=True, exist_ok=True)
+
+    index = []
+    for ds in fs_root.iterdir():
+        if not ds.is_dir():
+            continue
+        try:
+            res = analyze_dataset(ds)
+        except Exception:
+            res = {}
+        if res:
+            (out_dir / f"{ds.name}.topics.json").write_text(json.dumps(res, indent=2), encoding="utf-8")
+            index.append({"dataset": ds.name, "avg_ted_js": res.get("avg_ted_js")})
+    (out_dir / "index.json").write_text(json.dumps(index, indent=2), encoding="utf-8")
+
+
+if __name__ == "__main__":
+    main()

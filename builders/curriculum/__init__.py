@@ -96,6 +96,14 @@ def build_from_items_json(
         items=items,
     )
 
+    # Optional: FAISS-based thematic edges over item titles when enabled
+    try:
+        import os
+        if os.environ.get("AXIOM_FAISS_ENABLED", "0") == "1":
+            _add_ann_thematic_edges(items, id_map, edges, cfg.step_semantics)
+    except Exception:
+        pass
+
     # Ensure no step is empty: for any step with zero edges, add a self-edge on a representative node
     try:
         _ensure_nonempty_steps(items, id_map, edges, cfg.step_semantics)
@@ -924,3 +932,70 @@ def _add_edge(
             "val": weight,
         }
     )
+
+
+def _add_ann_thematic_edges(
+    items: List[Dict[str, object]],
+    id_map: Dict[str, int],
+    edges: List[EdgeEntry],
+    step_semantics: str,
+    *,
+    model_name: str = "all-MiniLM-L6-v2",
+    top_k: int = 8,
+    min_sim: float = 0.35,
+) -> None:
+    """Add forward-only thematic edges using ANN over item titles.
+
+    Uses sentence-transformers (if present) and FAISS (if present). Falls back to a
+    simple cosine search with numpy if FAISS is not available.
+    """
+    from core.embeddings import encode_texts
+    import numpy as np
+    titles = [(it.get("title") or "").strip() for it in items]
+    if not titles:
+        return
+    X = np.array(encode_texts(titles, model_name=model_name))
+    n = len(items)
+    # Build index
+    use_faiss = False
+    try:
+        import faiss  # type: ignore
+        d = X.shape[1]
+        index = faiss.IndexFlatIP(d)
+        # normalize (already normalized likely)
+        index.add(X.astype(np.float32))
+        use_faiss = True
+    except Exception:
+        index = None
+
+    added: set[tuple[int, int]] = set()
+    for i, src_item in enumerate(items):
+        # Only connect to future items to preserve course order semantics
+        if use_faiss:
+            import faiss  # type: ignore
+            D, I = index.search(X[i : i + 1].astype(np.float32), top_k + 1)
+            neighs = [(int(j), float(s)) for j, s in zip(I[0], D[0]) if j != i]
+        else:
+            # cosine similarities
+            sims = (X[i] @ X.T).tolist()
+            neighs = sorted(((j, float(s)) for j, s in enumerate(sims) if j != i), key=lambda t: t[1], reverse=True)[: top_k + 10]
+        # Filter by position and threshold, cap per-source
+        cnt = 0
+        for j, sim in neighs:
+            if sim < min_sim:
+                continue
+            if j <= i:
+                continue
+            src_key = items[i].get("item_id")
+            dst_key = items[j].get("item_id")
+            if src_key not in id_map or dst_key not in id_map:
+                continue
+            pair = (id_map[src_key], id_map[dst_key])
+            if pair in added:
+                continue
+            step = _step_from_item(items[j], step_semantics)
+            edges.append({"step": step, "src": pair[0], "dst": pair[1], "val": float(sim)})
+            added.add(pair)
+            cnt += 1
+            if cnt >= top_k:
+                break
