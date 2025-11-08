@@ -14,7 +14,8 @@ from .types import (
     ConversationTurn,
     ConversationSignals,
 )
-from .extractors import SimpleNodeExtractor, SimpleEdgeBuilder
+from collections import deque
+from .extractors import SimpleNodeExtractor, SimpleEdgeBuilder, AdvancedNodeExtractor
 
 
 class ConversationAdapter:
@@ -27,8 +28,12 @@ class ConversationAdapter:
     - Compatible with core/signals.py
     """
 
-    def __init__(self):
-        self.node_extractor = SimpleNodeExtractor()
+    def __init__(self, window_size: int = 6):
+        # Prefer advanced extractor; fallback to simple
+        try:
+            self.node_extractor = AdvancedNodeExtractor()
+        except Exception:
+            self.node_extractor = SimpleNodeExtractor()
         self.edge_builder = SimpleEdgeBuilder()
 
         # State
@@ -39,6 +44,12 @@ class ConversationAdapter:
         # For mapping to integer IDs (required by core/signals.py)
         self.node_id_to_int: Dict[str, int] = {}
         self.int_to_node_id: Dict[int, str] = {}
+
+        # Sliding window for step-level aggregation
+        self.window_size = max(2, int(window_size))
+        self._window = deque([], maxlen=self.window_size)
+        # For recency features
+        self._recent_concepts: deque = deque([], maxlen=self.window_size * 4)
 
     def process_turn(self, role: str, text: str) -> ConversationSignals:
         """
@@ -89,6 +100,9 @@ class ConversationAdapter:
         )
         self.turns.append(turn)
 
+        # Record window
+        self._window.append(turn)
+
         # Compute signals
         signals = self._compute_signals(turn)
 
@@ -109,11 +123,15 @@ class ConversationAdapter:
         # Compute TED (drift)
         ted = self._compute_TED(current_turn, previous_turn)
 
-        # Compute continuity
+        # Compute continuity (with adjacency-pair boost)
         continuity = self._compute_continuity(current_turn, previous_turn)
+        continuity = self._apply_adjacency_boost(continuity, current_turn, previous_turn)
 
         # Compute spread (topic dispersion)
         spread = self._compute_spread(current_turn)
+
+        # Trusted drift (reliability-weighted)
+        ted_trusted = self._compute_trusted_drift(ted, current_turn, previous_turn)
 
         return ConversationSignals(
             step_index=turn_index,
@@ -121,6 +139,7 @@ class ConversationAdapter:
             TED=ted,
             continuity=continuity,
             spread=spread,
+            ted_trusted=ted_trusted,
             node_count=len(current_turn.nodes),
             edge_count=len(current_turn.edges)
         )
@@ -266,6 +285,22 @@ class ConversationAdapter:
 
         return np.clip(continuity, 0, 1)
 
+    def _apply_adjacency_boost(
+        self,
+        base_cont: float,
+        current_turn: Optional[ConversationTurn],
+        previous_turn: Optional[ConversationTurn],
+    ) -> float:
+        if not current_turn or not previous_turn:
+            return base_cont
+        # If previous contained a question and current is opposite role, boost continuity
+        prev_has_q = any(n.type == "question" for n in previous_turn.nodes)
+        cross_role = (current_turn.nodes and previous_turn.nodes and current_turn.nodes[0].role != previous_turn.nodes[0].role)
+        if prev_has_q and cross_role:
+            # small bounded boost
+            return float(np.clip(base_cont + 0.08, 0, 1))
+        return base_cont
+
     def _compute_spread(self, turn: ConversationTurn) -> float:
         """
         Compute spread = topic dispersion.
@@ -295,6 +330,74 @@ class ConversationAdapter:
 
         return np.clip(spread, 0, 1)
 
+    def _compute_trusted_drift(
+        self,
+        base_ted: float,
+        current_turn: Optional[ConversationTurn],
+        previous_turn: Optional[ConversationTurn],
+    ) -> float:
+        """Weighted drift akin to curriculum trusted drift components.
+
+        Components (α,β,γ,δ configurable via env):
+        - Verification (v): fraction of shared concepts across both roles in window
+        - Authority (a): role prior (moderator/interviewer > guest > assistant/user equal)
+        - Recency (r): reuse of concepts from last W turns
+        - Locality (l): node-type weight (concept>question>entity>other)
+        Weighted score s = α*v + β*a + γ*r + δ*l; then ted_trusted = base_ted * (1 - s)
+        """
+        import os
+        try:
+            alpha = float(os.environ.get("AXIOM_TRUST_ALPHA", 0.4))
+            beta  = float(os.environ.get("AXIOM_TRUST_BETA",  0.2))
+            gamma = float(os.environ.get("AXIOM_TRUST_GAMMA", 0.2))
+            delta = float(os.environ.get("AXIOM_TRUST_DELTA", 0.2))
+        except Exception:
+            alpha, beta, gamma, delta = 0.4, 0.2, 0.2, 0.2
+
+        if previous_turn is None or current_turn is None:
+            return base_ted
+
+        # Verification: shared normalized concept strings this turn vs prev
+        curr_concepts = {n.text.lower() for n in current_turn.nodes if n.type in {"concept","entity"}}
+        prev_concepts = {n.text.lower() for n in previous_turn.nodes if n.type in {"concept","entity"}}
+        union = len(curr_concepts | prev_concepts)
+        v = (len(curr_concepts & prev_concepts) / union) if union > 0 else 0.0
+
+        # Authority: simple role prior (if roles alternate and one is interviewer/moderator in metadata)
+        def _role_weight(nodes: List[ConversationNode]) -> float:
+            if not nodes:
+                return 0.5
+            role = nodes[0].role.lower()
+            # Conversation roles vary; keep neutral with slight boost for assistant as "expert" analog
+            return 0.55 if role == "assistant" else 0.5
+        a = (_role_weight(previous_turn.nodes) + _role_weight(current_turn.nodes)) / 2.0
+
+        # Recency: fraction of current concepts seen in recent history
+        seen = 0
+        for c in curr_concepts:
+            if c in self._recent_concepts:
+                seen += 1
+        r = (seen / max(1, len(curr_concepts))) if curr_concepts else 0.0
+
+        # Locality: weight by node type presence (concept heavy → higher locality)
+        types = [n.type for n in current_turn.nodes]
+        l = 0.0
+        if types:
+            l = (
+                1.0 * (types.count("concept") / len(types)) +
+                0.8 * (types.count("question") / len(types)) +
+                0.6 * (types.count("entity") / len(types))
+            )
+
+        score = float(np.clip(alpha * v + beta * a + gamma * r + delta * l, 0, 1))
+        ted_trusted = float(np.clip(base_ted * (1.0 - score), 0, 1))
+
+        # Update recency buffer
+        for c in curr_concepts:
+            self._recent_concepts.append(c)
+
+        return ted_trusted
+
     def get_recent_signals(self, window_size: int = 5) -> List[ConversationSignals]:
         """Get signals for recent turns."""
         signals = []
@@ -303,12 +406,19 @@ class ConversationAdapter:
         for turn in self.turns[start_idx:]:
             # Recompute signals for each turn
             previous_turn = self.turns[turn.turn_index - 1] if turn.turn_index > 0 else None
+            ted = self._compute_TED(turn, previous_turn)
+            cont = self._apply_adjacency_boost(
+                self._compute_continuity(turn, previous_turn),
+                turn,
+                previous_turn,
+            )
             sig = ConversationSignals(
                 step_index=turn.turn_index,
                 q=self._compute_quality(turn),
-                TED=self._compute_TED(turn, previous_turn),
-                continuity=self._compute_continuity(turn, previous_turn),
+                TED=ted,
+                continuity=cont,
                 spread=self._compute_spread(turn),
+                ted_trusted=self._compute_trusted_drift(ted, turn, previous_turn),
                 node_count=len(turn.nodes),
                 edge_count=len(turn.edges)
             )

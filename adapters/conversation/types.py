@@ -81,6 +81,7 @@ class ConversationSignals:
     TED: float  # Drift from previous step
     continuity: float  # Overlap with previous step
     spread: Optional[float] = None  # Topic dispersion
+    ted_trusted: Optional[float] = None  # Reliability-weighted drift
     node_count: int = 0
     edge_count: int = 0
     metadata: Dict = field(default_factory=dict)
@@ -93,6 +94,7 @@ class ConversationSignals:
             "TED": float(round(self.TED, 3)),
             "continuity": float(round(self.continuity, 3)),
             "spread": float(round(self.spread, 3)) if self.spread is not None else None,
+            "ted_trusted": float(round(self.ted_trusted, 3)) if self.ted_trusted is not None else None,
             "node_count": int(self.node_count),
             "edge_count": int(self.edge_count),
             **self.metadata
