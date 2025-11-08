@@ -126,17 +126,25 @@ def main() -> None:
         report = json.loads(report_path.read_text(encoding="utf-8"))
         aggregates = report.get("aggregates", {})
         steps = report.get("steps", [])
-        cont_vals = [s.get("continuity") for s in steps if isinstance(s.get("continuity"), (int, float))]
-        avg_continuity = round(sum(cont_vals)/len(cont_vals), 3) if cont_vals else None
+        # Fallback compute from steps when aggregates are absent (e.g., dynamics reporter)
+        def _avg_from_steps(key: str):
+            vals = [s.get(key) for s in steps if isinstance(s.get(key), (int, float))]
+            return round(sum(vals)/len(vals), 3) if vals else None
+
+        avg_q = aggregates.get("avg_q") or _avg_from_steps("q") or _avg_from_steps("mean_q")
+        avg_ted = aggregates.get("avg_ted") or _avg_from_steps("ted") or _avg_from_steps("mean_ted")
+        avg_stability = aggregates.get("avg_stability") or _avg_from_steps("s") or _avg_from_steps("stability")
+        avg_spread = aggregates.get("avg_spread") or _avg_from_steps("spread")
+        avg_continuity = _avg_from_steps("continuity")
         ted_tr_vals = [s.get("ted_trusted") for s in steps if isinstance(s.get("ted_trusted"), (int, float))]
         avg_ted_trusted = round(sum(ted_tr_vals)/len(ted_tr_vals), 3) if ted_tr_vals else aggregates.get("avg_ted_trusted")
         summary.append(
             {
                 "course_id": course_id,
-                "avg_q": aggregates.get("avg_q"),
-                "avg_ted": aggregates.get("avg_ted"),
-                "avg_stability": aggregates.get("avg_stability"),
-                "avg_spread": aggregates.get("avg_spread"),
+                "avg_q": avg_q,
+                "avg_ted": avg_ted,
+                "avg_stability": avg_stability,
+                "avg_spread": avg_spread,
                 "avg_continuity": avg_continuity,
                 "avg_ted_trusted": avg_ted_trusted,
             }
@@ -149,4 +157,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
