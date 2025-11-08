@@ -115,6 +115,7 @@ class Engine:
                 "ted_delta": signals_obj.ted_delta,
                 "spread": signals_obj.spread,
                 "locality_nodes": signals_obj.locality_nodes,
+                "continuity": step_features.get("continuity"),
             }
 
             frame_context = StepFrame(

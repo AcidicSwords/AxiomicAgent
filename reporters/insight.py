@@ -23,6 +23,7 @@ class StepEntry:
     step_type: Optional[str] = None
     edge_count: Optional[int] = None
     fractions: Dict[str, float] = field(default_factory=dict)
+    continuity: Optional[float] = None
 
 
 @register_reporter("insight")
@@ -101,6 +102,7 @@ class InsightReporter:
             step_type=step_type,
             edge_count=meta.get("edge_count"),
             fractions=fractions,
+            continuity=signals.get("continuity"),
         )
         self.summary["steps"].append(entry.__dict__)
 

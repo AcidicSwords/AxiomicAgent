@@ -103,6 +103,10 @@ def main() -> None:
 
         report = json.loads(report_path.read_text(encoding="utf-8"))
         aggregates = report.get("aggregates", {})
+        # compute avg continuity if present
+        steps = report.get("steps", [])
+        cont_vals = [s.get("continuity") for s in steps if isinstance(s.get("continuity"), (int, float))]
+        avg_continuity = round(sum(cont_vals)/len(cont_vals), 3) if cont_vals else None
         summary.append(
             {
                 "course_id": course_id,
@@ -110,6 +114,7 @@ def main() -> None:
                 "avg_ted": aggregates.get("avg_ted"),
                 "avg_stability": aggregates.get("avg_stability"),
                 "avg_spread": aggregates.get("avg_spread"),
+                "avg_continuity": avg_continuity,
             }
         )
 

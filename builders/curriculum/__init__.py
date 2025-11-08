@@ -1,3 +1,14 @@
+"""
+Curriculum builders (MIT + YouTube) to materialize canonical datasets.
+
+Responsibilities:
+- Normalize item lists (MIT sections/lectures; YouTube episodes)
+- Create nodes.csv and edges_obs.csv with per-step edges
+- Inject transcript-derived segment/concept nodes (YouTube)
+- Add thin cross-step continuity edges (shared concepts, title similarity)
+- Guarantee non-empty steps with a self-edge fallback
+"""
+
 from __future__ import annotations
 
 import io
@@ -8,6 +19,7 @@ from collections import defaultdict
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Dict, List, Optional, Set, Tuple
+from pathlib import Path
 
 EdgeEntry = Dict[str, object]
 NodeEntry = Dict[str, object]
@@ -59,6 +71,20 @@ def build_from_items_json(
     else:
         edges = _build_edges_from_prereqs(items, prereqs, id_map, cfg.step_semantics)
 
+    # Optional: augment with transcript-derived nodes/edges if present
+    try:
+        _augment_with_transcripts(
+            items_json_path,
+            nodes,
+            edges,
+            items,
+            id_map,
+            cfg.step_semantics,
+        )
+    except Exception:
+        # Be tolerant; transcript augmentation is optional
+        pass
+
     meta = _build_meta(
         course_id=course_id,
         title=data.get("title", course_id),
@@ -69,6 +95,12 @@ def build_from_items_json(
         profile=profile,
         items=items,
     )
+
+    # Ensure no step is empty: for any step with zero edges, add a self-edge on a representative node
+    try:
+        _ensure_nonempty_steps(items, id_map, edges, cfg.step_semantics)
+    except Exception:
+        pass
 
     _write_zip(output_zip, nodes, edges, meta)
 
@@ -578,6 +610,210 @@ def _dicts_to_csv(rows: List[Dict[str, object]], fields: List[str]) -> str:
 # ---------------------------------------------------------------------------
 # helper utilities for profile-specific edges
 # ---------------------------------------------------------------------------
+
+def _augment_with_transcripts(
+    items_json_path: Path,
+    nodes: List[NodeEntry],
+    edges: List[EdgeEntry],
+    items: List[Dict[str, object]],
+    id_map: Dict[str, int],
+    step_semantics: str,
+) -> None:
+    """
+    If items include transcript_path fields, create per-video segment nodes and
+    concept nodes, and wire them with edges assigned to the video's step.
+
+    Also records short lists of per-video keywords for thin cross-step continuity
+    glue: concept→next-video edges (shared keywords) and a title-similarity
+    video→video link (when a content anchor overlaps).
+    """
+    # Lazy import to avoid creating a hard builder->core cycle at import time
+    from core.transcripts import coarse_segments, extract_keywords
+
+    base_dir = items_json_path.parent
+    concept_node_id: Dict[str, int] = {}
+    next_id = max((int(n.get("id", -1)) for n in nodes), default=-1) + 1
+
+    def _add_node(entry: Dict[str, object]) -> int:
+        nonlocal next_id
+        entry = dict(entry)
+        entry["id"] = next_id
+        nodes.append(entry)
+        nid = next_id
+        next_id += 1
+        return nid
+
+    # Keep light cross-step glue derived from transcript keywords
+    video_keywords: Dict[str, Set[str]] = {}
+    ordered_items = sorted(
+        items,
+        key=lambda it: (
+            it.get("order") if it.get("order") is not None else _week_value(it) or 0,
+            it.get("title", ""),
+        ),
+    )
+
+    for item in ordered_items:
+        transcript_rel = item.get("transcript_path")
+        if not transcript_rel:
+            continue
+        # Resolve path and load transcript JSON
+        tpath = (base_dir / str(transcript_rel)).resolve()
+        if not tpath.exists():
+            continue
+        try:
+            transcript = json.loads(tpath.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+
+        video_item_id = str(item.get("item_id"))
+        video_node_id = id_map.get(video_item_id)
+        if video_node_id is None:
+            continue
+        # Compute step for this video
+        step = _step_from_item(item, step_semantics)
+
+        # Build coarse segments
+        segments = coarse_segments(transcript, segment_duration=30.0)
+        prev_seg_nid: Optional[int] = None
+        kws_for_video: Set[str] = set()
+        for seg_idx, seg in enumerate(segments):
+            seg_nid = _add_node(
+                {
+                    "label": f"{item.get('title','')} [segment {seg_idx}]",
+                    "item_id": f"{video_item_id}::seg{seg_idx}",
+                    "kind": "segment",
+                    "course_id": nodes[video_node_id].get("course_id", ""),
+                    "section_index": item.get("section_index"),
+                    "section_slug": item.get("section_slug"),
+                    "section_title": item.get("section_title"),
+                    "section_chunk_index": item.get("section_chunk_index"),
+                    "week": item.get("week"),
+                    "order": item.get("order"),
+                    "tags": "",
+                    "source_path": item.get("source_path", ""),
+                    "metrics": "",
+                }
+            )
+            # video -> segment
+            edges.append({"step": step, "src": video_node_id, "dst": seg_nid, "val": 1})
+            # segment sequence
+            if prev_seg_nid is not None:
+                edges.append({"step": step, "src": prev_seg_nid, "dst": seg_nid, "val": 1})
+            prev_seg_nid = seg_nid
+
+            # segment -> concept keywords
+            for kw in extract_keywords(seg.get("text", ""), max_keywords=5):
+                if kw not in concept_node_id:
+                    cid = _add_node(
+                        {
+                            "label": kw,
+                            "item_id": f"kw::{kw}",
+                            "kind": "concept",
+                            "course_id": nodes[video_node_id].get("course_id", ""),
+                            "week": None,
+                            "order": None,
+                            "tags": "",
+                            "source_path": "",
+                            "metrics": "",
+                        }
+                    )
+                    concept_node_id[kw] = cid
+                edges.append({"step": step, "src": seg_nid, "dst": concept_node_id[kw], "val": 1})
+                kws_for_video.add(kw)
+
+        video_keywords[video_item_id] = kws_for_video
+
+    # Thin cross-step edges: connect shared concepts across adjacent items
+    MAX_CROSS_PER_STEP = 15
+    for prev_item, curr_item in zip(ordered_items, ordered_items[1:]):
+        prev_id = str(prev_item.get("item_id"))
+        curr_id = str(curr_item.get("item_id"))
+        prev_kws = video_keywords.get(prev_id, set())
+        curr_kws = video_keywords.get(curr_id, set())
+        if not prev_kws or not curr_kws:
+            continue
+        overlap = list(prev_kws & curr_kws)
+        if not overlap:
+            continue
+        step_curr = _step_from_item(curr_item, step_semantics)
+        added = 0
+        curr_vid_nid = id_map.get(curr_id)
+        if curr_vid_nid is None:
+            continue
+        for kw in overlap:
+            cid = concept_node_id.get(kw)
+            if cid is None:
+                continue
+            edges.append({"step": step_curr, "src": cid, "dst": curr_vid_nid, "val": 1})
+            added += 1
+            if added >= MAX_CROSS_PER_STEP:
+                break
+
+    # Title-similarity: connect previous video to current if titles share informative tokens
+    def _title_tokens(title: str) -> Set[str]:
+        import re
+        raw = re.findall(r"[a-zA-Z][a-zA-Z\-']{3,}", (title or "").lower())
+        stop = {"the","and","with","from","into","your","what","when","where","how","this","that","these","those","again","also","just","really","very","more","most","much","some","any","like","over","under","onto","into"}
+        return {t for t in raw if t not in stop}
+
+    TITLE_ANCHORS = {
+        # math / cs anchors
+        "derivative","integral","taylor","series","matrix","vector","eigen","determinant","gradient","limit",
+        "algorithm","network","compiler","memory","systems","operating","protocol",
+        # history anchors
+        "empire","revolution","civilization","samurai","communists","columbus","commerce","industrial",
+    }
+
+    for prev_item, curr_item in zip(ordered_items, ordered_items[1:]):
+        prev_id = str(prev_item.get("item_id"))
+        curr_id = str(curr_item.get("item_id"))
+        prev_vid = id_map.get(prev_id)
+        curr_vid = id_map.get(curr_id)
+        if prev_vid is None or curr_vid is None:
+            continue
+        a = _title_tokens(str(prev_item.get("title", "")))
+        b = _title_tokens(str(curr_item.get("title", "")))
+        if not a or not b:
+            continue
+        inter_terms = a & b
+        inter = len(inter_terms)
+        union = len(a | b)
+        jacc = inter / union if union else 0.0
+        # require at least one anchor term in common to avoid generic overlaps
+        has_anchor = any(t in TITLE_ANCHORS for t in inter_terms)
+        if jacc >= 0.12 and has_anchor:
+            step_curr = _step_from_item(curr_item, step_semantics)
+            edges.append({"step": step_curr, "src": prev_vid, "dst": curr_vid, "val": 1})
+
+
+def _ensure_nonempty_steps(
+    items: List[Dict[str, object]],
+    id_map: Dict[str, int],
+    edges: List[EdgeEntry],
+    step_semantics: str,
+) -> None:
+    # Build set of steps implied by items
+    wanted_steps: Set[int] = set()
+    first_item_for_step: Dict[int, Dict[str, object]] = {}
+    for it in items:
+        s = _step_from_item(it, step_semantics)
+        wanted_steps.add(s)
+        if s not in first_item_for_step:
+            first_item_for_step[s] = it
+
+    # Current edges per step
+    has_edges: Set[int] = set(e.get("step", 0) for e in edges)
+    missing = [s for s in sorted(wanted_steps) if s not in has_edges]
+    for s in missing:
+        it = first_item_for_step.get(s)
+        if not it:
+            continue
+        key = str(it.get("item_id"))
+        if key not in id_map:
+            continue
+        nid = id_map[key]
+        edges.append({"step": s, "src": nid, "dst": nid, "val": 1})
 
 
 def _week_value(item: Dict[str, object]) -> Optional[int]:

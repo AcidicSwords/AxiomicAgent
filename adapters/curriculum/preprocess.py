@@ -1,3 +1,16 @@
+"""
+Curriculum preprocessing: filter/weight nodes and edges, summarize steps.
+
+Key features:
+- Type inference and weights (concept/assessment/reading/meta/media/...)
+- Stoplists + regexes to drop navigation/media artifacts
+- Per-step summary: quality(q), stability, top_nodes, fractions, engagement
+- YouTube extras:
+  * continuity (concept Jaccard overlap between steps)
+  * light q normalization for very dense per-step graphs
+  * top_nodes filtering tuned for content phrases (anchors for singles)
+"""
+
 from __future__ import annotations
 
 import json
@@ -28,12 +41,55 @@ DEFAULT_STOP_PATTERNS = [
     r"^\s*$",
 ]
 
+# Labels that should never be surfaced as "top nodes" (but may still exist as nodes)
+_TOPNODE_ARTIFACT_RE = re.compile(r"\.(pdf|docx?|pptx?|jar|zip|tar|gz|csv|xlsx)$", re.I)
+_TOPNODE_FILLER = {
+    "access",
+    "address",
+    "after",
+    "ability",
+    "although",
+    "allowed",
+    "almost",
+    "before",
+    "based",
+    "adding",
+    "also",
+    "again",
+    "actually",
+    "another",
+    "because",
+    "between",
+    "different",
+    "example",
+    "important",
+    "instead",
+    "really",
+    "right",
+    "something",
+    "together",
+    "using",
+    "way",
+    "well",
+}
+
+# Single-token anchors we still allow for YouTube top nodes
+_SINGLE_TOKEN_ANCHORS = {
+    # STEM
+    "derivative","derivatives","integral","integrals","taylor","series",
+    "matrix","matrices","vector","vectors","eigen","determinant","gradient",
+    "algorithm","algorithms","network","compiler","memory","systems",
+    # History
+    "empire","revolution","civilization","samurai","communists"
+}
+
 DEFAULT_TYPE_WEIGHTS = {
     "exam": 0.70,
     "pset": 0.70,
     "concept": 1.00,
     "theorem": 1.00,
     "definition": 1.00,
+    "segment": 0.70,
     "reading": 0.85,
     "nav": 0.05,
     "media": 0.05,
@@ -150,10 +206,64 @@ class CurriculumPreprocessor:
         for step, edges in obs_steps.items():
             step_features[step] = self._summarize_step(step, edges, node_tags, node_weights, nodes)
 
+        # Compute continuity metric between consecutive steps (concept-node overlap Jaccard)
+        steps_sorted = sorted(step_features.keys())
+        prev_concepts: Set[int] | None = None
+        for s in steps_sorted:
+            feats = step_features[s]
+            # nodes present in this step
+            step_nodes: Set[int] = set(n for (u, v) in obs_steps.get(s, set()) for n in (u, v))
+            # concept-only subset
+            concept_nodes = {n for n in step_nodes if 'concept' in (node_tags.get(n, set()) or set())}
+            if prev_concepts is None:
+                feats['continuity'] = 0.0
+            else:
+                inter = len(concept_nodes & prev_concepts)
+                union = len(concept_nodes | prev_concepts)
+                feats['continuity'] = round((inter / union) if union else 0.0, 3)
+            prev_concepts = concept_nodes
+
         meta = dict(raw.meta)
         meta.setdefault("filter", "curriculum")
         meta.setdefault("stop_nodes", sorted(self.stop_nodes))
         meta["type_weights"] = self.type_weights
+
+        # Light normalization for YouTube-style profiles so q doesn't saturate due to segment density
+        profile = str(meta.get("profile") or meta.get("course_profile") or "").lower()
+        if profile.startswith("youtube"):
+            for step, feats in step_features.items():
+                q = feats.get("quality")
+                if isinstance(q, (int, float)):
+                    qf = float(q)
+                    edge_count = int(feats.get("edge_count") or 0)
+                    # soft cap + slight penalty for very large per-step graphs
+                    cap = 0.95
+                    penalty = 1.0
+                    if edge_count >= 400:
+                        penalty = 0.94
+                    elif edge_count >= 250:
+                        penalty = 0.97
+                    feats["quality"] = min(cap, qf * penalty)
+                # Filter top_nodes to prefer content titles/phrases over filler tokens
+                tn = feats.get("top_nodes") or []
+                filtered = []
+                for item in tn:
+                    label = str(item.get("label") or "")
+                    if not label:
+                        continue
+                    if _TOPNODE_ARTIFACT_RE.search(label):
+                        continue
+                    L = label.strip().lower()
+                    if L in _TOPNODE_FILLER:
+                        continue
+                    # Prefer multi-word or colon/pipe separated titles; allow single tokens only if anchors
+                    if (" " in label) or (":" in label) or ("|" in label):
+                        filtered.append(item)
+                    else:
+                        if L in _SINGLE_TOKEN_ANCHORS:
+                            filtered.append(item)
+                # Keep at most 8
+                feats["top_nodes"] = filtered[:8]
 
         return ProcessedStream(
             nodes=nodes,
@@ -182,6 +292,8 @@ class CurriculumPreprocessor:
 
         if kind_lower == "reading":
             return "reading", self.type_weights.get("reading", 0.85)
+        if kind_lower == "segment":
+            return "segment", self.type_weights.get("segment", 0.70)
 
         if any(rx.search(text) for rx in self.stop_re):
             return "media", self.type_weights.get("media", 0.05)
@@ -316,6 +428,7 @@ class CurriculumPreprocessor:
             "concept": {"concept"},
             "definition": {"definition"},
             "theorem": {"theorem"},
+            "segment": {"meta"},
             "assessment": {"assessment"},
             "exam": {"assessment", "exam"},
             "pset": {"assessment", "pset"},
@@ -419,6 +532,14 @@ class CurriculumPreprocessor:
                 or label_entry.get("concept")
                 or node_id
             )
+            # Content-oriented boost: prefer multiword titles/phrases and known anchors
+            lt = (label_text or "").strip().lower()
+            if (":" in lt) or ("|" in lt) or (" " in lt and len(lt) >= 10):
+                score += 0.15
+            else:
+                # single token: small boost only for anchors
+                if lt in _SINGLE_TOKEN_ANCHORS:
+                    score += 0.08
             node_scores.append((score, node_id, label_text))
             metrics_payload = self._parse_metrics(label_entry)
             if metrics_payload:
@@ -442,17 +563,34 @@ class CurriculumPreprocessor:
         stability = max(0.0, min(1.0, quality - 0.3 * ted_noise))
 
         node_scores.sort(key=lambda pair: (-pair[0], pair[2]))
-        top_nodes = [
-            {
-                "id": node_id,
-                "label": labels.get(node_id, {}).get("label")
-                or labels.get(node_id, {}).get("title")
-                or str(node_id),
-                "tags": sorted(node_tags.get(node_id, {"other"})),
-                "score": round(score, 3),
-            }
-            for score, node_id, _ in node_scores[:8]
-        ]
+        # Filter top nodes: drop media/meta/navigation/segment and artifact labels/fillers
+        def _accept_top(node_id: int, label_text: str) -> bool:
+            tags = node_tags.get(node_id, set()) or set()
+            if {'media', 'navigation'} & tags:
+                return False
+            if 'meta' in tags and 'concept' not in tags:
+                return False
+            if _TOPNODE_ARTIFACT_RE.search(label_text or ''):
+                return False
+            if label_text and label_text.strip().lower() in _TOPNODE_FILLER:
+                return False
+            return True
+
+        top_nodes: List[Dict[str, object]] = []
+        for score, node_id, label_text in node_scores:
+            if len(top_nodes) >= 8:
+                break
+            if not _accept_top(node_id, label_text):
+                continue
+            display = labels.get(node_id, {}).get("label") or labels.get(node_id, {}).get("title") or str(node_id)
+            top_nodes.append(
+                {
+                    "id": node_id,
+                    "label": display,
+                    "tags": sorted(node_tags.get(node_id, {"other"})),
+                    "score": round(score, 3),
+                }
+            )
 
         fractions = {
             "concept_fraction": round(weight_totals["concept"] / total_weight, 3),
