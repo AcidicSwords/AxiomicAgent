@@ -1,0 +1,96 @@
+{
+  "adapter": "curriculum",
+  "course_id": "essence_calculus",
+  "title": "Essence of calculus",
+  "num_items": 1514,
+  "num_edges": 2572,
+  "step_semantics": "week",
+  "sections": [],
+  "step_lookup": [
+    {
+      "step": 1,
+      "section_index": 1,
+      "section_title": "Week 1",
+      "chunk_index": 0,
+      "chunk_label": "Week 1"
+    },
+    {
+      "step": 2,
+      "section_index": 2,
+      "section_title": "Week 2",
+      "chunk_index": 0,
+      "chunk_label": "Week 2"
+    },
+    {
+      "step": 3,
+      "section_index": 3,
+      "section_title": "Week 3",
+      "chunk_index": 0,
+      "chunk_label": "Week 3"
+    },
+    {
+      "step": 4,
+      "section_index": 4,
+      "section_title": "Week 4",
+      "chunk_index": 0,
+      "chunk_label": "Week 4"
+    },
+    {
+      "step": 5,
+      "section_index": 5,
+      "section_title": "Week 5",
+      "chunk_index": 0,
+      "chunk_label": "Week 5"
+    },
+    {
+      "step": 6,
+      "section_index": 6,
+      "section_title": "Week 6",
+      "chunk_index": 0,
+      "chunk_label": "Week 6"
+    },
+    {
+      "step": 7,
+      "section_index": 7,
+      "section_title": "Week 7",
+      "chunk_index": 0,
+      "chunk_label": "Week 7"
+    },
+    {
+      "step": 8,
+      "section_index": 8,
+      "section_title": "Week 8",
+      "chunk_index": 0,
+      "chunk_label": "Week 8"
+    },
+    {
+      "step": 9,
+      "section_index": 9,
+      "section_title": "Week 9",
+      "chunk_index": 0,
+      "chunk_label": "Week 9"
+    },
+    {
+      "step": 10,
+      "section_index": 10,
+      "section_title": "Week 10",
+      "chunk_index": 0,
+      "chunk_label": "Week 10"
+    },
+    {
+      "step": 11,
+      "section_index": 11,
+      "section_title": "Week 11",
+      "chunk_index": 0,
+      "chunk_label": "Week 11"
+    },
+    {
+      "step": 12,
+      "section_index": 12,
+      "section_title": "Week 12",
+      "chunk_index": 0,
+      "chunk_label": "Week 12"
+    }
+  ],
+  "profile": "youtube_3b1b"
+}

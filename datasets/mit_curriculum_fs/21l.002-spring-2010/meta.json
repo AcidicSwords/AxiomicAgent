@@ -1,0 +1,73 @@
+{
+  "adapter": "curriculum",
+  "course_id": "21l.002-spring-2010",
+  "title": "21l.002-spring-2010",
+  "num_items": 4,
+  "num_edges": 3,
+  "step_semantics": "week",
+  "sections": [
+    {
+      "slug": "assignments",
+      "index": 1,
+      "title": "Assignments",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "Assignments",
+          "item_ids": []
+        }
+      ]
+    },
+    {
+      "slug": "readings",
+      "index": 2,
+      "title": "Readings",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "Readings",
+          "item_ids": []
+        }
+      ]
+    },
+    {
+      "slug": "syllabus",
+      "index": 3,
+      "title": "Syllabus",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "Syllabus",
+          "item_ids": []
+        }
+      ]
+    },
+    {
+      "slug": "resources",
+      "index": 4,
+      "title": "Resources",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "Resources",
+          "item_ids": [
+            "mit21l_002s10_assn01",
+            "mit21l_002s10_assn02",
+            "mit21l_002s10_assn03",
+            "mit21l_002s10_read01"
+          ]
+        }
+      ]
+    }
+  ],
+  "step_lookup": [
+    {
+      "step": 4,
+      "section_index": 4,
+      "section_title": "Week 4",
+      "chunk_index": 0,
+      "chunk_label": "Week 4"
+    }
+  ],
+  "profile": "stem"
+}

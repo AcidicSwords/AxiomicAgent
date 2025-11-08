@@ -1,0 +1,3746 @@
+{
+  "adapter": "curriculum",
+  "course_id": "18.01sc-fall-2010",
+  "title": "18.01sc-fall-2010",
+  "num_items": 1001,
+  "num_edges": 1000,
+  "step_semantics": "section_chunk",
+  "sections": [
+    {
+      "slug": "1.-differentiation",
+      "index": 1,
+      "title": "1. Differentiation",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "1. Differentiation (Part 1)",
+          "item_ids": [
+            "1.-differentiation-part-a-definition-and-basic-rules",
+            "1.-differentiation-part-a-definition-and-basic-rules-problem-set-1",
+            "1.-differentiation-part-a-definition-and-basic-rules-session-1-introduction-to-derivatives",
+            "1.-differentiation-part-a-definition-and-basic-rules-session-10-quotient-rule",
+            "1.-differentiation-part-a-definition-and-basic-rules-session-11-chain-rule"
+          ]
+        },
+        {
+          "index": 1,
+          "label": "1. Differentiation (Part 2)",
+          "item_ids": [
+            "1.-differentiation-part-a-definition-and-basic-rules-session-4-limits-and-continuity",
+            "1.-differentiation-part-a-definition-and-basic-rules-session-6-calculating-derivatives",
+            "1.-differentiation-part-a-definition-and-basic-rules-session-7-derivatives-of-sine-and-cosine",
+            "1.-differentiation-part-a-definition-and-basic-rules-session-9-product-rule",
+            "1.-differentiation-part-b-implicit-differentiation-and-inverse-functions"
+          ]
+        },
+        {
+          "index": 2,
+          "label": "1. Differentiation (Part 3)",
+          "item_ids": [
+            "1.-differentiation-part-b-implicit-differentiation-and-inverse-functions-problem-set-2",
+            "1.-differentiation-part-b-implicit-differentiation-and-inverse-functions-session-14-examples-of-implicit-differentiation",
+            "1.-differentiation-part-b-implicit-differentiation-and-inverse-functions-session-15-implicit-differentiation-and-inverse-functions",
+            "1.-differentiation-part-b-implicit-differentiation-and-inverse-functions-session-17-the-exponential-function-its-derivative-and-its-inverse",
+            "1.-differentiation-part-b-implicit-differentiation-and-inverse-functions-session-18-derivatives-of-other-exponential-functions"
+          ]
+        },
+        {
+          "index": 3,
+          "label": "1. Differentiation (Part 4)",
+          "item_ids": [
+            "1.-differentiation-part-b-implicit-differentiation-and-inverse-functions-session-20-hyperbolic-trig-functions",
+            "1.-differentiation-exam-1",
+            "1.-differentiation-exam-1-session-21-review-for-exam-1-computing-derivatives-using-differentiation-rules",
+            "1.-differentiation-exam-1-session-22-materials-for-exam-1",
+            "1.-differentiation-part-a-definition-and-basic-rules-session-12-higher-derivatives"
+          ]
+        },
+        {
+          "index": 4,
+          "label": "1. Differentiation (Part 5)",
+          "item_ids": [
+            "1.-differentiation-part-a-definition-and-basic-rules-session-2-examples-of-derivatives",
+            "1.-differentiation-part-a-definition-and-basic-rules-session-3-derivative-as-rate-of-change",
+            "1.-differentiation-part-a-definition-and-basic-rules-session-5-discontinuity",
+            "1.-differentiation-part-a-definition-and-basic-rules-session-8-limits-of-sine-and-cosine",
+            "1.-differentiation-part-b-implicit-differentiation-and-inverse-functions-session-13-implicit-differentiation"
+          ]
+        },
+        {
+          "index": 5,
+          "label": "1. Differentiation (Part 6)",
+          "item_ids": [
+            "1.-differentiation-part-b-implicit-differentiation-and-inverse-functions-session-16-the-derivative-of-a-x",
+            "1.-differentiation-part-b-implicit-differentiation-and-inverse-functions-session-19-an-interesting-limit-involving-e"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "final-exam",
+      "index": 2,
+      "title": "Session 102: Materials for Final Exam",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "Session 102: Materials for Final Exam",
+          "item_ids": []
+        }
+      ]
+    },
+    {
+      "slug": "syllabus",
+      "index": 3,
+      "title": "Syllabus",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "Syllabus",
+          "item_ids": []
+        }
+      ]
+    },
+    {
+      "slug": "unit-2-applications-of-differentiation",
+      "index": 4,
+      "title": "2. Applications of Differentiation",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "2. Applications of Differentiation (Part 1)",
+          "item_ids": [
+            "unit-2-applications-of-differentiation-part-b-optimization-related-rates-and-newtons-method-session-32-ring-on-a-string",
+            "unit-2-applications-of-differentiation-part-a-approximation-and-curve-sketching",
+            "unit-2-applications-of-differentiation-part-a-approximation-and-curve-sketching-problem-set-3",
+            "unit-2-applications-of-differentiation-part-a-approximation-and-curve-sketching-session-23-linear-approximation",
+            "unit-2-applications-of-differentiation-part-a-approximation-and-curve-sketching-session-24-examples-of-linear-approximation"
+          ]
+        },
+        {
+          "index": 1,
+          "label": "2. Applications of Differentiation (Part 2)",
+          "item_ids": [
+            "unit-2-applications-of-differentiation-part-a-approximation-and-curve-sketching-session-25-introduction-to-quadratic-appoximation",
+            "unit-2-applications-of-differentiation-part-a-approximation-and-curve-sketching-session-26-using-quadratic-approximations",
+            "unit-2-applications-of-differentiation-part-a-approximation-and-curve-sketching-session-27-sketching-graphs-i-polynomials-and-rational-functions",
+            "unit-2-applications-of-differentiation-part-b-optimization-related-rates-and-newtons-method-problem-set-4",
+            "unit-2-applications-of-differentiation-part-b-optimization-related-rates-and-newtons-method-session-29-optimization-problems"
+          ]
+        },
+        {
+          "index": 2,
+          "label": "2. Applications of Differentiation (Part 3)",
+          "item_ids": [
+            "unit-2-applications-of-differentiation-part-b-optimization-related-rates-and-newtons-method-session-30-optimization-problems-ii",
+            "unit-2-applications-of-differentiation-part-b-optimization-related-rates-and-newtons-method-session-31-related-rates",
+            "unit-2-applications-of-differentiation-part-b-optimization-related-rates-and-newtons-method-session-33-newtons-method",
+            "unit-2-applications-of-differentiation-part-c-mean-value-theorem-antiderivatives-and-differential-equations-problem-set-5",
+            "unit-2-applications-of-differentiation-part-c-mean-value-theorem-antiderivatives-and-differential-equations-session-34-introduction-to-the-mean-value-theorem"
+          ]
+        },
+        {
+          "index": 3,
+          "label": "2. Applications of Differentiation (Part 4)",
+          "item_ids": [
+            "unit-2-applications-of-differentiation-part-c-mean-value-theorem-antiderivatives-and-differential-equations-session-35-using-the-mean-value-theorem",
+            "unit-2-applications-of-differentiation-part-c-mean-value-theorem-antiderivatives-and-differential-equations-session-36-differentials",
+            "unit-2-applications-of-differentiation-part-c-mean-value-theorem-antiderivatives-and-differential-equations-session-37-antiderivatives",
+            "unit-2-applications-of-differentiation-part-c-mean-value-theorem-antiderivatives-and-differential-equations-session-38-integration-by-substitution",
+            "unit-2-applications-of-differentiation-part-c-mean-value-theorem-antiderivatives-and-differential-equations-session-40-separation-of-variables"
+          ]
+        },
+        {
+          "index": 4,
+          "label": "2. Applications of Differentiation (Part 5)",
+          "item_ids": [
+            "unit-2-applications-of-differentiation-part-b-optimization-related-rates-and-newtons-method",
+            "unit-2-applications-of-differentiation-part-c-mean-value-theorem-antiderivatives-and-differential-equations",
+            "unit-2-applications-of-differentiation-exam-2",
+            "unit-2-applications-of-differentiation-exam-2-materials-for-exam-2",
+            "unit-2-applications-of-differentiation-exam-2-session-41-review-for-exam-2"
+          ]
+        },
+        {
+          "index": 5,
+          "label": "2. Applications of Differentiation (Part 6)",
+          "item_ids": [
+            "unit-2-applications-of-differentiation-part-a-approximation-and-curve-sketching-session-28-sketching-graphs-ii-general-strategies",
+            "unit-2-applications-of-differentiation-part-c-mean-value-theorem-antiderivatives-and-differential-equations-session-39-introduction-to-differential-equations"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "unit-3-the-definite-integral-and-its-applications",
+      "index": 5,
+      "title": "3. The Definite Integral and its Applications",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "3. The Definite Integral and its Applications (Part 1)",
+          "item_ids": [
+            "unit-3-the-definite-integral-and-its-applications-part-b-second-fundamental-theorem-areas-volumes-session-52-proving-the-fundamental-theorem-of-calculus",
+            "unit-3-the-definite-integral-and-its-applications-part-b-second-fundamental-theorem-areas-volumes-session-53-new-functions-from-old",
+            "unit-3-the-definite-integral-and-its-applications-part-c-average-value-probability-and-numerical-integration-session-65-bell-curve-conclusion",
+            "unit-3-the-definite-integral-and-its-applications-part-a-definition-of-the-definite-integral-and-first-fundamental-theorem-problem-set-6",
+            "unit-3-the-definite-integral-and-its-applications-part-a-definition-of-the-definite-integral-and-first-fundamental-theorem-session-44-adding-areas-of-rectangles"
+          ]
+        },
+        {
+          "index": 1,
+          "label": "3. The Definite Integral and its Applications (Part 2)",
+          "item_ids": [
+            "unit-3-the-definite-integral-and-its-applications-part-a-definition-of-the-definite-integral-and-first-fundamental-theorem-session-46-riemann-sums",
+            "unit-3-the-definite-integral-and-its-applications-part-a-definition-of-the-definite-integral-and-first-fundamental-theorem-session-47-introduction-of-the-fundamental-theorem-of-calculus",
+            "unit-3-the-definite-integral-and-its-applications-part-a-definition-of-the-definite-integral-and-first-fundamental-theorem-session-49-applications-of-the-fundamental-theorem-of-calculus",
+            "unit-3-the-definite-integral-and-its-applications-part-b-second-fundamental-theorem-areas-volumes-problem-set-7",
+            "unit-3-the-definite-integral-and-its-applications-part-b-second-fundamental-theorem-areas-volumes-session-51-the-second-fundamental-theorem-of-calculus"
+          ]
+        },
+        {
+          "index": 2,
+          "label": "3. The Definite Integral and its Applications (Part 3)",
+          "item_ids": [
+            "unit-3-the-definite-integral-and-its-applications-part-b-second-fundamental-theorem-areas-volumes-session-56-geometric-interpretation-of-definite-integrals",
+            "unit-3-the-definite-integral-and-its-applications-part-b-second-fundamental-theorem-areas-volumes-session-59-volume-of-a-parabaloid-revolving-about-y-axis",
+            "unit-3-the-definite-integral-and-its-applications-part-c-average-value-probability-and-numerical-integration-problem-set-8",
+            "unit-3-the-definite-integral-and-its-applications-part-c-average-value-probability-and-numerical-integration-session-60-integrals-and-averages",
+            "unit-3-the-definite-integral-and-its-applications-part-c-average-value-probability-and-numerical-integration-session-62-integrals-and-probability"
+          ]
+        },
+        {
+          "index": 3,
+          "label": "3. The Definite Integral and its Applications (Part 4)",
+          "item_ids": [
+            "unit-3-the-definite-integral-and-its-applications-part-c-average-value-probability-and-numerical-integration-session-63-numerical-integration",
+            "unit-3-the-definite-integral-and-its-applications-part-a-definition-of-the-definite-integral-and-first-fundamental-theorem",
+            "unit-3-the-definite-integral-and-its-applications-part-b-second-fundamental-theorem-areas-volumes",
+            "unit-3-the-definite-integral-and-its-applications-part-c-average-value-probability-and-numerical-integration",
+            "unit-3-the-definite-integral-and-its-applications-exam-3"
+          ]
+        },
+        {
+          "index": 4,
+          "label": "3. The Definite Integral and its Applications (Part 5)",
+          "item_ids": [
+            "unit-3-the-definite-integral-and-its-applications-exam-3-materials-for-exam-3",
+            "unit-3-the-definite-integral-and-its-applications-exam-3-review-for-exam-3",
+            "unit-3-the-definite-integral-and-its-applications-part-a-definition-of-the-definite-integral-and-first-fundamental-theorem-session-43-definite-integrals",
+            "unit-3-the-definite-integral-and-its-applications-part-a-definition-of-the-definite-integral-and-first-fundamental-theorem-session-45-some-easy-integrals",
+            "unit-3-the-definite-integral-and-its-applications-part-a-definition-of-the-definite-integral-and-first-fundamental-theorem-session-48-the-fundamental-theorem-of-calculus"
+          ]
+        },
+        {
+          "index": 5,
+          "label": "3. The Definite Integral and its Applications (Part 6)",
+          "item_ids": [
+            "unit-3-the-definite-integral-and-its-applications-part-a-definition-of-the-definite-integral-and-first-fundamental-theorem-session-50-combining-the-fundamental-theorem-and-the-mean-value-theorem",
+            "unit-3-the-definite-integral-and-its-applications-part-b-second-fundamental-theorem-areas-volumes-session-54-the-second-fundamental-theorem-and-ln-x",
+            "unit-3-the-definite-integral-and-its-applications-part-b-second-fundamental-theorem-areas-volumes-session-55-creating-new-functions-using-the-second-fundamental-theorem",
+            "unit-3-the-definite-integral-and-its-applications-part-b-second-fundamental-theorem-areas-volumes-session-57-how-to-calculate-volumes",
+            "unit-3-the-definite-integral-and-its-applications-part-b-second-fundamental-theorem-areas-volumes-session-58-volume-of-a-sphere-revolving-about-x-axis"
+          ]
+        },
+        {
+          "index": 6,
+          "label": "3. The Definite Integral and its Applications (Part 7)",
+          "item_ids": [
+            "unit-3-the-definite-integral-and-its-applications-part-c-average-value-probability-and-numerical-integration-session-61-integrals-and-weighted-averages",
+            "unit-3-the-definite-integral-and-its-applications-part-c-average-value-probability-and-numerical-integration-session-64-numerical-integration-continued"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "unit-4-techniques-of-integration",
+      "index": 6,
+      "title": "4. Techniques of Integration",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "4. Techniques of Integration (Part 1)",
+          "item_ids": [
+            "unit-4-techniques-of-integration-part-b-partial-fractions-integration-by-parts-arc-length-and-surface-area-session-77-volume-of-a-wine-glass",
+            "unit-4-techniques-of-integration-part-c-parametric-equations-and-polar-coordinates-session-83-polar-coordinates-continued",
+            "unit-4-techniques-of-integration-exam-4-session-85-review-for-exam-4",
+            "unit-4-techniques-of-integration-part-a-trigonometric-powers-trigonometric-substitution-and-completing-the-square-problem-set-9",
+            "unit-4-techniques-of-integration-part-a-trigonometric-powers-trigonometric-substitution-and-completing-the-square-session-68-integral-of-sin-n-x-cos-m-x-odd-exponents"
+          ]
+        },
+        {
+          "index": 1,
+          "label": "4. Techniques of Integration (Part 2)",
+          "item_ids": [
+            "unit-4-techniques-of-integration-part-a-trigonometric-powers-trigonometric-substitution-and-completing-the-square-session-71-integrals-involving-secant-cosecant-and-cotangent",
+            "unit-4-techniques-of-integration-part-a-trigonometric-powers-trigonometric-substitution-and-completing-the-square-session-72-trig-substitution",
+            "unit-4-techniques-of-integration-part-a-trigonometric-powers-trigonometric-substitution-and-completing-the-square-session-73-completing-the-square",
+            "unit-4-techniques-of-integration-part-b-partial-fractions-integration-by-parts-arc-length-and-surface-area-problem-set-10",
+            "unit-4-techniques-of-integration-part-b-partial-fractions-integration-by-parts-arc-length-and-surface-area-session-75-advanced-partial-fractions"
+          ]
+        },
+        {
+          "index": 2,
+          "label": "4. Techniques of Integration (Part 3)",
+          "item_ids": [
+            "unit-4-techniques-of-integration-part-b-partial-fractions-integration-by-parts-arc-length-and-surface-area-session-76-integration-by-parts",
+            "unit-4-techniques-of-integration-part-b-partial-fractions-integration-by-parts-arc-length-and-surface-area-session-78-computing-the-length-of-a-curve",
+            "unit-4-techniques-of-integration-part-b-partial-fractions-integration-by-parts-arc-length-and-surface-area-session-79-surface-area",
+            "unit-4-techniques-of-integration-part-c-parametric-equations-and-polar-coordinates-problem-set-11",
+            "unit-4-techniques-of-integration-part-c-parametric-equations-and-polar-coordinates-session-80-parametric-curves"
+          ]
+        },
+        {
+          "index": 3,
+          "label": "4. Techniques of Integration (Part 4)",
+          "item_ids": [
+            "unit-4-techniques-of-integration-part-c-parametric-equations-and-polar-coordinates-session-82-polar-coordinates",
+            "unit-4-techniques-of-integration-part-c-parametric-equations-and-polar-coordinates-session-84-polar-coordinates-and-graphing",
+            "unit-4-techniques-of-integration-part-a-trigonometric-powers-trigonometric-substitution-and-completing-the-square",
+            "unit-4-techniques-of-integration-part-b-partial-fractions-integration-by-parts-arc-length-and-surface-area",
+            "unit-4-techniques-of-integration-exam-4"
+          ]
+        },
+        {
+          "index": 4,
+          "label": "4. Techniques of Integration (Part 5)",
+          "item_ids": [
+            "unit-4-techniques-of-integration-exam-4-session-86-materials-for-exam-4",
+            "unit-4-techniques-of-integration-part-a-trigonometric-powers-trigonometric-substitution-and-completing-the-square-session-69-integral-of-sin-n-x-cos-m-x-even-exponents",
+            "unit-4-techniques-of-integration-part-a-trigonometric-powers-trigonometric-substitution-and-completing-the-square-session-70-preview-of-trig-substitution-and-polar-coordinates",
+            "unit-4-techniques-of-integration-part-b-partial-fractions-integration-by-parts-arc-length-and-surface-area-session-74-integration-by-partial-fractions",
+            "unit-4-techniques-of-integration-part-c-parametric-equations-and-polar-coordinates"
+          ]
+        },
+        {
+          "index": 5,
+          "label": "4. Techniques of Integration (Part 6)",
+          "item_ids": [
+            "unit-4-techniques-of-integration-part-c-parametric-equations-and-polar-coordinates-session-81-examples-using-parametrized-curves"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "unit-5-exploring-the-infinite",
+      "index": 7,
+      "title": "5. Exploring the Infinite",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "5. Exploring the Infinite (Part 1)",
+          "item_ids": [
+            "unit-5-exploring-the-infinite-part-a-lhospitals-rule-and-improper-integrals-session-89-lhospitals-rule-and-rates-of-growth",
+            "unit-5-exploring-the-infinite-part-a-lhospitals-rule-and-improper-integrals-session-93-indefinite-integrals-and-singularities",
+            "unit-5-exploring-the-infinite-part-b-taylor-series",
+            "unit-5-exploring-the-infinite-part-b-taylor-series-session-96-stacking-blocks",
+            "unit-5-exploring-the-infinite-part-a-lhospitals-rule-and-improper-integrals-session-88-examples-of-lhospitals-rule"
+          ]
+        },
+        {
+          "index": 1,
+          "label": "5. Exploring the Infinite (Part 2)",
+          "item_ids": [
+            "unit-5-exploring-the-infinite-part-a-lhospitals-rule-and-improper-integrals-session-90-advanced-examples-of-lhospitals-rule",
+            "unit-5-exploring-the-infinite-part-a-lhospitals-rule-and-improper-integrals-session-91-improper-integrals",
+            "unit-5-exploring-the-infinite-part-a-lhospitals-rule-and-improper-integrals-session-92-integral-comparison",
+            "unit-5-exploring-the-infinite-part-b-taylor-series-session-100-operations-on-power-series",
+            "unit-5-exploring-the-infinite-part-b-taylor-series-session-101-conclusion"
+          ]
+        },
+        {
+          "index": 2,
+          "label": "5. Exploring the Infinite (Part 3)",
+          "item_ids": [
+            "unit-5-exploring-the-infinite-part-b-taylor-series-session-94-infinite-series",
+            "unit-5-exploring-the-infinite-part-b-taylor-series-session-95-series-comparison",
+            "unit-5-exploring-the-infinite-part-b-taylor-series-session-97-power-series",
+            "unit-5-exploring-the-infinite-part-b-taylor-series-session-98-taylors-series",
+            "unit-5-exploring-the-infinite-part-b-taylor-series-session-99-taylors-series-continued"
+          ]
+        },
+        {
+          "index": 3,
+          "label": "5. Exploring the Infinite (Part 4)",
+          "item_ids": [
+            "unit-5-exploring-the-infinite-part-a-lhospitals-rule-and-improper-integrals",
+            "unit-5-exploring-the-infinite-part-a-lhospitals-rule-and-improper-integrals-session-87-lhospitals-rule"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "resources",
+      "index": 8,
+      "title": "Resources",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "Resources (Part 1)",
+          "item_ids": [
+            "clip-2-warning-about-units",
+            "a-solid-with-finite-volume-and-infinite-cross-section",
+            "copy2_of_clip-1-graph-of-r-2a-cos-3b8",
+            "recitation-introduction",
+            "antidifferentiation-by-substitution"
+          ]
+        },
+        {
+          "index": 1,
+          "label": "Resources (Part 2)",
+          "item_ids": [
+            "applying-the-second-fundamental-theorem",
+            "arc-length-of-y-x3-2",
+            "area-between-the-graphs-of-sine-and-cosine",
+            "area-between-y-x3-and-y-3x-2",
+            "average-velocity"
+          ]
+        },
+        {
+          "index": 2,
+          "label": "Resources (Part 3)",
+          "item_ids": [
+            "average-x-coordinate-in-a-region",
+            "chain-rule",
+            "clip-1-alternate-definition-of-natural-log",
+            "clip-1-antiderivative-of-1-x",
+            "clip-1-approximating-ln-1-x-and-1-x-r"
+          ]
+        },
+        {
+          "index": 3,
+          "label": "Resources (Part 4)",
+          "item_ids": [
+            "clip-1-approximations-at-0-for-ln-1-x-and-1-x-r",
+            "clip-1-area-under-the-bell-curve",
+            "clip-1-areas-between-curves",
+            "clip-1-average-value",
+            "clip-1-by-horizontal-slices"
+          ]
+        },
+        {
+          "index": 4,
+          "label": "Resources (Part 5)",
+          "item_ids": [
+            "clip-1-chain-rule",
+            "clip-1-comparison-of-the-harmonic-series",
+            "clip-1-completing-the-square",
+            "clip-1-curves-are-hard-lines-are-easy",
+            "clip-1-definition-of-ex"
+          ]
+        },
+        {
+          "index": 5,
+          "label": "Resources (Part 6)",
+          "item_ids": [
+            "clip-1-derivative-of-ax",
+            "clip-1-derivative-of-sin-x-algebraic-proof",
+            "clip-1-derivative-of-the-arcsin-function",
+            "clip-1-derivative-of-the-inverse-of-a-function",
+            "clip-1-description-of-the-mean-value-theorem"
+          ]
+        },
+        {
+          "index": 6,
+          "label": "Resources (Part 7)",
+          "item_ids": [
+            "clip-1-difference-quotient-of-ax",
+            "clip-1-differential-equations-and-slope-part-1",
+            "clip-1-differentials-and-linear-approximation",
+            "clip-1-differentiating-logs-and-exponentials",
+            "clip-1-differentiation-formulas"
+          ]
+        },
+        {
+          "index": 7,
+          "label": "Resources (Part 8)",
+          "item_ids": [
+            "clip-1-dy-dx-f-x",
+            "clip-1-functions-without-elementary-anti-derivatives",
+            "clip-1-general-strategy-for-graph-sketching",
+            "clip-1-graph-of-r-2a-cos-theta-1",
+            "clip-1-higher-derivatives"
+          ]
+        },
+        {
+          "index": 8,
+          "label": "Resources (Part 9)",
+          "item_ids": [
+            "clip-1-indefinite-integrals-over-singularities",
+            "clip-1-integral-of-1-x-trapezoids",
+            "clip-1-integral-of-1-xp",
+            "clip-1-integral-of-cos2-x",
+            "clip-1-integral-of-natural-log"
+          ]
+        },
+        {
+          "index": 9,
+          "label": "Resources (Part 10)",
+          "item_ids": [
+            "clip-1-interpretation-of-the-fundamental-theorem",
+            "clip-1-introduction-of-product-and-quotient-rules",
+            "clip-1-introduction-to-18",
+            "clip-1-introduction-to-antiderivatives",
+            "clip-1-introduction-to-arc-length"
+          ]
+        },
+        {
+          "index": 10,
+          "label": "Resources (Part 11)",
+          "item_ids": [
+            "clip-1-introduction-to-comparison",
+            "clip-1-introduction-to-curve-sketching",
+            "clip-1-introduction-to-definite-integrals",
+            "clip-1-introduction-to-differentials",
+            "clip-1-introduction-to-differentiation"
+          ]
+        },
+        {
+          "index": 11,
+          "label": "Resources (Part 12)",
+          "item_ids": [
+            "clip-1-introduction-to-implicit-differentiation",
+            "clip-1-introduction-to-improper-integrals",
+            "clip-1-introduction-to-infinite-series",
+            "clip-1-introduction-to-integration-by-parts",
+            "clip-1-introduction-to-lhospitals-rule"
+          ]
+        },
+        {
+          "index": 12,
+          "label": "Resources (Part 13)",
+          "item_ids": [
+            "clip-1-introduction-to-linear-approximation",
+            "clip-1-introduction-to-newtons-method",
+            "clip-1-introduction-to-numerical-integration",
+            "clip-1-introduction-to-ordinary-differential",
+            "clip-1-introduction-to-polar-coordinates"
+          ]
+        },
+        {
+          "index": 13,
+          "label": "Resources (Part 14)",
+          "item_ids": [
+            "clip-1-introduction-to-power-series",
+            "clip-1-introduction-to-rates-of-change",
+            "clip-1-introduction-to-related-rates",
+            "clip-1-introduction-to-riemann-sums",
+            "clip-1-introduction-to-surface-area"
+          ]
+        },
+        {
+          "index": 14,
+          "label": "Resources (Part 15)",
+          "item_ids": [
+            "clip-1-introduction-to-taylors-series",
+            "clip-1-jump-discontinuities",
+            "clip-1-lhospitals-rule-continued",
+            "clip-1-limit-of-sin-5x-sin-2x",
+            "clip-1-limit-of-sin-x-x"
+          ]
+        },
+        {
+          "index": 15,
+          "label": "Resources (Part 16)",
+          "item_ids": [
+            "clip-1-limits",
+            "clip-1-list-of-approximations",
+            "clip-1-long-division",
+            "clip-1-maxima-and-minima-using-graphs",
+            "clip-1-minimal-surface-area-of-a-box-direct-solution"
+          ]
+        },
+        {
+          "index": 16,
+          "label": "Resources (Part 17)",
+          "item_ids": [
+            "clip-1-more-antiderivatives",
+            "clip-1-non-constant-speed-parametrization",
+            "clip-1-other-bases",
+            "clip-1-parametric-curve",
+            "clip-1-partial-fractions-i"
+          ]
+        },
+        {
+          "index": 17,
+          "label": "Resources (Part 18)",
+          "item_ids": [
+            "clip-1-polar-coordinates-and-area",
+            "clip-1-power-series-expansion-of-the-error-function",
+            "clip-1-power-series-multiplication",
+            "clip-1-preview-of-stacking-blocks",
+            "clip-1-probability-summary"
+          ]
+        },
+        {
+          "index": 18,
+          "label": "Resources (Part 19)",
+          "item_ids": [
+            "clip-1-proof-of-the-second-fundamental-theorem-of-calculus",
+            "clip-1-quotient-rule",
+            "clip-1-rate-of-growth-of-x-ln-x",
+            "clip-1-remarks-on-notation",
+            "clip-1-repeated-factors"
+          ]
+        },
+        {
+          "index": 19,
+          "label": "Resources (Part 20)",
+          "item_ids": [
+            "clip-1-review-for-test-iv",
+            "clip-1-review-of-taylors-series",
+            "clip-1-review-of-the-fundamental-theorem",
+            "clip-1-review-of-trigonometric-identities",
+            "clip-1-review-of-trigonometric-identities-1"
+          ]
+        },
+        {
+          "index": 20,
+          "label": "Resources (Part 21)",
+          "item_ids": [
+            "clip-1-ring-on-a-string",
+            "clip-1-second-fundamental-theorem-of-calculus",
+            "clip-1-simple-definite-integrals",
+            "clip-1-slope-of-tangent-to-circle-direct",
+            "clip-1-substitution"
+          ]
+        },
+        {
+          "index": 21,
+          "label": "Resources (Part 22)",
+          "item_ids": [
+            "clip-1-substitution-when-u-changes-sign",
+            "clip-1-the-bell-curve",
+            "clip-1-the-first-fundamental-theorem-of-calculus",
+            "clip-1-the-formula-for-quadratic-approximation",
+            "clip-1-the-indeterminate-form-00"
+          ]
+        },
+        {
+          "index": 22,
+          "label": "Resources (Part 23)",
+          "item_ids": [
+            "clip-1-the-mean-value-theorem-and-linear-approximation",
+            "clip-1-the-most-natural-logarithmic-function",
+            "clip-1-the-power-rule",
+            "clip-1-unique-up-to-a-constant",
+            "clip-1-value-of-e"
+          ]
+        },
+        {
+          "index": 23,
+          "label": "Resources (Part 24)",
+          "item_ids": [
+            "clip-1-volume-of-a-cauldron",
+            "clip-1-volume-of-a-sphere",
+            "clip-1-volumes-by-slicing",
+            "clip-1-weighted-averages",
+            "clip-1-why-lhospitals-rule-works"
+          ]
+        },
+        {
+          "index": 24,
+          "label": "Resources (Part 25)",
+          "item_ids": [
+            "clip-2-antiderivative-of-xa",
+            "clip-2-arclength-of-parametric-curves",
+            "clip-2-area-under-the-bell-curve",
+            "clip-2-average-height-3-min",
+            "clip-2-boiling-cauldron-introduction"
+          ]
+        },
+        {
+          "index": 25,
+          "label": "Resources (Part 26)",
+          "item_ids": [
+            "clip-2-by-vertical-slices",
+            "clip-2-chain-rule-revisited",
+            "clip-2-comparison-tests",
+            "clip-2-consequences-of-the-mean-value-theorem",
+            "clip-2-continuity"
+          ]
+        },
+        {
+          "index": 26,
+          "label": "Resources (Part 27)",
+          "item_ids": [
+            "clip-2-definition-of-definite-integrals",
+            "clip-2-derivative-of-a-power-series",
+            "clip-2-derivative-of-ax-logarithmic",
+            "clip-2-derivative-of-cos-x",
+            "clip-2-derivative-of-the-arctan-function"
+          ]
+        },
+        {
+          "index": 27,
+          "label": "Resources (Part 28)",
+          "item_ids": [
+            "clip-2-differential-equations-and-slope-part-2",
+            "clip-2-divergent-series",
+            "clip-2-errata-heat-is-energy",
+            "clip-2-exponent-review",
+            "clip-2-general-power-series"
+          ]
+        },
+        {
+          "index": 28,
+          "label": "Resources (Part 29)",
+          "item_ids": [
+            "clip-2-geometric-interpretation-of-differentiation-1",
+            "clip-2-graph-of-r-sin-2theta",
+            "clip-2-harder-problem-triangles-under-the-graph-of-y-1-x",
+            "clip-2-implicit-differentiation-rational-exponent-rule",
+            "clip-2-improper-integrals-of-the-second-kind-continued"
+          ]
+        },
+        {
+          "index": 29,
+          "label": "Resources (Part 30)",
+          "item_ids": [
+            "clip-2-integral-of-1-x-simpsons-rule",
+            "clip-2-integral-of-e2212kx",
+            "clip-2-integral-of-ln-x-2",
+            "clip-2-integral-of-sin2-x-cos2-x",
+            "clip-2-integral-of-sinn-x-cos-x"
+          ]
+        },
+        {
+          "index": 30,
+          "label": "Resources (Part 31)",
+          "item_ids": [
+            "clip-2-integral-of-tangent",
+            "clip-2-integration-by-advanced-guessing-1",
+            "clip-2-introduction-to-general-rules-for-differentiation",
+            "clip-2-introduction-to-the-cover-up-method",
+            "clip-2-lhospitals-rule-version-1"
+          ]
+        },
+        {
+          "index": 31,
+          "label": "Resources (Part 32)",
+          "item_ids": [
+            "clip-2-limit-of-1-cos-x-x",
+            "clip-2-limit-of-sin-x-x2",
+            "clip-2-linear-approximation-of-a-complicated-exponential",
+            "clip-2-linear-approximation-to-ln-x-at-x-1",
+            "clip-2-log-of-a-product"
+          ]
+        },
+        {
+          "index": 32,
+          "label": "Resources (Part 33)",
+          "item_ids": [
+            "clip-2-maximum-area-of-two-squares",
+            "clip-2-minimal-surface-area-of-a-box-implicit-differentiation",
+            "clip-2-more-new-functions-from-old",
+            "clip-2-natural-log",
+            "clip-2-newtons-method-continued"
+          ]
+        },
+        {
+          "index": 33,
+          "label": "Resources (Part 34)",
+          "item_ids": [
+            "clip-2-proof-of-the-first-fundamental-theorem-of-calculus",
+            "clip-2-quadratic-factors",
+            "clip-2-rate-of-growth-of-epx",
+            "clip-2-rates-of-change",
+            "clip-2-related-rates"
+          ]
+        },
+        {
+          "index": 34,
+          "label": "Resources (Part 35)",
+          "item_ids": [
+            "clip-2-relative-error",
+            "clip-2-removable-discontinuities",
+            "clip-2-repeating-lhospitals-rule",
+            "clip-2-riemann-sums",
+            "clip-2-separation-of-variables"
+          ]
+        },
+        {
+          "index": 35,
+          "label": "Resources (Part 36)",
+          "item_ids": [
+            "clip-2-slope-of-ax-at-0",
+            "clip-2-slope-of-tangent-to-circle-implicit",
+            "clip-2-solids-of-revolution",
+            "clip-2-stacking-blocks",
+            "clip-2-student-questions-on-test-iv"
+          ]
+        },
+        {
+          "index": 36,
+          "label": "Resources (Part 37)",
+          "item_ids": [
+            "clip-2-summation-notation",
+            "clip-2-surface-area-of-a-sphere",
+            "clip-2-surface-area-of-an-ellipsoid",
+            "clip-2-taylors-formula",
+            "clip-2-taylors-series-of-1-1-x"
+          ]
+        },
+        {
+          "index": 37,
+          "label": "Resources (Part 38)",
+          "item_ids": [
+            "clip-2-the-fundamental-theorem-and-negative-integrands",
+            "clip-2-the-fundamental-theorem-and-the-mean-value-theorem",
+            "clip-2-the-mean-value-theorem-and-inequalities",
+            "clip-2-types-of-riemann-sums",
+            "clip-2-undoing-trig-substitution"
+          ]
+        },
+        {
+          "index": 38,
+          "label": "Resources (Part 39)",
+          "item_ids": [
+            "clip-2-using-the-first-fundamental-theorem",
+            "clip-2-using-the-second-fundamental-theorem-of-calculus",
+            "clip-2-value-of-e-revisited",
+            "clip-3-a-reduction-formula",
+            "clip-3-asymptotes-of-antiderivatives"
+          ]
+        },
+        {
+          "index": 39,
+          "label": "Resources (Part 40)",
+          "item_ids": [
+            "clip-3-average-height-with-respect-to-arc-length",
+            "clip-3-boiling-cauldron-continued",
+            "clip-3-comparing-growth-of-ln-x-and-x1-3",
+            "clip-3-comparison-with-approximation",
+            "clip-3-d-dx-sec-x"
+          ]
+        },
+        {
+          "index": 40,
+          "label": "Resources (Part 41)",
+          "item_ids": [
+            "clip-3-derivative-of-xx",
+            "clip-3-graphing-a-rational-function",
+            "clip-3-infinite-discontinuities",
+            "clip-3-integral-of-a-power-series",
+            "clip-3-integral-of-e2212x2"
+          ]
+        },
+        {
+          "index": 41,
+          "label": "Resources (Part 42)",
+          "item_ids": [
+            "clip-3-integral-of-secant",
+            "clip-3-integral-of-sin3-x-cos2-x",
+            "clip-3-integral-of-x-arctan-x",
+            "clip-3-limit-of-secants",
+            "clip-3-linear-approximation-and-the-definition-of-the-derivative"
+          ]
+        },
+        {
+          "index": 42,
+          "label": "Resources (Part 43)",
+          "item_ids": [
+            "clip-3-newtons-method-what-could-go-wrong",
+            "clip-3-notation-for-derivatives",
+            "clip-3-notation-for-series",
+            "clip-3-overview-of-improper-integrals",
+            "clip-3-physical-interpretation-of-derivatives"
+          ]
+        },
+        {
+          "index": 43,
+          "label": "Resources (Part 44)",
+          "item_ids": [
+            "clip-3-product-rule",
+            "clip-3-properties-of-integrals",
+            "clip-3-question-can-we-use-the-original-formula",
+            "clip-3-questions-and-answers",
+            "clip-3-rates-a-conical-tank"
+          ]
+        },
+        {
+          "index": 44,
+          "label": "Resources (Part 45)",
+          "item_ids": [
+            "clip-3-summary-of-trig-substitution",
+            "clip-3-taylors-series-of-sin-x",
+            "clip-3-the-cover-up-method",
+            "clip-3-the-mean-value-theorem-and-estimation",
+            "clip-4-an-improper-integral-of-the-second-kind"
+          ]
+        },
+        {
+          "index": 45,
+          "label": "Resources (Part 46)",
+          "item_ids": [
+            "clip-4-another-reduction-formula",
+            "clip-4-approximations-at-0-for-sine-cosine-and-exponential-functions",
+            "clip-4-choosing-a-technique",
+            "clip-4-d-dx-ln-sec-x",
+            "clip-4-derivative-of-sin-x-geometric-proof"
+          ]
+        },
+        {
+          "index": 46,
+          "label": "Resources (Part 47)",
+          "item_ids": [
+            "clip-4-extensions-of-lhospitals-rule",
+            "clip-4-integral-of-1-x",
+            "clip-4-integral-of-sin3-x",
+            "clip-4-other-ugly-discontinuities",
+            "clip-4-physical-interpretation-of-derivatives-continued"
+          ]
+        },
+        {
+          "index": 47,
+          "label": "Resources (Part 48)",
+          "item_ids": [
+            "clip-4-simpsons-rule",
+            "clip-4-slope-as-ratio-1",
+            "clip-4-substitution-of-power-series",
+            "clip-4-summary-of-trig-integration",
+            "clip-5-d-dx-x10-8x-6"
+          ]
+        },
+        {
+          "index": 48,
+          "label": "Resources (Part 49)",
+          "item_ids": [
+            "clip-5-differentiable-implies-continuous",
+            "clip-5-main-formula",
+            "clip-6-the-derivative-of-everything",
+            "clip-7-key-concepts-in-differentiation",
+            "closest-point-to-the-origin"
+          ]
+        },
+        {
+          "index": 49,
+          "label": "Resources (Part 50)",
+          "item_ids": [
+            "comparing-functions-using-the-mvt",
+            "comparison-tests",
+            "computing-antiderivatives",
+            "computing-differentials",
+            "computing-the-volume-of-a-paraboloid"
+          ]
+        },
+        {
+          "index": 50,
+          "label": "Resources (Part 51)",
+          "item_ids": [
+            "constant-multiple-rule",
+            "converting-from-polar-to-rectangular-coordinates",
+            "copy2_of_clip-1-integral-of-1-x-trapezoids",
+            "copy2_of_clip-1-introduction-to-polar-coordinates",
+            "copy3_of_clip-1-introduction-to-polar-coordinates"
+          ]
+        },
+        {
+          "index": 51,
+          "label": "Resources (Part 52)",
+          "item_ids": [
+            "copy3_of_clip-2-derivative-of-the-sum-of-two-functions",
+            "copy_of_clip-1-introduction-to-numerical-integration",
+            "copy_of_clip-1-polar-coordinates-and-area",
+            "creatingderivative",
+            "daimp"
+          ]
+        },
+        {
+          "index": 52,
+          "label": "Resources (Part 53)",
+          "item_ids": [
+            "definite-integral-by-substitution",
+            "definite-integrals-of-tan-x",
+            "definition-of-derivative",
+            "derivative-of-the-arccos-function",
+            "derivative-with-a-discontinuity"
+          ]
+        },
+        {
+          "index": 53,
+          "label": "Resources (Part 54)",
+          "item_ids": [
+            "derivatives-of-sine-and-cosine",
+            "diffusion-of-a-chemical",
+            "explanation-of-simpsons-rule",
+            "failure-of-lhospitals-rule",
+            "finding-taylors-series"
+          ]
+        },
+        {
+          "index": 54,
+          "label": "Resources (Part 55)",
+          "item_ids": [
+            "finding-u-and-v-when-integrating-by-parts",
+            "graph-of-r-1-cos-theta-2",
+            "graphing-a-derivative-function",
+            "graphing-the-arctan-function",
+            "hyperbolic-trig-functions"
+          ]
+        },
+        {
+          "index": 55,
+          "label": "Resources (Part 56)",
+          "item_ids": [
+            "hyperbolic-trig-substitution",
+            "implicit-differentiation",
+            "implicit-differentiation-and-linear-approximation",
+            "improper-integrals",
+            "increasing-or-decreasing"
+          ]
+        },
+        {
+          "index": 56,
+          "label": "Resources (Part 57)",
+          "item_ids": [
+            "indeterminate-forms",
+            "inflating-a-balloon",
+            "integral-of-tan4theta",
+            "integral-of-xn-e-x",
+            "integral-test-for-convergence"
+          ]
+        },
+        {
+          "index": 57,
+          "label": "Resources (Part 58)",
+          "item_ids": [
+            "integrating-sinn-x-using-reduction",
+            "integration-by-completing-the-square",
+            "integration-of-taylors-series",
+            "integration-practice-i",
+            "integration-practice-ii"
+          ]
+        },
+        {
+          "index": 58,
+          "label": "Resources (Part 59)",
+          "item_ids": [
+            "integration-practice-iii",
+            "integration-practice-iv",
+            "lec1ses1ex1-secants",
+            "lec9ses2ex1-linearprod",
+            "lhospital-practice"
+          ]
+        },
+        {
+          "index": 59,
+          "label": "Resources (Part 60)",
+          "item_ids": [
+            "limit-of-a-series",
+            "linear-approximation-with-differentials",
+            "lip-1-area-of-part-of-a-circle",
+            "log-and-exponent-derivatives",
+            "maximum-surface-area"
+          ]
+        },
+        {
+          "index": 60,
+          "label": "Resources (Part 61)",
+          "item_ids": [
+            "minimum-triangle-area",
+            "mit18_01scf10_ex01prb",
+            "mit18_01scf10_ex01sol",
+            "mit18_01scf10_ex02prb",
+            "mit18_01scf10_ex02sol"
+          ]
+        },
+        {
+          "index": 61,
+          "label": "Resources (Part 62)",
+          "item_ids": [
+            "mit18_01scf10_ex03prb",
+            "mit18_01scf10_ex03sol",
+            "mit18_01scf10_ex04prb",
+            "mit18_01scf10_ex04sol",
+            "mit18_01scf10_ex05prb"
+          ]
+        },
+        {
+          "index": 62,
+          "label": "Resources (Part 63)",
+          "item_ids": [
+            "mit18_01scf10_ex05sol",
+            "mit18_01scf10_ex07prb",
+            "mit18_01scf10_ex07sol",
+            "mit18_01scf10_ex08prb",
+            "mit18_01scf10_ex08sol"
+          ]
+        },
+        {
+          "index": 63,
+          "label": "Resources (Part 64)",
+          "item_ids": [
+            "mit18_01scf10_ex09prb",
+            "mit18_01scf10_ex09sol",
+            "mit18_01scf10_ex100prb",
+            "mit18_01scf10_ex100sol",
+            "mit18_01scf10_ex101prb"
+          ]
+        },
+        {
+          "index": 64,
+          "label": "Resources (Part 65)",
+          "item_ids": [
+            "mit18_01scf10_ex101sol",
+            "mit18_01scf10_ex10prb",
+            "mit18_01scf10_ex10sol",
+            "mit18_01scf10_ex11prb",
+            "mit18_01scf10_ex11sol"
+          ]
+        },
+        {
+          "index": 65,
+          "label": "Resources (Part 66)",
+          "item_ids": [
+            "mit18_01scf10_ex12prb",
+            "mit18_01scf10_ex12sol",
+            "mit18_01scf10_ex13prb",
+            "mit18_01scf10_ex13sol",
+            "mit18_01scf10_ex14prb"
+          ]
+        },
+        {
+          "index": 66,
+          "label": "Resources (Part 67)",
+          "item_ids": [
+            "mit18_01scf10_ex14sol",
+            "mit18_01scf10_ex15prb",
+            "mit18_01scf10_ex15sol",
+            "mit18_01scf10_ex16prb",
+            "mit18_01scf10_ex16sol"
+          ]
+        },
+        {
+          "index": 67,
+          "label": "Resources (Part 68)",
+          "item_ids": [
+            "mit18_01scf10_ex17prb",
+            "mit18_01scf10_ex17sol",
+            "mit18_01scf10_ex19aprb",
+            "mit18_01scf10_ex19asol",
+            "mit18_01scf10_ex19bprb"
+          ]
+        },
+        {
+          "index": 68,
+          "label": "Resources (Part 69)",
+          "item_ids": [
+            "mit18_01scf10_ex19bsol",
+            "mit18_01scf10_ex20prb",
+            "mit18_01scf10_ex20sol",
+            "mit18_01scf10_ex23prb",
+            "mit18_01scf10_ex23sol"
+          ]
+        },
+        {
+          "index": 69,
+          "label": "Resources (Part 70)",
+          "item_ids": [
+            "mit18_01scf10_ex24prb",
+            "mit18_01scf10_ex24sol",
+            "mit18_01scf10_ex25prb",
+            "mit18_01scf10_ex25sol",
+            "mit18_01scf10_ex26prb"
+          ]
+        },
+        {
+          "index": 70,
+          "label": "Resources (Part 71)",
+          "item_ids": [
+            "mit18_01scf10_ex26sol",
+            "mit18_01scf10_ex28prb",
+            "mit18_01scf10_ex28sol",
+            "mit18_01scf10_ex30prb",
+            "mit18_01scf10_ex30sol"
+          ]
+        },
+        {
+          "index": 71,
+          "label": "Resources (Part 72)",
+          "item_ids": [
+            "mit18_01scf10_ex31prb",
+            "mit18_01scf10_ex31sol",
+            "mit18_01scf10_ex33prb",
+            "mit18_01scf10_ex33sol",
+            "mit18_01scf10_ex34prb"
+          ]
+        },
+        {
+          "index": 72,
+          "label": "Resources (Part 73)",
+          "item_ids": [
+            "mit18_01scf10_ex34sol",
+            "mit18_01scf10_ex35prb",
+            "mit18_01scf10_ex35sol",
+            "mit18_01scf10_ex36prb",
+            "mit18_01scf10_ex36sol"
+          ]
+        },
+        {
+          "index": 73,
+          "label": "Resources (Part 74)",
+          "item_ids": [
+            "mit18_01scf10_ex37prb",
+            "mit18_01scf10_ex37sol",
+            "mit18_01scf10_ex38prb",
+            "mit18_01scf10_ex38sol",
+            "mit18_01scf10_ex39prb"
+          ]
+        },
+        {
+          "index": 74,
+          "label": "Resources (Part 75)",
+          "item_ids": [
+            "mit18_01scf10_ex39sol",
+            "mit18_01scf10_ex40prb",
+            "mit18_01scf10_ex40sol",
+            "mit18_01scf10_ex43prb",
+            "mit18_01scf10_ex43sol"
+          ]
+        },
+        {
+          "index": 75,
+          "label": "Resources (Part 76)",
+          "item_ids": [
+            "mit18_01scf10_ex44prb",
+            "mit18_01scf10_ex44sol",
+            "mit18_01scf10_ex45prb",
+            "mit18_01scf10_ex45sol",
+            "mit18_01scf10_ex46prb"
+          ]
+        },
+        {
+          "index": 76,
+          "label": "Resources (Part 77)",
+          "item_ids": [
+            "mit18_01scf10_ex46sol",
+            "mit18_01scf10_ex47prb",
+            "mit18_01scf10_ex47sol",
+            "mit18_01scf10_ex48prb",
+            "mit18_01scf10_ex48sol"
+          ]
+        },
+        {
+          "index": 77,
+          "label": "Resources (Part 78)",
+          "item_ids": [
+            "mit18_01scf10_ex49prb",
+            "mit18_01scf10_ex49sol",
+            "mit18_01scf10_ex50prb",
+            "mit18_01scf10_ex50sol",
+            "mit18_01scf10_ex54prb"
+          ]
+        },
+        {
+          "index": 78,
+          "label": "Resources (Part 79)",
+          "item_ids": [
+            "mit18_01scf10_ex54sol",
+            "mit18_01scf10_ex55prb",
+            "mit18_01scf10_ex55sol",
+            "mit18_01scf10_ex56prb",
+            "mit18_01scf10_ex56sol"
+          ]
+        },
+        {
+          "index": 79,
+          "label": "Resources (Part 80)",
+          "item_ids": [
+            "mit18_01scf10_ex57prb",
+            "mit18_01scf10_ex57sol",
+            "mit18_01scf10_ex58prb",
+            "mit18_01scf10_ex58sol",
+            "mit18_01scf10_ex59prb"
+          ]
+        },
+        {
+          "index": 80,
+          "label": "Resources (Part 81)",
+          "item_ids": [
+            "mit18_01scf10_ex59sol",
+            "mit18_01scf10_ex60prb",
+            "mit18_01scf10_ex60sol",
+            "mit18_01scf10_ex61prb",
+            "mit18_01scf10_ex61sol"
+          ]
+        },
+        {
+          "index": 81,
+          "label": "Resources (Part 82)",
+          "item_ids": [
+            "mit18_01scf10_ex63prb",
+            "mit18_01scf10_ex63sol",
+            "mit18_01scf10_ex64prb",
+            "mit18_01scf10_ex64sol",
+            "mit18_01scf10_ex68prb"
+          ]
+        },
+        {
+          "index": 82,
+          "label": "Resources (Part 83)",
+          "item_ids": [
+            "mit18_01scf10_ex68sol",
+            "mit18_01scf10_ex69prb",
+            "mit18_01scf10_ex69sol",
+            "mit18_01scf10_ex70prb",
+            "mit18_01scf10_ex70sol"
+          ]
+        },
+        {
+          "index": 83,
+          "label": "Resources (Part 84)",
+          "item_ids": [
+            "mit18_01scf10_ex71prb",
+            "mit18_01scf10_ex71sol",
+            "mit18_01scf10_ex72prb",
+            "mit18_01scf10_ex72sol",
+            "mit18_01scf10_ex73prb"
+          ]
+        },
+        {
+          "index": 84,
+          "label": "Resources (Part 85)",
+          "item_ids": [
+            "mit18_01scf10_ex73sol",
+            "mit18_01scf10_ex74prb",
+            "mit18_01scf10_ex74sol",
+            "mit18_01scf10_ex75aprb",
+            "mit18_01scf10_ex75asol"
+          ]
+        },
+        {
+          "index": 85,
+          "label": "Resources (Part 86)",
+          "item_ids": [
+            "mit18_01scf10_ex75bprb",
+            "mit18_01scf10_ex75bsol",
+            "mit18_01scf10_ex76prb",
+            "mit18_01scf10_ex76sol",
+            "mit18_01scf10_ex78prb"
+          ]
+        },
+        {
+          "index": 86,
+          "label": "Resources (Part 87)",
+          "item_ids": [
+            "mit18_01scf10_ex78sol",
+            "mit18_01scf10_ex79prb",
+            "mit18_01scf10_ex79sol",
+            "mit18_01scf10_ex80prb",
+            "mit18_01scf10_ex80sol"
+          ]
+        },
+        {
+          "index": 87,
+          "label": "Resources (Part 88)",
+          "item_ids": [
+            "mit18_01scf10_ex81prb",
+            "mit18_01scf10_ex81sol",
+            "mit18_01scf10_ex84prb",
+            "mit18_01scf10_ex84sol",
+            "mit18_01scf10_ex87prb"
+          ]
+        },
+        {
+          "index": 88,
+          "label": "Resources (Part 89)",
+          "item_ids": [
+            "mit18_01scf10_ex87sol",
+            "mit18_01scf10_ex88prb",
+            "mit18_01scf10_ex88sol",
+            "mit18_01scf10_ex90prb",
+            "mit18_01scf10_ex90sol"
+          ]
+        },
+        {
+          "index": 89,
+          "label": "Resources (Part 90)",
+          "item_ids": [
+            "mit18_01scf10_ex91prb",
+            "mit18_01scf10_ex91sol",
+            "mit18_01scf10_ex92prb",
+            "mit18_01scf10_ex92sol",
+            "mit18_01scf10_ex94prb"
+          ]
+        },
+        {
+          "index": 90,
+          "label": "Resources (Part 91)",
+          "item_ids": [
+            "mit18_01scf10_ex94sol",
+            "mit18_01scf10_ex95prb",
+            "mit18_01scf10_ex95sol",
+            "mit18_01scf10_ex97prb",
+            "mit18_01scf10_ex97sol"
+          ]
+        },
+        {
+          "index": 91,
+          "label": "Resources (Part 92)",
+          "item_ids": [
+            "mit18_01scf10_ex98prb",
+            "mit18_01scf10_ex98sol",
+            "mit18_01scf10_ses100a",
+            "mit18_01scf10_ses100b",
+            "mit18_01scf10_ses100c"
+          ]
+        },
+        {
+          "index": 92,
+          "label": "Resources (Part 93)",
+          "item_ids": [
+            "mit18_01scf10_ses100d",
+            "mit18_01scf10_ses100e",
+            "mit18_01scf10_ses101a",
+            "mit18_01scf10_ses10a",
+            "mit18_01scf10_ses10b"
+          ]
+        },
+        {
+          "index": 93,
+          "label": "Resources (Part 94)",
+          "item_ids": [
+            "mit18_01scf10_ses11a",
+            "mit18_01scf10_ses11b",
+            "mit18_01scf10_ses12a",
+            "mit18_01scf10_ses12b",
+            "mit18_01scf10_ses13a"
+          ]
+        },
+        {
+          "index": 94,
+          "label": "Resources (Part 95)",
+          "item_ids": [
+            "mit18_01scf10_ses13b",
+            "mit18_01scf10_ses14a",
+            "mit18_01scf10_ses14b",
+            "mit18_01scf10_ses14c",
+            "mit18_01scf10_ses15a"
+          ]
+        },
+        {
+          "index": 95,
+          "label": "Resources (Part 96)",
+          "item_ids": [
+            "mit18_01scf10_ses15b",
+            "mit18_01scf10_ses15c",
+            "mit18_01scf10_ses16a",
+            "mit18_01scf10_ses16b",
+            "mit18_01scf10_ses16c"
+          ]
+        },
+        {
+          "index": 96,
+          "label": "Resources (Part 97)",
+          "item_ids": [
+            "mit18_01scf10_ses16d",
+            "mit18_01scf10_ses17a",
+            "mit18_01scf10_ses17b",
+            "mit18_01scf10_ses17c",
+            "mit18_01scf10_ses17d"
+          ]
+        },
+        {
+          "index": 97,
+          "label": "Resources (Part 98)",
+          "item_ids": [
+            "mit18_01scf10_ses18a",
+            "mit18_01scf10_ses18b",
+            "mit18_01scf10_ses18c",
+            "mit18_01scf10_ses18d",
+            "mit18_01scf10_ses19a"
+          ]
+        },
+        {
+          "index": 98,
+          "label": "Resources (Part 99)",
+          "item_ids": [
+            "mit18_01scf10_ses19b",
+            "mit18_01scf10_ses1a",
+            "mit18_01scf10_ses1b",
+            "mit18_01scf10_ses1c",
+            "mit18_01scf10_ses1d"
+          ]
+        },
+        {
+          "index": 99,
+          "label": "Resources (Part 100)",
+          "item_ids": [
+            "mit18_01scf10_ses1e",
+            "mit18_01scf10_ses20a",
+            "mit18_01scf10_ses21a",
+            "mit18_01scf10_ses21b",
+            "mit18_01scf10_ses21c"
+          ]
+        },
+        {
+          "index": 100,
+          "label": "Resources (Part 101)",
+          "item_ids": [
+            "mit18_01scf10_ses21d",
+            "mit18_01scf10_ses21e",
+            "mit18_01scf10_ses21f",
+            "mit18_01scf10_ses21g",
+            "mit18_01scf10_ses23a"
+          ]
+        },
+        {
+          "index": 101,
+          "label": "Resources (Part 102)",
+          "item_ids": [
+            "mit18_01scf10_ses23b",
+            "mit18_01scf10_ses23c",
+            "mit18_01scf10_ses23d",
+            "mit18_01scf10_ses23e",
+            "mit18_01scf10_ses24a"
+          ]
+        },
+        {
+          "index": 102,
+          "label": "Resources (Part 103)",
+          "item_ids": [
+            "mit18_01scf10_ses24b",
+            "mit18_01scf10_ses24c",
+            "mit18_01scf10_ses24d",
+            "mit18_01scf10_ses24e",
+            "mit18_01scf10_ses25a"
+          ]
+        },
+        {
+          "index": 103,
+          "label": "Resources (Part 104)",
+          "item_ids": [
+            "mit18_01scf10_ses25b",
+            "mit18_01scf10_ses25c",
+            "mit18_01scf10_ses26a",
+            "mit18_01scf10_ses26b",
+            "mit18_01scf10_ses26c"
+          ]
+        },
+        {
+          "index": 104,
+          "label": "Resources (Part 105)",
+          "item_ids": [
+            "mit18_01scf10_ses26d",
+            "mit18_01scf10_ses27a",
+            "mit18_01scf10_ses27b",
+            "mit18_01scf10_ses27c",
+            "mit18_01scf10_ses28a"
+          ]
+        },
+        {
+          "index": 105,
+          "label": "Resources (Part 106)",
+          "item_ids": [
+            "mit18_01scf10_ses28b",
+            "mit18_01scf10_ses29a",
+            "mit18_01scf10_ses29b",
+            "mit18_01scf10_ses2a",
+            "mit18_01scf10_ses2b"
+          ]
+        },
+        {
+          "index": 106,
+          "label": "Resources (Part 107)",
+          "item_ids": [
+            "mit18_01scf10_ses2c",
+            "mit18_01scf10_ses30a",
+            "mit18_01scf10_ses30b",
+            "mit18_01scf10_ses31a",
+            "mit18_01scf10_ses31b"
+          ]
+        },
+        {
+          "index": 107,
+          "label": "Resources (Part 108)",
+          "item_ids": [
+            "mit18_01scf10_ses31c",
+            "mit18_01scf10_ses32a",
+            "mit18_01scf10_ses33a",
+            "mit18_01scf10_ses33b",
+            "mit18_01scf10_ses33c"
+          ]
+        },
+        {
+          "index": 108,
+          "label": "Resources (Part 109)",
+          "item_ids": [
+            "mit18_01scf10_ses34a",
+            "mit18_01scf10_ses34b",
+            "mit18_01scf10_ses35a",
+            "mit18_01scf10_ses35b",
+            "mit18_01scf10_ses36a"
+          ]
+        },
+        {
+          "index": 109,
+          "label": "Resources (Part 110)",
+          "item_ids": [
+            "mit18_01scf10_ses36b",
+            "mit18_01scf10_ses37a",
+            "mit18_01scf10_ses37b",
+            "mit18_01scf10_ses37c",
+            "mit18_01scf10_ses37d"
+          ]
+        },
+        {
+          "index": 110,
+          "label": "Resources (Part 111)",
+          "item_ids": [
+            "mit18_01scf10_ses38a",
+            "mit18_01scf10_ses38b",
+            "mit18_01scf10_ses38c",
+            "mit18_01scf10_ses39a",
+            "mit18_01scf10_ses39b"
+          ]
+        },
+        {
+          "index": 111,
+          "label": "Resources (Part 112)",
+          "item_ids": [
+            "mit18_01scf10_ses3a",
+            "mit18_01scf10_ses3b",
+            "mit18_01scf10_ses3c",
+            "mit18_01scf10_ses3d",
+            "mit18_01scf10_ses40a"
+          ]
+        },
+        {
+          "index": 112,
+          "label": "Resources (Part 113)",
+          "item_ids": [
+            "mit18_01scf10_ses40b",
+            "mit18_01scf10_ses40c",
+            "mit18_01scf10_ses41a",
+            "mit18_01scf10_ses43a",
+            "mit18_01scf10_ses43b"
+          ]
+        },
+        {
+          "index": 113,
+          "label": "Resources (Part 114)",
+          "item_ids": [
+            "mit18_01scf10_ses44a",
+            "mit18_01scf10_ses44b",
+            "mit18_01scf10_ses45a",
+            "mit18_01scf10_ses45b",
+            "mit18_01scf10_ses46a"
+          ]
+        },
+        {
+          "index": 114,
+          "label": "Resources (Part 115)",
+          "item_ids": [
+            "mit18_01scf10_ses46b",
+            "mit18_01scf10_ses46c",
+            "mit18_01scf10_ses47a",
+            "mit18_01scf10_ses47b",
+            "mit18_01scf10_ses48a"
+          ]
+        },
+        {
+          "index": 115,
+          "label": "Resources (Part 116)",
+          "item_ids": [
+            "mit18_01scf10_ses48b",
+            "mit18_01scf10_ses48c",
+            "mit18_01scf10_ses49a",
+            "mit18_01scf10_ses49b",
+            "mit18_01scf10_ses49c"
+          ]
+        },
+        {
+          "index": 116,
+          "label": "Resources (Part 117)",
+          "item_ids": [
+            "mit18_01scf10_ses4a",
+            "mit18_01scf10_ses4b",
+            "mit18_01scf10_ses50a",
+            "mit18_01scf10_ses50b",
+            "mit18_01scf10_ses50c"
+          ]
+        },
+        {
+          "index": 117,
+          "label": "Resources (Part 118)",
+          "item_ids": [
+            "mit18_01scf10_ses51a",
+            "mit18_01scf10_ses51b",
+            "mit18_01scf10_ses52a",
+            "mit18_01scf10_ses52b",
+            "mit18_01scf10_ses53a"
+          ]
+        },
+        {
+          "index": 118,
+          "label": "Resources (Part 119)",
+          "item_ids": [
+            "mit18_01scf10_ses53b",
+            "mit18_01scf10_ses54a",
+            "mit18_01scf10_ses54b",
+            "mit18_01scf10_ses55a",
+            "mit18_01scf10_ses55b"
+          ]
+        },
+        {
+          "index": 119,
+          "label": "Resources (Part 120)",
+          "item_ids": [
+            "mit18_01scf10_ses56a",
+            "mit18_01scf10_ses56b",
+            "mit18_01scf10_ses57a",
+            "mit18_01scf10_ses57b",
+            "mit18_01scf10_ses58a"
+          ]
+        },
+        {
+          "index": 120,
+          "label": "Resources (Part 121)",
+          "item_ids": [
+            "mit18_01scf10_ses59a",
+            "mit18_01scf10_ses59b",
+            "mit18_01scf10_ses5a",
+            "mit18_01scf10_ses5b",
+            "mit18_01scf10_ses5c"
+          ]
+        },
+        {
+          "index": 121,
+          "label": "Resources (Part 122)",
+          "item_ids": [
+            "mit18_01scf10_ses5d",
+            "mit18_01scf10_ses5e",
+            "mit18_01scf10_ses60a",
+            "mit18_01scf10_ses60b",
+            "mit18_01scf10_ses60c"
+          ]
+        },
+        {
+          "index": 122,
+          "label": "Resources (Part 123)",
+          "item_ids": [
+            "mit18_01scf10_ses61a",
+            "mit18_01scf10_ses61b",
+            "mit18_01scf10_ses61c",
+            "mit18_01scf10_ses62a",
+            "mit18_01scf10_ses62b"
+          ]
+        },
+        {
+          "index": 123,
+          "label": "Resources (Part 124)",
+          "item_ids": [
+            "mit18_01scf10_ses62c",
+            "mit18_01scf10_ses62d",
+            "mit18_01scf10_ses63a",
+            "mit18_01scf10_ses63b",
+            "mit18_01scf10_ses63c"
+          ]
+        },
+        {
+          "index": 124,
+          "label": "Resources (Part 125)",
+          "item_ids": [
+            "mit18_01scf10_ses63d",
+            "mit18_01scf10_ses64a",
+            "mit18_01scf10_ses64b",
+            "mit18_01scf10_ses64c",
+            "mit18_01scf10_ses65a"
+          ]
+        },
+        {
+          "index": 125,
+          "label": "Resources (Part 126)",
+          "item_ids": [
+            "mit18_01scf10_ses66a",
+            "mit18_01scf10_ses66b",
+            "mit18_01scf10_ses66c",
+            "mit18_01scf10_ses66d",
+            "mit18_01scf10_ses68a"
+          ]
+        },
+        {
+          "index": 126,
+          "label": "Resources (Part 127)",
+          "item_ids": [
+            "mit18_01scf10_ses68b",
+            "mit18_01scf10_ses68c",
+            "mit18_01scf10_ses68d",
+            "mit18_01scf10_ses69a",
+            "mit18_01scf10_ses69b"
+          ]
+        },
+        {
+          "index": 127,
+          "label": "Resources (Part 128)",
+          "item_ids": [
+            "mit18_01scf10_ses6a",
+            "mit18_01scf10_ses6b",
+            "mit18_01scf10_ses70a",
+            "mit18_01scf10_ses71a",
+            "mit18_01scf10_ses71b"
+          ]
+        },
+        {
+          "index": 128,
+          "label": "Resources (Part 129)",
+          "item_ids": [
+            "mit18_01scf10_ses71c",
+            "mit18_01scf10_ses71d",
+            "mit18_01scf10_ses72a",
+            "mit18_01scf10_ses72b",
+            "mit18_01scf10_ses72c"
+          ]
+        },
+        {
+          "index": 129,
+          "label": "Resources (Part 130)",
+          "item_ids": [
+            "mit18_01scf10_ses73a",
+            "mit18_01scf10_ses74a",
+            "mit18_01scf10_ses74b",
+            "mit18_01scf10_ses74c",
+            "mit18_01scf10_ses75a"
+          ]
+        },
+        {
+          "index": 130,
+          "label": "Resources (Part 131)",
+          "item_ids": [
+            "mit18_01scf10_ses75b",
+            "mit18_01scf10_ses75c",
+            "mit18_01scf10_ses75d",
+            "mit18_01scf10_ses76a",
+            "mit18_01scf10_ses76b"
+          ]
+        },
+        {
+          "index": 131,
+          "label": "Resources (Part 132)",
+          "item_ids": [
+            "mit18_01scf10_ses76c",
+            "mit18_01scf10_ses76d",
+            "mit18_01scf10_ses76e",
+            "mit18_01scf10_ses77a",
+            "mit18_01scf10_ses77b"
+          ]
+        },
+        {
+          "index": 132,
+          "label": "Resources (Part 133)",
+          "item_ids": [
+            "mit18_01scf10_ses78a",
+            "mit18_01scf10_ses78b",
+            "mit18_01scf10_ses78c",
+            "mit18_01scf10_ses78d",
+            "mit18_01scf10_ses79a"
+          ]
+        },
+        {
+          "index": 133,
+          "label": "Resources (Part 134)",
+          "item_ids": [
+            "mit18_01scf10_ses79b",
+            "mit18_01scf10_ses7a",
+            "mit18_01scf10_ses7b",
+            "mit18_01scf10_ses80a",
+            "mit18_01scf10_ses80b"
+          ]
+        },
+        {
+          "index": 134,
+          "label": "Resources (Part 135)",
+          "item_ids": [
+            "mit18_01scf10_ses80c",
+            "mit18_01scf10_ses81a",
+            "mit18_01scf10_ses81b",
+            "mit18_01scf10_ses82a",
+            "mit18_01scf10_ses82b"
+          ]
+        },
+        {
+          "index": 135,
+          "label": "Resources (Part 136)",
+          "item_ids": [
+            "mit18_01scf10_ses82c",
+            "mit18_01scf10_ses82d",
+            "mit18_01scf10_ses83a",
+            "mit18_01scf10_ses83b",
+            "mit18_01scf10_ses84a"
+          ]
+        },
+        {
+          "index": 136,
+          "label": "Resources (Part 137)",
+          "item_ids": [
+            "mit18_01scf10_ses84b",
+            "mit18_01scf10_ses84c",
+            "mit18_01scf10_ses85a",
+            "mit18_01scf10_ses85b",
+            "mit18_01scf10_ses85c"
+          ]
+        },
+        {
+          "index": 137,
+          "label": "Resources (Part 138)",
+          "item_ids": [
+            "mit18_01scf10_ses87a",
+            "mit18_01scf10_ses87b",
+            "mit18_01scf10_ses87c",
+            "mit18_01scf10_ses87d",
+            "mit18_01scf10_ses88a"
+          ]
+        },
+        {
+          "index": 138,
+          "label": "Resources (Part 139)",
+          "item_ids": [
+            "mit18_01scf10_ses88b",
+            "mit18_01scf10_ses88c",
+            "mit18_01scf10_ses88d",
+            "mit18_01scf10_ses89a",
+            "mit18_01scf10_ses89b"
+          ]
+        },
+        {
+          "index": 139,
+          "label": "Resources (Part 140)",
+          "item_ids": [
+            "mit18_01scf10_ses89c",
+            "mit18_01scf10_ses8a",
+            "mit18_01scf10_ses8b",
+            "mit18_01scf10_ses8c",
+            "mit18_01scf10_ses8d"
+          ]
+        },
+        {
+          "index": 140,
+          "label": "Resources (Part 141)",
+          "item_ids": [
+            "mit18_01scf10_ses90a",
+            "mit18_01scf10_ses90b",
+            "mit18_01scf10_ses90c",
+            "mit18_01scf10_ses91a",
+            "mit18_01scf10_ses91b"
+          ]
+        },
+        {
+          "index": 141,
+          "label": "Resources (Part 142)",
+          "item_ids": [
+            "mit18_01scf10_ses91c",
+            "mit18_01scf10_ses91d",
+            "mit18_01scf10_ses91e",
+            "mit18_01scf10_ses92a",
+            "mit18_01scf10_ses92b"
+          ]
+        },
+        {
+          "index": 142,
+          "label": "Resources (Part 143)",
+          "item_ids": [
+            "mit18_01scf10_ses92c",
+            "mit18_01scf10_ses93a",
+            "mit18_01scf10_ses93b",
+            "mit18_01scf10_ses93c",
+            "mit18_01scf10_ses93d"
+          ]
+        },
+        {
+          "index": 143,
+          "label": "Resources (Part 144)",
+          "item_ids": [
+            "mit18_01scf10_ses94a",
+            "mit18_01scf10_ses94b",
+            "mit18_01scf10_ses94c",
+            "mit18_01scf10_ses94d",
+            "mit18_01scf10_ses95a"
+          ]
+        },
+        {
+          "index": 144,
+          "label": "Resources (Part 145)",
+          "item_ids": [
+            "mit18_01scf10_ses95b",
+            "mit18_01scf10_ses95c",
+            "mit18_01scf10_ses96a",
+            "mit18_01scf10_ses96b",
+            "mit18_01scf10_ses97a"
+          ]
+        },
+        {
+          "index": 145,
+          "label": "Resources (Part 146)",
+          "item_ids": [
+            "mit18_01scf10_ses97b",
+            "mit18_01scf10_ses98a",
+            "mit18_01scf10_ses98b",
+            "mit18_01scf10_ses98c",
+            "mit18_01scf10_ses99a"
+          ]
+        },
+        {
+          "index": 146,
+          "label": "Resources (Part 147)",
+          "item_ids": [
+            "mit18_01scf10_ses99b",
+            "mit18_01scf10_ses99c",
+            "mit18_01scf10_ses9a",
+            "mit18_01scf10_ses9b",
+            "mit18_01scf10_ses9c"
+          ]
+        },
+        {
+          "index": 147,
+          "label": "Resources (Part 148)",
+          "item_ids": [
+            "mit18_10scf10_ses2d",
+            "ocw-18-01-f07-lec01_300k",
+            "ocw-18-01-f07-lec05_300k",
+            "ocw-18-01-f07-lec09_300k",
+            "ocw-18-01-f07-lec10_300k"
+          ]
+        },
+        {
+          "index": 148,
+          "label": "Resources (Part 149)",
+          "item_ids": [
+            "ocw-18-01-f07-lec12_300k",
+            "ocw-18-01-f07-lec13_300k",
+            "ocw-18-01-f07-lec14_300k",
+            "ocw-18-01-f07-lec15_300k",
+            "ocw-18-01-f07-lec16_300k"
+          ]
+        },
+        {
+          "index": 149,
+          "label": "Resources (Part 150)",
+          "item_ids": [
+            "ocw-18-01-f07-lec18_300k",
+            "ocw-18-01-f07-lec19_300k",
+            "ocw-18-01-f07-lec20_300k",
+            "ocw-18-01-f07-lec21_300k",
+            "ocw-18-01-f07-lec22_300k"
+          ]
+        },
+        {
+          "index": 150,
+          "label": "Resources (Part 151)",
+          "item_ids": [
+            "ocw-18-01-f07-lec23_300k",
+            "ocw-18-01-f07-lec24_300k",
+            "ocw-18-01-f07-lec25_300k",
+            "ocw-18-01-f07-lec27_300k",
+            "ocw-18-01-f07-lec28_300k"
+          ]
+        },
+        {
+          "index": 151,
+          "label": "Resources (Part 152)",
+          "item_ids": [
+            "ocw-18-01-f07-lec29_300k",
+            "ocw-18-01-f07-lec30_300k",
+            "ocw-18-01-f07-lec31_300k",
+            "ocw-18-01-f07-lec32_300k",
+            "ocw-18-01-f07-lec33_300k"
+          ]
+        },
+        {
+          "index": 152,
+          "label": "Resources (Part 153)",
+          "item_ids": [
+            "ocw-18-01-f07-lec35_300k",
+            "ocw-18-01-f07-lec36_300k",
+            "ocw-18-01-f07-lec37_300k",
+            "ocw-18-01-f07-lec38_300k",
+            "ocw-18-01-f07-lec39_300k"
+          ]
+        },
+        {
+          "index": 153,
+          "label": "Resources (Part 154)",
+          "item_ids": [
+            "parametric-arc-length-1",
+            "partial-fractions-decomposition",
+            "power-series-practice",
+            "product-rule",
+            "quadratic-approximation-of-a-product"
+          ]
+        },
+        {
+          "index": 154,
+          "label": "Resources (Part 155)",
+          "item_ids": [
+            "quadratic-approximation-of-an-exponential-function",
+            "quotient-rule",
+            "radius-of-convergence",
+            "ratio-test-for-convergence",
+            "riemann-sum"
+          ]
+        },
+        {
+          "index": 155,
+          "label": "Resources (Part 156)",
+          "item_ids": [
+            "rules-of-logs",
+            "second-fundamental-theorem-and-chain-rule",
+            "second-fundamental-theorem-and-quadratic-approximation",
+            "series-calculation-using-a-riemann-sum",
+            "sketching-a-curve"
+          ]
+        },
+        {
+          "index": 156,
+          "label": "Resources (Part 157)",
+          "item_ids": [
+            "sliding-ladder",
+            "smoothing-a-piecewise-function",
+            "summation-notation-practice",
+            "surface-area-of-a-torus",
+            "tangent-to-graph-of-polynomial"
+          ]
+        },
+        {
+          "index": 157,
+          "label": "Resources (Part 158)",
+          "item_ids": [
+            "taylors-series-for-sec-x",
+            "taylors-series-of-a-polynomial",
+            "trig-integral-practice",
+            "trig-integrals-and-a-volume-of-revolution",
+            "using-newtons-method"
+          ]
+        },
+        {
+          "index": 158,
+          "label": "Resources (Part 159)",
+          "item_ids": [
+            "using-the-integral-test-for-estimation",
+            "using-the-trapezoid-and-simpsons-rules",
+            "volume-of-a-paraboloid-via-disks",
+            "volume-of-revolution-via-shells",
+            "xy-x2-x-y2-1"
+          ]
+        },
+        {
+          "index": 159,
+          "label": "Resources (Part 160)",
+          "item_ids": [
+            "y-6x-1",
+            "mit18_01sc_pset1prb",
+            "mit18_01sc_pset1prb-1",
+            "mit18_01sc_pset1sol",
+            "mit18_01sc_pset1sol-1"
+          ]
+        },
+        {
+          "index": 160,
+          "label": "Resources (Part 161)",
+          "item_ids": [
+            "mit18_01sc_pset2prb",
+            "mit18_01sc_pset2prb-1",
+            "mit18_01sc_pset2prb-2",
+            "mit18_01sc_pset2sol",
+            "mit18_01sc_pset2sol-1"
+          ]
+        },
+        {
+          "index": 161,
+          "label": "Resources (Part 162)",
+          "item_ids": [
+            "mit18_01sc_pset2sol-2",
+            "mit18_01sc_pset3prb",
+            "mit18_01sc_pset3prb-1",
+            "mit18_01sc_pset3prb-2",
+            "mit18_01sc_pset3sol"
+          ]
+        },
+        {
+          "index": 162,
+          "label": "Resources (Part 163)",
+          "item_ids": [
+            "mit18_01sc_pset3sol-1",
+            "mit18_01sc_pset3sol-2",
+            "mit18_01sc_pset4prb",
+            "mit18_01sc_pset4prb-1",
+            "mit18_01sc_pset4prb-2"
+          ]
+        },
+        {
+          "index": 163,
+          "label": "Resources (Part 164)",
+          "item_ids": [
+            "mit18_01sc_pset4prb-3",
+            "mit18_01sc_pset4sol",
+            "mit18_01sc_pset4sol-1",
+            "mit18_01sc_pset4sol-2",
+            "mit18_01sc_pset4sol-3"
+          ]
+        },
+        {
+          "index": 164,
+          "label": "Resources (Part 165)",
+          "item_ids": [
+            "mit18_01sc_pset5prb",
+            "mit18_01sc_pset5prb-1",
+            "mit18_01sc_pset5prb-2",
+            "mit18_01sc_pset5sol",
+            "mit18_01sc_pset5sol-1"
+          ]
+        },
+        {
+          "index": 165,
+          "label": "Resources (Part 166)",
+          "item_ids": [
+            "mit18_01sc_pset5sol-2",
+            "clip-1-example-1-y-1-x",
+            "clip-1-example-cumulative-debts",
+            "clip-1-example-f-x-x2",
+            "clip-1-example-of-estimation"
+          ]
+        },
+        {
+          "index": 166,
+          "label": "Resources (Part 167)",
+          "item_ids": [
+            "clip-1-example-of-trig-substitution",
+            "clip-1-example-sin-10t",
+            "clip-1-gps-time-dilation-example",
+            "clip-1-partial-fractions-2013-big-example",
+            "clip-1-probability-example"
+          ]
+        },
+        {
+          "index": 167,
+          "label": "Resources (Part 168)",
+          "item_ids": [
+            "clip-1-questions-on-exam-iii",
+            "clip-1-review-for-exam-ii",
+            "clip-2-comparison-example",
+            "clip-2-elementary-example-of-lhospitals-rule",
+            "clip-2-example-3x-x3"
+          ]
+        },
+        {
+          "index": 168,
+          "label": "Resources (Part 169)",
+          "item_ids": [
+            "clip-2-example-area-between-x-y2-and-y-x-2212-2",
+            "clip-2-example-change-of-variables",
+            "clip-2-example-dnxn",
+            "clip-2-example-ln-1-1-k-k",
+            "clip-2-example-reciprocals"
+          ]
+        },
+        {
+          "index": 169,
+          "label": "Resources (Part 170)",
+          "item_ids": [
+            "clip-2-example-x-ln-x",
+            "clip-2-example-y-mx",
+            "clip-2-explaining-the-formula-by-example",
+            "clip-2-summary-of-examples",
+            "clip-3-example-approximation-of-a-complicated-function"
+          ]
+        },
+        {
+          "index": 170,
+          "label": "Resources (Part 171)",
+          "item_ids": [
+            "clip-3-example-boy-near-a-dart-board",
+            "clip-3-example-circular-arc",
+            "clip-3-example-y4-xy2-2-0",
+            "clip-3-examples-of-comparison",
+            "clip-3-more-examples-of-integration"
+          ]
+        },
+        {
+          "index": 171,
+          "label": "Resources (Part 172)",
+          "item_ids": [
+            "clip-3-quadratic-approximation-at-0-for-several-examples",
+            "clip-3-taylors-formula-examples",
+            "clip-4-example-2-y-xn",
+            "clip-4-example-length-of-a-parabola",
+            "clip-4-examples-of-series"
+          ]
+        },
+        {
+          "index": 172,
+          "label": "Resources (Part 173)",
+          "item_ids": [
+            "clip-finale",
+            "copy_of_clip-1-introduction-to-polar-coordinates",
+            "mit18_01scf10_exam1",
+            "mit18_01scf10_exam1sol",
+            "mit18_01scf10_exam2"
+          ]
+        },
+        {
+          "index": 173,
+          "label": "Resources (Part 174)",
+          "item_ids": [
+            "mit18_01scf10_exam2sol",
+            "mit18_01scf10_exam3",
+            "mit18_01scf10_exam3sol",
+            "mit18_01scf10_exam4",
+            "mit18_01scf10_exam4sol"
+          ]
+        },
+        {
+          "index": 174,
+          "label": "Resources (Part 175)",
+          "item_ids": [
+            "mit18_01scf10_final",
+            "mit18_01scf10_finalsol"
+          ]
+        }
+      ]
+    }
+  ],
+  "step_lookup": [
+    {
+      "step": 100,
+      "section_index": 1,
+      "section_title": "1. Differentiation",
+      "chunk_index": 0,
+      "chunk_label": "1. Differentiation (Part 1)"
+    },
+    {
+      "step": 101,
+      "section_index": 1,
+      "section_title": "1. Differentiation",
+      "chunk_index": 1,
+      "chunk_label": "1. Differentiation (Part 2)"
+    },
+    {
+      "step": 102,
+      "section_index": 1,
+      "section_title": "1. Differentiation",
+      "chunk_index": 2,
+      "chunk_label": "1. Differentiation (Part 3)"
+    },
+    {
+      "step": 103,
+      "section_index": 1,
+      "section_title": "1. Differentiation",
+      "chunk_index": 3,
+      "chunk_label": "1. Differentiation (Part 4)"
+    },
+    {
+      "step": 104,
+      "section_index": 1,
+      "section_title": "1. Differentiation",
+      "chunk_index": 4,
+      "chunk_label": "1. Differentiation (Part 5)"
+    },
+    {
+      "step": 105,
+      "section_index": 1,
+      "section_title": "1. Differentiation",
+      "chunk_index": 5,
+      "chunk_label": "1. Differentiation (Part 6)"
+    },
+    {
+      "step": 200,
+      "section_index": 2,
+      "section_title": "Session 102: Materials for Final Exam",
+      "chunk_index": 0,
+      "chunk_label": "Session 102: Materials for Final Exam"
+    },
+    {
+      "step": 300,
+      "section_index": 3,
+      "section_title": "Syllabus",
+      "chunk_index": 0,
+      "chunk_label": "Syllabus"
+    },
+    {
+      "step": 400,
+      "section_index": 4,
+      "section_title": "2. Applications of Differentiation",
+      "chunk_index": 0,
+      "chunk_label": "2. Applications of Differentiation (Part 1)"
+    },
+    {
+      "step": 401,
+      "section_index": 4,
+      "section_title": "2. Applications of Differentiation",
+      "chunk_index": 1,
+      "chunk_label": "2. Applications of Differentiation (Part 2)"
+    },
+    {
+      "step": 402,
+      "section_index": 4,
+      "section_title": "2. Applications of Differentiation",
+      "chunk_index": 2,
+      "chunk_label": "2. Applications of Differentiation (Part 3)"
+    },
+    {
+      "step": 403,
+      "section_index": 4,
+      "section_title": "2. Applications of Differentiation",
+      "chunk_index": 3,
+      "chunk_label": "2. Applications of Differentiation (Part 4)"
+    },
+    {
+      "step": 404,
+      "section_index": 4,
+      "section_title": "2. Applications of Differentiation",
+      "chunk_index": 4,
+      "chunk_label": "2. Applications of Differentiation (Part 5)"
+    },
+    {
+      "step": 405,
+      "section_index": 4,
+      "section_title": "2. Applications of Differentiation",
+      "chunk_index": 5,
+      "chunk_label": "2. Applications of Differentiation (Part 6)"
+    },
+    {
+      "step": 500,
+      "section_index": 5,
+      "section_title": "3. The Definite Integral and its Applications",
+      "chunk_index": 0,
+      "chunk_label": "3. The Definite Integral and its Applications (Part 1)"
+    },
+    {
+      "step": 501,
+      "section_index": 5,
+      "section_title": "3. The Definite Integral and its Applications",
+      "chunk_index": 1,
+      "chunk_label": "3. The Definite Integral and its Applications (Part 2)"
+    },
+    {
+      "step": 502,
+      "section_index": 5,
+      "section_title": "3. The Definite Integral and its Applications",
+      "chunk_index": 2,
+      "chunk_label": "3. The Definite Integral and its Applications (Part 3)"
+    },
+    {
+      "step": 503,
+      "section_index": 5,
+      "section_title": "3. The Definite Integral and its Applications",
+      "chunk_index": 3,
+      "chunk_label": "3. The Definite Integral and its Applications (Part 4)"
+    },
+    {
+      "step": 504,
+      "section_index": 5,
+      "section_title": "3. The Definite Integral and its Applications",
+      "chunk_index": 4,
+      "chunk_label": "3. The Definite Integral and its Applications (Part 5)"
+    },
+    {
+      "step": 505,
+      "section_index": 5,
+      "section_title": "3. The Definite Integral and its Applications",
+      "chunk_index": 5,
+      "chunk_label": "3. The Definite Integral and its Applications (Part 6)"
+    },
+    {
+      "step": 506,
+      "section_index": 5,
+      "section_title": "3. The Definite Integral and its Applications",
+      "chunk_index": 6,
+      "chunk_label": "3. The Definite Integral and its Applications (Part 7)"
+    },
+    {
+      "step": 600,
+      "section_index": 6,
+      "section_title": "4. Techniques of Integration",
+      "chunk_index": 0,
+      "chunk_label": "4. Techniques of Integration (Part 1)"
+    },
+    {
+      "step": 601,
+      "section_index": 6,
+      "section_title": "4. Techniques of Integration",
+      "chunk_index": 1,
+      "chunk_label": "4. Techniques of Integration (Part 2)"
+    },
+    {
+      "step": 602,
+      "section_index": 6,
+      "section_title": "4. Techniques of Integration",
+      "chunk_index": 2,
+      "chunk_label": "4. Techniques of Integration (Part 3)"
+    },
+    {
+      "step": 603,
+      "section_index": 6,
+      "section_title": "4. Techniques of Integration",
+      "chunk_index": 3,
+      "chunk_label": "4. Techniques of Integration (Part 4)"
+    },
+    {
+      "step": 604,
+      "section_index": 6,
+      "section_title": "4. Techniques of Integration",
+      "chunk_index": 4,
+      "chunk_label": "4. Techniques of Integration (Part 5)"
+    },
+    {
+      "step": 605,
+      "section_index": 6,
+      "section_title": "4. Techniques of Integration",
+      "chunk_index": 5,
+      "chunk_label": "4. Techniques of Integration (Part 6)"
+    },
+    {
+      "step": 700,
+      "section_index": 7,
+      "section_title": "5. Exploring the Infinite",
+      "chunk_index": 0,
+      "chunk_label": "5. Exploring the Infinite (Part 1)"
+    },
+    {
+      "step": 701,
+      "section_index": 7,
+      "section_title": "5. Exploring the Infinite",
+      "chunk_index": 1,
+      "chunk_label": "5. Exploring the Infinite (Part 2)"
+    },
+    {
+      "step": 702,
+      "section_index": 7,
+      "section_title": "5. Exploring the Infinite",
+      "chunk_index": 2,
+      "chunk_label": "5. Exploring the Infinite (Part 3)"
+    },
+    {
+      "step": 703,
+      "section_index": 7,
+      "section_title": "5. Exploring the Infinite",
+      "chunk_index": 3,
+      "chunk_label": "5. Exploring the Infinite (Part 4)"
+    },
+    {
+      "step": 800,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 0,
+      "chunk_label": "Resources (Part 1)"
+    },
+    {
+      "step": 801,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 1,
+      "chunk_label": "Resources (Part 2)"
+    },
+    {
+      "step": 802,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 2,
+      "chunk_label": "Resources (Part 3)"
+    },
+    {
+      "step": 803,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 3,
+      "chunk_label": "Resources (Part 4)"
+    },
+    {
+      "step": 804,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 4,
+      "chunk_label": "Resources (Part 5)"
+    },
+    {
+      "step": 805,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 5,
+      "chunk_label": "Resources (Part 6)"
+    },
+    {
+      "step": 806,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 6,
+      "chunk_label": "Resources (Part 7)"
+    },
+    {
+      "step": 807,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 7,
+      "chunk_label": "Resources (Part 8)"
+    },
+    {
+      "step": 808,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 8,
+      "chunk_label": "Resources (Part 9)"
+    },
+    {
+      "step": 809,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 9,
+      "chunk_label": "Resources (Part 10)"
+    },
+    {
+      "step": 810,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 10,
+      "chunk_label": "Resources (Part 11)"
+    },
+    {
+      "step": 811,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 11,
+      "chunk_label": "Resources (Part 12)"
+    },
+    {
+      "step": 812,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 12,
+      "chunk_label": "Resources (Part 13)"
+    },
+    {
+      "step": 813,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 13,
+      "chunk_label": "Resources (Part 14)"
+    },
+    {
+      "step": 814,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 14,
+      "chunk_label": "Resources (Part 15)"
+    },
+    {
+      "step": 815,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 15,
+      "chunk_label": "Resources (Part 16)"
+    },
+    {
+      "step": 816,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 16,
+      "chunk_label": "Resources (Part 17)"
+    },
+    {
+      "step": 817,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 17,
+      "chunk_label": "Resources (Part 18)"
+    },
+    {
+      "step": 818,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 18,
+      "chunk_label": "Resources (Part 19)"
+    },
+    {
+      "step": 819,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 19,
+      "chunk_label": "Resources (Part 20)"
+    },
+    {
+      "step": 820,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 20,
+      "chunk_label": "Resources (Part 21)"
+    },
+    {
+      "step": 821,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 21,
+      "chunk_label": "Resources (Part 22)"
+    },
+    {
+      "step": 822,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 22,
+      "chunk_label": "Resources (Part 23)"
+    },
+    {
+      "step": 823,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 23,
+      "chunk_label": "Resources (Part 24)"
+    },
+    {
+      "step": 824,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 24,
+      "chunk_label": "Resources (Part 25)"
+    },
+    {
+      "step": 825,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 25,
+      "chunk_label": "Resources (Part 26)"
+    },
+    {
+      "step": 826,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 26,
+      "chunk_label": "Resources (Part 27)"
+    },
+    {
+      "step": 827,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 27,
+      "chunk_label": "Resources (Part 28)"
+    },
+    {
+      "step": 828,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 28,
+      "chunk_label": "Resources (Part 29)"
+    },
+    {
+      "step": 829,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 29,
+      "chunk_label": "Resources (Part 30)"
+    },
+    {
+      "step": 830,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 30,
+      "chunk_label": "Resources (Part 31)"
+    },
+    {
+      "step": 831,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 31,
+      "chunk_label": "Resources (Part 32)"
+    },
+    {
+      "step": 832,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 32,
+      "chunk_label": "Resources (Part 33)"
+    },
+    {
+      "step": 833,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 33,
+      "chunk_label": "Resources (Part 34)"
+    },
+    {
+      "step": 834,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 34,
+      "chunk_label": "Resources (Part 35)"
+    },
+    {
+      "step": 835,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 35,
+      "chunk_label": "Resources (Part 36)"
+    },
+    {
+      "step": 836,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 36,
+      "chunk_label": "Resources (Part 37)"
+    },
+    {
+      "step": 837,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 37,
+      "chunk_label": "Resources (Part 38)"
+    },
+    {
+      "step": 838,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 38,
+      "chunk_label": "Resources (Part 39)"
+    },
+    {
+      "step": 839,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 39,
+      "chunk_label": "Resources (Part 40)"
+    },
+    {
+      "step": 840,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 40,
+      "chunk_label": "Resources (Part 41)"
+    },
+    {
+      "step": 841,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 41,
+      "chunk_label": "Resources (Part 42)"
+    },
+    {
+      "step": 842,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 42,
+      "chunk_label": "Resources (Part 43)"
+    },
+    {
+      "step": 843,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 43,
+      "chunk_label": "Resources (Part 44)"
+    },
+    {
+      "step": 844,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 44,
+      "chunk_label": "Resources (Part 45)"
+    },
+    {
+      "step": 845,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 45,
+      "chunk_label": "Resources (Part 46)"
+    },
+    {
+      "step": 846,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 46,
+      "chunk_label": "Resources (Part 47)"
+    },
+    {
+      "step": 847,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 47,
+      "chunk_label": "Resources (Part 48)"
+    },
+    {
+      "step": 848,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 48,
+      "chunk_label": "Resources (Part 49)"
+    },
+    {
+      "step": 849,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 49,
+      "chunk_label": "Resources (Part 50)"
+    },
+    {
+      "step": 850,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 50,
+      "chunk_label": "Resources (Part 51)"
+    },
+    {
+      "step": 851,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 51,
+      "chunk_label": "Resources (Part 52)"
+    },
+    {
+      "step": 852,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 52,
+      "chunk_label": "Resources (Part 53)"
+    },
+    {
+      "step": 853,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 53,
+      "chunk_label": "Resources (Part 54)"
+    },
+    {
+      "step": 854,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 54,
+      "chunk_label": "Resources (Part 55)"
+    },
+    {
+      "step": 855,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 55,
+      "chunk_label": "Resources (Part 56)"
+    },
+    {
+      "step": 856,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 56,
+      "chunk_label": "Resources (Part 57)"
+    },
+    {
+      "step": 857,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 57,
+      "chunk_label": "Resources (Part 58)"
+    },
+    {
+      "step": 858,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 58,
+      "chunk_label": "Resources (Part 59)"
+    },
+    {
+      "step": 859,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 59,
+      "chunk_label": "Resources (Part 60)"
+    },
+    {
+      "step": 860,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 60,
+      "chunk_label": "Resources (Part 61)"
+    },
+    {
+      "step": 861,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 61,
+      "chunk_label": "Resources (Part 62)"
+    },
+    {
+      "step": 862,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 62,
+      "chunk_label": "Resources (Part 63)"
+    },
+    {
+      "step": 863,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 63,
+      "chunk_label": "Resources (Part 64)"
+    },
+    {
+      "step": 864,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 64,
+      "chunk_label": "Resources (Part 65)"
+    },
+    {
+      "step": 865,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 65,
+      "chunk_label": "Resources (Part 66)"
+    },
+    {
+      "step": 866,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 66,
+      "chunk_label": "Resources (Part 67)"
+    },
+    {
+      "step": 867,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 67,
+      "chunk_label": "Resources (Part 68)"
+    },
+    {
+      "step": 868,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 68,
+      "chunk_label": "Resources (Part 69)"
+    },
+    {
+      "step": 869,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 69,
+      "chunk_label": "Resources (Part 70)"
+    },
+    {
+      "step": 870,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 70,
+      "chunk_label": "Resources (Part 71)"
+    },
+    {
+      "step": 871,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 71,
+      "chunk_label": "Resources (Part 72)"
+    },
+    {
+      "step": 872,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 72,
+      "chunk_label": "Resources (Part 73)"
+    },
+    {
+      "step": 873,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 73,
+      "chunk_label": "Resources (Part 74)"
+    },
+    {
+      "step": 874,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 74,
+      "chunk_label": "Resources (Part 75)"
+    },
+    {
+      "step": 875,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 75,
+      "chunk_label": "Resources (Part 76)"
+    },
+    {
+      "step": 876,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 76,
+      "chunk_label": "Resources (Part 77)"
+    },
+    {
+      "step": 877,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 77,
+      "chunk_label": "Resources (Part 78)"
+    },
+    {
+      "step": 878,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 78,
+      "chunk_label": "Resources (Part 79)"
+    },
+    {
+      "step": 879,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 79,
+      "chunk_label": "Resources (Part 80)"
+    },
+    {
+      "step": 880,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 80,
+      "chunk_label": "Resources (Part 81)"
+    },
+    {
+      "step": 881,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 81,
+      "chunk_label": "Resources (Part 82)"
+    },
+    {
+      "step": 882,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 82,
+      "chunk_label": "Resources (Part 83)"
+    },
+    {
+      "step": 883,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 83,
+      "chunk_label": "Resources (Part 84)"
+    },
+    {
+      "step": 884,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 84,
+      "chunk_label": "Resources (Part 85)"
+    },
+    {
+      "step": 885,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 85,
+      "chunk_label": "Resources (Part 86)"
+    },
+    {
+      "step": 886,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 86,
+      "chunk_label": "Resources (Part 87)"
+    },
+    {
+      "step": 887,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 87,
+      "chunk_label": "Resources (Part 88)"
+    },
+    {
+      "step": 888,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 88,
+      "chunk_label": "Resources (Part 89)"
+    },
+    {
+      "step": 889,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 89,
+      "chunk_label": "Resources (Part 90)"
+    },
+    {
+      "step": 890,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 90,
+      "chunk_label": "Resources (Part 91)"
+    },
+    {
+      "step": 891,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 91,
+      "chunk_label": "Resources (Part 92)"
+    },
+    {
+      "step": 892,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 92,
+      "chunk_label": "Resources (Part 93)"
+    },
+    {
+      "step": 893,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 93,
+      "chunk_label": "Resources (Part 94)"
+    },
+    {
+      "step": 894,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 94,
+      "chunk_label": "Resources (Part 95)"
+    },
+    {
+      "step": 895,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 95,
+      "chunk_label": "Resources (Part 96)"
+    },
+    {
+      "step": 896,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 96,
+      "chunk_label": "Resources (Part 97)"
+    },
+    {
+      "step": 897,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 97,
+      "chunk_label": "Resources (Part 98)"
+    },
+    {
+      "step": 898,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 98,
+      "chunk_label": "Resources (Part 99)"
+    },
+    {
+      "step": 899,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 99,
+      "chunk_label": "Resources (Part 100)"
+    },
+    {
+      "step": 900,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 100,
+      "chunk_label": "Resources (Part 101)"
+    },
+    {
+      "step": 901,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 101,
+      "chunk_label": "Resources (Part 102)"
+    },
+    {
+      "step": 902,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 102,
+      "chunk_label": "Resources (Part 103)"
+    },
+    {
+      "step": 903,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 103,
+      "chunk_label": "Resources (Part 104)"
+    },
+    {
+      "step": 904,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 104,
+      "chunk_label": "Resources (Part 105)"
+    },
+    {
+      "step": 905,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 105,
+      "chunk_label": "Resources (Part 106)"
+    },
+    {
+      "step": 906,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 106,
+      "chunk_label": "Resources (Part 107)"
+    },
+    {
+      "step": 907,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 107,
+      "chunk_label": "Resources (Part 108)"
+    },
+    {
+      "step": 908,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 108,
+      "chunk_label": "Resources (Part 109)"
+    },
+    {
+      "step": 909,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 109,
+      "chunk_label": "Resources (Part 110)"
+    },
+    {
+      "step": 910,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 110,
+      "chunk_label": "Resources (Part 111)"
+    },
+    {
+      "step": 911,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 111,
+      "chunk_label": "Resources (Part 112)"
+    },
+    {
+      "step": 912,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 112,
+      "chunk_label": "Resources (Part 113)"
+    },
+    {
+      "step": 913,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 113,
+      "chunk_label": "Resources (Part 114)"
+    },
+    {
+      "step": 914,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 114,
+      "chunk_label": "Resources (Part 115)"
+    },
+    {
+      "step": 915,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 115,
+      "chunk_label": "Resources (Part 116)"
+    },
+    {
+      "step": 916,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 116,
+      "chunk_label": "Resources (Part 117)"
+    },
+    {
+      "step": 917,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 117,
+      "chunk_label": "Resources (Part 118)"
+    },
+    {
+      "step": 918,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 118,
+      "chunk_label": "Resources (Part 119)"
+    },
+    {
+      "step": 919,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 119,
+      "chunk_label": "Resources (Part 120)"
+    },
+    {
+      "step": 920,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 120,
+      "chunk_label": "Resources (Part 121)"
+    },
+    {
+      "step": 921,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 121,
+      "chunk_label": "Resources (Part 122)"
+    },
+    {
+      "step": 922,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 122,
+      "chunk_label": "Resources (Part 123)"
+    },
+    {
+      "step": 923,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 123,
+      "chunk_label": "Resources (Part 124)"
+    },
+    {
+      "step": 924,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 124,
+      "chunk_label": "Resources (Part 125)"
+    },
+    {
+      "step": 925,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 125,
+      "chunk_label": "Resources (Part 126)"
+    },
+    {
+      "step": 926,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 126,
+      "chunk_label": "Resources (Part 127)"
+    },
+    {
+      "step": 927,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 127,
+      "chunk_label": "Resources (Part 128)"
+    },
+    {
+      "step": 928,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 128,
+      "chunk_label": "Resources (Part 129)"
+    },
+    {
+      "step": 929,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 129,
+      "chunk_label": "Resources (Part 130)"
+    },
+    {
+      "step": 930,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 130,
+      "chunk_label": "Resources (Part 131)"
+    },
+    {
+      "step": 931,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 131,
+      "chunk_label": "Resources (Part 132)"
+    },
+    {
+      "step": 932,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 132,
+      "chunk_label": "Resources (Part 133)"
+    },
+    {
+      "step": 933,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 133,
+      "chunk_label": "Resources (Part 134)"
+    },
+    {
+      "step": 934,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 134,
+      "chunk_label": "Resources (Part 135)"
+    },
+    {
+      "step": 935,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 135,
+      "chunk_label": "Resources (Part 136)"
+    },
+    {
+      "step": 936,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 136,
+      "chunk_label": "Resources (Part 137)"
+    },
+    {
+      "step": 937,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 137,
+      "chunk_label": "Resources (Part 138)"
+    },
+    {
+      "step": 938,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 138,
+      "chunk_label": "Resources (Part 139)"
+    },
+    {
+      "step": 939,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 139,
+      "chunk_label": "Resources (Part 140)"
+    },
+    {
+      "step": 940,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 140,
+      "chunk_label": "Resources (Part 141)"
+    },
+    {
+      "step": 941,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 141,
+      "chunk_label": "Resources (Part 142)"
+    },
+    {
+      "step": 942,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 142,
+      "chunk_label": "Resources (Part 143)"
+    },
+    {
+      "step": 943,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 143,
+      "chunk_label": "Resources (Part 144)"
+    },
+    {
+      "step": 944,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 144,
+      "chunk_label": "Resources (Part 145)"
+    },
+    {
+      "step": 945,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 145,
+      "chunk_label": "Resources (Part 146)"
+    },
+    {
+      "step": 946,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 146,
+      "chunk_label": "Resources (Part 147)"
+    },
+    {
+      "step": 947,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 147,
+      "chunk_label": "Resources (Part 148)"
+    },
+    {
+      "step": 948,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 148,
+      "chunk_label": "Resources (Part 149)"
+    },
+    {
+      "step": 949,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 149,
+      "chunk_label": "Resources (Part 150)"
+    },
+    {
+      "step": 950,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 150,
+      "chunk_label": "Resources (Part 151)"
+    },
+    {
+      "step": 951,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 151,
+      "chunk_label": "Resources (Part 152)"
+    },
+    {
+      "step": 952,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 152,
+      "chunk_label": "Resources (Part 153)"
+    },
+    {
+      "step": 953,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 153,
+      "chunk_label": "Resources (Part 154)"
+    },
+    {
+      "step": 954,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 154,
+      "chunk_label": "Resources (Part 155)"
+    },
+    {
+      "step": 955,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 155,
+      "chunk_label": "Resources (Part 156)"
+    },
+    {
+      "step": 956,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 156,
+      "chunk_label": "Resources (Part 157)"
+    },
+    {
+      "step": 957,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 157,
+      "chunk_label": "Resources (Part 158)"
+    },
+    {
+      "step": 958,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 158,
+      "chunk_label": "Resources (Part 159)"
+    },
+    {
+      "step": 959,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 159,
+      "chunk_label": "Resources (Part 160)"
+    },
+    {
+      "step": 960,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 160,
+      "chunk_label": "Resources (Part 161)"
+    },
+    {
+      "step": 961,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 161,
+      "chunk_label": "Resources (Part 162)"
+    },
+    {
+      "step": 962,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 162,
+      "chunk_label": "Resources (Part 163)"
+    },
+    {
+      "step": 963,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 163,
+      "chunk_label": "Resources (Part 164)"
+    },
+    {
+      "step": 964,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 164,
+      "chunk_label": "Resources (Part 165)"
+    },
+    {
+      "step": 965,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 165,
+      "chunk_label": "Resources (Part 166)"
+    },
+    {
+      "step": 966,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 166,
+      "chunk_label": "Resources (Part 167)"
+    },
+    {
+      "step": 967,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 167,
+      "chunk_label": "Resources (Part 168)"
+    },
+    {
+      "step": 968,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 168,
+      "chunk_label": "Resources (Part 169)"
+    },
+    {
+      "step": 969,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 169,
+      "chunk_label": "Resources (Part 170)"
+    },
+    {
+      "step": 970,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 170,
+      "chunk_label": "Resources (Part 171)"
+    },
+    {
+      "step": 971,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 171,
+      "chunk_label": "Resources (Part 172)"
+    },
+    {
+      "step": 972,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 172,
+      "chunk_label": "Resources (Part 173)"
+    },
+    {
+      "step": 973,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 173,
+      "chunk_label": "Resources (Part 174)"
+    },
+    {
+      "step": 974,
+      "section_index": 8,
+      "section_title": "Resources",
+      "chunk_index": 174,
+      "chunk_label": "Resources (Part 175)"
+    }
+  ],
+  "profile": "stem"
+}

@@ -1,0 +1,17 @@
+id,label,item_id,kind,course_id,section_index,section_slug,section_title,section_chunk_index,week,order,tags,source_path,metrics
+0,Vectors | Chapter 1, Essence of linear algebra,fNk_zzaMoSs,lecture,essence_linear_algebra_series,,,,,1,0,,https://youtu.be/fNk_zzaMoSs,{"views": 10000000, "likes": 0, "duration": 592}
+1,Linear combinations, span, and basis vectors | Chapter 2, Essence of linear algebra,k7RM-ot2NWY,lecture,essence_linear_algebra_series,,,,,2,1,,https://youtu.be/k7RM-ot2NWY,{"views": 6500000, "likes": 0, "duration": 599}
+2,Linear transformations and matrices | Chapter 3, Essence of linear algebra,kYB8IZa5AuE,lecture,essence_linear_algebra_series,,,,,3,2,,https://youtu.be/kYB8IZa5AuE,{"views": 6200000, "likes": 0, "duration": 659}
+3,Matrix multiplication as composition | Chapter 4, Essence of linear algebra,XkY2DOUCWMU,lecture,essence_linear_algebra_series,,,,,4,3,,https://youtu.be/XkY2DOUCWMU,{"views": 3800000, "likes": 0, "duration": 604}
+4,Three-dimensional linear transformations | Chapter 5, Essence of linear algebra,rHLEWRxRGiM,lecture,essence_linear_algebra_series,,,,,5,4,,https://youtu.be/rHLEWRxRGiM,{"views": 2400000, "likes": 0, "duration": 286}
+5,The determinant | Chapter 6, Essence of linear algebra,Ip3X9LOh2dk,lecture,essence_linear_algebra_series,,,,,6,5,,https://youtu.be/Ip3X9LOh2dk,{"views": 4400000, "likes": 0, "duration": 603}
+6,Inverse matrices, column space and null space | Chapter 7, Essence of linear algebra,uQhTuRlWMxw,lecture,essence_linear_algebra_series,,,,,7,6,,https://youtu.be/uQhTuRlWMxw,{"views": 3400000, "likes": 0, "duration": 729}
+7,Nonsquare matrices as transformations between dimensions | Chapter 8, Essence of linear algebra,v8VSDg_WQlA,lecture,essence_linear_algebra_series,,,,,8,7,,https://youtu.be/v8VSDg_WQlA,{"views": 1800000, "likes": 0, "duration": 267}
+8,Dot products and duality | Chapter 9, Essence of linear algebra,LyGKycYT2v0,lecture,essence_linear_algebra_series,,,,,9,8,,https://youtu.be/LyGKycYT2v0,{"views": 2900000, "likes": 0, "duration": 852}
+9,Cross products | Chapter 10, Essence of linear algebra,eu6i7WJeinw,lecture,essence_linear_algebra_series,,,,,10,9,,https://youtu.be/eu6i7WJeinw,{"views": 2100000, "likes": 0, "duration": 534}
+10,Cross products in the light of linear transformations | Chapter 11, Essence of linear algebra,BaM7OCEm3G0,lecture,essence_linear_algebra_series,,,,,11,10,,https://youtu.be/BaM7OCEm3G0,{"views": 1400000, "likes": 0, "duration": 790}
+11,Cramer's rule, explained geometrically | Chapter 12, Essence of linear algebra,jBsC34PxzoM,lecture,essence_linear_algebra_series,,,,,12,11,,https://youtu.be/jBsC34PxzoM,{"views": 1300000, "likes": 0, "duration": 732}
+12,Change of basis | Chapter 13, Essence of linear algebra,P2LTAUO1TdA,lecture,essence_linear_algebra_series,,,,,13,12,,https://youtu.be/P2LTAUO1TdA,{"views": 2200000, "likes": 0, "duration": 771}
+13,Eigenvectors and eigenvalues | Chapter 14, Essence of linear algebra,PFDu9oVAE-g,lecture,essence_linear_algebra_series,,,,,14,13,,https://youtu.be/PFDu9oVAE-g,{"views": 5700000, "likes": 0, "duration": 1036}
+14,A quick trick for computing eigenvalues | Chapter 15, Essence of linear algebra,e50Bj7jn9IQ,lecture,essence_linear_algebra_series,,,,,15,14,,https://youtu.be/e50Bj7jn9IQ,{"views": 1200000, "likes": 0, "duration": 793}
+15,Abstract vector spaces | Chapter 16, Essence of linear algebra,TgKwz5Ikpc8,lecture,essence_linear_algebra_series,,,,,16,15,,https://youtu.be/TgKwz5Ikpc8,{"views": 1600000, "likes": 0, "duration": 1006}

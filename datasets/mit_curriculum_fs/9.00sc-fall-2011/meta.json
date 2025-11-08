@@ -1,0 +1,1163 @@
+{
+  "adapter": "curriculum",
+  "course_id": "9.00sc-fall-2011",
+  "title": "9.00sc-fall-2011",
+  "num_items": 276,
+  "num_edges": 285,
+  "step_semantics": "week",
+  "sections": [
+    {
+      "slug": "adult-development",
+      "index": 1,
+      "title": "Adult Development",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "Adult Development",
+          "item_ids": [
+            "adult-development-discussion-development"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "attention",
+      "index": 2,
+      "title": "Attention",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "Attention",
+          "item_ids": [
+            "attention-removed-clips",
+            "attention-discussion-attention"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "brain-i",
+      "index": 3,
+      "title": "Brain I: Structure and Functions",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "Brain I: Structure and Functions",
+          "item_ids": [
+            "brain-i-removed-clips"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "brain-ii",
+      "index": 4,
+      "title": "Brain II: Methods of Research",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "Brain II: Methods of Research",
+          "item_ids": [
+            "brain-ii-discussion-brain"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "child-development",
+      "index": 5,
+      "title": "Child Development",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "Child Development",
+          "item_ids": [
+            "child-development-removed-clips",
+            "child-development-writing-assignment-2"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "conclusions",
+      "index": 6,
+      "title": "Conclusions: Evolutionary Psychology, Happiness",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "Conclusions: Evolutionary Psychology, Happiness",
+          "item_ids": []
+        }
+      ]
+    },
+    {
+      "slug": "consciousness",
+      "index": 7,
+      "title": "Consciousness",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "Consciousness",
+          "item_ids": [
+            "consciousness-removed-clips"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "emotion-motivation",
+      "index": 8,
+      "title": "Emotion & Motivation",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "Emotion & Motivation",
+          "item_ids": [
+            "emotion-motivation-removed-clips",
+            "emotion-motivation-discussion-emotion"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "exam-1",
+      "index": 9,
+      "title": "Exam 1",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "Exam 1",
+          "item_ids": []
+        }
+      ]
+    },
+    {
+      "slug": "exam-2",
+      "index": 10,
+      "title": "Exam 2",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "Exam 2",
+          "item_ids": []
+        }
+      ]
+    },
+    {
+      "slug": "final-exam",
+      "index": 11,
+      "title": "Exam 3",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "Exam 3",
+          "item_ids": []
+        }
+      ]
+    },
+    {
+      "slug": "instructor-insights",
+      "index": 12,
+      "title": "Instructor Insights",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "Instructor Insights",
+          "item_ids": [
+            "instructor-insights-bringing-demonstrations-into-the-classroom",
+            "instructor-insights-crafting-lectures-that-inspire-and-inform",
+            "instructor-insights-maintaining-currency-in-a-rapidly-evolving-field",
+            "instructor-insights-structuring-a-broad-survey-course",
+            "instructor-insights-teaching-students-to-evaluate-research"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "intelligence",
+      "index": 13,
+      "title": "Intelligence",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "Intelligence",
+          "item_ids": [
+            "intelligence-discussion-thinking-intelligence"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "introduction",
+      "index": 14,
+      "title": "Introduction",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "Introduction",
+          "item_ids": [
+            "introduction-removed-clips"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "language-1",
+      "index": 15,
+      "title": "Language",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "Language",
+          "item_ids": [
+            "language-1-removed-clips",
+            "language-1-discussion-language"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "learning",
+      "index": 16,
+      "title": "Learning",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "Learning",
+          "item_ids": [
+            "learning-removed-clips",
+            "learning-discussion-learning"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "memory-i",
+      "index": 17,
+      "title": "Memory I",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "Memory I",
+          "item_ids": []
+        }
+      ]
+    },
+    {
+      "slug": "memory-ii",
+      "index": 18,
+      "title": "Memory II: Amnesia and Memory Systems",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "Memory II: Amnesia and Memory Systems",
+          "item_ids": [
+            "memory-ii-discussion-memory",
+            "memory-ii-removed-clips"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "personality",
+      "index": 19,
+      "title": "Personality",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "Personality",
+          "item_ids": [
+            "personality-discussion-personality"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "psychopathology-i",
+      "index": 20,
+      "title": "Psychopathology I",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "Psychopathology I",
+          "item_ids": [
+            "psychopathology-i-removed-clips"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "psychopathology-ii",
+      "index": 21,
+      "title": "Psychopathology II",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "Psychopathology II",
+          "item_ids": [
+            "psychopathology-ii-removed-clips",
+            "psychopathology-ii-discussion-psychopathology",
+            "psychopathology-ii-extra-credit-writing-assignment"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "science-research",
+      "index": 22,
+      "title": "Science & Research",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "Science & Research",
+          "item_ids": []
+        }
+      ]
+    },
+    {
+      "slug": "social-psychology-i",
+      "index": 23,
+      "title": "Social Psychology I",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "Social Psychology I",
+          "item_ids": [
+            "social-psychology-i-removed-clips"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "social-psychology-ii",
+      "index": 24,
+      "title": "Social Psychology II",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "Social Psychology II",
+          "item_ids": [
+            "social-psychology-ii-removed-clips",
+            "social-psychology-ii-discussion-social-psychology"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "stress",
+      "index": 25,
+      "title": "Stress",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "Stress",
+          "item_ids": [
+            "stress-discussion-stress"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "syllabus",
+      "index": 26,
+      "title": "Syllabus",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "Syllabus",
+          "item_ids": [
+            "syllabus-syllabus",
+            "syllabus-meet-the-tas",
+            "syllabus-meet-professor-john-gabrieli"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "thinking",
+      "index": 27,
+      "title": "Thinking",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "Thinking",
+          "item_ids": []
+        }
+      ]
+    },
+    {
+      "slug": "vision-i",
+      "index": 28,
+      "title": "Vision I",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "Vision I",
+          "item_ids": []
+        }
+      ]
+    },
+    {
+      "slug": "vision-ii",
+      "index": 29,
+      "title": "Vision II",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "Vision II",
+          "item_ids": [
+            "vision-ii-removed-clips",
+            "vision-ii-discussion-vision",
+            "vision-ii-writing-assignment-1"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "resources",
+      "index": 30,
+      "title": "Resources",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "Resources (Part 1)",
+          "item_ids": [
+            "brain-basis-of-emotions",
+            "brain-correlates-of-personality",
+            "brain-development-cell-migration-synaptic-formation-and-myelination",
+            "brain-imaging-gender-differences-and-emotion",
+            "brain-lesions-and-the-visual-system"
+          ]
+        },
+        {
+          "index": 1,
+          "label": "Resources (Part 2)",
+          "item_ids": [
+            "brain-overview-historical-viewpoints-neurons-gross-anatomy",
+            "introduction-to-vision-and-the-brain",
+            "lecture-1-introduction",
+            "lecture-10-memory-i",
+            "lecture-11-memory-ii-amnesia-and-memory-systems"
+          ]
+        },
+        {
+          "index": 2,
+          "label": "Resources (Part 3)",
+          "item_ids": [
+            "lecture-12-language",
+            "lecture-13-thinking",
+            "lecture-14-intelligence",
+            "lecture-15-emotion-and-motivation",
+            "lecture-16-personality"
+          ]
+        },
+        {
+          "index": 3,
+          "label": "Resources (Part 4)",
+          "item_ids": [
+            "lecture-17-child-development",
+            "lecture-18-adult-development",
+            "lecture-19-stress",
+            "lecture-2-science-and-research",
+            "lecture-20-psychopathology-i"
+          ]
+        },
+        {
+          "index": 4,
+          "label": "Resources (Part 5)",
+          "item_ids": [
+            "lecture-21-psychopathology-ii",
+            "lecture-22-social-psychology-i",
+            "lecture-23-social-psychology-ii",
+            "lecture-24-conclusions",
+            "lecture-3-brain-i"
+          ]
+        },
+        {
+          "index": 5,
+          "label": "Resources (Part 6)",
+          "item_ids": [
+            "lecture-4-brain-ii",
+            "lecture-5-vision-i",
+            "lecture-6-vision-ii-1",
+            "lecture-7-attention",
+            "lecture-8-consciousness"
+          ]
+        },
+        {
+          "index": 6,
+          "label": "Resources (Part 7)",
+          "item_ids": [
+            "lecture-9-learning",
+            "methods-of-studying-the-human-brain",
+            "mit9_00scf11_lec03_brain1",
+            "mit9_00scf11_lec04_brain2",
+            "the-mind-is-what-the-brain-does"
+          ]
+        },
+        {
+          "index": 7,
+          "label": "Resources (Part 8)",
+          "item_ids": [
+            "a-mnemonists-memory",
+            "adhd-diagnosis",
+            "adhd-treatments-and-studies",
+            "anterograde-amnesia-patient-h-m",
+            "attention-and-extinction-to-certain-stimulation"
+          ]
+        },
+        {
+          "index": 8,
+          "label": "Resources (Part 9)",
+          "item_ids": [
+            "attention-and-neglect-measures-of-neglect",
+            "attitudes-emotions-and-aging",
+            "babies-and-mathematicians",
+            "brightness-constancy-and-other-illusions",
+            "brocas-aphasia"
+          ]
+        },
+        {
+          "index": 9,
+          "label": "Resources (Part 10)",
+          "item_ids": [
+            "bystanders-and-helping-the-bystander-effect",
+            "causes-and-description-of-blindsight",
+            "causes-and-extent-of-neglect",
+            "cognitive-dissonance",
+            "cognitive-loss"
+          ]
+        },
+        {
+          "index": 10,
+          "label": "Resources (Part 11)",
+          "item_ids": [
+            "concepts-of-stress",
+            "contributions-from-nature-and-nurture",
+            "cultural-psychology",
+            "demonstrations-of-the-limits-of-attention",
+            "depression-diagnosis-and-neural-basis"
+          ]
+        },
+        {
+          "index": 11,
+          "label": "Resources (Part 12)",
+          "item_ids": [
+            "depression-treatments-and-studies",
+            "description-of-schizophrenia-and-genetic-factors",
+            "dopamine-and-reward-systems",
+            "embodied-cognition",
+            "evolutionary-psychology-views-on-sexuality-and-race"
+          ]
+        },
+        {
+          "index": 12,
+          "label": "Resources (Part 13)",
+          "item_ids": [
+            "false-consensus-and-the-influence-of-social-norms-on-behavior",
+            "first-impressions-how-powerful-how-accurate",
+            "flashbulb-and-repressed-memories",
+            "folk-psychology-and-scientific-psychology",
+            "from-sound-to-meaning-syntax-semantics-and-comprehension"
+          ]
+        },
+        {
+          "index": 13,
+          "label": "Resources (Part 14)",
+          "item_ids": [
+            "frontal-lobes-and-thinking",
+            "frontal-lobes-and-thinking-1",
+            "fundamental-attribution-error-and-cognitive-busyness",
+            "goals-of-the-course",
+            "good-memories-of-bad-events-in-infancy"
+          ]
+        },
+        {
+          "index": 14,
+          "label": "Resources (Part 15)",
+          "item_ids": [
+            "gradual-change-test-1",
+            "happiness-can-it-be-measured-and-studied",
+            "hemispheric-specialization",
+            "how-are-mental-disorders-diagnosed",
+            "how-babies-learn"
+          ]
+        },
+        {
+          "index": 15,
+          "label": "Resources (Part 16)",
+          "item_ids": [
+            "how-development-is-studied",
+            "how-infants-learn-dr-renee-baillargeon",
+            "how-our-minds-make-our-worlds-hearing-learning-memory",
+            "how-our-minds-make-our-worlds-vision-memory-attention",
+            "how-we-feel-vs"
+          ]
+        },
+        {
+          "index": 16,
+          "label": "Resources (Part 17)",
+          "item_ids": [
+            "hypnosis-and-the-stroop-effect",
+            "influencing-decisions-anchoring-adjustment-and-framing",
+            "influencing-decisions-anchoring-adjustment-and-framing-1",
+            "inside-nova-change-blindness",
+            "interventions-effort-and-practice-does-head-start-help"
+          ]
+        },
+        {
+          "index": 17,
+          "label": "Resources (Part 18)",
+          "item_ids": [
+            "introduction-and-neotony",
+            "introduction-to-recognition",
+            "iq-tests-validity-and-value",
+            "is-language-learning-a-conditioned-skill",
+            "judgement-and-decision-making-heuristics"
+          ]
+        },
+        {
+          "index": 18,
+          "label": "Resources (Part 19)",
+          "item_ids": [
+            "judgement-and-decision-making-heuristics-1",
+            "lang_disc",
+            "language-acquisition-infants-bilingualism-and-the-case-of-genie",
+            "language-basics-sounds-we-hear-and-distinguish",
+            "lesion-injury-and-stimulation-studies"
+          ]
+        },
+        {
+          "index": 19,
+          "label": "Resources (Part 20)",
+          "item_ids": [
+            "limits-of-conditioning",
+            "little-things-can-influence-behavior",
+            "localization-of-mental-functions",
+            "long-term-or-secondary-memory",
+            "measures-of-personality"
+          ]
+        },
+        {
+          "index": 20,
+          "label": "Resources (Part 21)",
+          "item_ids": [
+            "memory_disc_1",
+            "memory_disc_2",
+            "milgram-obedience-study-and-stanford-prison-experiment",
+            "mit9_00scf11_lec01",
+            "mit9_00scf11_lec02_scires"
+          ]
+        },
+        {
+          "index": 21,
+          "label": "Resources (Part 22)",
+          "item_ids": [
+            "mit9_00scf11_lec05_vis1",
+            "mit9_00scf11_lec06_vis2",
+            "mit9_00scf11_lec07_attn",
+            "mit9_00scf11_lec08_consc",
+            "mit9_00scf11_lec09_learning"
+          ]
+        },
+        {
+          "index": 22,
+          "label": "Resources (Part 23)",
+          "item_ids": [
+            "mit9_00scf11_lec10_mem1",
+            "mit9_00scf11_lec11_mem2",
+            "mit9_00scf11_lec12_lang",
+            "mit9_00scf11_lec13_think",
+            "mit9_00scf11_lec14_intel"
+          ]
+        },
+        {
+          "index": 23,
+          "label": "Resources (Part 24)",
+          "item_ids": [
+            "mit9_00scf11_lec15_emotion",
+            "mit9_00scf11_lec16_person",
+            "mit9_00scf11_lec17_child",
+            "mit9_00scf11_lec18_addev",
+            "mit9_00scf11_lec19_stress"
+          ]
+        },
+        {
+          "index": 24,
+          "label": "Resources (Part 25)",
+          "item_ids": [
+            "mit9_00scf11_lec20_psych1",
+            "mit9_00scf11_lec21_psych2",
+            "mit9_00scf11_lec22_socpsych1",
+            "mit9_00scf11_lec23_socpsy2",
+            "mit9_00scf11_lec24"
+          ]
+        },
+        {
+          "index": 25,
+          "label": "Resources (Part 26)",
+          "item_ids": [
+            "mit9_00scf11_read_kr1",
+            "mit9_00scf11_read_kr10",
+            "mit9_00scf11_read_kr11",
+            "mit9_00scf11_read_kr12",
+            "mit9_00scf11_read_kr13"
+          ]
+        },
+        {
+          "index": 26,
+          "label": "Resources (Part 27)",
+          "item_ids": [
+            "mit9_00scf11_read_kr2",
+            "mit9_00scf11_read_kr3",
+            "mit9_00scf11_read_kr4",
+            "mit9_00scf11_read_kr5",
+            "mit9_00scf11_read_kr6"
+          ]
+        },
+        {
+          "index": 27,
+          "label": "Resources (Part 28)",
+          "item_ids": [
+            "mit9_00scf11_read_kr7",
+            "mit9_00scf11_read_kr8",
+            "mit9_00scf11_read_kr9",
+            "mit9_00scf11_text_pdf",
+            "mit9_00scf11_wax_bioethics"
+          ]
+        },
+        {
+          "index": 28,
+          "label": "Resources (Part 29)",
+          "item_ids": [
+            "models-of-intelligence-and-underlying-neural-mechanisms",
+            "modern-and-historical-viewpoints-on-psychopathology",
+            "neural-memory-systems-and-the-effect-of-huntingtons-and-alzheimers-diseases-on-memory",
+            "neurogenesis",
+            "object-tracking-1"
+          ]
+        },
+        {
+          "index": 29,
+          "label": "Resources (Part 30)",
+          "item_ids": [
+            "object-tracking-2",
+            "object-tracking-3",
+            "object-tracking-and-improving-attention",
+            "obsessive-compulsive-disorder-ocd",
+            "operant-conditioning-thorndikes-cat-and-little-albert"
+          ]
+        },
+        {
+          "index": 30,
+          "label": "Resources (Part 31)",
+          "item_ids": [
+            "origins-of-personality",
+            "pavlov-and-learning-through-conditioning",
+            "perception-in-blindsight-patients",
+            "peripheral-bodily-events-influencing-emotion",
+            "personality-and-how-its-tested"
+          ]
+        },
+        {
+          "index": 31,
+          "label": "Resources (Part 32)",
+          "item_ids": [
+            "pfc",
+            "physical-stress-mechanism-and-its-effects",
+            "piaget-and-the-preoperational-stage",
+            "piaget-and-the-sensorimotor-stage",
+            "predicting-happiness-affective-forecasting-the-paradox-of-choice"
+          ]
+        },
+        {
+          "index": 32,
+          "label": "Resources (Part 33)",
+          "item_ids": [
+            "predisposition-to-facial-recognition",
+            "proactive-and-retroactive-interference",
+            "problems-with-language-aphasia-and-the-neural-basis-of-speech",
+            "problems-with-object-recognition",
+            "psychological-modifiers-of-the-stress-response"
+          ]
+        },
+        {
+          "index": 33,
+          "label": "Resources (Part 34)",
+          "item_ids": [
+            "psychology-and-science",
+            "psychology-experiments-and-the-real-world",
+            "race-and-facial-recognition",
+            "racism-acheivement-gaps-and-the-stereotype-threat",
+            "recognizing-faces-and-prosopagnosia"
+          ]
+        },
+        {
+          "index": 34,
+          "label": "Resources (Part 35)",
+          "item_ids": [
+            "recognizing-fear",
+            "recording-studies-of-function-electrical-eeg-meg-metabolic-pet-fmri",
+            "recording-studies-of-structure-ct-mr-dti",
+            "reinforcement-and-learned-helplessness",
+            "removed-clip-1-face-the-rear"
+          ]
+        },
+        {
+          "index": 35,
+          "label": "Resources (Part 36)",
+          "item_ids": [
+            "removed-clip-2-heider-simmel-demonstration",
+            "retrograde-amnesia",
+            "reward-value-and-delayed-gratification",
+            "risk-assessment-and-loss-aversion",
+            "sample-studies-social-cognition-empathy-vegetative-states"
+          ]
+        },
+        {
+          "index": 36,
+          "label": "Resources (Part 37)",
+          "item_ids": [
+            "selective-attention-test",
+            "self-serving-attributional-bias",
+            "short-term-memory",
+            "social-influence-conformity-compliance-and-obedience",
+            "stages-of-development"
+          ]
+        },
+        {
+          "index": 37,
+          "label": "Resources (Part 38)",
+          "item_ids": [
+            "stereotypes-and-stress",
+            "studying-emotion-history-and-overview",
+            "subliminal-perception",
+            "the-baby-human-werker",
+            "the-creation-of-false-memories"
+          ]
+        },
+        {
+          "index": 38,
+          "label": "Resources (Part 39)",
+          "item_ids": [
+            "the-crying-indian-commercial",
+            "the-development-of-facial-recognition",
+            "the-door-study",
+            "the-importance-of-memory",
+            "the-mcgurk-effect"
+          ]
+        },
+        {
+          "index": 39,
+          "label": "Resources (Part 40)",
+          "item_ids": [
+            "the-mechanics-of-vision-pre-visual-cortex",
+            "the-mechanics-of-vision-visual-cortex",
+            "the-monkey-business-illusion",
+            "the-power-and-peril-of-automaticity",
+            "theory-of-mind"
+          ]
+        },
+        {
+          "index": 40,
+          "label": "Resources (Part 41)",
+          "item_ids": [
+            "thinking-traps-functional-fixedness-problem-solving-and-creativity",
+            "thinking-traps-functional-fixedness-problem-solving-and-creativity-1",
+            "thinking_disc_1",
+            "thinking_disc_2",
+            "treatment-approaches-behavioral-and-medical"
+          ]
+        },
+        {
+          "index": 41,
+          "label": "Resources (Part 42)",
+          "item_ids": [
+            "treatment-of-schizophrenia",
+            "types-of-memory-and-q-a-about-patient-h",
+            "universality-of-emotions",
+            "vision-as-interpretation",
+            "visual-search-and-attentional-blink"
+          ]
+        },
+        {
+          "index": 42,
+          "label": "Resources (Part 43)",
+          "item_ids": [
+            "wernickes-aphasia",
+            "what-and-where-systems",
+            "what-do-we-mean-by-attention",
+            "what-information-from-the-neglected-field-can-be-processed",
+            "what-is-a-mental-disorder"
+          ]
+        },
+        {
+          "index": 43,
+          "label": "Resources (Part 44)",
+          "item_ids": [
+            "what-is-intelligence",
+            "what-is-social-psychology",
+            "what-makes-something-an-experiment",
+            "woman-with-ocd",
+            "word-recognition-and-alexia"
+          ]
+        },
+        {
+          "index": 44,
+          "label": "Resources (Part 45)",
+          "item_ids": [
+            "mit9_00scf11_exam1",
+            "mit9_00scf11_exam1_2009",
+            "mit9_00scf11_exam1_2009sol",
+            "mit9_00scf11_exam1_2010",
+            "mit9_00scf11_exam1_2010sol"
+          ]
+        },
+        {
+          "index": 45,
+          "label": "Resources (Part 46)",
+          "item_ids": [
+            "mit9_00scf11_exam1_sol",
+            "mit9_00scf11_exam2",
+            "mit9_00scf11_exam2_2009",
+            "mit9_00scf11_exam2_2009sol",
+            "mit9_00scf11_exam2_2010"
+          ]
+        },
+        {
+          "index": 46,
+          "label": "Resources (Part 47)",
+          "item_ids": [
+            "mit9_00scf11_exam2_2010sol",
+            "mit9_00scf11_exam2_sol",
+            "mit9_00scf11_exam3",
+            "mit9_00scf11_exam3_2009",
+            "mit9_00scf11_exam3_2009sol"
+          ]
+        },
+        {
+          "index": 47,
+          "label": "Resources (Part 48)",
+          "item_ids": [
+            "mit9_00scf11_exam3_2010",
+            "mit9_00scf11_exam3_2010sol",
+            "mit9_00scf11_exam3_sol"
+          ]
+        }
+      ]
+    }
+  ],
+  "step_lookup": [
+    {
+      "step": 1,
+      "section_index": 1,
+      "section_title": "Week 1",
+      "chunk_index": 0,
+      "chunk_label": "Week 1"
+    },
+    {
+      "step": 2,
+      "section_index": 2,
+      "section_title": "Week 2",
+      "chunk_index": 0,
+      "chunk_label": "Week 2"
+    },
+    {
+      "step": 3,
+      "section_index": 3,
+      "section_title": "Week 3",
+      "chunk_index": 0,
+      "chunk_label": "Week 3"
+    },
+    {
+      "step": 4,
+      "section_index": 4,
+      "section_title": "Week 4",
+      "chunk_index": 0,
+      "chunk_label": "Week 4"
+    },
+    {
+      "step": 5,
+      "section_index": 5,
+      "section_title": "Week 5",
+      "chunk_index": 0,
+      "chunk_label": "Week 5"
+    },
+    {
+      "step": 6,
+      "section_index": 6,
+      "section_title": "Week 6",
+      "chunk_index": 0,
+      "chunk_label": "Week 6"
+    },
+    {
+      "step": 7,
+      "section_index": 7,
+      "section_title": "Week 7",
+      "chunk_index": 0,
+      "chunk_label": "Week 7"
+    },
+    {
+      "step": 8,
+      "section_index": 8,
+      "section_title": "Week 8",
+      "chunk_index": 0,
+      "chunk_label": "Week 8"
+    },
+    {
+      "step": 9,
+      "section_index": 9,
+      "section_title": "Week 9",
+      "chunk_index": 0,
+      "chunk_label": "Week 9"
+    },
+    {
+      "step": 10,
+      "section_index": 10,
+      "section_title": "Week 10",
+      "chunk_index": 0,
+      "chunk_label": "Week 10"
+    },
+    {
+      "step": 11,
+      "section_index": 11,
+      "section_title": "Week 11",
+      "chunk_index": 0,
+      "chunk_label": "Week 11"
+    },
+    {
+      "step": 12,
+      "section_index": 12,
+      "section_title": "Week 12",
+      "chunk_index": 0,
+      "chunk_label": "Week 12"
+    },
+    {
+      "step": 13,
+      "section_index": 13,
+      "section_title": "Week 13",
+      "chunk_index": 0,
+      "chunk_label": "Week 13"
+    },
+    {
+      "step": 14,
+      "section_index": 14,
+      "section_title": "Week 14",
+      "chunk_index": 0,
+      "chunk_label": "Week 14"
+    },
+    {
+      "step": 15,
+      "section_index": 15,
+      "section_title": "Week 15",
+      "chunk_index": 0,
+      "chunk_label": "Week 15"
+    },
+    {
+      "step": 16,
+      "section_index": 16,
+      "section_title": "Week 16",
+      "chunk_index": 0,
+      "chunk_label": "Week 16"
+    },
+    {
+      "step": 17,
+      "section_index": 17,
+      "section_title": "Week 17",
+      "chunk_index": 0,
+      "chunk_label": "Week 17"
+    },
+    {
+      "step": 18,
+      "section_index": 18,
+      "section_title": "Week 18",
+      "chunk_index": 0,
+      "chunk_label": "Week 18"
+    },
+    {
+      "step": 19,
+      "section_index": 19,
+      "section_title": "Week 19",
+      "chunk_index": 0,
+      "chunk_label": "Week 19"
+    },
+    {
+      "step": 20,
+      "section_index": 20,
+      "section_title": "Week 20",
+      "chunk_index": 0,
+      "chunk_label": "Week 20"
+    },
+    {
+      "step": 21,
+      "section_index": 21,
+      "section_title": "Week 21",
+      "chunk_index": 0,
+      "chunk_label": "Week 21"
+    },
+    {
+      "step": 22,
+      "section_index": 22,
+      "section_title": "Week 22",
+      "chunk_index": 0,
+      "chunk_label": "Week 22"
+    },
+    {
+      "step": 23,
+      "section_index": 23,
+      "section_title": "Week 23",
+      "chunk_index": 0,
+      "chunk_label": "Week 23"
+    },
+    {
+      "step": 24,
+      "section_index": 24,
+      "section_title": "Week 24",
+      "chunk_index": 0,
+      "chunk_label": "Week 24"
+    },
+    {
+      "step": 25,
+      "section_index": 25,
+      "section_title": "Week 25",
+      "chunk_index": 0,
+      "chunk_label": "Week 25"
+    },
+    {
+      "step": 26,
+      "section_index": 26,
+      "section_title": "Week 26",
+      "chunk_index": 0,
+      "chunk_label": "Week 26"
+    },
+    {
+      "step": 29,
+      "section_index": 29,
+      "section_title": "Week 29",
+      "chunk_index": 0,
+      "chunk_label": "Week 29"
+    },
+    {
+      "step": 30,
+      "section_index": 30,
+      "section_title": "Week 30",
+      "chunk_index": 0,
+      "chunk_label": "Week 30"
+    },
+    {
+      "step": 2009,
+      "section_index": 2009,
+      "section_title": "Week 2009",
+      "chunk_index": 0,
+      "chunk_label": "Week 2009"
+    },
+    {
+      "step": 2010,
+      "section_index": 2010,
+      "section_title": "Week 2010",
+      "chunk_index": 0,
+      "chunk_label": "Week 2010"
+    }
+  ],
+  "profile": "stem"
+}

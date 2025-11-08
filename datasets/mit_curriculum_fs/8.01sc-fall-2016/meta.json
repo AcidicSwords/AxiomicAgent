@@ -1,0 +1,1996 @@
+{
+  "adapter": "curriculum",
+  "course_id": "8.01sc-fall-2016",
+  "title": "8.01sc-fall-2016",
+  "num_items": 482,
+  "num_edges": 482,
+  "step_semantics": "section_chunk",
+  "sections": [
+    {
+      "slug": "assignments",
+      "index": 1,
+      "title": "Assignments",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "Assignments",
+          "item_ids": []
+        }
+      ]
+    },
+    {
+      "slug": "online-textbook",
+      "index": 2,
+      "title": "Online Textbook",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "Online Textbook",
+          "item_ids": []
+        }
+      ]
+    },
+    {
+      "slug": "readings",
+      "index": 3,
+      "title": "Readings",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "Readings",
+          "item_ids": []
+        }
+      ]
+    },
+    {
+      "slug": "review-vectors",
+      "index": 4,
+      "title": "Review Vectors",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "Review Vectors (Part 1)",
+          "item_ids": [
+            "review-vectors-0-1-vectors-vs--scalars",
+            "review-vectors-0-2-vector-operators",
+            "review-vectors-0-3-coordinate-systems-and-unit-vectors",
+            "review-vectors-0-4-vectors-magnitude-and-direction",
+            "review-vectors-0-5-vector-decomposition-into-components"
+          ]
+        },
+        {
+          "index": 1,
+          "label": "Review Vectors (Part 2)",
+          "item_ids": [
+            "review-vectors-0-6-going-between-representations"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "syllabus",
+      "index": 5,
+      "title": "Syllabus",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "Syllabus",
+          "item_ids": [
+            "syllabus-about-the-team"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "week-1-kinematics",
+      "index": 6,
+      "title": "Week 1 Kinematics",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "Week 1 Kinematics (Part 1)",
+          "item_ids": [
+            "week-1-kinematics-1-1-coordinate-systems-and-unit-vectors-in-1d-position-vector-in-1d",
+            "week-1-kinematics-1-2-position-vector-in-1d",
+            "week-1-kinematics-1-4-average-velocity-in-1d",
+            "week-1-kinematics-1-5-instantaneous-velocity-in-1d",
+            "week-1-kinematics-1-6-derivatives"
+          ]
+        },
+        {
+          "index": 1,
+          "label": "Week 1 Kinematics (Part 2)",
+          "item_ids": [
+            "week-1-kinematics-2-1-introduction-to-acceleration",
+            "week-1-kinematics-2-2-acceleration-in-1d",
+            "week-1-kinematics-2-4-integration",
+            "week-1-kinematics-3-1-coordinate-system-and-position-vector-in-2d",
+            "week-1-kinematics-3-2-instantaneous-velocity-in-2d"
+          ]
+        },
+        {
+          "index": 2,
+          "label": "Week 1 Kinematics (Part 3)",
+          "item_ids": [
+            "week-1-kinematics-3-3-instantaneous-acceleration-in-2d",
+            "week-1-kinematics-3-4-projectile-motion",
+            "week-1-kinematics-3-5-demos-for-projectile-motion",
+            "week-1-kinematics-ps-1-2-shooting-the-apple",
+            "week-1-kinematics-ps-1-4-sketch-the-motion"
+          ]
+        },
+        {
+          "index": 3,
+          "label": "Week 1 Kinematics (Part 4)",
+          "item_ids": [
+            "week-1-kinematics-week-1-introduction",
+            "week-1-kinematics-ps-1-5-worked-example-pedestrian-and-bike-at-intersection",
+            "week-1-kinematics-2-5-list-of-useful-integrals",
+            "week-1-kinematics-problem-set-1",
+            "week-1-kinematics-ps.1.1-three-questions-before-starting-problem-set-1"
+          ]
+        },
+        {
+          "index": 4,
+          "label": "Week 1 Kinematics (Part 5)",
+          "item_ids": [
+            "week-1-kinematics-1-3-displacement-vector-in-1d",
+            "week-1-kinematics-1-7-worked-example-derivatives-in-kinematics",
+            "week-1-kinematics-2-3-worked-example-acceleration-from-position",
+            "week-1-kinematics-ps-1-3-worked-example-braking-car",
+            "week-1-kinematics-ps.1.1-three-questions-before-starting"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "week-10-rotational-motion",
+      "index": 7,
+      "title": "Week 10 Rotational Motion",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "Week 10 Rotational Motion (Part 1)",
+          "item_ids": [
+            "week-10-rotational-motion-28-2-introduction-to-translation-and-rotation",
+            "week-10-rotational-motion-28-3-review-of-angular-velocity-and-acceleration",
+            "week-10-rotational-motion-29-1-kinetic-energy-of-rotation",
+            "week-10-rotational-motion-29-2-moment-of-inertia-of-a-rod",
+            "week-10-rotational-motion-29-3-moment-of-inertia-of-a-disc"
+          ]
+        },
+        {
+          "index": 1,
+          "label": "Week 10 Rotational Motion (Part 2)",
+          "item_ids": [
+            "week-10-rotational-motion-29-4-parallel-axis-theorem",
+            "week-10-rotational-motion-29-5-moment-of-inertia-of-a-sphere",
+            "week-10-rotational-motion-29-6-derivation-of-the-parallel-axis-theorem",
+            "week-10-rotational-motion-30-1-introduction-to-torque-and-rotational-dynamics",
+            "week-10-rotational-motion-30-2-cross-product"
+          ]
+        },
+        {
+          "index": 2,
+          "label": "Week 10 Rotational Motion (Part 3)",
+          "item_ids": [
+            "week-10-rotational-motion-30-3-cross-product-in-cartesian-coordinates",
+            "week-10-rotational-motion-30-4-torque",
+            "week-10-rotational-motion-30-5-torque-from-gravity",
+            "week-10-rotational-motion-31-1-relationship-between-torque-and-angular-acceleration",
+            "week-10-rotational-motion-31-2-internal-torques-cancel-in-pairs"
+          ]
+        },
+        {
+          "index": 3,
+          "label": "Week 10 Rotational Motion (Part 4)",
+          "item_ids": [
+            "week-10-rotational-motion-31-5-massive-pulley-problems",
+            "week-10-rotational-motion-ps-10-1-blocks-and-massive-pulley",
+            "week-10-rotational-motion-week-10-introduction",
+            "week-10-rotational-motion-28-1-rigid-bodies",
+            "week-10-rotational-motion-problem-set-10"
+          ]
+        },
+        {
+          "index": 4,
+          "label": "Week 10 Rotational Motion (Part 5)",
+          "item_ids": [
+            "week-10-rotational-motion-31-3-worked-example-find-the-moment-of-inertia-of-a-disc-from-a-falling-mass",
+            "week-10-rotational-motion-31-4-worked-example-atwood-machine",
+            "week-10-rotational-motion-31-6-non-slip-condition",
+            "week-10-rotational-motion-31-7-worked-example-two-blocks-and-a-pulley-using-energy"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "week-11-angular-momentum",
+      "index": 8,
+      "title": "Week 11 Angular Momentum",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "Week 11 Angular Momentum (Part 1)",
+          "item_ids": [
+            "week-11-angular-momentum-32-1-angular-momentum-for-a-point-particle",
+            "week-11-angular-momentum-32-2-calculating-angular-momentum",
+            "week-11-angular-momentum-32-4-angular-momentum-of-circular-motion",
+            "week-11-angular-momentum-33-2-angular-momentum-of-a-symmetric-object",
+            "week-11-angular-momentum-33-4-if-momentum-is-zero-then-angular-momentum-is-independent-of-origin"
+          ]
+        },
+        {
+          "index": 1,
+          "label": "Week 11 Angular Momentum (Part 2)",
+          "item_ids": [
+            "week-11-angular-momentum-33-5-kinetic-energy-of-a-symmetric-object",
+            "week-11-angular-momentum-34-1-torque-causes-angular-momentum-to-change-point-particle",
+            "week-11-angular-momentum-34-2-torque-causes-angular-momentum-to-change-system-of-particles",
+            "week-11-angular-momentum-34-3-angular-impulse",
+            "week-11-angular-momentum-34-4-demo-bicycle-wheel"
+          ]
+        },
+        {
+          "index": 2,
+          "label": "Week 11 Angular Momentum (Part 3)",
+          "item_ids": [
+            "week-11-angular-momentum-week-11-introduction",
+            "week-11-angular-momentum-33-3-summary-so-far",
+            "week-11-angular-momentum-problem-set-11",
+            "week-11-angular-momentum-32-3-worked-example-angular-momentum-about-different-points",
+            "week-11-angular-momentum-33-1-worked-example-angular-momentum-of-2-rotating-point-particles"
+          ]
+        },
+        {
+          "index": 3,
+          "label": "Week 11 Angular Momentum (Part 4)",
+          "item_ids": [
+            "week-11-angular-momentum-34-5-worked-example-particle-hits-pivoted-ring"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "week-12-rotations-and-translation-rolling",
+      "index": 9,
+      "title": "Week 12 Rotations And Translation Rolling",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "Week 12 Rotations And Translation Rolling (Part 1)",
+          "item_ids": [
+            "week-12-rotations-and-translation-rolling-35-1-translation-and-rotation-of-a-wheel",
+            "week-12-rotations-and-translation-rolling-35-2-rolling-wheel-in-the-center-of-mass-frame",
+            "week-12-rotations-and-translation-rolling-35-3-rolling-wheel-in-the-ground-frame",
+            "week-12-rotations-and-translation-rolling-35-4-rolling-without-slipping-slipping-and-skidding",
+            "week-12-rotations-and-translation-rolling-35-5-contact-point-of-a-wheel-rolling-without-slipping"
+          ]
+        },
+        {
+          "index": 1,
+          "label": "Week 12 Rotations And Translation Rolling (Part 2)",
+          "item_ids": [
+            "week-12-rotations-and-translation-rolling-36-1-friction-on-a-rolling-wheel",
+            "week-12-rotations-and-translation-rolling-36-3-spool-demo",
+            "week-12-rotations-and-translation-rolling-36-5-analyze-force-and-torque-in-translation-and-rotation-problems",
+            "week-12-rotations-and-translation-rolling-37-1-kinetic-energy-of-translation-and-rotation",
+            "week-12-rotations-and-translation-rolling-37-3-angular-momentum-of-translation-and-rotation"
+          ]
+        },
+        {
+          "index": 2,
+          "label": "Week 12 Rotations And Translation Rolling (Part 3)",
+          "item_ids": [
+            "week-12-rotations-and-translation-rolling-dd-3-1-gyroscopes-1-free-body-diagrams-torque-and-rotating-vectors",
+            "week-12-rotations-and-translation-rolling-dd-3-2-gyroscopes-2-precessional-angular-velocity-and-titled-gyroscopes",
+            "week-12-rotations-and-translation-rolling-dd-3-3-gyroscopes-3-nutation-and-total-angular-momentum",
+            "week-12-rotations-and-translation-rolling-week-12-introduction",
+            "week-12-rotations-and-translation-rolling-37-4-summary-of-angular-momentum-and-kinetic-energy"
+          ]
+        },
+        {
+          "index": 3,
+          "label": "Week 12 Rotations And Translation Rolling (Part 4)",
+          "item_ids": [
+            "week-12-rotations-and-translation-rolling-problem-set-12",
+            "week-12-rotations-and-translation-rolling-36-2-worked-example-wheel-rolling-without-slipping-down-inclined-plane-torque-method",
+            "week-12-rotations-and-translation-rolling-36-4-worked-example-yoyo-pulled-along-the-ground",
+            "week-12-rotations-and-translation-rolling-37-2-worked-example-wheel-rolling-without-slipping-down-inclined-plane"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "week-2-newtons-laws",
+      "index": 10,
+      "title": "Week 2 Newtons Laws",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "Week 2 Newtons Laws (Part 1)",
+          "item_ids": [
+            "week-2-newtons-laws-4-1-newtons-first-and-second-laws",
+            "week-2-newtons-laws-4-2-newtons-third-law",
+            "week-2-newtons-laws-4-3-reference-frames",
+            "week-2-newtons-laws-4-4-non-inertial-reference-frames",
+            "week-2-newtons-laws-5-1-universal-law-of-gravitation"
+          ]
+        },
+        {
+          "index": 1,
+          "label": "Week 2 Newtons Laws (Part 2)",
+          "item_ids": [
+            "week-2-newtons-laws-5-3-gravity-at-the-surface-of-the-earth-the-value-of-g",
+            "week-2-newtons-laws-6-1-contact-forces",
+            "week-2-newtons-laws-6-2-static-friction-lesson",
+            "week-2-newtons-laws-7-1-pushing-pulling-and-tension",
+            "week-2-newtons-laws-7-2-ideal-rope"
+          ]
+        },
+        {
+          "index": 2,
+          "label": "Week 2 Newtons Laws (Part 3)",
+          "item_ids": [
+            "week-2-newtons-laws-7-3-solving-pulley-systems",
+            "week-2-newtons-laws-7-4-hookes-law",
+            "week-2-newtons-laws-dd-1-1-friction-at-the-nanoscale",
+            "week-2-newtons-laws-ps-2-3-window-washer-problem",
+            "week-2-newtons-laws-week-2-introduction"
+          ]
+        },
+        {
+          "index": 3,
+          "label": "Week 2 Newtons Laws (Part 4)",
+          "item_ids": [
+            "week-2-newtons-laws-problem-set-2",
+            "week-2-newtons-laws-5-2-worked-example-gravity-superposition",
+            "week-2-newtons-laws-ps-2-1-worked-example-sliding-block",
+            "week-2-newtons-laws-ps-2-2-worked-example-pushing-stacked-blocks"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "week-3-circular-motion",
+      "index": 11,
+      "title": "Week 3 Circular Motion",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "Week 3 Circular Motion (Part 1)",
+          "item_ids": [
+            "week-3-circular-motion-10-1-circular-motion-2013-acceleration",
+            "week-3-circular-motion-10-2-angular-acceleration",
+            "week-3-circular-motion-11-1-newtons-2nd-law-and-circular-motion",
+            "week-3-circular-motion-11-3-demo-rotating-bucket",
+            "week-3-circular-motion-8-1-polar-coordinates"
+          ]
+        },
+        {
+          "index": 1,
+          "label": "Week 3 Circular Motion (Part 2)",
+          "item_ids": [
+            "week-3-circular-motion-8-2-circular-motion-position-and-velocity-vectors",
+            "week-3-circular-motion-8-3-angular-velocity",
+            "week-3-circular-motion-9-1-uniform-circular-motion",
+            "week-3-circular-motion-9-2-uniform-circular-motion-direction-of-the-acceleration",
+            "week-3-circular-motion-week-3-introduction"
+          ]
+        },
+        {
+          "index": 2,
+          "label": "Week 3 Circular Motion (Part 3)",
+          "item_ids": [
+            "week-3-circular-motion-10-4-review-of-rotational-kinematics",
+            "week-3-circular-motion-9-3-period-and-frequency",
+            "week-3-circular-motion-problem-set-3",
+            "week-3-circular-motion-10-3-worked-example-angular-position-from-angular-acceleration",
+            "week-3-circular-motion-11-2-worked-example-car-on-a-banked-turn"
+          ]
+        },
+        {
+          "index": 3,
+          "label": "Week 3 Circular Motion (Part 4)",
+          "item_ids": [
+            "week-3-circular-motion-ps-3-1-worked-example-orbital-circular-motion"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "week-4-drag-forces-constraints-and-continuous-systems",
+      "index": 12,
+      "title": "Week 4 Drag Forces Constraints And Continuous Systems",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "Week 4 Drag Forces Constraints And Continuous Systems (Part 1)",
+          "item_ids": [
+            "week-4-drag-forces-constraints-and-continuous-systems-12-1-pulley-problems-part-i-set-up-the-equations",
+            "week-4-drag-forces-constraints-and-continuous-systems-12-2-pulley-problem-part-ii-constraint-condition",
+            "week-4-drag-forces-constraints-and-continuous-systems-12-3-pulley-problem-part-iii-constraints-and-virtual-displacement-arguments",
+            "week-4-drag-forces-constraints-and-continuous-systems-12-4-pulley-problem-part-iv-solving-the-system-of-equations",
+            "week-4-drag-forces-constraints-and-continuous-systems-13-1-rope-hanging-between-trees"
+          ]
+        },
+        {
+          "index": 1,
+          "label": "Week 4 Drag Forces Constraints And Continuous Systems (Part 2)",
+          "item_ids": [
+            "week-4-drag-forces-constraints-and-continuous-systems-13-2-differential-analysis-of-a-massive-rope",
+            "week-4-drag-forces-constraints-and-continuous-systems-13-3-differential-elements",
+            "week-4-drag-forces-constraints-and-continuous-systems-13-4-density",
+            "week-4-drag-forces-constraints-and-continuous-systems-13-5-demo-wrapping-friction",
+            "week-4-drag-forces-constraints-and-continuous-systems-13-6-summary-of-differential-analysis"
+          ]
+        },
+        {
+          "index": 2,
+          "label": "Week 4 Drag Forces Constraints And Continuous Systems (Part 3)",
+          "item_ids": [
+            "week-4-drag-forces-constraints-and-continuous-systems-14-1-intro-to-resistive-forces",
+            "week-4-drag-forces-constraints-and-continuous-systems-14-2-resistive-forces-low-speed-case",
+            "week-4-drag-forces-constraints-and-continuous-systems-14-3-resistive-forces-high-speed-case",
+            "week-4-drag-forces-constraints-and-continuous-systems-week-4-introduction",
+            "week-4-drag-forces-constraints-and-continuous-systems-problem-set-4"
+          ]
+        },
+        {
+          "index": 3,
+          "label": "Week 4 Drag Forces Constraints And Continuous Systems (Part 4)",
+          "item_ids": [
+            "week-4-drag-forces-constraints-and-continuous-systems-12-5-worked-example-2-blocks-and-2-pulleys"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "week-5-momentum-and-impulse",
+      "index": 13,
+      "title": "Week 5 Momentum And Impulse",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "Week 5 Momentum And Impulse (Part 1)",
+          "item_ids": [
+            "week-5-momentum-and-impulse-15-1-momentum-and-impulse",
+            "week-5-momentum-and-impulse-15-2-impulse-is-a-vector",
+            "week-5-momentum-and-impulse-15-4-momentum-of-a-system-of-point-particles",
+            "week-5-momentum-and-impulse-15-5-force-on-a-system-of-particles",
+            "week-5-momentum-and-impulse-16-1-conservation-of-momentum"
+          ]
+        },
+        {
+          "index": 1,
+          "label": "Week 5 Momentum And Impulse (Part 2)",
+          "item_ids": [
+            "week-5-momentum-and-impulse-16-2-momentum-diagrams",
+            "week-5-momentum-and-impulse-17-1-definition-of-the-center-of-mass",
+            "week-5-momentum-and-impulse-17-3-center-of-mass-of-a-continuous-system",
+            "week-5-momentum-and-impulse-17-6-velocity-and-acceleration-of-the-center-of-mass",
+            "week-5-momentum-and-impulse-17-7-reduction-of-a-system-to-a-point-particle"
+          ]
+        },
+        {
+          "index": 2,
+          "label": "Week 5 Momentum And Impulse (Part 3)",
+          "item_ids": [
+            "week-5-momentum-and-impulse-week-5-introduction",
+            "week-5-momentum-and-impulse-problem-set-5",
+            "week-5-momentum-and-impulse-15-3-worked-example-bouncing-ball",
+            "week-5-momentum-and-impulse-17-2-worked-example-center-of-mass-of-3-objects",
+            "week-5-momentum-and-impulse-17-4-center-of-mass-of-a-system-of-extended-objects"
+          ]
+        },
+        {
+          "index": 3,
+          "label": "Week 5 Momentum And Impulse (Part 4)",
+          "item_ids": [
+            "week-5-momentum-and-impulse-17-5-worked-example-center-of-mass-of-a-uniform-rod"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "week-6-continuous-mass-transfer",
+      "index": 14,
+      "title": "Week 6 Continuous Mass Transfer",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "Week 6 Continuous Mass Transfer (Part 1)",
+          "item_ids": [
+            "week-6-continuous-mass-transfer-18-1-relative-velocity",
+            "week-6-continuous-mass-transfer-18-2-set-up-a-recoil-problem",
+            "week-6-continuous-mass-transfer-18-3-solve-for-velocity-in-the-ground-frame",
+            "week-6-continuous-mass-transfer-18-4-solve-for-velocity-in-the-moving-frame",
+            "week-6-continuous-mass-transfer-19-1-rocket-problem-1-set-up-the-problem"
+          ]
+        },
+        {
+          "index": 1,
+          "label": "Week 6 Continuous Mass Transfer (Part 2)",
+          "item_ids": [
+            "week-6-continuous-mass-transfer-19-2-rocket-problem-2-momentum-diagrams",
+            "week-6-continuous-mass-transfer-19-3-rocket-problem-3-mass-relations",
+            "week-6-continuous-mass-transfer-19-4-rocket-problem-4-solution",
+            "week-6-continuous-mass-transfer-19-5-rocket-problem-5-thrust-and-external-forces",
+            "week-6-continuous-mass-transfer-19-6-rocket-problem-6-solution-for-no-external-forces"
+          ]
+        },
+        {
+          "index": 2,
+          "label": "Week 6 Continuous Mass Transfer (Part 3)",
+          "item_ids": [
+            "week-6-continuous-mass-transfer-19-7-rocket-problem-7-solution-with-external-forces",
+            "week-6-continuous-mass-transfer-ps-6-1-rocket-sled-problem",
+            "week-6-continuous-mass-transfer-ps-6-2-snowplow-problem",
+            "week-6-continuous-mass-transfer-week-6-introduction",
+            "week-6-continuous-mass-transfer-problem-set-6"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "week-7-kinetic-energy-and-work",
+      "index": 15,
+      "title": "Week 7 Kinetic Energy And Work",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "Week 7 Kinetic Energy And Work (Part 1)",
+          "item_ids": [
+            "week-7-kinetic-energy-and-work-20-1-kinetic-energy",
+            "week-7-kinetic-energy-and-work-20-2-work-by-a-constant-force",
+            "week-7-kinetic-energy-and-work-20-3-work-by-a-non-constant-force",
+            "week-7-kinetic-energy-and-work-20-4-integrate-acceleration-with-respect-to-time-and-position",
+            "week-7-kinetic-energy-and-work-20-5-work-kinetic-energy-theorem"
+          ]
+        },
+        {
+          "index": 1,
+          "label": "Week 7 Kinetic Energy And Work (Part 2)",
+          "item_ids": [
+            "week-7-kinetic-energy-and-work-20-6-power",
+            "week-7-kinetic-energy-and-work-21-1-scalar-product-properties",
+            "week-7-kinetic-energy-and-work-21-2-scalar-product-in-cartesian-coordinates",
+            "week-7-kinetic-energy-and-work-21-3-kinetic-energy-as-a-scalar-product",
+            "week-7-kinetic-energy-and-work-21-4-work-in-2d-and-3d"
+          ]
+        },
+        {
+          "index": 2,
+          "label": "Week 7 Kinetic Energy And Work (Part 3)",
+          "item_ids": [
+            "week-7-kinetic-energy-and-work-21-5-work-kinetic-energy-theorem-in-2d-and-3d",
+            "week-7-kinetic-energy-and-work-22-1-path-independence-gravity",
+            "week-7-kinetic-energy-and-work-22-2-path-dependence-friction",
+            "week-7-kinetic-energy-and-work-22-3-conservative-forces",
+            "week-7-kinetic-energy-and-work-22-4-non-conservative-forces"
+          ]
+        },
+        {
+          "index": 3,
+          "label": "Week 7 Kinetic Energy And Work (Part 4)",
+          "item_ids": [
+            "week-7-kinetic-energy-and-work-22-5-summary-of-work-and-kinetic-energy",
+            "week-7-kinetic-energy-and-work-week-7-introduction",
+            "week-7-kinetic-energy-and-work-problem-set-7",
+            "week-7-kinetic-energy-and-work-21-6-worked-example-block-going-down-a-ramp",
+            "week-7-kinetic-energy-and-work-ps-7-1-worked-example-collision-and-sliding-on-a-rough-surface"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "week-8-potential-energy-and-energy-conservation",
+      "index": 16,
+      "title": "Week 8 Potential Energy And Energy Conservation",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "Week 8 Potential Energy And Energy Conservation (Part 1)",
+          "item_ids": [
+            "week-8-potential-energy-and-energy-conservation-23-1-introduction-to-potential-energy",
+            "week-8-potential-energy-and-energy-conservation-23-2-potential-energy-of-gravity-near-the-surface-of-the-earth",
+            "week-8-potential-energy-and-energy-conservation-23-3-potential-energy-reference-state",
+            "week-8-potential-energy-and-energy-conservation-23-4-potential-energy-of-a-spring",
+            "week-8-potential-energy-and-energy-conservation-23-5-potential-energy-of-gravitation"
+          ]
+        },
+        {
+          "index": 1,
+          "label": "Week 8 Potential Energy And Energy Conservation (Part 2)",
+          "item_ids": [
+            "week-8-potential-energy-and-energy-conservation-24-1-mechanical-energy-and-energy-conservation",
+            "week-8-potential-energy-and-energy-conservation-24-2-energy-state-diagrams",
+            "week-8-potential-energy-and-energy-conservation-24-4-newtons-2nd-law-and-energy-conservation",
+            "week-8-potential-energy-and-energy-conservation-25-1-force-is-the-derivative-of-potential",
+            "week-8-potential-energy-and-energy-conservation-25-2-stable-and-unstable-equilibrium-points"
+          ]
+        },
+        {
+          "index": 2,
+          "label": "Week 8 Potential Energy And Energy Conservation (Part 3)",
+          "item_ids": [
+            "week-8-potential-energy-and-energy-conservation-week-8-introduction",
+            "week-8-potential-energy-and-energy-conservation-25-3-reading-potential-energy-diagrams",
+            "week-8-potential-energy-and-energy-conservation-problem-set-8",
+            "week-8-potential-energy-and-energy-conservation-24-3-worked-example-block-sliding-down-circular-slope"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "week-9-collision-theory",
+      "index": 17,
+      "title": "Week 9 Collision Theory",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "Week 9 Collision Theory (Part 1)",
+          "item_ids": [
+            "week-9-collision-theory-26-1-momentum-in-collisions",
+            "week-9-collision-theory-26-2-kinetic-energy-in-collisions",
+            "week-9-collision-theory-26-3-totally-inelastic-collisions",
+            "week-9-collision-theory-27-2-relative-velocity-in-1d",
+            "week-9-collision-theory-27-3-kinetic-energy-and-momentum-equation"
+          ]
+        },
+        {
+          "index": 1,
+          "label": "Week 9 Collision Theory (Part 2)",
+          "item_ids": [
+            "week-9-collision-theory-27-6-2d-collisions",
+            "week-9-collision-theory-dd-2-1-position-in-the-cm-frame",
+            "week-9-collision-theory-dd-2-2-relative-velocity-is-independent-of-reference-frame",
+            "week-9-collision-theory-dd-2-3-1d-elastic-collision-velocities-in-cm-frame",
+            "week-9-collision-theory-dd-2-5-kinetic-energy-in-different-reference-frames"
+          ]
+        },
+        {
+          "index": 2,
+          "label": "Week 9 Collision Theory (Part 3)",
+          "item_ids": [
+            "week-9-collision-theory-dd-2-6-kinetic-energy-in-the-cm-frame",
+            "week-9-collision-theory-dd-2-7-change-in-the-kinetic-energy",
+            "week-9-collision-theory-week-9-introduction",
+            "week-9-collision-theory-problem-set-9",
+            "week-9-collision-theory-27-1-worked-example-elastic-1d-collision"
+          ]
+        },
+        {
+          "index": 3,
+          "label": "Week 9 Collision Theory (Part 4)",
+          "item_ids": [
+            "week-9-collision-theory-27-4-worked-example-elastic-1d-collision-again",
+            "week-9-collision-theory-27-5-worked-example-gravitational-slingshot",
+            "week-9-collision-theory-dd-2-4-worked-example-1d-elastic-collision-in-cm"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "resources",
+      "index": 18,
+      "title": "Resources",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "Resources (Part 1)",
+          "item_ids": [
+            "0-1",
+            "1",
+            "video-introduction",
+            "ps-1-4",
+            "0"
+          ]
+        },
+        {
+          "index": 1,
+          "label": "Resources (Part 2)",
+          "item_ids": [
+            "0-1-vectors-vs",
+            "0-2",
+            "0-3",
+            "0-4",
+            "1-1"
+          ]
+        },
+        {
+          "index": 2,
+          "label": "Resources (Part 3)",
+          "item_ids": [
+            "1-2",
+            "1-3",
+            "1-4",
+            "10",
+            "10-1"
+          ]
+        },
+        {
+          "index": 3,
+          "label": "Resources (Part 4)",
+          "item_ids": [
+            "11",
+            "11-2",
+            "12",
+            "12-1",
+            "12-2"
+          ]
+        },
+        {
+          "index": 4,
+          "label": "Resources (Part 5)",
+          "item_ids": [
+            "12-3",
+            "13",
+            "13-1",
+            "13-2",
+            "13-3"
+          ]
+        },
+        {
+          "index": 5,
+          "label": "Resources (Part 6)",
+          "item_ids": [
+            "13-4",
+            "13-5",
+            "14",
+            "14-1",
+            "14-2"
+          ]
+        },
+        {
+          "index": 6,
+          "label": "Resources (Part 7)",
+          "item_ids": [
+            "15",
+            "15-1",
+            "15-3",
+            "15-4",
+            "16"
+          ]
+        },
+        {
+          "index": 7,
+          "label": "Resources (Part 8)",
+          "item_ids": [
+            "16-1",
+            "17",
+            "17-2",
+            "17-4",
+            "17-5"
+          ]
+        },
+        {
+          "index": 8,
+          "label": "Resources (Part 9)",
+          "item_ids": [
+            "18",
+            "18-1",
+            "18-2",
+            "18-3",
+            "19"
+          ]
+        },
+        {
+          "index": 9,
+          "label": "Resources (Part 10)",
+          "item_ids": [
+            "19-1",
+            "19-2",
+            "19-3",
+            "19-4",
+            "19-5"
+          ]
+        },
+        {
+          "index": 10,
+          "label": "Resources (Part 11)",
+          "item_ids": [
+            "19-6",
+            "2",
+            "2-1",
+            "2-3",
+            "20"
+          ]
+        },
+        {
+          "index": 11,
+          "label": "Resources (Part 12)",
+          "item_ids": [
+            "20-1",
+            "20-2",
+            "20-3",
+            "20-4",
+            "20-5"
+          ]
+        },
+        {
+          "index": 12,
+          "label": "Resources (Part 13)",
+          "item_ids": [
+            "21",
+            "21-1",
+            "21-2",
+            "21-3",
+            "21-4"
+          ]
+        },
+        {
+          "index": 13,
+          "label": "Resources (Part 14)",
+          "item_ids": [
+            "22",
+            "22-1",
+            "22-2",
+            "22-3",
+            "22-4"
+          ]
+        },
+        {
+          "index": 14,
+          "label": "Resources (Part 15)",
+          "item_ids": [
+            "23",
+            "23-1",
+            "23-2",
+            "23-3",
+            "23-4"
+          ]
+        },
+        {
+          "index": 15,
+          "label": "Resources (Part 16)",
+          "item_ids": [
+            "24",
+            "24-1",
+            "24-3",
+            "25",
+            "25-1"
+          ]
+        },
+        {
+          "index": 16,
+          "label": "Resources (Part 17)",
+          "item_ids": [
+            "25-2",
+            "26",
+            "26-1",
+            "26-2",
+            "27-1"
+          ]
+        },
+        {
+          "index": 17,
+          "label": "Resources (Part 18)",
+          "item_ids": [
+            "27-2",
+            "27-5",
+            "28-1",
+            "28-2",
+            "29"
+          ]
+        },
+        {
+          "index": 18,
+          "label": "Resources (Part 19)",
+          "item_ids": [
+            "29-1",
+            "29-2",
+            "29-3",
+            "29-4",
+            "29-5"
+          ]
+        },
+        {
+          "index": 19,
+          "label": "Resources (Part 20)",
+          "item_ids": [
+            "3",
+            "3-1",
+            "3-2",
+            "3-3",
+            "30"
+          ]
+        },
+        {
+          "index": 20,
+          "label": "Resources (Part 21)",
+          "item_ids": [
+            "30-1",
+            "30-2",
+            "30-3",
+            "30-4",
+            "31"
+          ]
+        },
+        {
+          "index": 21,
+          "label": "Resources (Part 22)",
+          "item_ids": [
+            "31-1",
+            "31-4",
+            "32",
+            "32-1",
+            "32-3"
+          ]
+        },
+        {
+          "index": 22,
+          "label": "Resources (Part 23)",
+          "item_ids": [
+            "33-1",
+            "33-2",
+            "33-3",
+            "34",
+            "34-1"
+          ]
+        },
+        {
+          "index": 23,
+          "label": "Resources (Part 24)",
+          "item_ids": [
+            "34-2",
+            "34-3",
+            "35",
+            "35-1",
+            "35-2"
+          ]
+        },
+        {
+          "index": 24,
+          "label": "Resources (Part 25)",
+          "item_ids": [
+            "35-3",
+            "35-4",
+            "36",
+            "36-2",
+            "36-4"
+          ]
+        },
+        {
+          "index": 25,
+          "label": "Resources (Part 26)",
+          "item_ids": [
+            "37",
+            "37-2",
+            "4",
+            "4-1",
+            "4-2"
+          ]
+        },
+        {
+          "index": 26,
+          "label": "Resources (Part 27)",
+          "item_ids": [
+            "4-3",
+            "5",
+            "5-2",
+            "6",
+            "6-1"
+          ]
+        },
+        {
+          "index": 27,
+          "label": "Resources (Part 28)",
+          "item_ids": [
+            "7",
+            "7-1",
+            "7-2",
+            "7-3",
+            "8"
+          ]
+        },
+        {
+          "index": 28,
+          "label": "Resources (Part 29)",
+          "item_ids": [
+            "8-1",
+            "8-2",
+            "9",
+            "9-1",
+            "dd-1"
+          ]
+        },
+        {
+          "index": 29,
+          "label": "Resources (Part 30)",
+          "item_ids": [
+            "dd-2",
+            "dd-2-1",
+            "dd-2-2",
+            "dd-2-4",
+            "dd-2-5"
+          ]
+        },
+        {
+          "index": 30,
+          "label": "Resources (Part 31)",
+          "item_ids": [
+            "dd-2-6",
+            "dd-3",
+            "dd-3-1",
+            "dd-3-2",
+            "demo-relative-motion-gun"
+          ]
+        },
+        {
+          "index": 31,
+          "label": "Resources (Part 32)",
+          "item_ids": [
+            "demo-shooting-an-apple",
+            "mit8_01scs22_chapter1",
+            "mit8_01scs22_chapter10",
+            "mit8_01scs22_chapter11",
+            "mit8_01scs22_chapter12"
+          ]
+        },
+        {
+          "index": 32,
+          "label": "Resources (Part 33)",
+          "item_ids": [
+            "mit8_01scs22_chapter13",
+            "mit8_01scs22_chapter14",
+            "mit8_01scs22_chapter14a",
+            "mit8_01scs22_chapter15",
+            "mit8_01scs22_chapter16"
+          ]
+        },
+        {
+          "index": 33,
+          "label": "Resources (Part 34)",
+          "item_ids": [
+            "mit8_01scs22_chapter17",
+            "mit8_01scs22_chapter18",
+            "mit8_01scs22_chapter19",
+            "mit8_01scs22_chapter2",
+            "mit8_01scs22_chapter20"
+          ]
+        },
+        {
+          "index": 34,
+          "label": "Resources (Part 35)",
+          "item_ids": [
+            "mit8_01scs22_chapter21",
+            "mit8_01scs22_chapter22",
+            "mit8_01scs22_chapter23",
+            "mit8_01scs22_chapter24",
+            "mit8_01scs22_chapter25new"
+          ]
+        },
+        {
+          "index": 35,
+          "label": "Resources (Part 36)",
+          "item_ids": [
+            "mit8_01scs22_chapter26",
+            "mit8_01scs22_chapter27",
+            "mit8_01scs22_chapter28",
+            "mit8_01scs22_chapter29",
+            "mit8_01scs22_chapter3"
+          ]
+        },
+        {
+          "index": 36,
+          "label": "Resources (Part 37)",
+          "item_ids": [
+            "mit8_01scs22_chapter30",
+            "mit8_01scs22_chapter31",
+            "mit8_01scs22_chapter4",
+            "mit8_01scs22_chapter5",
+            "mit8_01scs22_chapter6"
+          ]
+        },
+        {
+          "index": 37,
+          "label": "Resources (Part 38)",
+          "item_ids": [
+            "mit8_01scs22_chapter7",
+            "mit8_01scs22_chapter8",
+            "mit8_01scs22_chapter9",
+            "mit8_01scs22_constants",
+            "mit8_01scs22_data"
+          ]
+        },
+        {
+          "index": 38,
+          "label": "Resources (Part 39)",
+          "item_ids": [
+            "orbital-circular-motion-2013-period",
+            "orbital-circular-motion-2013-velocity",
+            "ps-1",
+            "ps-1-1",
+            "ps-1-3"
+          ]
+        },
+        {
+          "index": 39,
+          "label": "Resources (Part 40)",
+          "item_ids": [
+            "ps-10",
+            "ps-6",
+            "rocket-sled-differential-equation",
+            "rocket-sled-integrate-the-rocket-equation",
+            "rocket-sled-solve-for-initial-velocity"
+          ]
+        },
+        {
+          "index": 40,
+          "label": "Resources (Part 41)",
+          "item_ids": [
+            "week-1-introduction",
+            "week-10-introduction",
+            "week-11-introduction",
+            "week-12-introduction",
+            "week-2-introduction"
+          ]
+        },
+        {
+          "index": 41,
+          "label": "Resources (Part 42)",
+          "item_ids": [
+            "week-3-introduction",
+            "week-4-introduction",
+            "week-5-introduction",
+            "week-6-introduction",
+            "week-7-introduction"
+          ]
+        },
+        {
+          "index": 42,
+          "label": "Resources (Part 43)",
+          "item_ids": [
+            "week-8-introduction",
+            "week-9-introduction",
+            "window-washer-free-body-diagrams",
+            "window-washer-solution",
+            "mit8_01f16_pset10"
+          ]
+        },
+        {
+          "index": 43,
+          "label": "Resources (Part 44)",
+          "item_ids": [
+            "mit8_01f16_pset11",
+            "mit8_01f16_pset12",
+            "mit8_01f16_pset1_new",
+            "mit8_01f16_pset2",
+            "mit8_01f16_pset3"
+          ]
+        },
+        {
+          "index": 44,
+          "label": "Resources (Part 45)",
+          "item_ids": [
+            "mit8_01f16_pset4",
+            "mit8_01f16_pset5",
+            "mit8_01f16_pset6",
+            "mit8_01f16_pset7",
+            "mit8_01f16_pset8"
+          ]
+        },
+        {
+          "index": 45,
+          "label": "Resources (Part 46)",
+          "item_ids": [
+            "mit8_01f16_pset9",
+            "1-5",
+            "10-2",
+            "11-1",
+            "12-4"
+          ]
+        },
+        {
+          "index": 46,
+          "label": "Resources (Part 47)",
+          "item_ids": [
+            "15-2",
+            "17-1",
+            "17-3",
+            "2-2",
+            "21-5"
+          ]
+        },
+        {
+          "index": 47,
+          "label": "Resources (Part 48)",
+          "item_ids": [
+            "24-2",
+            "27",
+            "27-3",
+            "27-4",
+            "31-2"
+          ]
+        },
+        {
+          "index": 48,
+          "label": "Resources (Part 49)",
+          "item_ids": [
+            "31-3",
+            "31-5",
+            "32-2",
+            "33",
+            "34-4"
+          ]
+        },
+        {
+          "index": 49,
+          "label": "Resources (Part 50)",
+          "item_ids": [
+            "36-1",
+            "36-3",
+            "37-1",
+            "5-1",
+            "dd-2-3"
+          ]
+        },
+        {
+          "index": 50,
+          "label": "Resources (Part 51)",
+          "item_ids": [
+            "ps-1-2",
+            "ps-2",
+            "ps-7",
+            "worked-example-orbital-circular-motion-2013-radius",
+            "worked-example-stacked-blocks-choosing-the-system-of-2-blocks-together"
+          ]
+        },
+        {
+          "index": 51,
+          "label": "Resources (Part 52)",
+          "item_ids": [
+            "worked-example-stacked-blocks-free-body-diagrams-and-applying-newtons-2nd-law",
+            "worked-example-stacked-blocks-solve-for-the-maximum-force"
+          ]
+        }
+      ]
+    }
+  ],
+  "step_lookup": [
+    {
+      "step": 100,
+      "section_index": 1,
+      "section_title": "Assignments",
+      "chunk_index": 0,
+      "chunk_label": "Assignments"
+    },
+    {
+      "step": 200,
+      "section_index": 2,
+      "section_title": "Online Textbook",
+      "chunk_index": 0,
+      "chunk_label": "Online Textbook"
+    },
+    {
+      "step": 300,
+      "section_index": 3,
+      "section_title": "Readings",
+      "chunk_index": 0,
+      "chunk_label": "Readings"
+    },
+    {
+      "step": 400,
+      "section_index": 4,
+      "section_title": "Review Vectors",
+      "chunk_index": 0,
+      "chunk_label": "Review Vectors (Part 1)"
+    },
+    {
+      "step": 401,
+      "section_index": 4,
+      "section_title": "Review Vectors",
+      "chunk_index": 1,
+      "chunk_label": "Review Vectors (Part 2)"
+    },
+    {
+      "step": 500,
+      "section_index": 5,
+      "section_title": "Syllabus",
+      "chunk_index": 0,
+      "chunk_label": "Syllabus"
+    },
+    {
+      "step": 600,
+      "section_index": 6,
+      "section_title": "Week 1 Kinematics",
+      "chunk_index": 0,
+      "chunk_label": "Week 1 Kinematics (Part 1)"
+    },
+    {
+      "step": 601,
+      "section_index": 6,
+      "section_title": "Week 1 Kinematics",
+      "chunk_index": 1,
+      "chunk_label": "Week 1 Kinematics (Part 2)"
+    },
+    {
+      "step": 602,
+      "section_index": 6,
+      "section_title": "Week 1 Kinematics",
+      "chunk_index": 2,
+      "chunk_label": "Week 1 Kinematics (Part 3)"
+    },
+    {
+      "step": 603,
+      "section_index": 6,
+      "section_title": "Week 1 Kinematics",
+      "chunk_index": 3,
+      "chunk_label": "Week 1 Kinematics (Part 4)"
+    },
+    {
+      "step": 604,
+      "section_index": 6,
+      "section_title": "Week 1 Kinematics",
+      "chunk_index": 4,
+      "chunk_label": "Week 1 Kinematics (Part 5)"
+    },
+    {
+      "step": 700,
+      "section_index": 7,
+      "section_title": "Week 10 Rotational Motion",
+      "chunk_index": 0,
+      "chunk_label": "Week 10 Rotational Motion (Part 1)"
+    },
+    {
+      "step": 701,
+      "section_index": 7,
+      "section_title": "Week 10 Rotational Motion",
+      "chunk_index": 1,
+      "chunk_label": "Week 10 Rotational Motion (Part 2)"
+    },
+    {
+      "step": 702,
+      "section_index": 7,
+      "section_title": "Week 10 Rotational Motion",
+      "chunk_index": 2,
+      "chunk_label": "Week 10 Rotational Motion (Part 3)"
+    },
+    {
+      "step": 703,
+      "section_index": 7,
+      "section_title": "Week 10 Rotational Motion",
+      "chunk_index": 3,
+      "chunk_label": "Week 10 Rotational Motion (Part 4)"
+    },
+    {
+      "step": 704,
+      "section_index": 7,
+      "section_title": "Week 10 Rotational Motion",
+      "chunk_index": 4,
+      "chunk_label": "Week 10 Rotational Motion (Part 5)"
+    },
+    {
+      "step": 800,
+      "section_index": 8,
+      "section_title": "Week 11 Angular Momentum",
+      "chunk_index": 0,
+      "chunk_label": "Week 11 Angular Momentum (Part 1)"
+    },
+    {
+      "step": 801,
+      "section_index": 8,
+      "section_title": "Week 11 Angular Momentum",
+      "chunk_index": 1,
+      "chunk_label": "Week 11 Angular Momentum (Part 2)"
+    },
+    {
+      "step": 802,
+      "section_index": 8,
+      "section_title": "Week 11 Angular Momentum",
+      "chunk_index": 2,
+      "chunk_label": "Week 11 Angular Momentum (Part 3)"
+    },
+    {
+      "step": 803,
+      "section_index": 8,
+      "section_title": "Week 11 Angular Momentum",
+      "chunk_index": 3,
+      "chunk_label": "Week 11 Angular Momentum (Part 4)"
+    },
+    {
+      "step": 900,
+      "section_index": 9,
+      "section_title": "Week 12 Rotations And Translation Rolling",
+      "chunk_index": 0,
+      "chunk_label": "Week 12 Rotations And Translation Rolling (Part 1)"
+    },
+    {
+      "step": 901,
+      "section_index": 9,
+      "section_title": "Week 12 Rotations And Translation Rolling",
+      "chunk_index": 1,
+      "chunk_label": "Week 12 Rotations And Translation Rolling (Part 2)"
+    },
+    {
+      "step": 902,
+      "section_index": 9,
+      "section_title": "Week 12 Rotations And Translation Rolling",
+      "chunk_index": 2,
+      "chunk_label": "Week 12 Rotations And Translation Rolling (Part 3)"
+    },
+    {
+      "step": 903,
+      "section_index": 9,
+      "section_title": "Week 12 Rotations And Translation Rolling",
+      "chunk_index": 3,
+      "chunk_label": "Week 12 Rotations And Translation Rolling (Part 4)"
+    },
+    {
+      "step": 1000,
+      "section_index": 10,
+      "section_title": "Week 2 Newtons Laws",
+      "chunk_index": 0,
+      "chunk_label": "Week 2 Newtons Laws (Part 1)"
+    },
+    {
+      "step": 1001,
+      "section_index": 10,
+      "section_title": "Week 2 Newtons Laws",
+      "chunk_index": 1,
+      "chunk_label": "Week 2 Newtons Laws (Part 2)"
+    },
+    {
+      "step": 1002,
+      "section_index": 10,
+      "section_title": "Week 2 Newtons Laws",
+      "chunk_index": 2,
+      "chunk_label": "Week 2 Newtons Laws (Part 3)"
+    },
+    {
+      "step": 1003,
+      "section_index": 10,
+      "section_title": "Week 2 Newtons Laws",
+      "chunk_index": 3,
+      "chunk_label": "Week 2 Newtons Laws (Part 4)"
+    },
+    {
+      "step": 1100,
+      "section_index": 11,
+      "section_title": "Week 3 Circular Motion",
+      "chunk_index": 0,
+      "chunk_label": "Week 3 Circular Motion (Part 1)"
+    },
+    {
+      "step": 1101,
+      "section_index": 11,
+      "section_title": "Week 3 Circular Motion",
+      "chunk_index": 1,
+      "chunk_label": "Week 3 Circular Motion (Part 2)"
+    },
+    {
+      "step": 1102,
+      "section_index": 11,
+      "section_title": "Week 3 Circular Motion",
+      "chunk_index": 2,
+      "chunk_label": "Week 3 Circular Motion (Part 3)"
+    },
+    {
+      "step": 1103,
+      "section_index": 11,
+      "section_title": "Week 3 Circular Motion",
+      "chunk_index": 3,
+      "chunk_label": "Week 3 Circular Motion (Part 4)"
+    },
+    {
+      "step": 1200,
+      "section_index": 12,
+      "section_title": "Week 4 Drag Forces Constraints And Continuous Systems",
+      "chunk_index": 0,
+      "chunk_label": "Week 4 Drag Forces Constraints And Continuous Systems (Part 1)"
+    },
+    {
+      "step": 1201,
+      "section_index": 12,
+      "section_title": "Week 4 Drag Forces Constraints And Continuous Systems",
+      "chunk_index": 1,
+      "chunk_label": "Week 4 Drag Forces Constraints And Continuous Systems (Part 2)"
+    },
+    {
+      "step": 1202,
+      "section_index": 12,
+      "section_title": "Week 4 Drag Forces Constraints And Continuous Systems",
+      "chunk_index": 2,
+      "chunk_label": "Week 4 Drag Forces Constraints And Continuous Systems (Part 3)"
+    },
+    {
+      "step": 1203,
+      "section_index": 12,
+      "section_title": "Week 4 Drag Forces Constraints And Continuous Systems",
+      "chunk_index": 3,
+      "chunk_label": "Week 4 Drag Forces Constraints And Continuous Systems (Part 4)"
+    },
+    {
+      "step": 1300,
+      "section_index": 13,
+      "section_title": "Week 5 Momentum And Impulse",
+      "chunk_index": 0,
+      "chunk_label": "Week 5 Momentum And Impulse (Part 1)"
+    },
+    {
+      "step": 1301,
+      "section_index": 13,
+      "section_title": "Week 5 Momentum And Impulse",
+      "chunk_index": 1,
+      "chunk_label": "Week 5 Momentum And Impulse (Part 2)"
+    },
+    {
+      "step": 1302,
+      "section_index": 13,
+      "section_title": "Week 5 Momentum And Impulse",
+      "chunk_index": 2,
+      "chunk_label": "Week 5 Momentum And Impulse (Part 3)"
+    },
+    {
+      "step": 1303,
+      "section_index": 13,
+      "section_title": "Week 5 Momentum And Impulse",
+      "chunk_index": 3,
+      "chunk_label": "Week 5 Momentum And Impulse (Part 4)"
+    },
+    {
+      "step": 1400,
+      "section_index": 14,
+      "section_title": "Week 6 Continuous Mass Transfer",
+      "chunk_index": 0,
+      "chunk_label": "Week 6 Continuous Mass Transfer (Part 1)"
+    },
+    {
+      "step": 1401,
+      "section_index": 14,
+      "section_title": "Week 6 Continuous Mass Transfer",
+      "chunk_index": 1,
+      "chunk_label": "Week 6 Continuous Mass Transfer (Part 2)"
+    },
+    {
+      "step": 1402,
+      "section_index": 14,
+      "section_title": "Week 6 Continuous Mass Transfer",
+      "chunk_index": 2,
+      "chunk_label": "Week 6 Continuous Mass Transfer (Part 3)"
+    },
+    {
+      "step": 1500,
+      "section_index": 15,
+      "section_title": "Week 7 Kinetic Energy And Work",
+      "chunk_index": 0,
+      "chunk_label": "Week 7 Kinetic Energy And Work (Part 1)"
+    },
+    {
+      "step": 1501,
+      "section_index": 15,
+      "section_title": "Week 7 Kinetic Energy And Work",
+      "chunk_index": 1,
+      "chunk_label": "Week 7 Kinetic Energy And Work (Part 2)"
+    },
+    {
+      "step": 1502,
+      "section_index": 15,
+      "section_title": "Week 7 Kinetic Energy And Work",
+      "chunk_index": 2,
+      "chunk_label": "Week 7 Kinetic Energy And Work (Part 3)"
+    },
+    {
+      "step": 1503,
+      "section_index": 15,
+      "section_title": "Week 7 Kinetic Energy And Work",
+      "chunk_index": 3,
+      "chunk_label": "Week 7 Kinetic Energy And Work (Part 4)"
+    },
+    {
+      "step": 1600,
+      "section_index": 16,
+      "section_title": "Week 8 Potential Energy And Energy Conservation",
+      "chunk_index": 0,
+      "chunk_label": "Week 8 Potential Energy And Energy Conservation (Part 1)"
+    },
+    {
+      "step": 1601,
+      "section_index": 16,
+      "section_title": "Week 8 Potential Energy And Energy Conservation",
+      "chunk_index": 1,
+      "chunk_label": "Week 8 Potential Energy And Energy Conservation (Part 2)"
+    },
+    {
+      "step": 1602,
+      "section_index": 16,
+      "section_title": "Week 8 Potential Energy And Energy Conservation",
+      "chunk_index": 2,
+      "chunk_label": "Week 8 Potential Energy And Energy Conservation (Part 3)"
+    },
+    {
+      "step": 1700,
+      "section_index": 17,
+      "section_title": "Week 9 Collision Theory",
+      "chunk_index": 0,
+      "chunk_label": "Week 9 Collision Theory (Part 1)"
+    },
+    {
+      "step": 1701,
+      "section_index": 17,
+      "section_title": "Week 9 Collision Theory",
+      "chunk_index": 1,
+      "chunk_label": "Week 9 Collision Theory (Part 2)"
+    },
+    {
+      "step": 1702,
+      "section_index": 17,
+      "section_title": "Week 9 Collision Theory",
+      "chunk_index": 2,
+      "chunk_label": "Week 9 Collision Theory (Part 3)"
+    },
+    {
+      "step": 1703,
+      "section_index": 17,
+      "section_title": "Week 9 Collision Theory",
+      "chunk_index": 3,
+      "chunk_label": "Week 9 Collision Theory (Part 4)"
+    },
+    {
+      "step": 1800,
+      "section_index": 18,
+      "section_title": "Resources",
+      "chunk_index": 0,
+      "chunk_label": "Resources (Part 1)"
+    },
+    {
+      "step": 1801,
+      "section_index": 18,
+      "section_title": "Resources",
+      "chunk_index": 1,
+      "chunk_label": "Resources (Part 2)"
+    },
+    {
+      "step": 1802,
+      "section_index": 18,
+      "section_title": "Resources",
+      "chunk_index": 2,
+      "chunk_label": "Resources (Part 3)"
+    },
+    {
+      "step": 1803,
+      "section_index": 18,
+      "section_title": "Resources",
+      "chunk_index": 3,
+      "chunk_label": "Resources (Part 4)"
+    },
+    {
+      "step": 1804,
+      "section_index": 18,
+      "section_title": "Resources",
+      "chunk_index": 4,
+      "chunk_label": "Resources (Part 5)"
+    },
+    {
+      "step": 1805,
+      "section_index": 18,
+      "section_title": "Resources",
+      "chunk_index": 5,
+      "chunk_label": "Resources (Part 6)"
+    },
+    {
+      "step": 1806,
+      "section_index": 18,
+      "section_title": "Resources",
+      "chunk_index": 6,
+      "chunk_label": "Resources (Part 7)"
+    },
+    {
+      "step": 1807,
+      "section_index": 18,
+      "section_title": "Resources",
+      "chunk_index": 7,
+      "chunk_label": "Resources (Part 8)"
+    },
+    {
+      "step": 1808,
+      "section_index": 18,
+      "section_title": "Resources",
+      "chunk_index": 8,
+      "chunk_label": "Resources (Part 9)"
+    },
+    {
+      "step": 1809,
+      "section_index": 18,
+      "section_title": "Resources",
+      "chunk_index": 9,
+      "chunk_label": "Resources (Part 10)"
+    },
+    {
+      "step": 1810,
+      "section_index": 18,
+      "section_title": "Resources",
+      "chunk_index": 10,
+      "chunk_label": "Resources (Part 11)"
+    },
+    {
+      "step": 1811,
+      "section_index": 18,
+      "section_title": "Resources",
+      "chunk_index": 11,
+      "chunk_label": "Resources (Part 12)"
+    },
+    {
+      "step": 1812,
+      "section_index": 18,
+      "section_title": "Resources",
+      "chunk_index": 12,
+      "chunk_label": "Resources (Part 13)"
+    },
+    {
+      "step": 1813,
+      "section_index": 18,
+      "section_title": "Resources",
+      "chunk_index": 13,
+      "chunk_label": "Resources (Part 14)"
+    },
+    {
+      "step": 1814,
+      "section_index": 18,
+      "section_title": "Resources",
+      "chunk_index": 14,
+      "chunk_label": "Resources (Part 15)"
+    },
+    {
+      "step": 1815,
+      "section_index": 18,
+      "section_title": "Resources",
+      "chunk_index": 15,
+      "chunk_label": "Resources (Part 16)"
+    },
+    {
+      "step": 1816,
+      "section_index": 18,
+      "section_title": "Resources",
+      "chunk_index": 16,
+      "chunk_label": "Resources (Part 17)"
+    },
+    {
+      "step": 1817,
+      "section_index": 18,
+      "section_title": "Resources",
+      "chunk_index": 17,
+      "chunk_label": "Resources (Part 18)"
+    },
+    {
+      "step": 1818,
+      "section_index": 18,
+      "section_title": "Resources",
+      "chunk_index": 18,
+      "chunk_label": "Resources (Part 19)"
+    },
+    {
+      "step": 1819,
+      "section_index": 18,
+      "section_title": "Resources",
+      "chunk_index": 19,
+      "chunk_label": "Resources (Part 20)"
+    },
+    {
+      "step": 1820,
+      "section_index": 18,
+      "section_title": "Resources",
+      "chunk_index": 20,
+      "chunk_label": "Resources (Part 21)"
+    },
+    {
+      "step": 1821,
+      "section_index": 18,
+      "section_title": "Resources",
+      "chunk_index": 21,
+      "chunk_label": "Resources (Part 22)"
+    },
+    {
+      "step": 1822,
+      "section_index": 18,
+      "section_title": "Resources",
+      "chunk_index": 22,
+      "chunk_label": "Resources (Part 23)"
+    },
+    {
+      "step": 1823,
+      "section_index": 18,
+      "section_title": "Resources",
+      "chunk_index": 23,
+      "chunk_label": "Resources (Part 24)"
+    },
+    {
+      "step": 1824,
+      "section_index": 18,
+      "section_title": "Resources",
+      "chunk_index": 24,
+      "chunk_label": "Resources (Part 25)"
+    },
+    {
+      "step": 1825,
+      "section_index": 18,
+      "section_title": "Resources",
+      "chunk_index": 25,
+      "chunk_label": "Resources (Part 26)"
+    },
+    {
+      "step": 1826,
+      "section_index": 18,
+      "section_title": "Resources",
+      "chunk_index": 26,
+      "chunk_label": "Resources (Part 27)"
+    },
+    {
+      "step": 1827,
+      "section_index": 18,
+      "section_title": "Resources",
+      "chunk_index": 27,
+      "chunk_label": "Resources (Part 28)"
+    },
+    {
+      "step": 1828,
+      "section_index": 18,
+      "section_title": "Resources",
+      "chunk_index": 28,
+      "chunk_label": "Resources (Part 29)"
+    },
+    {
+      "step": 1829,
+      "section_index": 18,
+      "section_title": "Resources",
+      "chunk_index": 29,
+      "chunk_label": "Resources (Part 30)"
+    },
+    {
+      "step": 1830,
+      "section_index": 18,
+      "section_title": "Resources",
+      "chunk_index": 30,
+      "chunk_label": "Resources (Part 31)"
+    },
+    {
+      "step": 1831,
+      "section_index": 18,
+      "section_title": "Resources",
+      "chunk_index": 31,
+      "chunk_label": "Resources (Part 32)"
+    },
+    {
+      "step": 1832,
+      "section_index": 18,
+      "section_title": "Resources",
+      "chunk_index": 32,
+      "chunk_label": "Resources (Part 33)"
+    },
+    {
+      "step": 1833,
+      "section_index": 18,
+      "section_title": "Resources",
+      "chunk_index": 33,
+      "chunk_label": "Resources (Part 34)"
+    },
+    {
+      "step": 1834,
+      "section_index": 18,
+      "section_title": "Resources",
+      "chunk_index": 34,
+      "chunk_label": "Resources (Part 35)"
+    },
+    {
+      "step": 1835,
+      "section_index": 18,
+      "section_title": "Resources",
+      "chunk_index": 35,
+      "chunk_label": "Resources (Part 36)"
+    },
+    {
+      "step": 1836,
+      "section_index": 18,
+      "section_title": "Resources",
+      "chunk_index": 36,
+      "chunk_label": "Resources (Part 37)"
+    },
+    {
+      "step": 1837,
+      "section_index": 18,
+      "section_title": "Resources",
+      "chunk_index": 37,
+      "chunk_label": "Resources (Part 38)"
+    },
+    {
+      "step": 1838,
+      "section_index": 18,
+      "section_title": "Resources",
+      "chunk_index": 38,
+      "chunk_label": "Resources (Part 39)"
+    },
+    {
+      "step": 1839,
+      "section_index": 18,
+      "section_title": "Resources",
+      "chunk_index": 39,
+      "chunk_label": "Resources (Part 40)"
+    },
+    {
+      "step": 1840,
+      "section_index": 18,
+      "section_title": "Resources",
+      "chunk_index": 40,
+      "chunk_label": "Resources (Part 41)"
+    },
+    {
+      "step": 1841,
+      "section_index": 18,
+      "section_title": "Resources",
+      "chunk_index": 41,
+      "chunk_label": "Resources (Part 42)"
+    },
+    {
+      "step": 1842,
+      "section_index": 18,
+      "section_title": "Resources",
+      "chunk_index": 42,
+      "chunk_label": "Resources (Part 43)"
+    },
+    {
+      "step": 1843,
+      "section_index": 18,
+      "section_title": "Resources",
+      "chunk_index": 43,
+      "chunk_label": "Resources (Part 44)"
+    },
+    {
+      "step": 1844,
+      "section_index": 18,
+      "section_title": "Resources",
+      "chunk_index": 44,
+      "chunk_label": "Resources (Part 45)"
+    },
+    {
+      "step": 1845,
+      "section_index": 18,
+      "section_title": "Resources",
+      "chunk_index": 45,
+      "chunk_label": "Resources (Part 46)"
+    },
+    {
+      "step": 1846,
+      "section_index": 18,
+      "section_title": "Resources",
+      "chunk_index": 46,
+      "chunk_label": "Resources (Part 47)"
+    },
+    {
+      "step": 1847,
+      "section_index": 18,
+      "section_title": "Resources",
+      "chunk_index": 47,
+      "chunk_label": "Resources (Part 48)"
+    },
+    {
+      "step": 1848,
+      "section_index": 18,
+      "section_title": "Resources",
+      "chunk_index": 48,
+      "chunk_label": "Resources (Part 49)"
+    },
+    {
+      "step": 1849,
+      "section_index": 18,
+      "section_title": "Resources",
+      "chunk_index": 49,
+      "chunk_label": "Resources (Part 50)"
+    },
+    {
+      "step": 1850,
+      "section_index": 18,
+      "section_title": "Resources",
+      "chunk_index": 50,
+      "chunk_label": "Resources (Part 51)"
+    },
+    {
+      "step": 1851,
+      "section_index": 18,
+      "section_title": "Resources",
+      "chunk_index": 51,
+      "chunk_label": "Resources (Part 52)"
+    }
+  ],
+  "profile": "stem"
+}

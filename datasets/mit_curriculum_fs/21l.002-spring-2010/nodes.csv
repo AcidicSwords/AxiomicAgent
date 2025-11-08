@@ -1,0 +1,5 @@
+id,label,item_id,kind,course_id,section_index,section_slug,section_title,section_chunk_index,week,order,tags,source_path,metrics
+0,The Value of Friendship ,mit21l_002s10_assn01,concept,21l.002-spring-2010,4,resources,Resources,0,4,0,,resources/mit21l_002s10_assn01,
+1,The Duality of Don Quixote’s Character as Shown through  his Attitude towards Dulcinea of El Toboso,mit21l_002s10_assn02,concept,21l.002-spring-2010,4,resources,Resources,0,4,1,,resources/mit21l_002s10_assn02,
+2,Molière’s the Misanthrope: Masking the Truth,mit21l_002s10_assn03,concept,21l.002-spring-2010,4,resources,Resources,0,4,2,,resources/mit21l_002s10_assn03,
+3,Description of Readings,mit21l_002s10_read01,reading,21l.002-spring-2010,4,resources,Resources,0,4,3,,resources/mit21l_002s10_read01,

@@ -1,0 +1,2847 @@
+{
+  "adapter": "curriculum",
+  "course_id": "18.02sc-fall-2010",
+  "title": "18.02sc-fall-2010",
+  "num_items": 758,
+  "num_edges": 757,
+  "step_semantics": "section_chunk",
+  "sections": [
+    {
+      "slug": "1.-vectors-and-matrices",
+      "index": 1,
+      "title": "1. Vectors and Matrices",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "1. Vectors and Matrices (Part 1)",
+          "item_ids": [
+            "1.-vectors-and-matrices-part-a-vectors-determinants-and-planes-session-1-vectors",
+            "1.-vectors-and-matrices-part-a-vectors-determinants-and-planes-session-3-uses-of-the-dot-product-lengths-and-angles",
+            "1.-vectors-and-matrices-part-a-vectors-determinants-and-planes-session-4-vector-components",
+            "1.-vectors-and-matrices-part-a-vectors-determinants-and-planes-session-5-area-and-determinants-in-2d",
+            "1.-vectors-and-matrices-part-a-vectors-determinants-and-planes-session-6-volumes-and-determinants-in-space"
+          ]
+        },
+        {
+          "index": 1,
+          "label": "1. Vectors and Matrices (Part 2)",
+          "item_ids": [
+            "1.-vectors-and-matrices-part-a-vectors-determinants-and-planes-session-7-cross-products",
+            "1.-vectors-and-matrices-part-b-matrices-and-systems-of-equations",
+            "1.-vectors-and-matrices-part-b-matrices-and-systems-of-equations-session-11-matrix-inverses",
+            "1.-vectors-and-matrices-part-b-matrices-and-systems-of-equations-session-12-equations-of-planes-ii",
+            "1.-vectors-and-matrices-part-b-matrices-and-systems-of-equations-session-14-solutions-to-square-systems"
+          ]
+        },
+        {
+          "index": 2,
+          "label": "1. Vectors and Matrices (Part 3)",
+          "item_ids": [
+            "1.-vectors-and-matrices-part-b-matrices-and-systems-of-equations-session-9-matrix-multiplication",
+            "1.-vectors-and-matrices-part-c-parametric-equations-for-curves",
+            "1.-vectors-and-matrices-part-c-parametric-equations-for-curves-session-15-equations-of-lines",
+            "1.-vectors-and-matrices-part-c-parametric-equations-for-curves-session-16-intersection-of-a-line-and-a-plane",
+            "1.-vectors-and-matrices-part-c-parametric-equations-for-curves-session-19-velocity-and-acceleration"
+          ]
+        },
+        {
+          "index": 3,
+          "label": "1. Vectors and Matrices (Part 4)",
+          "item_ids": [
+            "1.-vectors-and-matrices-part-c-parametric-equations-for-curves-session-20-velocity-and-arc-length",
+            "1.-vectors-and-matrices-part-b-matrices-and-systems-of-equations-session-13-linear-systems-and-planes",
+            "1.-vectors-and-matrices-part-c-parametric-equations-for-curves-session-18-point-cusp-on-cycloid",
+            "1.-vectors-and-matrices-part-c-parametric-equations-for-curves-session-21-keplers-second-law",
+            "1.-vectors-and-matrices-part-a-vectors-determinants-and-planes"
+          ]
+        },
+        {
+          "index": 4,
+          "label": "1. Vectors and Matrices (Part 5)",
+          "item_ids": [
+            "1.-vectors-and-matrices-part-a-vectors-determinants-and-planes-problem-set-1",
+            "1.-vectors-and-matrices-part-b-matrices-and-systems-of-equations-problem-set-2",
+            "1.-vectors-and-matrices-part-c-parametric-equations-for-curves-problem-set-3",
+            "1.-vectors-and-matrices-exam-1",
+            "1.-vectors-and-matrices-exam-1-exam"
+          ]
+        },
+        {
+          "index": 5,
+          "label": "1. Vectors and Matrices (Part 6)",
+          "item_ids": [
+            "1.-vectors-and-matrices-exam-1-practice-exam",
+            "1.-vectors-and-matrices-exam-1-session-22-review-of-topics",
+            "1.-vectors-and-matrices-exam-1-session-23-review-of-problems",
+            "1.-vectors-and-matrices-part-a-vectors-determinants-and-planes-session-2-dot-products",
+            "1.-vectors-and-matrices-part-a-vectors-determinants-and-planes-session-8-equations-of-planes"
+          ]
+        },
+        {
+          "index": 6,
+          "label": "1. Vectors and Matrices (Part 7)",
+          "item_ids": [
+            "1.-vectors-and-matrices-part-b-matrices-and-systems-of-equations-session-10-meaning-of-matrix-multiplication",
+            "1.-vectors-and-matrices-part-c-parametric-equations-for-curves-session-17-general-parametric-equations-the-cycloid"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "2.-partial-derivatives",
+      "index": 2,
+      "title": " 2. Partial Derivatives",
+      "chunks": [
+        {
+          "index": 0,
+          "label": " 2. Partial Derivatives (Part 1)",
+          "item_ids": [
+            "2.-partial-derivatives-part-a-functions-of-two-variables-tangent-approximation-and-optimization-session-24-functions-of-two-variables-graphs",
+            "2.-partial-derivatives-part-a-functions-of-two-variables-tangent-approximation-and-optimization-session-25-level-curves-and-contour-plots",
+            "2.-partial-derivatives-part-a-functions-of-two-variables-tangent-approximation-and-optimization-session-26-partial-derivatives",
+            "2.-partial-derivatives-part-a-functions-of-two-variables-tangent-approximation-and-optimization-session-27-approximation-formula",
+            "2.-partial-derivatives-part-a-functions-of-two-variables-tangent-approximation-and-optimization-session-29-least-squares"
+          ]
+        },
+        {
+          "index": 1,
+          "label": " 2. Partial Derivatives (Part 2)",
+          "item_ids": [
+            "2.-partial-derivatives-part-a-functions-of-two-variables-tangent-approximation-and-optimization-session-30-second-derivative-test",
+            "2.-partial-derivatives-part-a-functions-of-two-variables-tangent-approximation-and-optimization-session-31-example",
+            "2.-partial-derivatives-part-b-chain-rule-gradient-and-directional-derivatives-session-34-the-chain-rule-with-more-variables",
+            "2.-partial-derivatives-part-b-chain-rule-gradient-and-directional-derivatives-session-37-example",
+            "2.-partial-derivatives-part-b-chain-rule-gradient-and-directional-derivatives-session-38-directional-derivatives"
+          ]
+        },
+        {
+          "index": 2,
+          "label": " 2. Partial Derivatives (Part 3)",
+          "item_ids": [
+            "2.-partial-derivatives-part-c-lagrange-multipliers-and-constrained-differentials-session-39-statement-of-lagrange-multipliers-and-example",
+            "2.-partial-derivatives-part-c-lagrange-multipliers-and-constrained-differentials-session-41-advanced-example",
+            "2.-partial-derivatives-part-c-lagrange-multipliers-and-constrained-differentials-session-43-clearer-notation",
+            "2.-partial-derivatives-part-c-lagrange-multipliers-and-constrained-differentials-session-44-example",
+            "2.-partial-derivatives-part-c-lagrange-multipliers-and-constrained-differentials-session-40-proof-of-lagrange-multipliers"
+          ]
+        },
+        {
+          "index": 3,
+          "label": " 2. Partial Derivatives (Part 4)",
+          "item_ids": [
+            "2.-partial-derivatives-part-a-functions-of-two-variables-tangent-approximation-and-optimization-problem-set-4",
+            "2.-partial-derivatives-part-b-chain-rule-gradient-and-directional-derivatives-problem-set-5",
+            "2.-partial-derivatives-part-c-lagrange-multipliers-and-constrained-differentials-problem-set-6",
+            "2.-partial-derivatives-exam-2",
+            "2.-partial-derivatives-exam-2-exam-materials"
+          ]
+        },
+        {
+          "index": 4,
+          "label": " 2. Partial Derivatives (Part 5)",
+          "item_ids": [
+            "2.-partial-derivatives-exam-2-practice-exam",
+            "2.-partial-derivatives-exam-2-session-45-review-of-topics",
+            "2.-partial-derivatives-exam-2-session-46-review-of-problems",
+            "2.-partial-derivatives-part-a-functions-of-two-variables-tangent-approximation-and-optimization",
+            "2.-partial-derivatives-part-a-functions-of-two-variables-tangent-approximation-and-optimization-session-28-optimization-problems"
+          ]
+        },
+        {
+          "index": 5,
+          "label": " 2. Partial Derivatives (Part 6)",
+          "item_ids": [
+            "2.-partial-derivatives-part-b-chain-rule-gradient-and-directional-derivatives",
+            "2.-partial-derivatives-part-b-chain-rule-gradient-and-directional-derivatives-session-32-total-differentials-and-the-chain-rule",
+            "2.-partial-derivatives-part-b-chain-rule-gradient-and-directional-derivatives-session-33-examples",
+            "2.-partial-derivatives-part-b-chain-rule-gradient-and-directional-derivatives-session-35-gradient-definition-perpendicular-to-level-curves",
+            "2.-partial-derivatives-part-b-chain-rule-gradient-and-directional-derivatives-session-36-proof"
+          ]
+        },
+        {
+          "index": 6,
+          "label": " 2. Partial Derivatives (Part 7)",
+          "item_ids": [
+            "2.-partial-derivatives-part-c-lagrange-multipliers-and-constrained-differentials",
+            "2.-partial-derivatives-part-c-lagrange-multipliers-and-constrained-differentials-session-42-constrained-differentials"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "3.-double-integrals-and-line-integrals-in-the-plane",
+      "index": 3,
+      "title": "3. Double Integrals and Line Integrals in the Plane",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "3. Double Integrals and Line Integrals in the Plane (Part 1)",
+          "item_ids": [
+            "3.-double-integrals-and-line-integrals-in-the-plane-part-b-vector-fields-and-line-integrals-session-61-conservative-fields-path-independence-exact-differentials",
+            "3.-double-integrals-and-line-integrals-in-the-plane-part-a-double-integrals-session-48-examples-of-double-integration",
+            "3.-double-integrals-and-line-integrals-in-the-plane-part-a-double-integrals-session-49-exchanging-the-order-of-integration",
+            "3.-double-integrals-and-line-integrals-in-the-plane-part-a-double-integrals-session-50-double-integrals-in-polar-coordinates",
+            "3.-double-integrals-and-line-integrals-in-the-plane-part-a-double-integrals-session-52-applications-moment-of-inertia"
+          ]
+        },
+        {
+          "index": 1,
+          "label": "3. Double Integrals and Line Integrals in the Plane (Part 2)",
+          "item_ids": [
+            "3.-double-integrals-and-line-integrals-in-the-plane-part-a-double-integrals-session-53-change-of-variables",
+            "3.-double-integrals-and-line-integrals-in-the-plane-part-a-double-integrals-session-54-example-polar-coordinates",
+            "3.-double-integrals-and-line-integrals-in-the-plane-part-a-double-integrals-session-55-example",
+            "3.-double-integrals-and-line-integrals-in-the-plane-part-b-vector-fields-and-line-integrals-session-57-work-and-line-integrals",
+            "3.-double-integrals-and-line-integrals-in-the-plane-part-b-vector-fields-and-line-integrals-session-58-geometric-approach"
+          ]
+        },
+        {
+          "index": 2,
+          "label": "3. Double Integrals and Line Integrals in the Plane (Part 3)",
+          "item_ids": [
+            "3.-double-integrals-and-line-integrals-in-the-plane-part-b-vector-fields-and-line-integrals-session-60-fundamental-theorem-for-line-integrals",
+            "3.-double-integrals-and-line-integrals-in-the-plane-part-b-vector-fields-and-line-integrals-session-62-gradient-fields",
+            "3.-double-integrals-and-line-integrals-in-the-plane-part-b-vector-fields-and-line-integrals-session-63-potential-functions",
+            "3.-double-integrals-and-line-integrals-in-the-plane-part-c-greens-theorem-session-65-greens-theorem",
+            "3.-double-integrals-and-line-integrals-in-the-plane-part-c-greens-theorem-session-68-planimeter-greens-theorem-and-area"
+          ]
+        },
+        {
+          "index": 3,
+          "label": "3. Double Integrals and Line Integrals in the Plane (Part 4)",
+          "item_ids": [
+            "3.-double-integrals-and-line-integrals-in-the-plane-part-c-greens-theorem-session-69-flux-in-2d",
+            "3.-double-integrals-and-line-integrals-in-the-plane-part-c-greens-theorem-session-70-normal-form-of-greens-theorem",
+            "3.-double-integrals-and-line-integrals-in-the-plane-part-c-greens-theorem-session-71-extended-greens-theorem-boundaries-with-multiple-pieces",
+            "3.-double-integrals-and-line-integrals-in-the-plane-part-c-greens-theorem-session-72-simply-connected-regions-and-conservative-fields",
+            "3.-double-integrals-and-line-integrals-in-the-plane-part-b-vector-fields-and-line-integrals-session-64-curl"
+          ]
+        },
+        {
+          "index": 4,
+          "label": "3. Double Integrals and Line Integrals in the Plane (Part 5)",
+          "item_ids": [
+            "3.-double-integrals-and-line-integrals-in-the-plane-part-c-greens-theorem-session-66-curl-f-equals-0-implies-conservative",
+            "3.-double-integrals-and-line-integrals-in-the-plane-part-c-greens-theorem-session-67-proof-of-greens-theorem",
+            "3.-double-integrals-and-line-integrals-in-the-plane-part-a-double-integrals-problem-set-7",
+            "3.-double-integrals-and-line-integrals-in-the-plane-part-b-vector-fields-and-line-integrals-problem-set-8",
+            "3.-double-integrals-and-line-integrals-in-the-plane-part-c-greens-theorem-problem-set-9"
+          ]
+        },
+        {
+          "index": 5,
+          "label": "3. Double Integrals and Line Integrals in the Plane (Part 6)",
+          "item_ids": [
+            "3.-double-integrals-and-line-integrals-in-the-plane-exam-3",
+            "3.-double-integrals-and-line-integrals-in-the-plane-exam-3-exam",
+            "3.-double-integrals-and-line-integrals-in-the-plane-exam-3-practice-exam",
+            "3.-double-integrals-and-line-integrals-in-the-plane-exam-3-session-73-exam-review",
+            "3.-double-integrals-and-line-integrals-in-the-plane-part-a-double-integrals"
+          ]
+        },
+        {
+          "index": 6,
+          "label": "3. Double Integrals and Line Integrals in the Plane (Part 7)",
+          "item_ids": [
+            "3.-double-integrals-and-line-integrals-in-the-plane-part-a-double-integrals-session-47-definition-of-double-integration",
+            "3.-double-integrals-and-line-integrals-in-the-plane-part-a-double-integrals-session-51-applications-mass-and-average-value",
+            "3.-double-integrals-and-line-integrals-in-the-plane-part-b-vector-fields-and-line-integrals",
+            "3.-double-integrals-and-line-integrals-in-the-plane-part-b-vector-fields-and-line-integrals-session-56-vector-fields",
+            "3.-double-integrals-and-line-integrals-in-the-plane-part-b-vector-fields-and-line-integrals-session-59-example-line-integrals-for-work"
+          ]
+        },
+        {
+          "index": 7,
+          "label": "3. Double Integrals and Line Integrals in the Plane (Part 8)",
+          "item_ids": [
+            "3.-double-integrals-and-line-integrals-in-the-plane-part-c-greens-theorem"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "4.-triple-integrals-and-surface-integrals-in-3-space",
+      "index": 4,
+      "title": "4. Triple Integrals and Surface Integrals in 3-Space",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "4. Triple Integrals and Surface Integrals in 3-Space (Part 1)",
+          "item_ids": [
+            "4.-triple-integrals-and-surface-integrals-in-3-space-part-b-flux-and-the-divergence-theorem-session-83-other-ways-to-find-nds",
+            "4.-triple-integrals-and-surface-integrals-in-3-space-part-c-line-integrals-and-stokes-theorem-session-96-summary-of-multiple-integration",
+            "4.-triple-integrals-and-surface-integrals-in-3-space-physics-applications",
+            "4.-triple-integrals-and-surface-integrals-in-3-space-physics-applications-session-97-curl-and-physics",
+            "4.-triple-integrals-and-surface-integrals-in-3-space-part-a-triple-integrals-session-74-triple-integrals-rectangular-and-cylindrical-coordinates"
+          ]
+        },
+        {
+          "index": 1,
+          "label": "4. Triple Integrals and Surface Integrals in 3-Space (Part 2)",
+          "item_ids": [
+            "4.-triple-integrals-and-surface-integrals-in-3-space-part-a-triple-integrals-session-75-applications-and-examples",
+            "4.-triple-integrals-and-surface-integrals-in-3-space-part-a-triple-integrals-session-77-triple-integrals-in-spherical-coordinates",
+            "4.-triple-integrals-and-surface-integrals-in-3-space-part-a-triple-integrals-session-78-applications-gravitational-attraction",
+            "4.-triple-integrals-and-surface-integrals-in-3-space-part-b-flux-and-the-divergence-theorem-session-80-flux-through-a-surface",
+            "4.-triple-integrals-and-surface-integrals-in-3-space-part-b-flux-and-the-divergence-theorem-session-81-calculating-flux-finding-nds"
+          ]
+        },
+        {
+          "index": 2,
+          "label": "4. Triple Integrals and Surface Integrals in 3-Space (Part 3)",
+          "item_ids": [
+            "4.-triple-integrals-and-surface-integrals-in-3-space-part-b-flux-and-the-divergence-theorem-session-84-divergence-theorem",
+            "4.-triple-integrals-and-surface-integrals-in-3-space-part-b-flux-and-the-divergence-theorem-session-85-physical-meaning-of-flux-del-notation",
+            "4.-triple-integrals-and-surface-integrals-in-3-space-part-c-line-integrals-and-stokes-theorem-session-88-line-integrals-in-space",
+            "4.-triple-integrals-and-surface-integrals-in-3-space-part-c-line-integrals-and-stokes-theorem-session-90-curl-in-3d",
+            "4.-triple-integrals-and-surface-integrals-in-3-space-part-c-line-integrals-and-stokes-theorem-session-91-stokes-theorem"
+          ]
+        },
+        {
+          "index": 3,
+          "label": "4. Triple Integrals and Surface Integrals in 3-Space (Part 4)",
+          "item_ids": [
+            "4.-triple-integrals-and-surface-integrals-in-3-space-part-c-line-integrals-and-stokes-theorem-session-93-example",
+            "4.-triple-integrals-and-surface-integrals-in-3-space-part-c-line-integrals-and-stokes-theorem-session-94-simply-connected-regions-topology",
+            "4.-triple-integrals-and-surface-integrals-in-3-space-part-c-line-integrals-and-stokes-theorem-session-95-stokes-theorem-and-surface-independence",
+            "4.-triple-integrals-and-surface-integrals-in-3-space-part-b-flux-and-the-divergence-theorem-session-86-proof-of-the-divergence-theorem",
+            "4.-triple-integrals-and-surface-integrals-in-3-space-part-b-flux-and-the-divergence-theorem-session-87-diffusion-equation"
+          ]
+        },
+        {
+          "index": 4,
+          "label": "4. Triple Integrals and Surface Integrals in 3-Space (Part 5)",
+          "item_ids": [
+            "4.-triple-integrals-and-surface-integrals-in-3-space-part-c-line-integrals-and-stokes-theorem-session-92-proof-of-stokes-theorem",
+            "4.-triple-integrals-and-surface-integrals-in-3-space-physics-applications-session-98-maxwells-equations",
+            "4.-triple-integrals-and-surface-integrals-in-3-space-part-a-triple-integrals-problem-set-10",
+            "4.-triple-integrals-and-surface-integrals-in-3-space-part-b-flux-and-the-divergence-theorem",
+            "4.-triple-integrals-and-surface-integrals-in-3-space-part-b-flux-and-the-divergence-theorem-problem-set-11"
+          ]
+        },
+        {
+          "index": 5,
+          "label": "4. Triple Integrals and Surface Integrals in 3-Space (Part 6)",
+          "item_ids": [
+            "4.-triple-integrals-and-surface-integrals-in-3-space-part-c-line-integrals-and-stokes-theorem-problem-set-12",
+            "4.-triple-integrals-and-surface-integrals-in-3-space-exam-4",
+            "4.-triple-integrals-and-surface-integrals-in-3-space-exam-4-exam",
+            "4.-triple-integrals-and-surface-integrals-in-3-space-exam-4-practice-exam",
+            "4.-triple-integrals-and-surface-integrals-in-3-space-part-a-triple-integrals"
+          ]
+        },
+        {
+          "index": 6,
+          "label": "4. Triple Integrals and Surface Integrals in 3-Space (Part 7)",
+          "item_ids": [
+            "4.-triple-integrals-and-surface-integrals-in-3-space-part-a-triple-integrals-session-76-spherical-coordinates",
+            "4.-triple-integrals-and-surface-integrals-in-3-space-part-b-flux-and-the-divergence-theorem-session-79-vector-fields-in-space",
+            "4.-triple-integrals-and-surface-integrals-in-3-space-part-b-flux-and-the-divergence-theorem-session-82-nds-for-a-surface-z-f-x-y",
+            "4.-triple-integrals-and-surface-integrals-in-3-space-part-c-line-integrals-and-stokes-theorem",
+            "4.-triple-integrals-and-surface-integrals-in-3-space-part-c-line-integrals-and-stokes-theorem-session-89-gradient-fields-and-potential-functions"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "final-exam-1",
+      "index": 5,
+      "title": "Final Exam",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "Final Exam (Part 1)",
+          "item_ids": [
+            "final-exam-1-final-exam",
+            "final-exam-1-practice-final-exam",
+            "final-exam-1-review",
+            "final-exam-1-review-session-100-unit-2-review",
+            "final-exam-1-review-session-101-unit-3-review"
+          ]
+        },
+        {
+          "index": 1,
+          "label": "Final Exam (Part 2)",
+          "item_ids": [
+            "final-exam-1-review-session-102-unit-4-review",
+            "final-exam-1-review-session-99-unit-1-review"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "syllabus",
+      "index": 6,
+      "title": "Syllabus",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "Syllabus",
+          "item_ids": []
+        }
+      ]
+    },
+    {
+      "slug": "resources",
+      "index": 7,
+      "title": "Resources",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "Resources (Part 1)",
+          "item_ids": [
+            "application-of-greens-theorem",
+            "area-of-a-parallelogram",
+            "area-using-cross-product",
+            "average-distance-on-a-sphere",
+            "average-height"
+          ]
+        },
+        {
+          "index": 1,
+          "label": "Resources (Part 2)",
+          "item_ids": [
+            "change-of-variables",
+            "change-of-variables-1",
+            "changing-the-order-of-integration",
+            "clip-1-cross-products",
+            "clip-1-double-integrals-jacobian-triple-integrals"
+          ]
+        },
+        {
+          "index": 2,
+          "label": "Resources (Part 3)",
+          "item_ids": [
+            "clip-1-functions-of-2-variables-partial-derivatives",
+            "clip-1-vectors-equations-of-lines-curves-planes",
+            "clip-1-work-line-integrals-curl",
+            "clip-2-applications",
+            "clip-2-matrices-determinants-linear-systems"
+          ]
+        },
+        {
+          "index": 3,
+          "label": "Resources (Part 4)",
+          "item_ids": [
+            "clip-2-max-min-problems-lagrange-multipliers",
+            "clip-2-more-on-cross-products",
+            "clip-2-second-derivative-test",
+            "clip-2-stokes-greens-divergence-theorems",
+            "clip-an-important-non-conservative-field"
+          ]
+        },
+        {
+          "index": 4,
+          "label": "Resources (Part 5)",
+          "item_ids": [
+            "clip-applications-mass-and-average-value",
+            "clip-applications-moment-of-inertia",
+            "clip-approximation-formula",
+            "clip-area-and-determinants-in-2d",
+            "clip-calculating-flux"
+          ]
+        },
+        {
+          "index": 5,
+          "label": "Resources (Part 6)",
+          "item_ids": [
+            "clip-calculating-flux-finding-nds",
+            "clip-chain-rule-with-more-variables",
+            "clip-change-of-variables",
+            "clip-clearer-notation",
+            "clip-conservative-fields-path-independence-exact"
+          ]
+        },
+        {
+          "index": 6,
+          "label": "Resources (Part 7)",
+          "item_ids": [
+            "clip-constrained-differentials",
+            "clip-curl",
+            "clip-curl-and-physics",
+            "clip-curl-f-0-implies-conservative",
+            "clip-curl-in-3d"
+          ]
+        },
+        {
+          "index": 7,
+          "label": "Resources (Part 8)",
+          "item_ids": [
+            "clip-cylindrical-coordinates",
+            "clip-definition-of-double-integration",
+            "clip-definition-perpendicular-to-level-curves",
+            "clip-diffusion-equation",
+            "clip-directional-derivatives"
+          ]
+        },
+        {
+          "index": 8,
+          "label": "Resources (Part 9)",
+          "item_ids": [
+            "clip-divergence-theorem",
+            "clip-dot-products-1",
+            "clip-double-integrals-in-polar-coordinates",
+            "clip-equations-of-lines",
+            "clip-equations-of-planes"
+          ]
+        },
+        {
+          "index": 9,
+          "label": "Resources (Part 10)",
+          "item_ids": [
+            "clip-equations-of-planes-1",
+            "clip-exchanging-the-order-of-integration",
+            "clip-extended-greens-theorem",
+            "clip-flux-across-a-curve",
+            "clip-flux-through-a-surface"
+          ]
+        },
+        {
+          "index": 10,
+          "label": "Resources (Part 11)",
+          "item_ids": [
+            "clip-functions-of-two-variables-graphs",
+            "clip-fundamental-theorem",
+            "clip-general-parametric-equations-and-the-cycloid",
+            "clip-geometric-approach",
+            "clip-gradient-fields"
+          ]
+        },
+        {
+          "index": 11,
+          "label": "Resources (Part 12)",
+          "item_ids": [
+            "clip-gradient-fields-and-potential-functions",
+            "clip-gravitational-attraction",
+            "clip-greens-theorem",
+            "clip-introduction",
+            "clip-introduction-and-definition-of-divergence"
+          ]
+        },
+        {
+          "index": 12,
+          "label": "Resources (Part 13)",
+          "item_ids": [
+            "clip-keplers-second-law",
+            "clip-least-squares",
+            "clip-level-curves-and-contour-plots",
+            "clip-line-integrals",
+            "clip-line-integrals-in-space"
+          ]
+        },
+        {
+          "index": 13,
+          "label": "Resources (Part 14)",
+          "item_ids": [
+            "clip-linear-systems-and-planes",
+            "clip-matrix-inverses",
+            "clip-meaning-of-matrix-multiplication",
+            "clip-nds-for-a-surface-z-f-x-y",
+            "clip-optimization-problem"
+          ]
+        },
+        {
+          "index": 14,
+          "label": "Resources (Part 15)",
+          "item_ids": [
+            "clip-other-ways-to-find-nds",
+            "clip-partial-derivatives",
+            "clip-physical-meaning-of-flux-del-notation",
+            "clip-planimeter-greens-theorem-and-area",
+            "clip-point-cusp-of-a-cycloid"
+          ]
+        },
+        {
+          "index": 15,
+          "label": "Resources (Part 16)",
+          "item_ids": [
+            "clip-polar-coordinates",
+            "clip-potential-functions",
+            "clip-proof",
+            "clip-proof-of-greens-theorem",
+            "clip-proof-of-lagrange-multipliers"
+          ]
+        },
+        {
+          "index": 16,
+          "label": "Resources (Part 17)",
+          "item_ids": [
+            "clip-proof-of-stokes-theorem",
+            "clip-proof-of-the-divergence-theorem",
+            "clip-review-of-problems",
+            "clip-review-of-problems-1",
+            "clip-review-of-topics"
+          ]
+        },
+        {
+          "index": 17,
+          "label": "Resources (Part 18)",
+          "item_ids": [
+            "clip-review-of-topics-1",
+            "clip-simply-connected-regions-and-conservative-fields",
+            "clip-simply-connected-regions-topology",
+            "clip-solutions-to-square-systems",
+            "clip-spherical-coordinates"
+          ]
+        },
+        {
+          "index": 18,
+          "label": "Resources (Part 19)",
+          "item_ids": [
+            "clip-stokes-theorem",
+            "clip-stokes-theorem-and-surface-independence",
+            "clip-summary-of-multiple-integration",
+            "clip-total-differentials-and-chain-rule",
+            "clip-triple-integrals"
+          ]
+        },
+        {
+          "index": 19,
+          "label": "Resources (Part 20)",
+          "item_ids": [
+            "clip-triple-integrals-in-spherical-coordinates",
+            "clip-vector-fields",
+            "clip-vector-fields-in-space",
+            "clip-vectors",
+            "clip-velocity-and-acceleration"
+          ]
+        },
+        {
+          "index": 20,
+          "label": "Resources (Part 21)",
+          "item_ids": [
+            "clip-velocity-and-arc-length",
+            "clip-volumes-and-determinants-in-space",
+            "clip-work-and-line-integrals",
+            "components-of-a-vector",
+            "consequences-of-stokes-theorem"
+          ]
+        },
+        {
+          "index": 21,
+          "label": "Resources (Part 22)",
+          "item_ids": [
+            "conservative-fields-and-exact-differentials",
+            "coordinate-free-proofs-centroid-of-a-triangle",
+            "copy2_of_clip-lengths-and-angles",
+            "copy2_of_clip-matrix-multiplication",
+            "copy2_of_clip-vector-components"
+          ]
+        },
+        {
+          "index": 22,
+          "label": "Resources (Part 23)",
+          "item_ids": [
+            "del-and-the-product-rule",
+            "determinants",
+            "differentiating-a-vector-valued-function",
+            "distance-of-a-point-to-a-plane",
+            "domains-of-vector-fields"
+          ]
+        },
+        {
+          "index": 23,
+          "label": "Resources (Part 24)",
+          "item_ids": [
+            "dot-products-and-angles",
+            "equations-of-planes",
+            "extended-gauss-theorem",
+            "extended-greens-theorem",
+            "extended-stokes-theorem"
+          ]
+        },
+        {
+          "index": 24,
+          "label": "Resources (Part 25)",
+          "item_ids": [
+            "flux",
+            "flux-across-a-curve",
+            "flux-and-the-divergence-theorem",
+            "flux-through-a-square",
+            "flux-through-a-square-1"
+          ]
+        },
+        {
+          "index": 25,
+          "label": "Resources (Part 26)",
+          "item_ids": [
+            "flux-through-easy-surfaces",
+            "fundamental-theorem-of-line-integrals",
+            "gradient-and-directional-derivative",
+            "gradients-composition",
+            "graphing-surfaces"
+          ]
+        },
+        {
+          "index": 26,
+          "label": "Resources (Part 27)",
+          "item_ids": [
+            "gravity-and-a-half-sphere",
+            "greens-theorem-an-off-center-circle",
+            "greens-theorem-area-under-an-arch",
+            "greens-theorem-in-normal-form",
+            "integral-of-exp-x-sup-2-sup"
+          ]
+        },
+        {
+          "index": 27,
+          "label": "Resources (Part 28)",
+          "item_ids": [
+            "integrals-with-density",
+            "integration-in-polar-coordinates",
+            "lagrange-multipliers",
+            "lagrange-multipliers-3-variables",
+            "least-squares"
+          ]
+        },
+        {
+          "index": 28,
+          "label": "Resources (Part 29)",
+          "item_ids": [
+            "level-curves",
+            "level-curves-and-critical-points",
+            "line-integral-on-a-helix",
+            "line-integrals-by-geometric-reasoning",
+            "line-integrals-parametrization-independence"
+          ]
+        },
+        {
+          "index": 29,
+          "label": "Resources (Part 30)",
+          "item_ids": [
+            "line-integrals-path-dependence",
+            "matrix-multiplication-practice",
+            "max-min",
+            "mit18_02sc_mnotes_cv4",
+            "mit18_02sc_mnotes_d2"
+          ]
+        },
+        {
+          "index": 30,
+          "label": "Resources (Part 31)",
+          "item_ids": [
+            "mit18_02sc_mnotes_i1",
+            "mit18_02sc_mnotes_i3",
+            "mit18_02sc_mnotes_k",
+            "mit18_02sc_mnotes_ls",
+            "mit18_02sc_mnotes_m3"
+          ]
+        },
+        {
+          "index": 31,
+          "label": "Resources (Part 32)",
+          "item_ids": [
+            "mit18_02sc_mnotes_n1_2",
+            "mit18_02sc_mnotes_p",
+            "mit18_02sc_mnotes_p-1",
+            "mit18_02sc_mnotes_sd",
+            "mit18_02sc_mnotes_ta1"
+          ]
+        },
+        {
+          "index": 32,
+          "label": "Resources (Part 33)",
+          "item_ids": [
+            "mit18_02sc_mnotes_v10-2",
+            "mit18_02sc_mnotes_v11",
+            "mit18_02sc_mnotes_v12",
+            "mit18_02sc_mnotes_v13-1to2",
+            "mit18_02sc_mnotes_v13-3"
+          ]
+        },
+        {
+          "index": 33,
+          "label": "Resources (Part 34)",
+          "item_ids": [
+            "mit18_02sc_mnotes_v14",
+            "mit18_02sc_mnotes_v15-1",
+            "mit18_02sc_mnotes_v15-2to3",
+            "mit18_02sc_mnotes_v4-3",
+            "mit18_02sc_mnotes_v5"
+          ]
+        },
+        {
+          "index": 34,
+          "label": "Resources (Part 35)",
+          "item_ids": [
+            "mit18_02sc_mnotes_v9-1",
+            "mit18_02sc_mnotes_v9-3to4",
+            "mit18_02sc_notes_0",
+            "mit18_02sc_notes_1",
+            "mit18_02sc_notes_10"
+          ]
+        },
+        {
+          "index": 35,
+          "label": "Resources (Part 36)",
+          "item_ids": [
+            "mit18_02sc_notes_12",
+            "mit18_02sc_notes_13",
+            "mit18_02sc_notes_14",
+            "mit18_02sc_notes_19",
+            "mit18_02sc_notes_22"
+          ]
+        },
+        {
+          "index": 36,
+          "label": "Resources (Part 37)",
+          "item_ids": [
+            "mit18_02sc_notes_26",
+            "mit18_02sc_notes_28",
+            "mit18_02sc_notes_30",
+            "mit18_02sc_notes_31",
+            "mit18_02sc_notes_32"
+          ]
+        },
+        {
+          "index": 37,
+          "label": "Resources (Part 38)",
+          "item_ids": [
+            "mit18_02sc_notes_33",
+            "mit18_02sc_notes_67",
+            "mit18_02sc_notes_7",
+            "mit18_02sc_notes_8",
+            "mit18_02sc_pb_10_comb"
+          ]
+        },
+        {
+          "index": 38,
+          "label": "Resources (Part 39)",
+          "item_ids": [
+            "mit18_02sc_pb_10_quest",
+            "mit18_02sc_pb_11_comb",
+            "mit18_02sc_pb_11_quest",
+            "mit18_02sc_pb_12_comb",
+            "mit18_02sc_pb_12_quest"
+          ]
+        },
+        {
+          "index": 39,
+          "label": "Resources (Part 40)",
+          "item_ids": [
+            "mit18_02sc_pb_13_comb",
+            "mit18_02sc_pb_13_quest",
+            "mit18_02sc_pb_14_comb",
+            "mit18_02sc_pb_14_quest",
+            "mit18_02sc_pb_15_comb"
+          ]
+        },
+        {
+          "index": 40,
+          "label": "Resources (Part 41)",
+          "item_ids": [
+            "mit18_02sc_pb_15_quest",
+            "mit18_02sc_pb_16_comb",
+            "mit18_02sc_pb_16_quest",
+            "mit18_02sc_pb_17_comb",
+            "mit18_02sc_pb_17_quest"
+          ]
+        },
+        {
+          "index": 41,
+          "label": "Resources (Part 42)",
+          "item_ids": [
+            "mit18_02sc_pb_19_comb",
+            "mit18_02sc_pb_19_quest",
+            "mit18_02sc_pb_1_comb",
+            "mit18_02sc_pb_1_quest",
+            "mit18_02sc_pb_20_comb"
+          ]
+        },
+        {
+          "index": 42,
+          "label": "Resources (Part 43)",
+          "item_ids": [
+            "mit18_02sc_pb_20_quest",
+            "mit18_02sc_pb_21_comb",
+            "mit18_02sc_pb_21_quest",
+            "mit18_02sc_pb_22_comb",
+            "mit18_02sc_pb_22_quest"
+          ]
+        },
+        {
+          "index": 43,
+          "label": "Resources (Part 44)",
+          "item_ids": [
+            "mit18_02sc_pb_23_comb",
+            "mit18_02sc_pb_23_quest",
+            "mit18_02sc_pb_24_comb",
+            "mit18_02sc_pb_24_quest",
+            "mit18_02sc_pb_25_comb"
+          ]
+        },
+        {
+          "index": 44,
+          "label": "Resources (Part 45)",
+          "item_ids": [
+            "mit18_02sc_pb_25_quest",
+            "mit18_02sc_pb_26_comb",
+            "mit18_02sc_pb_26_quest",
+            "mit18_02sc_pb_27_comb",
+            "mit18_02sc_pb_27_quest"
+          ]
+        },
+        {
+          "index": 45,
+          "label": "Resources (Part 46)",
+          "item_ids": [
+            "mit18_02sc_pb_28_comb",
+            "mit18_02sc_pb_28_quest",
+            "mit18_02sc_pb_29_comb",
+            "mit18_02sc_pb_29_quest",
+            "mit18_02sc_pb_2_comb"
+          ]
+        },
+        {
+          "index": 46,
+          "label": "Resources (Part 47)",
+          "item_ids": [
+            "mit18_02sc_pb_2_quest",
+            "mit18_02sc_pb_30_comb",
+            "mit18_02sc_pb_30_quest",
+            "mit18_02sc_pb_32_comb",
+            "mit18_02sc_pb_32_quest"
+          ]
+        },
+        {
+          "index": 47,
+          "label": "Resources (Part 48)",
+          "item_ids": [
+            "mit18_02sc_pb_35_comb",
+            "mit18_02sc_pb_35_quest",
+            "mit18_02sc_pb_36_comb",
+            "mit18_02sc_pb_36_quest",
+            "mit18_02sc_pb_37_comb"
+          ]
+        },
+        {
+          "index": 48,
+          "label": "Resources (Part 49)",
+          "item_ids": [
+            "mit18_02sc_pb_37_quest",
+            "mit18_02sc_pb_38_comb",
+            "mit18_02sc_pb_39_comb",
+            "mit18_02sc_pb_39_quest",
+            "mit18_02sc_pb_3_comb"
+          ]
+        },
+        {
+          "index": 49,
+          "label": "Resources (Part 50)",
+          "item_ids": [
+            "mit18_02sc_pb_3_quest",
+            "mit18_02sc_pb_40_comb",
+            "mit18_02sc_pb_40_quest",
+            "mit18_02sc_pb_41_comb",
+            "mit18_02sc_pb_41_quest"
+          ]
+        },
+        {
+          "index": 50,
+          "label": "Resources (Part 51)",
+          "item_ids": [
+            "mit18_02sc_pb_42_comb",
+            "mit18_02sc_pb_42_quest",
+            "mit18_02sc_pb_43_comb",
+            "mit18_02sc_pb_43_quest",
+            "mit18_02sc_pb_44_comb"
+          ]
+        },
+        {
+          "index": 51,
+          "label": "Resources (Part 52)",
+          "item_ids": [
+            "mit18_02sc_pb_44_quest",
+            "mit18_02sc_pb_45_comb",
+            "mit18_02sc_pb_45_quest",
+            "mit18_02sc_pb_46_comb",
+            "mit18_02sc_pb_46_quest"
+          ]
+        },
+        {
+          "index": 52,
+          "label": "Resources (Part 53)",
+          "item_ids": [
+            "mit18_02sc_pb_47_comb",
+            "mit18_02sc_pb_47_quest",
+            "mit18_02sc_pb_48_comb",
+            "mit18_02sc_pb_48_quest",
+            "mit18_02sc_pb_49_comb"
+          ]
+        },
+        {
+          "index": 53,
+          "label": "Resources (Part 54)",
+          "item_ids": [
+            "mit18_02sc_pb_49_quest",
+            "mit18_02sc_pb_4_comb",
+            "mit18_02sc_pb_4_quest",
+            "mit18_02sc_pb_51_comb",
+            "mit18_02sc_pb_51_quest"
+          ]
+        },
+        {
+          "index": 54,
+          "label": "Resources (Part 55)",
+          "item_ids": [
+            "mit18_02sc_pb_53_comb",
+            "mit18_02sc_pb_53_quest",
+            "mit18_02sc_pb_54_comb",
+            "mit18_02sc_pb_54_quest",
+            "mit18_02sc_pb_56_comb"
+          ]
+        },
+        {
+          "index": 55,
+          "label": "Resources (Part 56)",
+          "item_ids": [
+            "mit18_02sc_pb_56_quest",
+            "mit18_02sc_pb_57_comb",
+            "mit18_02sc_pb_57_quest",
+            "mit18_02sc_pb_58_comb",
+            "mit18_02sc_pb_58_quest"
+          ]
+        },
+        {
+          "index": 56,
+          "label": "Resources (Part 57)",
+          "item_ids": [
+            "mit18_02sc_pb_5_comb",
+            "mit18_02sc_pb_5_quest",
+            "mit18_02sc_pb_60_comb",
+            "mit18_02sc_pb_60_quest",
+            "mit18_02sc_pb_62_comb"
+          ]
+        },
+        {
+          "index": 57,
+          "label": "Resources (Part 58)",
+          "item_ids": [
+            "mit18_02sc_pb_62_quest",
+            "mit18_02sc_pb_63_comb",
+            "mit18_02sc_pb_63_quest",
+            "mit18_02sc_pb_64_comb",
+            "mit18_02sc_pb_64_quest"
+          ]
+        },
+        {
+          "index": 58,
+          "label": "Resources (Part 59)",
+          "item_ids": [
+            "mit18_02sc_pb_65_comb",
+            "mit18_02sc_pb_65_quest",
+            "mit18_02sc_pb_66_comb",
+            "mit18_02sc_pb_66_quest",
+            "mit18_02sc_pb_68_comb"
+          ]
+        },
+        {
+          "index": 59,
+          "label": "Resources (Part 60)",
+          "item_ids": [
+            "mit18_02sc_pb_68_quest",
+            "mit18_02sc_pb_69_comb",
+            "mit18_02sc_pb_69_quest",
+            "mit18_02sc_pb_6_comb",
+            "mit18_02sc_pb_6_quest"
+          ]
+        },
+        {
+          "index": 60,
+          "label": "Resources (Part 61)",
+          "item_ids": [
+            "mit18_02sc_pb_70_comb",
+            "mit18_02sc_pb_70_quest",
+            "mit18_02sc_pb_71_comb",
+            "mit18_02sc_pb_71_quest",
+            "mit18_02sc_pb_72_comb"
+          ]
+        },
+        {
+          "index": 61,
+          "label": "Resources (Part 62)",
+          "item_ids": [
+            "mit18_02sc_pb_72_quest",
+            "mit18_02sc_pb_74_comb",
+            "mit18_02sc_pb_74_quest",
+            "mit18_02sc_pb_75_comb",
+            "mit18_02sc_pb_75_quest"
+          ]
+        },
+        {
+          "index": 62,
+          "label": "Resources (Part 63)",
+          "item_ids": [
+            "mit18_02sc_pb_76_comb",
+            "mit18_02sc_pb_76_quest",
+            "mit18_02sc_pb_77_comb",
+            "mit18_02sc_pb_77_quest",
+            "mit18_02sc_pb_78_comb"
+          ]
+        },
+        {
+          "index": 63,
+          "label": "Resources (Part 64)",
+          "item_ids": [
+            "mit18_02sc_pb_78_quest",
+            "mit18_02sc_pb_79_comb",
+            "mit18_02sc_pb_79_quest",
+            "mit18_02sc_pb_7_comb",
+            "mit18_02sc_pb_7_quest"
+          ]
+        },
+        {
+          "index": 64,
+          "label": "Resources (Part 65)",
+          "item_ids": [
+            "mit18_02sc_pb_80_comb",
+            "mit18_02sc_pb_80_quest",
+            "mit18_02sc_pb_81_comb",
+            "mit18_02sc_pb_81_quest",
+            "mit18_02sc_pb_82_comb"
+          ]
+        },
+        {
+          "index": 65,
+          "label": "Resources (Part 66)",
+          "item_ids": [
+            "mit18_02sc_pb_82_quest",
+            "mit18_02sc_pb_83_comb",
+            "mit18_02sc_pb_83_quest",
+            "mit18_02sc_pb_84_comb",
+            "mit18_02sc_pb_84_quest"
+          ]
+        },
+        {
+          "index": 66,
+          "label": "Resources (Part 67)",
+          "item_ids": [
+            "mit18_02sc_pb_85_comb",
+            "mit18_02sc_pb_85_quest",
+            "mit18_02sc_pb_87_comb",
+            "mit18_02sc_pb_87_quest",
+            "mit18_02sc_pb_88_comb"
+          ]
+        },
+        {
+          "index": 67,
+          "label": "Resources (Part 68)",
+          "item_ids": [
+            "mit18_02sc_pb_88_quest",
+            "mit18_02sc_pb_89_comb",
+            "mit18_02sc_pb_89_quest",
+            "mit18_02sc_pb_8_comb",
+            "mit18_02sc_pb_8_quest"
+          ]
+        },
+        {
+          "index": 68,
+          "label": "Resources (Part 69)",
+          "item_ids": [
+            "mit18_02sc_pb_90_comb",
+            "mit18_02sc_pb_90_quest",
+            "mit18_02sc_pb_91_comb",
+            "mit18_02sc_pb_91_quest",
+            "mit18_02sc_pb_93_comb"
+          ]
+        },
+        {
+          "index": 69,
+          "label": "Resources (Part 70)",
+          "item_ids": [
+            "mit18_02sc_pb_93_quest",
+            "mit18_02sc_pb_94_comb",
+            "mit18_02sc_pb_94_quest",
+            "mit18_02sc_pb_95_comb",
+            "mit18_02sc_pb_95_quest"
+          ]
+        },
+        {
+          "index": 70,
+          "label": "Resources (Part 71)",
+          "item_ids": [
+            "mit18_02sc_pb_9_comb",
+            "mit18_02sc_pb_9_quest",
+            "mit18_02sc_supprob2",
+            "mit18_02sc_supprobsol2",
+            "moment-of-inertia-of-a-cylinder"
+          ]
+        },
+        {
+          "index": 71,
+          "label": "Resources (Part 72)",
+          "item_ids": [
+            "more-stokes-theorem",
+            "non-conservative-vector-fields",
+            "parametric-curves-velocity-acceleration-length",
+            "parametric-line-intersecting-a-plane",
+            "partial-derivatives"
+          ]
+        },
+        {
+          "index": 72,
+          "label": "Resources (Part 73)",
+          "item_ids": [
+            "potentials-of-gradient-fields",
+            "regions-of-integration",
+            "second-derivative-test",
+            "simply-connected-regions",
+            "solve-a-linear-system-using-matrices"
+          ]
+        },
+        {
+          "index": 73,
+          "label": "Resources (Part 74)",
+          "item_ids": [
+            "stokes-theorem",
+            "systems-of-linear-equations",
+            "tangent-plane-approximation",
+            "tangent-planes",
+            "the-chain-rule-with-constraints"
+          ]
+        },
+        {
+          "index": 74,
+          "label": "Resources (Part 75)",
+          "item_ids": [
+            "total-differentials-and-the-chain-rule",
+            "volume-in-cylindrical-coordinates",
+            "volume-of-a-parallelepiped",
+            "clip-intersection-of-a-line-and-a-plane",
+            "mit18_02sc_pb_18_comb"
+          ]
+        },
+        {
+          "index": 75,
+          "label": "Resources (Part 76)",
+          "item_ids": [
+            "mit18_02sc_pb_18_quest",
+            "mit18_02sc_pset1",
+            "mit18_02sc_pset10",
+            "mit18_02sc_pset10sol",
+            "mit18_02sc_pset11"
+          ]
+        },
+        {
+          "index": 76,
+          "label": "Resources (Part 77)",
+          "item_ids": [
+            "mit18_02sc_pset11sol",
+            "mit18_02sc_pset12",
+            "mit18_02sc_pset12sol",
+            "mit18_02sc_pset1sol",
+            "mit18_02sc_pset2"
+          ]
+        },
+        {
+          "index": 77,
+          "label": "Resources (Part 78)",
+          "item_ids": [
+            "mit18_02sc_pset2sol",
+            "mit18_02sc_pset3",
+            "mit18_02sc_pset3sol",
+            "mit18_02sc_pset4",
+            "mit18_02sc_pset4sol"
+          ]
+        },
+        {
+          "index": 78,
+          "label": "Resources (Part 79)",
+          "item_ids": [
+            "mit18_02sc_pset5",
+            "mit18_02sc_pset5sol",
+            "mit18_02sc_pset6",
+            "mit18_02sc_pset6sol",
+            "mit18_02sc_pset7"
+          ]
+        },
+        {
+          "index": 79,
+          "label": "Resources (Part 80)",
+          "item_ids": [
+            "mit18_02sc_pset7sol",
+            "mit18_02sc_pset8",
+            "mit18_02sc_pset8sol",
+            "mit18_02sc_pset9",
+            "mit18_02sc_pset9sol"
+          ]
+        },
+        {
+          "index": 80,
+          "label": "Resources (Part 81)",
+          "item_ids": [
+            "mit18_02sc_supprob1",
+            "mit18_02sc_supprob3",
+            "mit18_02sc_supprob4",
+            "mit18_02sc_supprob5",
+            "mit18_02sc_supprob6"
+          ]
+        },
+        {
+          "index": 81,
+          "label": "Resources (Part 82)",
+          "item_ids": [
+            "mit18_02sc_supprobsol1",
+            "mit18_02sc_supprobsol3",
+            "mit18_02sc_supprobsol4",
+            "mit18_02sc_supprobsol5",
+            "mit18_02sc_supprobsol6"
+          ]
+        },
+        {
+          "index": 82,
+          "label": "Resources (Part 83)",
+          "item_ids": [
+            "mit18_02sc_we_9_comb",
+            "parametrized-lines-and-intersections",
+            "recitation-introduction",
+            "functionstwovariables",
+            "functionstwovariables-1"
+          ]
+        },
+        {
+          "index": 83,
+          "label": "Resources (Part 84)",
+          "item_ids": [
+            "functionstwovariables-2",
+            "functionstwovariables-3",
+            "go",
+            "go-1",
+            "go-2"
+          ]
+        },
+        {
+          "index": 84,
+          "label": "Resources (Part 85)",
+          "item_ids": [
+            "go-3",
+            "gotext",
+            "gotext-1",
+            "gotext-2",
+            "gotext-3"
+          ]
+        },
+        {
+          "index": 85,
+          "label": "Resources (Part 86)",
+          "item_ids": [
+            "jcbwt363",
+            "jcbwt363-1",
+            "jcbwt363-2",
+            "jcbwt363-3",
+            "jcbwt363-4"
+          ]
+        },
+        {
+          "index": 86,
+          "label": "Resources (Part 87)",
+          "item_ids": [
+            "lagrangemultiplierstwovariables",
+            "mit18_02scf10rec_01_300k-1",
+            "mit18_02scf10rec_02_300k-1",
+            "mit18_02scf10rec_03_300k",
+            "mit18_02scf10rec_04_300k-1"
+          ]
+        },
+        {
+          "index": 87,
+          "label": "Resources (Part 88)",
+          "item_ids": [
+            "mit18_02scf10rec_05_300k-1",
+            "mit18_02scf10rec_06_300k-1",
+            "mit18_02scf10rec_07_300k",
+            "mit18_02scf10rec_08_300k-1",
+            "mit18_02scf10rec_09_300k"
+          ]
+        },
+        {
+          "index": 88,
+          "label": "Resources (Part 89)",
+          "item_ids": [
+            "mit18_02scf10rec_10_300k-1",
+            "mit18_02scf10rec_11_300k-1",
+            "mit18_02scf10rec_12_300k",
+            "mit18_02scf10rec_13_300k-1",
+            "mit18_02scf10rec_14_300k-1"
+          ]
+        },
+        {
+          "index": 89,
+          "label": "Resources (Part 90)",
+          "item_ids": [
+            "mit18_02scf10rec_15_300k",
+            "mit18_02scf10rec_16_300k-1",
+            "mit18_02scf10rec_17_300k",
+            "mit18_02scf10rec_18_300k-1",
+            "mit18_02scf10rec_19_300k-1"
+          ]
+        },
+        {
+          "index": 90,
+          "label": "Resources (Part 91)",
+          "item_ids": [
+            "mit18_02scf10rec_20_300k",
+            "mit18_02scf10rec_21_300k-1",
+            "mit18_02scf10rec_22_300k-1",
+            "mit18_02scf10rec_23_300k",
+            "mit18_02scf10rec_24_300k-1"
+          ]
+        },
+        {
+          "index": 91,
+          "label": "Resources (Part 92)",
+          "item_ids": [
+            "mit18_02scf10rec_25_300k",
+            "mit18_02scf10rec_26_300k-1",
+            "mit18_02scf10rec_27_300k",
+            "mit18_02scf10rec_28_300k-1",
+            "mit18_02scf10rec_29_300k"
+          ]
+        },
+        {
+          "index": 92,
+          "label": "Resources (Part 93)",
+          "item_ids": [
+            "mit18_02scf10rec_30_300k-1",
+            "mit18_02scf10rec_31_300k",
+            "mit18_02scf10rec_32_300k-1",
+            "mit18_02scf10rec_33_300k",
+            "mit18_02scf10rec_34_300k"
+          ]
+        },
+        {
+          "index": 93,
+          "label": "Resources (Part 94)",
+          "item_ids": [
+            "mit18_02scf10rec_35_300k-1",
+            "mit18_02scf10rec_36_300k",
+            "mit18_02scf10rec_37_300k-1",
+            "mit18_02scf10rec_38_300k",
+            "mit18_02scf10rec_39_300k-1"
+          ]
+        },
+        {
+          "index": 94,
+          "label": "Resources (Part 95)",
+          "item_ids": [
+            "mit18_02scf10rec_40_300k-1",
+            "mit18_02scf10rec_41_300k",
+            "mit18_02scf10rec_42_300k-1",
+            "mit18_02scf10rec_43_300k",
+            "mit18_02scf10rec_44_300k"
+          ]
+        },
+        {
+          "index": 95,
+          "label": "Resources (Part 96)",
+          "item_ids": [
+            "mit18_02scf10rec_45_300k-1",
+            "mit18_02scf10rec_45a_300k",
+            "mit18_02scf10rec_46_300k",
+            "mit18_02scf10rec_47_300k-1",
+            "mit18_02scf10rec_48_300k"
+          ]
+        },
+        {
+          "index": 96,
+          "label": "Resources (Part 97)",
+          "item_ids": [
+            "mit18_02scf10rec_49_300k-1",
+            "mit18_02scf10rec_50_300k",
+            "mit18_02scf10rec_51_300k-1",
+            "mit18_02scf10rec_52_300k",
+            "mit18_02scf10rec_53_300k-1"
+          ]
+        },
+        {
+          "index": 97,
+          "label": "Resources (Part 98)",
+          "item_ids": [
+            "mit18_02scf10rec_54_300k",
+            "mit18_02scf10rec_55_300k-1",
+            "mit18_02scf10rec_56_300k",
+            "mit18_02scf10rec_57_300k-1",
+            "mit18_02scf10rec_58_300k-1"
+          ]
+        },
+        {
+          "index": 98,
+          "label": "Resources (Part 99)",
+          "item_ids": [
+            "mit18_02scf10rec_59_300k",
+            "mit18_02scf10rec_60_300k",
+            "mit18_02scf10rec_61_300k",
+            "mit18_02scf10rec_62_300k-1",
+            "mit18_02scf10rec_63_300k"
+          ]
+        },
+        {
+          "index": 99,
+          "label": "Resources (Part 100)",
+          "item_ids": [
+            "mit18_02scf10rec_64_300k-1",
+            "mit18_02scf10rec_65_300k",
+            "mit18_02scf10rec_66_300k-1",
+            "mit18_02scf10rec_67_300k",
+            "mit18_02scf10rec_68_300k"
+          ]
+        },
+        {
+          "index": 100,
+          "label": "Resources (Part 101)",
+          "item_ids": [
+            "mit18_02scf10rec_69_300k-1",
+            "mk_lib",
+            "mk_lib-1",
+            "mk_lib-2",
+            "mk_lib-3"
+          ]
+        },
+        {
+          "index": 101,
+          "label": "Resources (Part 102)",
+          "item_ids": [
+            "mk_lib-4",
+            "parser_math",
+            "parser_math-1",
+            "parser_math-2",
+            "parser_math-3"
+          ]
+        },
+        {
+          "index": 102,
+          "label": "Resources (Part 103)",
+          "item_ids": [
+            "parser_math-4",
+            "clip-1-quadratic-example",
+            "clip-advanced-example",
+            "clip-applications-and-examples",
+            "clip-exam-review"
+          ]
+        },
+        {
+          "index": 103,
+          "label": "Resources (Part 104)",
+          "item_ids": [
+            "clip-example",
+            "clip-example-1",
+            "clip-example-2",
+            "clip-example-3",
+            "clip-example-4"
+          ]
+        },
+        {
+          "index": 104,
+          "label": "Resources (Part 105)",
+          "item_ids": [
+            "clip-examples",
+            "clip-examples-of-double-integration",
+            "clip-lagrange-multipliers-by-example",
+            "mit18_02sc_exam1",
+            "mit18_02sc_exam1sol"
+          ]
+        },
+        {
+          "index": 105,
+          "label": "Resources (Part 106)",
+          "item_ids": [
+            "mit18_02sc_exam2",
+            "mit18_02sc_exam2sol",
+            "mit18_02sc_exam3",
+            "mit18_02sc_exam3sol",
+            "mit18_02sc_exam4"
+          ]
+        },
+        {
+          "index": 106,
+          "label": "Resources (Part 107)",
+          "item_ids": [
+            "mit18_02sc_exam4sol",
+            "mit18_02sc_finalexam",
+            "mit18_02sc_finalexamsol",
+            "mit18_02sc_mnotes_cv1",
+            "mit18_02sc_mnotes_cv2"
+          ]
+        },
+        {
+          "index": 107,
+          "label": "Resources (Part 108)",
+          "item_ids": [
+            "mit18_02sc_mnotes_cv3",
+            "mit18_02sc_mnotes_d1",
+            "mit18_02sc_mnotes_g",
+            "mit18_02sc_mnotes_m1",
+            "mit18_02sc_mnotes_m2"
+          ]
+        },
+        {
+          "index": 108,
+          "label": "Resources (Part 109)",
+          "item_ids": [
+            "mit18_02sc_mnotes_n3",
+            "mit18_02sc_mnotes_ta2_3",
+            "mit18_02sc_mnotes_ta4",
+            "mit18_02sc_mnotes_v1",
+            "mit18_02sc_mnotes_v10-1"
+          ]
+        },
+        {
+          "index": 109,
+          "label": "Resources (Part 110)",
+          "item_ids": [
+            "mit18_02sc_mnotes_v2-1",
+            "mit18_02sc_mnotes_v2-2to3",
+            "mit18_02sc_mnotes_v3",
+            "mit18_02sc_mnotes_v4-1to2",
+            "mit18_02sc_mnotes_v8"
+          ]
+        },
+        {
+          "index": 110,
+          "label": "Resources (Part 111)",
+          "item_ids": [
+            "mit18_02sc_mnotes_v9-2",
+            "mit18_02sc_notes_11",
+            "mit18_02sc_notes_15",
+            "mit18_02sc_notes_16",
+            "mit18_02sc_notes_17"
+          ]
+        },
+        {
+          "index": 111,
+          "label": "Resources (Part 112)",
+          "item_ids": [
+            "mit18_02sc_notes_18",
+            "mit18_02sc_notes_2",
+            "mit18_02sc_notes_20",
+            "mit18_02sc_notes_21",
+            "mit18_02sc_notes_23"
+          ]
+        },
+        {
+          "index": 112,
+          "label": "Resources (Part 113)",
+          "item_ids": [
+            "mit18_02sc_notes_24",
+            "mit18_02sc_notes_25",
+            "mit18_02sc_notes_27",
+            "mit18_02sc_notes_29",
+            "mit18_02sc_notes_3"
+          ]
+        },
+        {
+          "index": 113,
+          "label": "Resources (Part 114)",
+          "item_ids": [
+            "mit18_02sc_notes_4",
+            "mit18_02sc_notes_5",
+            "mit18_02sc_notes_6",
+            "mit18_02sc_notes_9",
+            "mit18_02sc_pb_31_comb"
+          ]
+        },
+        {
+          "index": 114,
+          "label": "Resources (Part 115)",
+          "item_ids": [
+            "mit18_02sc_pb_31_quest",
+            "mit18_02sc_pb_33_comb",
+            "mit18_02sc_pb_33_quest",
+            "mit18_02sc_pb_34_comb",
+            "mit18_02sc_pb_34_quest"
+          ]
+        },
+        {
+          "index": 115,
+          "label": "Resources (Part 116)",
+          "item_ids": [
+            "mit18_02sc_pb_38_quest",
+            "mit18_02sc_pb_55_comb",
+            "mit18_02sc_pb_55_quest",
+            "mit18_02sc_prac1a",
+            "mit18_02sc_prac1asol"
+          ]
+        },
+        {
+          "index": 116,
+          "label": "Resources (Part 117)",
+          "item_ids": [
+            "mit18_02sc_prac2a",
+            "mit18_02sc_prac2asol",
+            "mit18_02sc_prac3a",
+            "mit18_02sc_prac3asol",
+            "mit18_02sc_prac4a"
+          ]
+        },
+        {
+          "index": 117,
+          "label": "Resources (Part 118)",
+          "item_ids": [
+            "mit18_02sc_prac4asol",
+            "mit18_02sc_pracfinal",
+            "mit18_02sc_pracfinalsol",
+            "mit18_02sc_we_10_comb",
+            "mit18_02sc_we_11_comb"
+          ]
+        },
+        {
+          "index": 118,
+          "label": "Resources (Part 119)",
+          "item_ids": [
+            "mit18_02sc_we_12_comb",
+            "mit18_02sc_we_13_comb",
+            "mit18_02sc_we_14_comb",
+            "mit18_02sc_we_15_comb",
+            "mit18_02sc_we_16_comb"
+          ]
+        },
+        {
+          "index": 119,
+          "label": "Resources (Part 120)",
+          "item_ids": [
+            "mit18_02sc_we_17_comb",
+            "mit18_02sc_we_18_comb",
+            "mit18_02sc_we_19_comb",
+            "mit18_02sc_we_1_comb",
+            "mit18_02sc_we_20_comb"
+          ]
+        },
+        {
+          "index": 120,
+          "label": "Resources (Part 121)",
+          "item_ids": [
+            "mit18_02sc_we_2_comb",
+            "mit18_02sc_we_3_comb",
+            "mit18_02sc_we_4_comb",
+            "mit18_02sc_we_5_comb",
+            "mit18_02sc_we_65_comb"
+          ]
+        },
+        {
+          "index": 121,
+          "label": "Resources (Part 122)",
+          "item_ids": [
+            "mit18_02sc_we_68_comb",
+            "mit18_02sc_we_6_comb",
+            "mit18_02sc_we_70_comb",
+            "mit18_02sc_we_71_comb",
+            "mit18_02sc_we_74_comb"
+          ]
+        },
+        {
+          "index": 122,
+          "label": "Resources (Part 123)",
+          "item_ids": [
+            "mit18_02sc_we_77_comb",
+            "mit18_02sc_we_7_comb",
+            "mit18_02sc_we_83_comb",
+            "mit18_02sc_we_8_comb",
+            "mit18_02sc_we_90_comb"
+          ]
+        },
+        {
+          "index": 123,
+          "label": "Resources (Part 124)",
+          "item_ids": [
+            "mit18_02sc_we_93_comb"
+          ]
+        }
+      ]
+    }
+  ],
+  "step_lookup": [
+    {
+      "step": 100,
+      "section_index": 1,
+      "section_title": "1. Vectors and Matrices",
+      "chunk_index": 0,
+      "chunk_label": "1. Vectors and Matrices (Part 1)"
+    },
+    {
+      "step": 101,
+      "section_index": 1,
+      "section_title": "1. Vectors and Matrices",
+      "chunk_index": 1,
+      "chunk_label": "1. Vectors and Matrices (Part 2)"
+    },
+    {
+      "step": 102,
+      "section_index": 1,
+      "section_title": "1. Vectors and Matrices",
+      "chunk_index": 2,
+      "chunk_label": "1. Vectors and Matrices (Part 3)"
+    },
+    {
+      "step": 103,
+      "section_index": 1,
+      "section_title": "1. Vectors and Matrices",
+      "chunk_index": 3,
+      "chunk_label": "1. Vectors and Matrices (Part 4)"
+    },
+    {
+      "step": 104,
+      "section_index": 1,
+      "section_title": "1. Vectors and Matrices",
+      "chunk_index": 4,
+      "chunk_label": "1. Vectors and Matrices (Part 5)"
+    },
+    {
+      "step": 105,
+      "section_index": 1,
+      "section_title": "1. Vectors and Matrices",
+      "chunk_index": 5,
+      "chunk_label": "1. Vectors and Matrices (Part 6)"
+    },
+    {
+      "step": 106,
+      "section_index": 1,
+      "section_title": "1. Vectors and Matrices",
+      "chunk_index": 6,
+      "chunk_label": "1. Vectors and Matrices (Part 7)"
+    },
+    {
+      "step": 200,
+      "section_index": 2,
+      "section_title": " 2. Partial Derivatives",
+      "chunk_index": 0,
+      "chunk_label": " 2. Partial Derivatives (Part 1)"
+    },
+    {
+      "step": 201,
+      "section_index": 2,
+      "section_title": " 2. Partial Derivatives",
+      "chunk_index": 1,
+      "chunk_label": " 2. Partial Derivatives (Part 2)"
+    },
+    {
+      "step": 202,
+      "section_index": 2,
+      "section_title": " 2. Partial Derivatives",
+      "chunk_index": 2,
+      "chunk_label": " 2. Partial Derivatives (Part 3)"
+    },
+    {
+      "step": 203,
+      "section_index": 2,
+      "section_title": " 2. Partial Derivatives",
+      "chunk_index": 3,
+      "chunk_label": " 2. Partial Derivatives (Part 4)"
+    },
+    {
+      "step": 204,
+      "section_index": 2,
+      "section_title": " 2. Partial Derivatives",
+      "chunk_index": 4,
+      "chunk_label": " 2. Partial Derivatives (Part 5)"
+    },
+    {
+      "step": 205,
+      "section_index": 2,
+      "section_title": " 2. Partial Derivatives",
+      "chunk_index": 5,
+      "chunk_label": " 2. Partial Derivatives (Part 6)"
+    },
+    {
+      "step": 206,
+      "section_index": 2,
+      "section_title": " 2. Partial Derivatives",
+      "chunk_index": 6,
+      "chunk_label": " 2. Partial Derivatives (Part 7)"
+    },
+    {
+      "step": 300,
+      "section_index": 3,
+      "section_title": "3. Double Integrals and Line Integrals in the Plane",
+      "chunk_index": 0,
+      "chunk_label": "3. Double Integrals and Line Integrals in the Plane (Part 1)"
+    },
+    {
+      "step": 301,
+      "section_index": 3,
+      "section_title": "3. Double Integrals and Line Integrals in the Plane",
+      "chunk_index": 1,
+      "chunk_label": "3. Double Integrals and Line Integrals in the Plane (Part 2)"
+    },
+    {
+      "step": 302,
+      "section_index": 3,
+      "section_title": "3. Double Integrals and Line Integrals in the Plane",
+      "chunk_index": 2,
+      "chunk_label": "3. Double Integrals and Line Integrals in the Plane (Part 3)"
+    },
+    {
+      "step": 303,
+      "section_index": 3,
+      "section_title": "3. Double Integrals and Line Integrals in the Plane",
+      "chunk_index": 3,
+      "chunk_label": "3. Double Integrals and Line Integrals in the Plane (Part 4)"
+    },
+    {
+      "step": 304,
+      "section_index": 3,
+      "section_title": "3. Double Integrals and Line Integrals in the Plane",
+      "chunk_index": 4,
+      "chunk_label": "3. Double Integrals and Line Integrals in the Plane (Part 5)"
+    },
+    {
+      "step": 305,
+      "section_index": 3,
+      "section_title": "3. Double Integrals and Line Integrals in the Plane",
+      "chunk_index": 5,
+      "chunk_label": "3. Double Integrals and Line Integrals in the Plane (Part 6)"
+    },
+    {
+      "step": 306,
+      "section_index": 3,
+      "section_title": "3. Double Integrals and Line Integrals in the Plane",
+      "chunk_index": 6,
+      "chunk_label": "3. Double Integrals and Line Integrals in the Plane (Part 7)"
+    },
+    {
+      "step": 307,
+      "section_index": 3,
+      "section_title": "3. Double Integrals and Line Integrals in the Plane",
+      "chunk_index": 7,
+      "chunk_label": "3. Double Integrals and Line Integrals in the Plane (Part 8)"
+    },
+    {
+      "step": 400,
+      "section_index": 4,
+      "section_title": "4. Triple Integrals and Surface Integrals in 3-Space",
+      "chunk_index": 0,
+      "chunk_label": "4. Triple Integrals and Surface Integrals in 3-Space (Part 1)"
+    },
+    {
+      "step": 401,
+      "section_index": 4,
+      "section_title": "4. Triple Integrals and Surface Integrals in 3-Space",
+      "chunk_index": 1,
+      "chunk_label": "4. Triple Integrals and Surface Integrals in 3-Space (Part 2)"
+    },
+    {
+      "step": 402,
+      "section_index": 4,
+      "section_title": "4. Triple Integrals and Surface Integrals in 3-Space",
+      "chunk_index": 2,
+      "chunk_label": "4. Triple Integrals and Surface Integrals in 3-Space (Part 3)"
+    },
+    {
+      "step": 403,
+      "section_index": 4,
+      "section_title": "4. Triple Integrals and Surface Integrals in 3-Space",
+      "chunk_index": 3,
+      "chunk_label": "4. Triple Integrals and Surface Integrals in 3-Space (Part 4)"
+    },
+    {
+      "step": 404,
+      "section_index": 4,
+      "section_title": "4. Triple Integrals and Surface Integrals in 3-Space",
+      "chunk_index": 4,
+      "chunk_label": "4. Triple Integrals and Surface Integrals in 3-Space (Part 5)"
+    },
+    {
+      "step": 405,
+      "section_index": 4,
+      "section_title": "4. Triple Integrals and Surface Integrals in 3-Space",
+      "chunk_index": 5,
+      "chunk_label": "4. Triple Integrals and Surface Integrals in 3-Space (Part 6)"
+    },
+    {
+      "step": 406,
+      "section_index": 4,
+      "section_title": "4. Triple Integrals and Surface Integrals in 3-Space",
+      "chunk_index": 6,
+      "chunk_label": "4. Triple Integrals and Surface Integrals in 3-Space (Part 7)"
+    },
+    {
+      "step": 500,
+      "section_index": 5,
+      "section_title": "Final Exam",
+      "chunk_index": 0,
+      "chunk_label": "Final Exam (Part 1)"
+    },
+    {
+      "step": 501,
+      "section_index": 5,
+      "section_title": "Final Exam",
+      "chunk_index": 1,
+      "chunk_label": "Final Exam (Part 2)"
+    },
+    {
+      "step": 600,
+      "section_index": 6,
+      "section_title": "Syllabus",
+      "chunk_index": 0,
+      "chunk_label": "Syllabus"
+    },
+    {
+      "step": 700,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 0,
+      "chunk_label": "Resources (Part 1)"
+    },
+    {
+      "step": 701,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 1,
+      "chunk_label": "Resources (Part 2)"
+    },
+    {
+      "step": 702,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 2,
+      "chunk_label": "Resources (Part 3)"
+    },
+    {
+      "step": 703,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 3,
+      "chunk_label": "Resources (Part 4)"
+    },
+    {
+      "step": 704,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 4,
+      "chunk_label": "Resources (Part 5)"
+    },
+    {
+      "step": 705,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 5,
+      "chunk_label": "Resources (Part 6)"
+    },
+    {
+      "step": 706,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 6,
+      "chunk_label": "Resources (Part 7)"
+    },
+    {
+      "step": 707,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 7,
+      "chunk_label": "Resources (Part 8)"
+    },
+    {
+      "step": 708,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 8,
+      "chunk_label": "Resources (Part 9)"
+    },
+    {
+      "step": 709,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 9,
+      "chunk_label": "Resources (Part 10)"
+    },
+    {
+      "step": 710,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 10,
+      "chunk_label": "Resources (Part 11)"
+    },
+    {
+      "step": 711,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 11,
+      "chunk_label": "Resources (Part 12)"
+    },
+    {
+      "step": 712,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 12,
+      "chunk_label": "Resources (Part 13)"
+    },
+    {
+      "step": 713,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 13,
+      "chunk_label": "Resources (Part 14)"
+    },
+    {
+      "step": 714,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 14,
+      "chunk_label": "Resources (Part 15)"
+    },
+    {
+      "step": 715,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 15,
+      "chunk_label": "Resources (Part 16)"
+    },
+    {
+      "step": 716,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 16,
+      "chunk_label": "Resources (Part 17)"
+    },
+    {
+      "step": 717,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 17,
+      "chunk_label": "Resources (Part 18)"
+    },
+    {
+      "step": 718,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 18,
+      "chunk_label": "Resources (Part 19)"
+    },
+    {
+      "step": 719,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 19,
+      "chunk_label": "Resources (Part 20)"
+    },
+    {
+      "step": 720,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 20,
+      "chunk_label": "Resources (Part 21)"
+    },
+    {
+      "step": 721,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 21,
+      "chunk_label": "Resources (Part 22)"
+    },
+    {
+      "step": 722,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 22,
+      "chunk_label": "Resources (Part 23)"
+    },
+    {
+      "step": 723,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 23,
+      "chunk_label": "Resources (Part 24)"
+    },
+    {
+      "step": 724,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 24,
+      "chunk_label": "Resources (Part 25)"
+    },
+    {
+      "step": 725,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 25,
+      "chunk_label": "Resources (Part 26)"
+    },
+    {
+      "step": 726,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 26,
+      "chunk_label": "Resources (Part 27)"
+    },
+    {
+      "step": 727,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 27,
+      "chunk_label": "Resources (Part 28)"
+    },
+    {
+      "step": 728,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 28,
+      "chunk_label": "Resources (Part 29)"
+    },
+    {
+      "step": 729,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 29,
+      "chunk_label": "Resources (Part 30)"
+    },
+    {
+      "step": 730,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 30,
+      "chunk_label": "Resources (Part 31)"
+    },
+    {
+      "step": 731,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 31,
+      "chunk_label": "Resources (Part 32)"
+    },
+    {
+      "step": 732,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 32,
+      "chunk_label": "Resources (Part 33)"
+    },
+    {
+      "step": 733,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 33,
+      "chunk_label": "Resources (Part 34)"
+    },
+    {
+      "step": 734,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 34,
+      "chunk_label": "Resources (Part 35)"
+    },
+    {
+      "step": 735,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 35,
+      "chunk_label": "Resources (Part 36)"
+    },
+    {
+      "step": 736,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 36,
+      "chunk_label": "Resources (Part 37)"
+    },
+    {
+      "step": 737,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 37,
+      "chunk_label": "Resources (Part 38)"
+    },
+    {
+      "step": 738,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 38,
+      "chunk_label": "Resources (Part 39)"
+    },
+    {
+      "step": 739,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 39,
+      "chunk_label": "Resources (Part 40)"
+    },
+    {
+      "step": 740,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 40,
+      "chunk_label": "Resources (Part 41)"
+    },
+    {
+      "step": 741,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 41,
+      "chunk_label": "Resources (Part 42)"
+    },
+    {
+      "step": 742,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 42,
+      "chunk_label": "Resources (Part 43)"
+    },
+    {
+      "step": 743,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 43,
+      "chunk_label": "Resources (Part 44)"
+    },
+    {
+      "step": 744,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 44,
+      "chunk_label": "Resources (Part 45)"
+    },
+    {
+      "step": 745,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 45,
+      "chunk_label": "Resources (Part 46)"
+    },
+    {
+      "step": 746,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 46,
+      "chunk_label": "Resources (Part 47)"
+    },
+    {
+      "step": 747,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 47,
+      "chunk_label": "Resources (Part 48)"
+    },
+    {
+      "step": 748,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 48,
+      "chunk_label": "Resources (Part 49)"
+    },
+    {
+      "step": 749,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 49,
+      "chunk_label": "Resources (Part 50)"
+    },
+    {
+      "step": 750,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 50,
+      "chunk_label": "Resources (Part 51)"
+    },
+    {
+      "step": 751,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 51,
+      "chunk_label": "Resources (Part 52)"
+    },
+    {
+      "step": 752,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 52,
+      "chunk_label": "Resources (Part 53)"
+    },
+    {
+      "step": 753,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 53,
+      "chunk_label": "Resources (Part 54)"
+    },
+    {
+      "step": 754,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 54,
+      "chunk_label": "Resources (Part 55)"
+    },
+    {
+      "step": 755,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 55,
+      "chunk_label": "Resources (Part 56)"
+    },
+    {
+      "step": 756,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 56,
+      "chunk_label": "Resources (Part 57)"
+    },
+    {
+      "step": 757,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 57,
+      "chunk_label": "Resources (Part 58)"
+    },
+    {
+      "step": 758,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 58,
+      "chunk_label": "Resources (Part 59)"
+    },
+    {
+      "step": 759,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 59,
+      "chunk_label": "Resources (Part 60)"
+    },
+    {
+      "step": 760,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 60,
+      "chunk_label": "Resources (Part 61)"
+    },
+    {
+      "step": 761,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 61,
+      "chunk_label": "Resources (Part 62)"
+    },
+    {
+      "step": 762,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 62,
+      "chunk_label": "Resources (Part 63)"
+    },
+    {
+      "step": 763,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 63,
+      "chunk_label": "Resources (Part 64)"
+    },
+    {
+      "step": 764,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 64,
+      "chunk_label": "Resources (Part 65)"
+    },
+    {
+      "step": 765,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 65,
+      "chunk_label": "Resources (Part 66)"
+    },
+    {
+      "step": 766,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 66,
+      "chunk_label": "Resources (Part 67)"
+    },
+    {
+      "step": 767,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 67,
+      "chunk_label": "Resources (Part 68)"
+    },
+    {
+      "step": 768,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 68,
+      "chunk_label": "Resources (Part 69)"
+    },
+    {
+      "step": 769,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 69,
+      "chunk_label": "Resources (Part 70)"
+    },
+    {
+      "step": 770,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 70,
+      "chunk_label": "Resources (Part 71)"
+    },
+    {
+      "step": 771,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 71,
+      "chunk_label": "Resources (Part 72)"
+    },
+    {
+      "step": 772,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 72,
+      "chunk_label": "Resources (Part 73)"
+    },
+    {
+      "step": 773,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 73,
+      "chunk_label": "Resources (Part 74)"
+    },
+    {
+      "step": 774,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 74,
+      "chunk_label": "Resources (Part 75)"
+    },
+    {
+      "step": 775,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 75,
+      "chunk_label": "Resources (Part 76)"
+    },
+    {
+      "step": 776,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 76,
+      "chunk_label": "Resources (Part 77)"
+    },
+    {
+      "step": 777,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 77,
+      "chunk_label": "Resources (Part 78)"
+    },
+    {
+      "step": 778,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 78,
+      "chunk_label": "Resources (Part 79)"
+    },
+    {
+      "step": 779,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 79,
+      "chunk_label": "Resources (Part 80)"
+    },
+    {
+      "step": 780,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 80,
+      "chunk_label": "Resources (Part 81)"
+    },
+    {
+      "step": 781,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 81,
+      "chunk_label": "Resources (Part 82)"
+    },
+    {
+      "step": 782,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 82,
+      "chunk_label": "Resources (Part 83)"
+    },
+    {
+      "step": 783,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 83,
+      "chunk_label": "Resources (Part 84)"
+    },
+    {
+      "step": 784,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 84,
+      "chunk_label": "Resources (Part 85)"
+    },
+    {
+      "step": 785,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 85,
+      "chunk_label": "Resources (Part 86)"
+    },
+    {
+      "step": 786,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 86,
+      "chunk_label": "Resources (Part 87)"
+    },
+    {
+      "step": 787,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 87,
+      "chunk_label": "Resources (Part 88)"
+    },
+    {
+      "step": 788,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 88,
+      "chunk_label": "Resources (Part 89)"
+    },
+    {
+      "step": 789,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 89,
+      "chunk_label": "Resources (Part 90)"
+    },
+    {
+      "step": 790,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 90,
+      "chunk_label": "Resources (Part 91)"
+    },
+    {
+      "step": 791,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 91,
+      "chunk_label": "Resources (Part 92)"
+    },
+    {
+      "step": 792,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 92,
+      "chunk_label": "Resources (Part 93)"
+    },
+    {
+      "step": 793,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 93,
+      "chunk_label": "Resources (Part 94)"
+    },
+    {
+      "step": 794,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 94,
+      "chunk_label": "Resources (Part 95)"
+    },
+    {
+      "step": 795,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 95,
+      "chunk_label": "Resources (Part 96)"
+    },
+    {
+      "step": 796,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 96,
+      "chunk_label": "Resources (Part 97)"
+    },
+    {
+      "step": 797,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 97,
+      "chunk_label": "Resources (Part 98)"
+    },
+    {
+      "step": 798,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 98,
+      "chunk_label": "Resources (Part 99)"
+    },
+    {
+      "step": 799,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 99,
+      "chunk_label": "Resources (Part 100)"
+    },
+    {
+      "step": 800,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 100,
+      "chunk_label": "Resources (Part 101)"
+    },
+    {
+      "step": 801,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 101,
+      "chunk_label": "Resources (Part 102)"
+    },
+    {
+      "step": 802,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 102,
+      "chunk_label": "Resources (Part 103)"
+    },
+    {
+      "step": 803,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 103,
+      "chunk_label": "Resources (Part 104)"
+    },
+    {
+      "step": 804,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 104,
+      "chunk_label": "Resources (Part 105)"
+    },
+    {
+      "step": 805,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 105,
+      "chunk_label": "Resources (Part 106)"
+    },
+    {
+      "step": 806,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 106,
+      "chunk_label": "Resources (Part 107)"
+    },
+    {
+      "step": 807,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 107,
+      "chunk_label": "Resources (Part 108)"
+    },
+    {
+      "step": 808,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 108,
+      "chunk_label": "Resources (Part 109)"
+    },
+    {
+      "step": 809,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 109,
+      "chunk_label": "Resources (Part 110)"
+    },
+    {
+      "step": 810,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 110,
+      "chunk_label": "Resources (Part 111)"
+    },
+    {
+      "step": 811,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 111,
+      "chunk_label": "Resources (Part 112)"
+    },
+    {
+      "step": 812,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 112,
+      "chunk_label": "Resources (Part 113)"
+    },
+    {
+      "step": 813,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 113,
+      "chunk_label": "Resources (Part 114)"
+    },
+    {
+      "step": 814,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 114,
+      "chunk_label": "Resources (Part 115)"
+    },
+    {
+      "step": 815,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 115,
+      "chunk_label": "Resources (Part 116)"
+    },
+    {
+      "step": 816,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 116,
+      "chunk_label": "Resources (Part 117)"
+    },
+    {
+      "step": 817,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 117,
+      "chunk_label": "Resources (Part 118)"
+    },
+    {
+      "step": 818,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 118,
+      "chunk_label": "Resources (Part 119)"
+    },
+    {
+      "step": 819,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 119,
+      "chunk_label": "Resources (Part 120)"
+    },
+    {
+      "step": 820,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 120,
+      "chunk_label": "Resources (Part 121)"
+    },
+    {
+      "step": 821,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 121,
+      "chunk_label": "Resources (Part 122)"
+    },
+    {
+      "step": 822,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 122,
+      "chunk_label": "Resources (Part 123)"
+    },
+    {
+      "step": 823,
+      "section_index": 7,
+      "section_title": "Resources",
+      "chunk_index": 123,
+      "chunk_label": "Resources (Part 124)"
+    }
+  ],
+  "profile": "stem"
+}
