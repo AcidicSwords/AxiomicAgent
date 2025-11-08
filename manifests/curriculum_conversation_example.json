@@ -1,0 +1,24 @@
+{
+  "mit": {"rebuild": false},
+  "curriculum": {
+    "zip_dir": "datasets/mit_curriculum_datasets",
+    "fs_dir": "datasets/mit_curriculum_fs",
+    "insights_out": "reports/mit_curriculum_insights_fs",
+    "dynamics_out": "reports/mit_curriculum_dynamics_fs",
+    "heads": ["monte_carlo", "forecast", "regime_change"]
+  },
+  "youtube": [
+    {
+      "course_id": "essence_calculus",
+      "playlist_url": null,
+      "profile": "youtube_3b1b",
+      "videos_per_step": 1
+    }
+  ],
+  "conversation": {
+    "raw_dir": "RawConversation",
+    "clean_out": "reports/conversation_clean",
+    "metrics_out": "reports/conversation_metrics"
+  }
+}
+
