@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python tests/test_conversation_adapter.py:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
