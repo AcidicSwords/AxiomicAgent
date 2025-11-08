@@ -220,6 +220,19 @@ class CurriculumPreprocessor:
         for step, edges in obs_steps.items():
             step_features[step] = self._summarize_step(step, edges, node_tags, node_weights, nodes)
 
+        extra_steps = raw.meta.get("step_features")
+        if isinstance(extra_steps, dict):
+            for step_key, extras in extra_steps.items():
+                try:
+                    step_index = int(step_key)
+                except (TypeError, ValueError):
+                    continue
+                if not isinstance(extras, dict):
+                    continue
+                feats = step_features.setdefault(step_index, {})
+                for k, v in extras.items():
+                    feats[k] = v
+
         # --- Trusted connectivity (TED_tau) approximation ---
         # Compose a per-edge quality score from verification (freq), authority (tags),
         # recency (last seen distance), and locality (min node weight).

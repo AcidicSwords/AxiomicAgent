@@ -129,36 +129,11 @@ class InsightReporter:
         self.summary["steps"].append(data)
 
     def finish(self):
-        aggregates = {
-            "avg_q": round(sum(self._series_q) / len(self._series_q), 3) if self._series_q else None,
-            "avg_ted": round(sum(self._series_ted) / len(self._series_ted), 3) if self._series_ted else None,
-            "avg_stability": round(sum(self._series_s) / len(self._series_s), 3) if self._series_s else None,
-            "avg_spread": round(sum(self._series_spread) / len(self._series_spread), 3) if self._series_spread else None,
-            "steps": len(self.summary["steps"]),
-        }
-        # compute avg_ted_trusted if present in any step entries
-        ted_tr_vals = []
-        for s in self.summary.get("steps", []):
-            v = s.get("ted_trusted")
-            if isinstance(v, (int, float)):
-                ted_tr_vals.append(float(v))
-        if ted_tr_vals:
-            aggregates["avg_ted_trusted"] = round(sum(ted_tr_vals) / len(ted_tr_vals), 3)
-        if self._type_counts:
-            aggregates["step_types"] = dict(sorted(self._type_counts.items()))
+        aggregates = self._build_aggregates()
         self.summary["aggregates"] = aggregates
-
-        recs: List[str] = []
-        if aggregates.get("avg_ted") and aggregates["avg_ted"] > 0.6:
-            recs.append("High drift detected; schedule a review or escalation.")
-        if aggregates.get("avg_q") and aggregates["avg_q"] < 0.4:
-            recs.append("Quality is lagging; consider injecting higher-signal context.")
-        if not recs:
-            recs.append("System performing within expected ranges.")
-        self.summary["recommendations"] = recs
-
-        self.path.parent.mkdir(parents=True, exist_ok=True)
-        self.path.write_text(json.dumps(self.summary, indent=2))
+        self.summary["recommendations"] = self._compose_recommendations(aggregates)
+        self._extend_summary()
+        self._write_summary()
 
     # ------------------------------------------------------------------
 
@@ -254,3 +229,39 @@ class InsightReporter:
         if meta_fraction >= 0.3 or nav_noise >= 0.45:
             return "transition"
         return "mixed"
+
+    def _extend_summary(self):
+        return
+
+    def _build_aggregates(self) -> Dict[str, object]:
+        aggregates = {
+            "avg_q": round(sum(self._series_q) / len(self._series_q), 3) if self._series_q else None,
+            "avg_ted": round(sum(self._series_ted) / len(self._series_ted), 3) if self._series_ted else None,
+            "avg_stability": round(sum(self._series_s) / len(self._series_s), 3) if self._series_s else None,
+            "avg_spread": round(sum(self._series_spread) / len(self._series_spread), 3) if self._series_spread else None,
+            "steps": len(self.summary["steps"]),
+        }
+        ted_tr_vals = []
+        for s in self.summary.get("steps", []):
+            v = s.get("ted_trusted")
+            if isinstance(v, (int, float)):
+                ted_tr_vals.append(float(v))
+        if ted_tr_vals:
+            aggregates["avg_ted_trusted"] = round(sum(ted_tr_vals) / len(ted_tr_vals), 3)
+        if self._type_counts:
+            aggregates["step_types"] = dict(sorted(self._type_counts.items()))
+        return aggregates
+
+    def _compose_recommendations(self, aggregates: Dict[str, object]) -> List[str]:
+        recs: List[str] = []
+        if aggregates.get("avg_ted") and float(aggregates["avg_ted"]) > 0.6:
+            recs.append("High drift detected; schedule a review or escalation.")
+        if aggregates.get("avg_q") and float(aggregates["avg_q"]) < 0.4:
+            recs.append("Quality is lagging; consider injecting higher-signal context.")
+        if not recs:
+            recs.append("System performing within expected ranges.")
+        return recs
+
+    def _write_summary(self):
+        self.path.parent.mkdir(parents=True, exist_ok=True)
+        self.path.write_text(json.dumps(self.summary, indent=2))

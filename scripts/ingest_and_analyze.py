@@ -106,26 +106,98 @@ def process_mit_group(entry: Dict[str, Any]) -> None:
         print("[mit] Using existing datasets; set rebuild=true to rebuild")
 
 
-def process_conversation(entry: Dict[str, Any]) -> Path:
+def build_conversation_datasets(clean_dir: Path, zip_dir: Path, window_size: int, prefix: str) -> None:
+    ensure_dir(zip_dir)
+    _run(
+        [
+            sys.executable,
+            "-m",
+            "scripts.build_conversation_datasets",
+            "--input-dir",
+            str(clean_dir),
+            "--output-dir",
+            str(zip_dir),
+            "--window-size",
+            str(window_size),
+            "--prefix",
+            prefix,
+        ]
+    )
+
+
+def process_conversation(entry: Dict[str, Any], default_zip_dir: Path) -> Path:
     raw_dir = Path(entry.get("raw_dir") or "RawConversation")
     clean_out = Path(entry.get("clean_out") or "reports/conversation_clean")
     metrics_out = Path(entry.get("metrics_out") or "reports/conversation_metrics")
+    window_size = int(entry.get("window_size") or 6)
+    prefix = entry.get("prefix") or "conversation"
+    build_zip_dir = Path(entry.get("zip_dir") or default_zip_dir)
+
     ensure_dir(clean_out)
     ensure_dir(metrics_out)
-    _run([sys.executable, "-m", "scripts.scrub_transcripts", "--input-dir", str(raw_dir), "--out-dir", str(clean_out)])
-    _run([sys.executable, "-m", "scripts.run_conversation_health", "--input-dir", str(clean_out), "--out-dir", str(metrics_out)])
+    _run(
+        [
+            sys.executable,
+            "-m",
+            "scripts.scrub_transcripts",
+            "--input-dir",
+            str(raw_dir),
+            "--out-dir",
+            str(clean_out),
+        ]
+    )
+    build_conversation_datasets(clean_out, build_zip_dir, window_size, prefix)
+    _run(
+        [
+            sys.executable,
+            "-m",
+            "scripts.run_conversation_health",
+            "--input-dir",
+            str(clean_out),
+            "--out-dir",
+            str(metrics_out),
+            "--window",
+            str(window_size),
+        ]
+    )
     return metrics_out
 
 
-def run_zipless_curriculum(zip_dir: Path, fs_dir: Path, insights_out: Path, dynamics_out: Path, heads: List[str]) -> None:
-    ensure_dir(insights_out)
-    ensure_dir(dynamics_out)
-    _run([sys.executable, "-m", "scripts.run_mit_curriculum_zipless",
-          "--zip-dir", str(zip_dir), "--fs-dir", str(fs_dir), "--out-dir", str(insights_out),
-          "--compute-spread", "--compute-locality", "--heads", *heads, "--reporter", "insight"]) 
-    _run([sys.executable, "-m", "scripts.run_mit_curriculum_zipless",
-          "--zip-dir", str(zip_dir), "--fs-dir", str(fs_dir), "--out-dir", str(dynamics_out),
-          "--compute-spread", "--compute-locality", "--heads", *heads, "--reporter", "curriculum_dynamics"]) 
+def run_core_report(
+    zip_dir: Path,
+    fs_dir: Path,
+    out_dir: Path,
+    reporter_name: str,
+    heads: List[str],
+    compute_spread: bool,
+    compute_locality: bool,
+):
+    ensure_dir(out_dir)
+    cmd = [
+        sys.executable,
+        "-m",
+        "scripts.run_mit_curriculum_zipless",
+        "--zip-dir",
+        str(zip_dir),
+        "--fs-dir",
+        str(fs_dir),
+        "--out-dir",
+        str(out_dir),
+        "--heads",
+        *heads,
+        "--reporter",
+        reporter_name,
+    ]
+    if compute_spread:
+        cmd.append("--compute-spread")
+    if compute_locality:
+        cmd.append("--compute-locality")
+    _run(cmd)
+
+
+def run_zipless_curriculum(zip_dir: Path, fs_dir: Path, insights_out: Path, dynamics_out: Path, heads: List[str], compute_spread: bool, compute_locality: bool) -> None:
+    run_core_report(zip_dir, fs_dir, insights_out, "insight", heads, compute_spread, compute_locality)
+    run_core_report(zip_dir, fs_dir, dynamics_out, "curriculum_dynamics", heads, compute_spread, compute_locality)
 
 
 def main() -> None:
@@ -134,6 +206,17 @@ def main() -> None:
     args = ap.parse_args()
 
     manifest = _read_manifest(Path(args.manifest))
+
+    curriculum_cfg = manifest.get("curriculum") or {}
+    zip_dir = Path(curriculum_cfg.get("zip_dir") or "datasets/mit_curriculum_datasets")
+    fs_dir = Path(curriculum_cfg.get("fs_dir") or "datasets/mit_curriculum_fs")
+    insights_out = Path(curriculum_cfg.get("insights_out") or "reports/mit_curriculum_insights_fs")
+    dynamics_out = Path(curriculum_cfg.get("dynamics_out") or "reports/mit_curriculum_dynamics_fs")
+    curriculum_insight_out = Path(curriculum_cfg.get("curriculum_insight_out") or "reports/curriculum_insight_fs")
+    conversation_insight_out = Path(curriculum_cfg.get("conversation_insight_out") or "reports/conversation_insight_fs")
+    heads = curriculum_cfg.get("heads") or ["monte_carlo", "forecast", "regime_change"]
+    compute_spread = bool(curriculum_cfg.get("compute_spread", True))
+    compute_locality = bool(curriculum_cfg.get("compute_locality", True))
 
     # 1) YouTube sources (optional)
     zip_paths: List[Path] = []
@@ -146,22 +229,21 @@ def main() -> None:
     if manifest.get("mit"):
         process_mit_group(manifest["mit"])
 
-    # 3) Run curriculum zipless over full zip_dir
-    curriculum_cfg = manifest.get("curriculum") or {}
-    zip_dir = Path(curriculum_cfg.get("zip_dir") or "datasets/mit_curriculum_datasets")
-    fs_dir = Path(curriculum_cfg.get("fs_dir") or "datasets/mit_curriculum_fs")
-    insights_out = Path(curriculum_cfg.get("insights_out") or "reports/mit_curriculum_insights_fs")
-    dynamics_out = Path(curriculum_cfg.get("dynamics_out") or "reports/mit_curriculum_dynamics_fs")
-    heads = curriculum_cfg.get("heads") or ["monte_carlo", "forecast", "regime_change"]
-    run_zipless_curriculum(zip_dir, fs_dir, insights_out, dynamics_out, heads)
-
-    # 4) Conversation (optional)
+    # 3) Conversation (optional) — build dataset before running zipless pipeline
     if manifest.get("conversation"):
-        process_conversation(manifest["conversation"])
+        process_conversation(manifest["conversation"], zip_dir)
+
+    # 4) Run curriculum zipless over full zip_dir (includes MIT + YouTube + conversation datasets)
+    if manifest.get("conversation"):
+        process_conversation(manifest["conversation"], zip_dir)
+
+    # 4) Run curriculum + conversation reporters
+    run_zipless_curriculum(zip_dir, fs_dir, insights_out, dynamics_out, heads, compute_spread, compute_locality)
+    run_core_report(zip_dir, fs_dir, curriculum_insight_out, "curriculum_insight", heads, compute_spread, compute_locality)
+    run_core_report(zip_dir, fs_dir, conversation_insight_out, "conversation_insight", heads, compute_spread, compute_locality)
 
     print("\nOrchestration complete.")
 
 
 if __name__ == "__main__":
     main()
-

@@ -1,24 +1,52 @@
 {
-  "mit": {"rebuild": false},
+  "mit": {"rebuild": true},
   "curriculum": {
     "zip_dir": "datasets/mit_curriculum_datasets",
     "fs_dir": "datasets/mit_curriculum_fs",
     "insights_out": "reports/mit_curriculum_insights_fs",
     "dynamics_out": "reports/mit_curriculum_dynamics_fs",
-    "heads": ["monte_carlo", "forecast", "regime_change"]
+    "heads": ["monte_carlo", "forecast", "regime_change"],
+    "curriculum_insight_out": "reports/curriculum_insight_fs",
+    "conversation_insight_out": "reports/conversation_insight_fs",
+    "compute_spread": true,
+    "compute_locality": true
   },
   "youtube": [
     {
+      "course_id": "crashcourse_computing",
+      "raw_json": "RawYT/crashcourse_computing.raw.json",
+      "profile": "youtube_crashcourse",
+      "videos_per_step": 1,
+      "output_zip": "datasets/mit_curriculum_datasets/crashcourse_computing.zip"
+    },
+    {
+      "course_id": "crashcourse_history",
+      "raw_json": "RawYT/crashcourse_history.raw.json",
+      "profile": "youtube_crashcourse",
+      "videos_per_step": 1,
+      "output_zip": "datasets/mit_curriculum_datasets/crashcourse_history.zip"
+    },
+    {
       "course_id": "essence_calculus",
-      "playlist_url": null,
+      "raw_json": "RawYT/essence_linear_algebra.raw.json",
       "profile": "youtube_3b1b",
-      "videos_per_step": 1
+      "videos_per_step": 1,
+      "output_zip": "datasets/mit_curriculum_datasets/essence_calculus.zip"
+    },
+    {
+      "course_id": "essence_linear_algebra_series",
+      "raw_json": "RawYT/essence_linear_algebra_series.raw.json",
+      "profile": "youtube_3b1b",
+      "videos_per_step": 1,
+      "output_zip": "datasets/mit_curriculum_datasets/essence_linear_algebra_series.zip"
     }
   ],
   "conversation": {
-    "raw_dir": "RawConversation",
+    "raw_dir": "RawConversation/PositiveExample",
     "clean_out": "reports/conversation_clean",
-    "metrics_out": "reports/conversation_metrics"
+    "metrics_out": "reports/conversation_metrics",
+    "zip_dir": "datasets/mit_curriculum_datasets",
+    "window_size": 6,
+    "prefix": "conversation"
   }
 }
-
