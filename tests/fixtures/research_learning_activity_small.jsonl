@@ -1,0 +1,6 @@
+﻿{"user_id": "u1", "timestamp": "2024-01-10T09:00:00Z", "resource_id": "intro_limits_video", "resource_label": "Intro: Limits", "event_type": "view", "score": null, "course_id": "18.01"}
+{"user_id": "u1", "timestamp": "2024-01-10T09:20:00Z", "resource_id": "limits_reading", "resource_label": "Reading: Limits", "event_type": "view", "score": null, "course_id": "18.01"}
+{"user_id": "u1", "timestamp": "2024-01-10T09:45:00Z", "resource_id": "limits_quiz_1", "resource_label": "Quiz 1", "event_type": "submit_quiz", "score": 0.7, "course_id": "18.01"}
+{"user_id": "u1", "timestamp": "2024-01-11T10:00:00Z", "resource_id": "limits_quiz_1", "resource_label": "Quiz 1", "event_type": "submit_quiz", "score": 0.9, "course_id": "18.01"}
+{"user_id": "u2", "timestamp": "2024-01-11T11:00:00Z", "resource_id": "intro_limits_video", "resource_label": "Intro: Limits", "event_type": "view", "score": null, "course_id": "18.01"}
+{"user_id": "u2", "timestamp": "2024-01-11T11:30:00Z", "resource_id": "limits_quiz_1", "resource_label": "Quiz 1", "event_type": "submit_quiz", "score": 0.6, "course_id": "18.01"}

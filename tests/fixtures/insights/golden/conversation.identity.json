@@ -1,0 +1,189 @@
+{
+  "domain": "conversation",
+  "run_meta": {
+    "dataset": "datasets\\convo_brainstorm_test.zip",
+    "hash": null,
+    "steps": null,
+    "nodes": null,
+    "adapter": "conversation_brainstorm",
+    "policy": "IdentityPolicy",
+    "capacity": null
+  },
+  "steps": [
+    {
+      "step": 0,
+      "mean_q": 0.5,
+      "mean_ted": 0.0,
+      "mean_s": 1.0,
+      "delta_ted": null,
+      "top_nodes": [
+        {
+          "id": 1,
+          "label": "One idea is to add an interactive tutorial.",
+          "tags": [
+            "idea"
+          ],
+          "score": 1.0
+        },
+        {
+          "id": 0,
+          "label": "Let's brainstorm ways to improve onboarding.",
+          "tags": [],
+          "score": 0.0
+        }
+      ],
+      "commentary": "Ideas are emerging but could use more building and synthesis.",
+      "counts": {
+        "idea": 1,
+        "build": 0,
+        "decision": 0,
+        "critique": 0,
+        "question": 0
+      },
+      "spread": null,
+      "locality_nodes": null
+    },
+    {
+      "step": 1,
+      "mean_q": 1.0,
+      "mean_ted": 0.0,
+      "mean_s": 1.0,
+      "delta_ted": 0.0,
+      "top_nodes": [
+        {
+          "id": 2,
+          "label": "Another idea could be a short welcome video.",
+          "tags": [
+            "idea"
+          ],
+          "score": 1.0
+        },
+        {
+          "id": 1,
+          "label": "One idea is to add an interactive tutorial.",
+          "tags": [
+            "idea"
+          ],
+          "score": 1.0
+        }
+      ],
+      "commentary": "Healthy idea flow with balanced collaboration.",
+      "counts": {
+        "idea": 2,
+        "build": 0,
+        "decision": 0,
+        "critique": 0,
+        "question": 0
+      },
+      "spread": null,
+      "locality_nodes": null
+    },
+    {
+      "step": 2,
+      "mean_q": 0.75,
+      "mean_ted": 0.0,
+      "mean_s": 1.0,
+      "delta_ted": 0.0,
+      "top_nodes": [
+        {
+          "id": 2,
+          "label": "Another idea could be a short welcome video.",
+          "tags": [
+            "idea"
+          ],
+          "score": 1.0
+        },
+        {
+          "id": 3,
+          "label": "We could also send a follow-up email with tips.",
+          "tags": [
+            "decision"
+          ],
+          "score": 0.6
+        }
+      ],
+      "commentary": "Healthy idea flow with balanced collaboration.",
+      "counts": {
+        "idea": 1,
+        "build": 0,
+        "decision": 1,
+        "critique": 0,
+        "question": 0
+      },
+      "spread": null,
+      "locality_nodes": null
+    },
+    {
+      "step": 3,
+      "mean_q": 0.0,
+      "mean_ted": 0.0,
+      "mean_s": 1.0,
+      "delta_ted": 0.0,
+      "top_nodes": [
+        {
+          "id": 4,
+          "label": "Brainstorm marketing experiments for next quarter.",
+          "tags": [],
+          "score": 0.0
+        },
+        {
+          "id": 5,
+          "label": "Try A/B testing new landing page copy.",
+          "tags": [],
+          "score": 0.0
+        }
+      ],
+      "commentary": "Session progressing normally.",
+      "counts": {
+        "idea": 0,
+        "build": 0,
+        "decision": 0,
+        "critique": 0,
+        "question": 0
+      },
+      "spread": null,
+      "locality_nodes": null
+    },
+    {
+      "step": 4,
+      "mean_q": 0.0,
+      "mean_ted": 0.0,
+      "mean_s": 1.0,
+      "delta_ted": 0.0,
+      "top_nodes": [
+        {
+          "id": 6,
+          "label": "Run a small paid campaign on social media.",
+          "tags": [],
+          "score": 0.0
+        },
+        {
+          "id": 5,
+          "label": "Try A/B testing new landing page copy.",
+          "tags": [],
+          "score": 0.0
+        }
+      ],
+      "commentary": "Session progressing normally.",
+      "counts": {
+        "idea": 0,
+        "build": 0,
+        "decision": 0,
+        "critique": 0,
+        "question": 0
+      },
+      "spread": null,
+      "locality_nodes": null
+    }
+  ],
+  "aggregates": {
+    "avg_q": 0.45,
+    "avg_ted": 0.0,
+    "avg_stability": 1.0,
+    "avg_spread": null,
+    "steps": 5
+  },
+  "recommendations": [
+    "System performing within expected ranges."
+  ]
+}

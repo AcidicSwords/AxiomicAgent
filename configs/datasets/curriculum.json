@@ -1,0 +1,78 @@
+{
+  "domain": "curriculum",
+  "builder": {
+    "source": "rawDataStream/18.01sc-fall-2010.zip",
+    "items_json": "datasets/raw_items/18.01sc-fall-2010.json",
+    "output": "datasets/curriculum_stream.zip",
+    "source_format": "mit_ocw",
+    "step_semantics": "section_chunk",
+    "rebuild_items": true
+  },
+  "preprocessor": {
+    "stop_nodes": [
+      "Contact Us",
+      "Browse Course Material",
+      "Help & FAQs",
+      "About OCW",
+      "Give Now",
+      "Syllabus",
+      "Calendar",
+      "Recitations",
+      "Download",
+      "Transcript",
+      "Video",
+      "Lecture Notes"
+    ],
+    "regex_patterns": [
+      "^lec\\\\d+(\\\\.jpg|\\\\.png|\\\\.mp4|\\\\.srt)$",
+      ".*\\\\.srt$",
+      "^\\\\s*$"
+    ],
+    "type_rules": [
+      {
+        "pattern": "(exam|midterm|final|quiz)",
+        "type": "exam",
+        "tag": "assessment",
+        "weight": 2.0
+      },
+      {
+        "pattern": "(problem set|pset|assignment|homework)",
+        "type": "pset",
+        "tag": "assessment",
+        "weight": 1.2
+      },
+      {
+        "pattern": "(lecture|session|topic|unit)",
+        "type": "concept",
+        "tag": "concept",
+        "weight": 1.0
+      },
+      {
+        "pattern": "(definition|theorem|lemma|corollary)",
+        "type": "definition",
+        "tag": "concept",
+        "weight": 1.0
+      },
+      {
+        "pattern": "(reading|reading list|text|novel|story)",
+        "type": "reading",
+        "tag": "reading",
+        "weight": 0.85
+      },
+      {
+        "pattern": "(essay|paper|writing assignment|portfolio)",
+        "type": "assessment",
+        "tag": "assessment",
+        "weight": 2.5
+      },
+      {
+        "pattern": "(guidelines|syllabus|insight)",
+        "type": "meta",
+        "tag": "meta",
+        "weight": 0.2
+      }
+    ],
+    "keep_threshold": 0.1,
+    "topk_per_node": 50
+  }
+}

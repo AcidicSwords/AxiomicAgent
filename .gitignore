@@ -1,0 +1,33 @@
+﻿# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+.env/
+
+# Test/coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Project artifacts
+reports/
+RawOCW/
+RawYT/
+datasets/raw_mit_curriculum/
+datasets/youtube_raw/
+datasets/mit_curriculum_datasets/
+
+# Archives
+*.zip
+
+# Editor
+.vscode/
+.idea/

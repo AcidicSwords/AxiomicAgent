@@ -1,0 +1,135 @@
+{
+  "domain": "research_activity",
+  "run_meta": {
+    "dataset": "datasets\\research_activity_test.zip",
+    "hash": null,
+    "steps": null,
+    "nodes": null,
+    "adapter": "research_learning",
+    "policy": "IdentityPolicy",
+    "capacity": null
+  },
+  "steps": [
+    {
+      "step": 0,
+      "mean_q": 0.35,
+      "mean_ted": 0.77,
+      "mean_s": 0.23,
+      "delta_ted": null,
+      "top_nodes": [
+        {
+          "id": 2,
+          "label": "Reading: Limits",
+          "tags": [
+            "resource"
+          ],
+          "score": 0.4
+        },
+        {
+          "id": 1,
+          "label": "Intro: Limits",
+          "tags": [],
+          "score": 0
+        }
+      ],
+      "commentary": "Engagement dropping; intervene with targeted prompts or reminders.",
+      "counts": {
+        "resource": 1,
+        "assessment": 0,
+        "support": 0,
+        "events": 1
+      },
+      "spread": null,
+      "locality_nodes": null
+    },
+    {
+      "step": 1,
+      "mean_q": 0.5,
+      "mean_ted": 0.755,
+      "mean_s": 0.245,
+      "delta_ted": -0.015,
+      "top_nodes": [
+        {
+          "id": 0,
+          "label": "Quiz 1",
+          "tags": [
+            "assessment"
+          ],
+          "score": 0.5
+        },
+        {
+          "id": 2,
+          "label": "Reading: Limits",
+          "tags": [
+            "resource"
+          ],
+          "score": 0.4
+        }
+      ],
+      "commentary": "Engagement dropping; intervene with targeted prompts or reminders.",
+      "counts": {
+        "resource": 1,
+        "assessment": 1,
+        "support": 0,
+        "events": 1
+      },
+      "spread": null,
+      "locality_nodes": null
+    },
+    {
+      "step": 2,
+      "mean_q": 0.0,
+      "mean_ted": 0.0,
+      "mean_s": 1.0,
+      "delta_ted": -0.755,
+      "top_nodes": [],
+      "commentary": "No learning activity recorded.",
+      "counts": {},
+      "spread": null,
+      "locality_nodes": null
+    },
+    {
+      "step": 3,
+      "mean_q": 0.15,
+      "mean_ted": 0.97,
+      "mean_s": 0.03,
+      "delta_ted": 0.97,
+      "top_nodes": [
+        {
+          "id": 0,
+          "label": "Quiz 1",
+          "tags": [
+            "assessment"
+          ],
+          "score": 0.5
+        },
+        {
+          "id": 1,
+          "label": "Intro: Limits",
+          "tags": [],
+          "score": 0
+        }
+      ],
+      "commentary": "Engagement dropping; intervene with targeted prompts or reminders.",
+      "counts": {
+        "resource": 0,
+        "assessment": 1,
+        "support": 0,
+        "events": 1
+      },
+      "spread": null,
+      "locality_nodes": null
+    }
+  ],
+  "aggregates": {
+    "avg_q": 0.25,
+    "avg_ted": 0.624,
+    "avg_stability": 0.376,
+    "avg_spread": null,
+    "steps": 4
+  },
+  "recommendations": [
+    "High drift detected; schedule a review or escalation.",
+    "Quality is lagging; consider injecting higher-signal context."
+  ]
+}

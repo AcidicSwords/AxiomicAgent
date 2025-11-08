@@ -1,0 +1,390 @@
+{
+  "domain": "blueprint",
+  "run_meta": {
+    "dataset": "datasets\\creation_blueprint_test.zip",
+    "hash": null,
+    "steps": null,
+    "nodes": null,
+    "adapter": "creation_blueprint",
+    "policy": "IdentityPolicy",
+    "capacity": null
+  },
+  "steps": [
+    {
+      "step": 0,
+      "mean_q": 1.0,
+      "mean_ted": 0.0,
+      "mean_s": 1.0,
+      "delta_ted": null,
+      "top_nodes": [
+        {
+          "id": 0,
+          "label": "System shall allow users to reset their password via email.",
+          "tags": [
+            "requirement"
+          ],
+          "score": 1.0
+        },
+        {
+          "id": 2,
+          "label": "AuthService",
+          "tags": [
+            "component"
+          ],
+          "score": 0.8
+        }
+      ],
+      "commentary": "Blueprint coverage looks balanced.",
+      "counts": {
+        "requirements": 1,
+        "components": 1,
+        "tests": 0,
+        "risks": 0
+      },
+      "spread": null,
+      "locality_nodes": null
+    },
+    {
+      "step": 1,
+      "mean_q": 1.0,
+      "mean_ted": 0.0,
+      "mean_s": 1.0,
+      "delta_ted": 0.0,
+      "top_nodes": [
+        {
+          "id": 1,
+          "label": "System must support two-factor authentication (2FA).",
+          "tags": [
+            "requirement"
+          ],
+          "score": 1.0
+        },
+        {
+          "id": 2,
+          "label": "AuthService",
+          "tags": [
+            "component"
+          ],
+          "score": 0.8
+        }
+      ],
+      "commentary": "Blueprint coverage looks balanced.",
+      "counts": {
+        "requirements": 1,
+        "components": 1,
+        "tests": 0,
+        "risks": 0
+      },
+      "spread": null,
+      "locality_nodes": null
+    },
+    {
+      "step": 2,
+      "mean_q": 1.0,
+      "mean_ted": 0.0,
+      "mean_s": 1.0,
+      "delta_ted": 0.0,
+      "top_nodes": [
+        {
+          "id": 1,
+          "label": "System must support two-factor authentication (2FA).",
+          "tags": [
+            "requirement"
+          ],
+          "score": 1.0
+        },
+        {
+          "id": 4,
+          "label": "NotificationService",
+          "tags": [
+            "component"
+          ],
+          "score": 0.8
+        }
+      ],
+      "commentary": "Blueprint coverage looks balanced.",
+      "counts": {
+        "requirements": 1,
+        "components": 1,
+        "tests": 0,
+        "risks": 0
+      },
+      "spread": null,
+      "locality_nodes": null
+    },
+    {
+      "step": 3,
+      "mean_q": 0.3,
+      "mean_ted": 0.7,
+      "mean_s": 0.5,
+      "delta_ted": 0.7,
+      "top_nodes": [
+        {
+          "id": 2,
+          "label": "AuthService",
+          "tags": [
+            "component"
+          ],
+          "score": 0.8
+        },
+        {
+          "id": 3,
+          "label": "UserService",
+          "tags": [
+            "component"
+          ],
+          "score": 0.8
+        }
+      ],
+      "commentary": "Many requirements are unlinked-add design/test coverage.",
+      "counts": {
+        "requirements": 0,
+        "components": 2,
+        "tests": 0,
+        "risks": 0
+      },
+      "spread": null,
+      "locality_nodes": null
+    },
+    {
+      "step": 4,
+      "mean_q": 0.3,
+      "mean_ted": 0.7,
+      "mean_s": 0.5,
+      "delta_ted": 0.0,
+      "top_nodes": [
+        {
+          "id": 2,
+          "label": "AuthService",
+          "tags": [
+            "component"
+          ],
+          "score": 0.8
+        },
+        {
+          "id": 4,
+          "label": "NotificationService",
+          "tags": [
+            "component"
+          ],
+          "score": 0.8
+        }
+      ],
+      "commentary": "Many requirements are unlinked-add design/test coverage.",
+      "counts": {
+        "requirements": 0,
+        "components": 2,
+        "tests": 0,
+        "risks": 0
+      },
+      "spread": null,
+      "locality_nodes": null
+    },
+    {
+      "step": 5,
+      "mean_q": 0.3,
+      "mean_ted": 0.7,
+      "mean_s": 0.5,
+      "delta_ted": 0.0,
+      "top_nodes": [
+        {
+          "id": 6,
+          "label": "AuthService",
+          "tags": [
+            "component"
+          ],
+          "score": 0.8
+        },
+        {
+          "id": 5,
+          "label": "ResetRequestPage",
+          "tags": [],
+          "score": 0
+        }
+      ],
+      "commentary": "Many requirements are unlinked-add design/test coverage.",
+      "counts": {
+        "requirements": 0,
+        "components": 1,
+        "tests": 0,
+        "risks": 0
+      },
+      "spread": null,
+      "locality_nodes": null
+    },
+    {
+      "step": 6,
+      "mean_q": 0.3,
+      "mean_ted": 0.7,
+      "mean_s": 0.5,
+      "delta_ted": 0.0,
+      "top_nodes": [
+        {
+          "id": 6,
+          "label": "AuthService",
+          "tags": [
+            "component"
+          ],
+          "score": 0.8
+        },
+        {
+          "id": 7,
+          "label": "NotificationService",
+          "tags": [
+            "component"
+          ],
+          "score": 0.8
+        }
+      ],
+      "commentary": "Many requirements are unlinked-add design/test coverage.",
+      "counts": {
+        "requirements": 0,
+        "components": 2,
+        "tests": 0,
+        "risks": 0
+      },
+      "spread": null,
+      "locality_nodes": null
+    },
+    {
+      "step": 7,
+      "mean_q": 0.3,
+      "mean_ted": 0.7,
+      "mean_s": 0.5,
+      "delta_ted": 0.0,
+      "top_nodes": [
+        {
+          "id": 7,
+          "label": "NotificationService",
+          "tags": [
+            "component"
+          ],
+          "score": 0.8
+        },
+        {
+          "id": 8,
+          "label": "ResetConfirmationPage",
+          "tags": [],
+          "score": 0
+        }
+      ],
+      "commentary": "Many requirements are unlinked-add design/test coverage.",
+      "counts": {
+        "requirements": 0,
+        "components": 1,
+        "tests": 0,
+        "risks": 0
+      },
+      "spread": null,
+      "locality_nodes": null
+    },
+    {
+      "step": 8,
+      "mean_q": 0.3,
+      "mean_ted": 0.7,
+      "mean_s": 0.5,
+      "delta_ted": 0.0,
+      "top_nodes": [
+        {
+          "id": 10,
+          "label": "AuthService",
+          "tags": [
+            "component"
+          ],
+          "score": 0.8
+        },
+        {
+          "id": 9,
+          "label": "LoginPage",
+          "tags": [],
+          "score": 0
+        }
+      ],
+      "commentary": "Many requirements are unlinked-add design/test coverage.",
+      "counts": {
+        "requirements": 0,
+        "components": 1,
+        "tests": 0,
+        "risks": 0
+      },
+      "spread": null,
+      "locality_nodes": null
+    },
+    {
+      "step": 9,
+      "mean_q": 0.3,
+      "mean_ted": 0.7,
+      "mean_s": 0.5,
+      "delta_ted": 0.0,
+      "top_nodes": [
+        {
+          "id": 10,
+          "label": "AuthService",
+          "tags": [
+            "component"
+          ],
+          "score": 0.8
+        },
+        {
+          "id": 11,
+          "label": "UserService",
+          "tags": [
+            "component"
+          ],
+          "score": 0.8
+        }
+      ],
+      "commentary": "Many requirements are unlinked-add design/test coverage.",
+      "counts": {
+        "requirements": 0,
+        "components": 2,
+        "tests": 0,
+        "risks": 0
+      },
+      "spread": null,
+      "locality_nodes": null
+    },
+    {
+      "step": 10,
+      "mean_q": 0.3,
+      "mean_ted": 0.7,
+      "mean_s": 0.5,
+      "delta_ted": 0.0,
+      "top_nodes": [
+        {
+          "id": 11,
+          "label": "UserService",
+          "tags": [
+            "component"
+          ],
+          "score": 0.8
+        },
+        {
+          "id": 12,
+          "label": "HomePage",
+          "tags": [],
+          "score": 0
+        }
+      ],
+      "commentary": "Many requirements are unlinked-add design/test coverage.",
+      "counts": {
+        "requirements": 0,
+        "components": 1,
+        "tests": 0,
+        "risks": 0
+      },
+      "spread": null,
+      "locality_nodes": null
+    }
+  ],
+  "aggregates": {
+    "avg_q": 0.491,
+    "avg_ted": 0.509,
+    "avg_stability": 0.636,
+    "avg_spread": null,
+    "steps": 11
+  },
+  "recommendations": [
+    "System performing within expected ranges."
+  ]
+}

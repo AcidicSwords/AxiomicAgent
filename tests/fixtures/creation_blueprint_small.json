@@ -1,0 +1,35 @@
+﻿{
+  "requirements": [
+    "System shall allow users to reset their password via email.",
+    "System must support two-factor authentication (2FA)."
+  ],
+  "components": [
+    "AuthService",
+    "UserService",
+    "NotificationService"
+  ],
+  "processes": [
+    {
+      "name": "PasswordResetFlow",
+      "steps": [
+        "ResetRequestPage",
+        "AuthService",
+        "NotificationService",
+        "ResetConfirmationPage"
+      ]
+    },
+    {
+      "name": "LoginFlow",
+      "steps": [
+        "LoginPage",
+        "AuthService",
+        "UserService",
+        "HomePage"
+      ]
+    }
+  ],
+  "links": [
+    {"from": "AuthService", "to": "UserService", "relation": "loads_profile"},
+    {"from": "AuthService", "to": "NotificationService", "relation": "sends_email"}
+  ]
+}

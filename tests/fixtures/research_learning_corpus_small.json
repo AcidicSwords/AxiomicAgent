@@ -1,0 +1,43 @@
+﻿[
+  {
+    "doc_id": "calc_textbook_ch1",
+    "title": "Introduction to Limits",
+    "kind": "textbook_chapter",
+    "sections": [
+      {
+        "section_id": "s1",
+        "title": "What is a Limit?",
+        "text": "We introduce the notion of a limit...",
+        "outlinks": ["wiki_limit"],
+        "anchors": ["limit", "approach", "epsilon-delta"]
+      },
+      {
+        "section_id": "s2",
+        "title": "Examples",
+        "text": "Consider f(x) = (x^2 - 1)/(x - 1)...",
+        "outlinks": ["smith2020-rational-functions"],
+        "anchors": ["continuity", "removable singularity"]
+      }
+    ]
+  },
+  {
+    "doc_id": "wiki_limit",
+    "title": "Limit (mathematics)",
+    "kind": "wiki",
+    "sections": [
+      {
+        "section_id": "intro",
+        "title": "Definition",
+        "text": "In mathematics, the limit of a function...",
+        "outlinks": [],
+        "anchors": ["limit", "function", "real analysis"]
+      }
+    ]
+  },
+  {
+    "doc_id": "smith2020-rational-functions",
+    "title": "On Rational Functions and Limits",
+    "kind": "paper",
+    "sections": []
+  }
+]

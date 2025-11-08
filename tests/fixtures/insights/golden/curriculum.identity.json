@@ -1,0 +1,184 @@
+{
+  "domain": "curriculum_test",
+  "run_meta": {
+    "dataset": "D:\\AxiomicAgent\\datasets\\curriculum_test.zip",
+    "hash": null,
+    "steps": 3,
+    "nodes": 5,
+    "adapter": "curriculum",
+    "policy": "IdentityPolicy",
+    "capacity": null
+  },
+  "steps": [
+    {
+      "step": 0,
+      "mean_q": 0.782,
+      "mean_ted": 0.0,
+      "mean_s": 0.782,
+      "delta_ted": null,
+      "top_nodes": [
+        {
+          "id": 0,
+          "label": "Limits and continuity",
+          "tags": [
+            "concept"
+          ],
+          "score": 1.0
+        },
+        {
+          "id": 1,
+          "label": "Problem set 1 (limits)",
+          "tags": [
+            "assessment"
+          ],
+          "score": 0.8
+        }
+      ],
+      "commentary": "Major checkpoint week; assessments tightly coupled to concepts (q=0.78).",
+      "counts": {
+        "concept": 1,
+        "definition": 0,
+        "theorem": 0,
+        "reading": 0,
+        "assessment": 1,
+        "navigation": 0,
+        "media": 0,
+        "meta": 0,
+        "other": 0
+      },
+      "spread": null,
+      "locality_nodes": null,
+      "step_type": "checkpoint",
+      "edge_count": 1,
+      "fractions": {
+        "concept_fraction": 0.455,
+        "assessment_fraction": 0.545,
+        "reading_fraction": 0.0,
+        "meta_fraction": 0.0
+      }
+    },
+    {
+      "step": 1,
+      "mean_q": 0.85,
+      "mean_ted": 0.667,
+      "mean_s": 0.85,
+      "delta_ted": 0.667,
+      "top_nodes": [
+        {
+          "id": 2,
+          "label": "Derivatives",
+          "tags": [
+            "concept"
+          ],
+          "score": 1.0
+        },
+        {
+          "id": 0,
+          "label": "Limits and continuity",
+          "tags": [
+            "concept"
+          ],
+          "score": 1.0
+        },
+        {
+          "id": 3,
+          "label": "Problem set 2 (derivatives)",
+          "tags": [
+            "assessment"
+          ],
+          "score": 0.8
+        }
+      ],
+      "commentary": "Major checkpoint week; assessments tightly coupled to concepts (q=0.85).",
+      "counts": {
+        "concept": 2,
+        "definition": 0,
+        "theorem": 0,
+        "reading": 0,
+        "assessment": 1,
+        "navigation": 0,
+        "media": 0,
+        "meta": 0,
+        "other": 0
+      },
+      "spread": null,
+      "locality_nodes": null,
+      "step_type": "checkpoint",
+      "edge_count": 2,
+      "fractions": {
+        "concept_fraction": 0.625,
+        "assessment_fraction": 0.375,
+        "reading_fraction": 0.0,
+        "meta_fraction": 0.0
+      }
+    },
+    {
+      "step": 2,
+      "mean_q": 0.8,
+      "mean_ted": 0.4,
+      "mean_s": 0.8,
+      "delta_ted": -0.267,
+      "top_nodes": [
+        {
+          "id": 2,
+          "label": "Derivatives",
+          "tags": [
+            "concept"
+          ],
+          "score": 1.0
+        },
+        {
+          "id": 0,
+          "label": "Limits and continuity",
+          "tags": [
+            "concept"
+          ],
+          "score": 1.0
+        },
+        {
+          "id": 4,
+          "label": "Midterm exam (limits + derivatives)",
+          "tags": [
+            "assessment"
+          ],
+          "score": 0.8
+        }
+      ],
+      "commentary": "Major checkpoint week; assessments tightly coupled to concepts (q=0.80).",
+      "counts": {
+        "concept": 2,
+        "definition": 0,
+        "theorem": 0,
+        "reading": 0,
+        "assessment": 1,
+        "navigation": 0,
+        "media": 0,
+        "meta": 0,
+        "other": 0
+      },
+      "spread": null,
+      "locality_nodes": null,
+      "step_type": "checkpoint",
+      "edge_count": 2,
+      "fractions": {
+        "concept_fraction": 0.5,
+        "assessment_fraction": 0.5,
+        "reading_fraction": 0.0,
+        "meta_fraction": 0.0
+      }
+    }
+  ],
+  "aggregates": {
+    "avg_q": 0.811,
+    "avg_ted": 0.356,
+    "avg_stability": 0.811,
+    "avg_spread": null,
+    "steps": 3,
+    "step_types": {
+      "checkpoint": 3
+    }
+  },
+  "recommendations": [
+    "System performing within expected ranges."
+  ]
+}

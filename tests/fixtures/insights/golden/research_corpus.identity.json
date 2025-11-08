@@ -1,0 +1,225 @@
+{
+  "domain": "research_corpus",
+  "run_meta": {
+    "dataset": "datasets\\research_corpus_test.zip",
+    "hash": null,
+    "steps": null,
+    "nodes": null,
+    "adapter": "research_learning",
+    "policy": "IdentityPolicy",
+    "capacity": null
+  },
+  "steps": [
+    {
+      "step": 0,
+      "mean_q": 1.0,
+      "mean_ted": 0.0,
+      "mean_s": 1.0,
+      "delta_ted": null,
+      "top_nodes": [
+        {
+          "id": 0,
+          "label": "Introduction to Limits",
+          "tags": [
+            "doc",
+            "textbook_chapter"
+          ],
+          "score": 1.0
+        },
+        {
+          "id": 3,
+          "label": "Limit (mathematics)",
+          "tags": [
+            "doc",
+            "wiki"
+          ],
+          "score": 1.0
+        },
+        {
+          "id": 5,
+          "label": "On Rational Functions and Limits",
+          "tags": [
+            "doc",
+            "paper"
+          ],
+          "score": 1.0
+        },
+        {
+          "id": 4,
+          "label": "Definition",
+          "tags": [
+            "section"
+          ],
+          "score": 0.8
+        },
+        {
+          "id": 2,
+          "label": "Examples",
+          "tags": [
+            "section"
+          ],
+          "score": 0.8
+        },
+        {
+          "id": 1,
+          "label": "What is a Limit?",
+          "tags": [
+            "section"
+          ],
+          "score": 0.8
+        }
+      ],
+      "commentary": "Corpus graph connectivity looks healthy.",
+      "counts": {
+        "doc": 3,
+        "section": 3
+      },
+      "spread": null,
+      "locality_nodes": null
+    },
+    {
+      "step": 1,
+      "mean_q": 1.0,
+      "mean_ted": 0.0,
+      "mean_s": 1.0,
+      "delta_ted": 0.0,
+      "top_nodes": [
+        {
+          "id": 0,
+          "label": "Introduction to Limits",
+          "tags": [
+            "doc",
+            "textbook_chapter"
+          ],
+          "score": 1.0
+        },
+        {
+          "id": 3,
+          "label": "Limit (mathematics)",
+          "tags": [
+            "doc",
+            "wiki"
+          ],
+          "score": 1.0
+        },
+        {
+          "id": 5,
+          "label": "On Rational Functions and Limits",
+          "tags": [
+            "doc",
+            "paper"
+          ],
+          "score": 1.0
+        },
+        {
+          "id": 4,
+          "label": "Definition",
+          "tags": [
+            "section"
+          ],
+          "score": 0.8
+        },
+        {
+          "id": 2,
+          "label": "Examples",
+          "tags": [
+            "section"
+          ],
+          "score": 0.8
+        },
+        {
+          "id": 1,
+          "label": "What is a Limit?",
+          "tags": [
+            "section"
+          ],
+          "score": 0.8
+        }
+      ],
+      "commentary": "Corpus graph connectivity looks healthy.",
+      "counts": {
+        "doc": 3,
+        "section": 3
+      },
+      "spread": null,
+      "locality_nodes": null
+    },
+    {
+      "step": 2,
+      "mean_q": 1.0,
+      "mean_ted": 0.0,
+      "mean_s": 1.0,
+      "delta_ted": 0.0,
+      "top_nodes": [
+        {
+          "id": 0,
+          "label": "Introduction to Limits",
+          "tags": [
+            "doc",
+            "textbook_chapter"
+          ],
+          "score": 1.0
+        },
+        {
+          "id": 3,
+          "label": "Limit (mathematics)",
+          "tags": [
+            "doc",
+            "wiki"
+          ],
+          "score": 1.0
+        },
+        {
+          "id": 5,
+          "label": "On Rational Functions and Limits",
+          "tags": [
+            "doc",
+            "paper"
+          ],
+          "score": 1.0
+        },
+        {
+          "id": 4,
+          "label": "Definition",
+          "tags": [
+            "section"
+          ],
+          "score": 0.8
+        },
+        {
+          "id": 2,
+          "label": "Examples",
+          "tags": [
+            "section"
+          ],
+          "score": 0.8
+        },
+        {
+          "id": 1,
+          "label": "What is a Limit?",
+          "tags": [
+            "section"
+          ],
+          "score": 0.8
+        }
+      ],
+      "commentary": "Corpus graph connectivity looks healthy.",
+      "counts": {
+        "doc": 3,
+        "section": 3
+      },
+      "spread": null,
+      "locality_nodes": null
+    }
+  ],
+  "aggregates": {
+    "avg_q": 1.0,
+    "avg_ted": 0.0,
+    "avg_stability": 1.0,
+    "avg_spread": null,
+    "steps": 3
+  },
+  "recommendations": [
+    "System performing within expected ranges."
+  ]
+}

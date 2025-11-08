@@ -1,0 +1,13 @@
+{
+  "domain": "conversation_brainstorm",
+  "builder": {
+    "source_glob": "rawData/brainstorm/**/*.jsonl",
+    "output": "datasets/convo_brainstorm_stream.zip",
+    "chunk_minutes": 5,
+    "min_turns_per_chunk": 6
+  },
+  "preprocessor": {
+    "stop_terms": ["um", "uh", "like"],
+    "max_degree": 80
+  }
+}

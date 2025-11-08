@@ -1,0 +1,7 @@
+﻿{"session_id": "s1", "turn_index": 0, "speaker": "user",  "text": "Let's brainstorm ways to improve onboarding."}
+{"session_id": "s1", "turn_index": 1, "speaker": "agent", "text": "One idea is to add an interactive tutorial."}
+{"session_id": "s1", "turn_index": 2, "speaker": "user",  "text": "Another idea could be a short welcome video."}
+{"session_id": "s1", "turn_index": 3, "speaker": "agent", "text": "We could also send a follow-up email with tips."}
+{"session_id": "s2", "turn_index": 0, "speaker": "user",  "text": "Brainstorm marketing experiments for next quarter."}
+{"session_id": "s2", "turn_index": 1, "speaker": "agent", "text": "Try A/B testing new landing page copy."}
+{"session_id": "s2", "turn_index": 2, "speaker": "user",  "text": "Run a small paid campaign on social media."}
