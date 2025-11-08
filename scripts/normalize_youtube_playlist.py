@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+﻿#!/usr/bin/env python
 from __future__ import annotations
 
 import argparse
@@ -54,3 +54,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+\n\n# DEPRECATED: use pipeline entry points\nimport warnings\nwarnings.warn('This script is deprecated; see docs/DEPRECATIONS.md', DeprecationWarning)\n

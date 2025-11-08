@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+﻿#!/usr/bin/env python
 from __future__ import annotations
 
 import argparse
@@ -13,7 +13,7 @@ from pdfminer.high_level import extract_text
 WEB_ARTIFACT_PATTERNS = [
     r"^\s*Subscribe\b.*$",
     r"^\s*Sign in\b.*$",
-    r"^\s*©\s*\d{4}.*$",
+    r"^\s*Â©\s*\d{4}.*$",
     r"^\s*All rights reserved.*$",
     r"^\s*Page\s+\d+\s+of\s+\d+\s*$",
     r"^\s*The\s+On\s+Being\s+Project.*$",
@@ -149,3 +149,4 @@ def main() -> None:
 if __name__ == "__main__":
     main()
 
+\n\n# DEPRECATED: use pipeline entry points\nimport warnings\nwarnings.warn('This script is deprecated; see docs/DEPRECATIONS.md', DeprecationWarning)\n
