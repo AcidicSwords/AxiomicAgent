@@ -133,7 +133,7 @@ class ConversationAdapter:
         # Trusted drift (reliability-weighted)
         ted_trusted = self._compute_trusted_drift(ted, current_turn, previous_turn)
 
-        return ConversationSignals(
+        sig = ConversationSignals(
             step_index=turn_index,
             q=q,
             TED=ted,
@@ -143,6 +143,27 @@ class ConversationAdapter:
             node_count=len(current_turn.nodes),
             edge_count=len(current_turn.edges)
         )
+
+        # Map to curriculum-like step types for parity
+        step_type = self._classify_step(sig)
+        sig.metadata["step_type"] = step_type
+
+        return sig
+
+    def _classify_step(self, sig: ConversationSignals) -> str:
+        """Classify conversation step type similar to curriculum labels."""
+        q = sig.q; ted = sig.TED; cont = sig.continuity
+        if ted >= 0.65 and cont <= 0.2:
+            return "pivot"
+        if q >= 0.85 and ted <= 0.25 and cont >= 0.4:
+            return "checkpoint"
+        if q >= 0.8 and cont >= 0.3:
+            return "concept_dense"
+        if q <= 0.4 and ted >= 0.5:
+            return "scattered"
+        if ted >= 0.4 and cont <= 0.25:
+            return "exploring"
+        return "mixed"
 
     def _compute_quality(self, turn: ConversationTurn) -> float:
         """
@@ -156,19 +177,29 @@ class ConversationAdapter:
         if len(turn.nodes) == 0:
             return 0.5  # Neutral
 
-        # Factor 1: Edge density
+        # Factor 1: Edge density with reply emphasis (reduce co-mention dominance)
         num_nodes = len(turn.nodes)
         max_edges = num_nodes * (num_nodes - 1) / 2
-        actual_edges = len([e for e in turn.edges if e.type == "co-mention"])
+        com_edges = [e for e in turn.edges if e.type == "co-mention"]
+        rep_edges = [e for e in turn.edges if e.type == "reply"]
 
-        if max_edges > 0:
-            density = actual_edges / max_edges
-        else:
-            density = 0.0
+        # Density considers both, with reply contributing more signal
+        com_d = (len(com_edges) / max_edges) if max_edges > 0 else 0.0
+        rep_d = (len(rep_edges) / max_edges) if max_edges > 0 else 0.0
+        density = 0.6 * rep_d + 0.4 * com_d
 
         # Factor 2: Average edge quality
         if turn.edges:
-            avg_edge_quality = np.mean([e.quality for e in turn.edges])
+            # Weight reply edges higher for quality
+            if rep_edges:
+                rep_q = np.mean([e.quality for e in rep_edges])
+            else:
+                rep_q = 0.5
+            if com_edges:
+                com_q = np.mean([e.quality for e in com_edges])
+            else:
+                com_q = 0.5
+            avg_edge_quality = 0.65 * rep_q + 0.35 * com_q
         else:
             avg_edge_quality = 0.5
 
@@ -179,11 +210,7 @@ class ConversationAdapter:
         balance_factor = 0.8 if (has_concepts and has_questions) else 0.6
 
         # Weighted combination
-        q = (
-            0.3 * density +
-            0.4 * avg_edge_quality +
-            0.3 * balance_factor
-        )
+        q = (0.35 * density + 0.45 * avg_edge_quality + 0.2 * balance_factor)
 
         return np.clip(q, 0, 1)
 

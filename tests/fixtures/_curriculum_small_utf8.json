@@ -1,0 +1,57 @@
+{
+  "course_id": "18.01-mini",
+  "items": [
+    {
+      "item_id": "lec1",
+      "title": "Limits and continuity",
+      "kind": "lecture",
+      "week": 1
+    },
+    {
+      "item_id": "ps1",
+      "title": "Problem set 1 (limits)",
+      "kind": "problem_set",
+      "week": 1
+    },
+    {
+      "item_id": "lec2",
+      "title": "Derivatives",
+      "kind": "lecture",
+      "week": 2
+    },
+    {
+      "item_id": "ps2",
+      "title": "Problem set 2 (derivatives)",
+      "kind": "problem_set",
+      "week": 2
+    },
+    {
+      "item_id": "exam1",
+      "title": "Midterm exam (limits + derivatives)",
+      "kind": "exam",
+      "week": 3
+    }
+  ],
+  "prerequisites": [
+    {
+      "from": "lec1",
+      "to": "lec2"
+    },
+    {
+      "from": "lec1",
+      "to": "ps1"
+    },
+    {
+      "from": "lec2",
+      "to": "ps2"
+    },
+    {
+      "from": "lec1",
+      "to": "exam1"
+    },
+    {
+      "from": "lec2",
+      "to": "exam1"
+    }
+  ]
+}

@@ -57,18 +57,25 @@ Outputs land in:
 - Curriculum: `reports/curriculum_insight_fs`
 - Conversation: `reports/conversation_insight_fs`
 
+## Data Layout
+
+See `docs/PIPELINE_LAYOUT.md` for the full map. In short:
+- RAWDATA: raw dumps and intermediate normalized/cleaned files
+- datasets: canonical, core‑ready zips and zipless FS extracts
+- reports: generated insights/dynamics/metrics
+
 ## Direct domain entry points
 
 Curriculum:
-- Normalize playlist: `python -m pipeline.curriculum.normalize_youtube_playlist --input RawYT/<file>.raw.json --output datasets/youtube_raw/<id>.json --course-id <id> --videos-per-step 1`
-- Build YouTube dataset: `python -m pipeline.curriculum.build_youtube --input-json datasets/youtube_raw/<id>.json --output-zip datasets/mit_curriculum_datasets/<id>.zip --profile youtube_series --step-semantics week`
-- Build MIT datasets: `python -m pipeline.curriculum.build_mit`
+- Normalize playlist: `python -m pipeline.curriculum.normalize_youtube_playlist --input RAWDATA/RawYT/<file>.raw.json --output RAWDATA/RawYT/<id>.json --course-id <id> --videos-per-step 1`
+- Build YouTube dataset: `python -m pipeline.curriculum.build_youtube --input-json RAWDATA/RawYT/<id>.json --output-zip datasets/mit_curriculum_datasets/<id>.zip --profile youtube_series --step-semantics week`
+- Build MIT datasets: `python -m pipeline.curriculum.build_mit --raw-dir RAWDATA/raw_mit_curriculum --out-dir datasets/mit_curriculum_datasets`
 - Run Core zipless: `python -m pipeline.curriculum.run_zipless --zip-dir datasets/mit_curriculum_datasets --fs-dir datasets/mit_curriculum_fs --out-dir reports/mit_curriculum_insights_fs --reporter insight --heads monte_carlo forecast regime_change --compute-spread --compute-locality`
 
 Conversation:
-- Scrub transcripts: `python -m pipeline.conversation.scrub_transcripts --input-dir RawConversation --out-dir reports/conversation_clean`
-- Build datasets: `python -m pipeline.conversation.build_datasets --input-dir reports/conversation_clean --output-dir datasets/mit_curriculum_datasets --window-size 6`
-- Quick health metrics: `python -m pipeline.conversation.run_health --input-dir reports/conversation_clean --out-dir reports/conversation_metrics --window 6`
+- Scrub transcripts: `python -m pipeline.conversation.scrub_transcripts --input-dir RAWDATA/RawConversation --out-dir RAWDATA/ConversationClean`
+- Build datasets: `python -m pipeline.conversation.build_datasets --input-dir RAWDATA/ConversationClean --output-dir datasets/conversation_datasets --window-size 6`
+- Quick health metrics: `python -m pipeline.conversation.run_health --input-dir RAWDATA/ConversationClean --out-dir reports/conversation_insight_fs --window 6`
 
 ## Make targets (optional)
 

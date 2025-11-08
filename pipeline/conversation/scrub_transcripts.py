@@ -112,7 +112,8 @@ def write_outputs(data: Dict, out_dir: Path) -> None:
 def main() -> None:
     ap = argparse.ArgumentParser(description="Scrub conversation PDFs/TXT to clean transcripts")
     ap.add_argument("--input-dir", default="RawConversation")
-    ap.add_argument("--out-dir", default="reports/conversation_clean")
+    # Clean transcripts are intermediate artifacts → keep under RAWDATA
+    ap.add_argument("--out-dir", default="RAWDATA/ConversationClean")
     args = ap.parse_args()
 
     in_dir = Path(args.input_dir)

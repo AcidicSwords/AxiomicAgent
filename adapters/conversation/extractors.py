@@ -245,29 +245,37 @@ class SimpleEdgeBuilder:
     def _build_comention_edges(
         self, nodes: List[ConversationNode], turn_index: int
     ) -> List[ConversationEdge]:
-        """Build co-mention edges within a turn."""
-        edges = []
+        """Build co-mention edges within a turn.
+
+        Parity tightening: cap co-mention edges per turn and keep only strongest pairs
+        to reduce connector noise.
+        """
+        candidates: List[ConversationEdge] = []
 
         for i, node_a in enumerate(nodes):
             for node_b in nodes[i+1:]:
                 # Compute similarity
-                sim = self._cosine_similarity(
-                    node_a.embedding, node_b.embedding
-                )
+                sim = self._cosine_similarity(node_a.embedding, node_b.embedding)
 
                 # Only connect if sufficiently similar
-                if sim > 0.3:
-                    edge = ConversationEdge(
-                        source=node_a.id,
-                        target=node_b.id,
-                        type="co-mention",
-                        weight=sim,
-                        quality=sim,  # Quality = similarity for co-mention
-                        turn_index=turn_index
+                if sim > 0.35:
+                    candidates.append(
+                        ConversationEdge(
+                            source=node_a.id,
+                            target=node_b.id,
+                            type="co-mention",
+                            weight=sim,
+                            quality=sim,  # Quality = similarity for co-mention
+                            turn_index=turn_index,
+                        )
                     )
-                    edges.append(edge)
 
-        return edges
+        # Keep only top-K by weight to avoid dense cliques on verbose turns
+        if not candidates:
+            return []
+        candidates.sort(key=lambda e: e.weight, reverse=True)
+        K = min(15, len(candidates))
+        return candidates[:K]
 
     def _build_reply_edges(
         self,
@@ -288,6 +296,7 @@ class SimpleEdgeBuilder:
         if curr_role == prev_role:
             return edges  # Don't connect same-role turns
 
+        pairs = []
         for prev_node in previous_nodes:
             for curr_node in current_nodes:
                 # Compute semantic similarity
@@ -298,20 +307,26 @@ class SimpleEdgeBuilder:
                 # Also check lexical overlap
                 lexical = self._lexical_overlap(prev_node.text, curr_node.text)
 
-                # Connect if either metric is high
-                if sim > 0.4 or lexical > 0.3:
-                    # Quality based on both factors
-                    quality = 0.6 * sim + 0.4 * lexical
+                # Connect if either metric is high; boost reply importance
+                if sim > 0.35 or lexical > 0.25:
+                    # Quality based on both factors (prefer semantic)
+                    quality = 0.7 * sim + 0.3 * lexical
+                    pairs.append((max(sim, lexical), quality, prev_node.id, curr_node.id))
 
-                    edge = ConversationEdge(
-                        source=prev_node.id,
-                        target=curr_node.id,
-                        type="reply",
-                        weight=max(sim, lexical),
-                        quality=quality,
-                        turn_index=turn_index
-                    )
-                    edges.append(edge)
+        # Keep strongest cross-turn links to control complexity
+        if not pairs:
+            return edges
+        pairs.sort(key=lambda x: x[0], reverse=True)
+        K = min(20, len(pairs))
+        for w, q, sid, tid in pairs[:K]:
+            edges.append(ConversationEdge(
+                source=sid,
+                target=tid,
+                type="reply",
+                weight=float(min(1.0, w * 1.2)),  # emphasize reply edges
+                quality=float(min(1.0, q * 1.2)),
+                turn_index=turn_index,
+            ))
 
         return edges
 

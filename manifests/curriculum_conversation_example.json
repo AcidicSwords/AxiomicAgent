@@ -15,30 +15,65 @@
     {
       "course_id": "crashcourse_computing",
       "raw_json": "RAWDATA/RawYT/crashcourse_computing.raw.json",
+      "normalized_out": "RAWDATA/RawYT/crashcourse_computing.json",
       "profile": "youtube_crashcourse",
       "videos_per_step": 1,
-      "output_zip": "datasets/mit_curriculum_datasets/crashcourse_computing.zip"
+      "output_zip": "datasets/youtube_curriculum_datasets/crashcourse_computing.zip"
     },
     {
       "course_id": "crashcourse_history",
       "raw_json": "RAWDATA/RawYT/crashcourse_history.raw.json",
+      "normalized_out": "RAWDATA/RawYT/crashcourse_history.json",
       "profile": "youtube_crashcourse",
       "videos_per_step": 1,
-      "output_zip": "datasets/mit_curriculum_datasets/crashcourse_history.zip"
+      "output_zip": "datasets/youtube_curriculum_datasets/crashcourse_history.zip"
     },
     {
       "course_id": "essence_linear_algebra_series",
       "raw_json": "RAWDATA/RawYT/essence_linear_algebra_series.raw.json",
+      "normalized_out": "RAWDATA/RawYT/essence_linear_algebra_series.json",
       "profile": "youtube_3b1b",
       "videos_per_step": 1,
-      "output_zip": "datasets/mit_curriculum_datasets/essence_linear_algebra_series.zip"
+      "output_zip": "datasets/youtube_curriculum_datasets/essence_linear_algebra_series.zip"
+    },
+    {
+      "course_id": "essence_calculus",
+      "playlist_url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr",
+      "normalized_out": "RAWDATA/RawYT/essence_calculus.json",
+      "profile": "youtube_3b1b",
+      "videos_per_step": 1,
+      "output_zip": "datasets/youtube_curriculum_datasets/essence_calculus.zip"
+    },
+    {
+      "course_id": "crashcourse_economics",
+      "playlist_url": "https://www.youtube.com/playlist?list=PL8dPuuaLjXtPNZwz5_o_5uirJ8gQXnhEO",
+      "normalized_out": "RAWDATA/RawYT/crashcourse_economics.json",
+      "profile": "youtube_crashcourse",
+      "videos_per_step": 1,
+      "output_zip": "datasets/youtube_curriculum_datasets/crashcourse_economics.zip"
+    },
+    {
+      "course_id": "mit_6_006_algorithms",
+      "playlist_url": "https://www.youtube.com/playlist?list=PLUl4u3cNGP63EdVPNLG3ToM6LaEUuStEY",
+      "normalized_out": "RAWDATA/RawYT/mit_6_006_algorithms.json",
+      "profile": "youtube_series",
+      "videos_per_step": 1,
+      "output_zip": "datasets/youtube_curriculum_datasets/mit_6_006_algorithms.zip"
+    },
+    {
+      "course_id": "statquest_statistics_fundamentals",
+      "playlist_url": "https://www.youtube.com/playlist?list=PLblh5JKOoLUK0FLuzwntyYI10UQFUhsY9",
+      "normalized_out": "RAWDATA/RawYT/statquest_statistics_fundamentals.json",
+      "profile": "youtube_series",
+      "videos_per_step": 1,
+      "output_zip": "datasets/youtube_curriculum_datasets/statquest_statistics_fundamentals.zip"
     }
   ],
   "conversation": {
     "raw_dir": "RAWDATA/RawConversation/PositiveExample",
-    "clean_out": "reports/conversation_clean",
-    "metrics_out": "reports/conversation_metrics",
-    "zip_dir": "datasets/mit_curriculum_datasets",
+    "clean_out": "RAWDATA/ConversationClean",
+    "metrics_out": "reports/conversation_insight_fs",
+    "zip_dir": "datasets/conversation_datasets",
     "window_size": 6,
     "prefix": "conversation"
   }

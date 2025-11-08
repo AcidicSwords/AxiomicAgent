@@ -16,8 +16,9 @@ PROFILE_OVERRIDES = {
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Build curriculum datasets from normalized MIT JSON.")
-    parser.add_argument("--raw-dir", default="datasets/raw_mit_curriculum", help="Directory of normalized JSON files.")
+    parser.add_argument("--raw-dir", default="RAWDATA/raw_mit_curriculum", help="Directory of normalized JSON files.")
     parser.add_argument("--out-dir", default="datasets/mit_curriculum_datasets", help="Directory to write dataset zips.")
+    # Note: raw MIT normalized inputs are expected under RAWDATA/raw_mit_curriculum
     args = parser.parse_args()
 
     raw_dir = Path(args.raw_dir)

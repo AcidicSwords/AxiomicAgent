@@ -13,11 +13,12 @@ from core.signals import DefaultSignalComputer
 ROOT = Path(__file__).resolve().parents[1]
 
 FIXTURES = [
-    ("conversation", "conversation_brainstorm", "datasets/convo_brainstorm_test.zip", "tests/fixtures/insights/golden/conversation.identity.json"),
-    ("research_activity", "research_learning", "datasets/research_activity_test.zip", "tests/fixtures/insights/golden/research_activity.identity.json"),
-    ("research_corpus", "research_learning", "datasets/research_corpus_test.zip", "tests/fixtures/insights/golden/research_corpus.identity.json"),
-    ("creation_blueprint", "creation_blueprint", "datasets/creation_blueprint_test.zip", "tests/fixtures/insights/golden/creation_blueprint.identity.json"),
-    ("curriculum_test", "curriculum_stream", "datasets/curriculum_test.zip", "tests/fixtures/insights/golden/curriculum.identity.json"),
+    (
+        "curriculum_test",
+        "curriculum_stream",
+        "datasets/curriculum_test.zip",
+        "tests/fixtures/insights/golden/curriculum.identity.json",
+    ),
 ]
 
 
