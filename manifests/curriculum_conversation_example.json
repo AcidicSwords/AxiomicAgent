@@ -14,28 +14,28 @@
   "youtube": [
     {
       "course_id": "crashcourse_computing",
-      "raw_json": "RawYT/crashcourse_computing.raw.json",
+      "raw_json": "RAWDATA/RawYT/crashcourse_computing.raw.json",
       "profile": "youtube_crashcourse",
       "videos_per_step": 1,
       "output_zip": "datasets/mit_curriculum_datasets/crashcourse_computing.zip"
     },
     {
       "course_id": "crashcourse_history",
-      "raw_json": "RawYT/crashcourse_history.raw.json",
+      "raw_json": "RAWDATA/RawYT/crashcourse_history.raw.json",
       "profile": "youtube_crashcourse",
       "videos_per_step": 1,
       "output_zip": "datasets/mit_curriculum_datasets/crashcourse_history.zip"
     },
     {
       "course_id": "essence_linear_algebra_series",
-      "raw_json": "RawYT/essence_linear_algebra_series.raw.json",
+      "raw_json": "RAWDATA/RawYT/essence_linear_algebra_series.raw.json",
       "profile": "youtube_3b1b",
       "videos_per_step": 1,
       "output_zip": "datasets/mit_curriculum_datasets/essence_linear_algebra_series.zip"
     }
   ],
   "conversation": {
-    "raw_dir": "RawConversation/PositiveExample",
+    "raw_dir": "RAWDATA/RawConversation/PositiveExample",
     "clean_out": "reports/conversation_clean",
     "metrics_out": "reports/conversation_metrics",
     "zip_dir": "datasets/mit_curriculum_datasets",
@@ -43,3 +43,4 @@
     "prefix": "conversation"
   }
 }
+
