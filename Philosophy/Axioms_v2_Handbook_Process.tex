@@ -1,0 +1,92 @@
+
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=black,urlcolor=blue,citecolor=black}
+
+\title{Axioms v2 Handbook (Process)}
+\author{}
+\date{\today}
+
+\newtheorem{principle}{Principle}
+\newtheorem{definition}{Definition}
+\newtheorem{remark}{Remark}
+
+\begin{document}
+\maketitle
+
+\section*{Purpose}
+This handbook specifies the \emph{process} for analysis and design under Axioms v2 (Operationally Complete). It is domain-agnostic, uses neutral language, and is optimized for reproducibility. Formal statements of the axioms appear in \emph{Axioms v2: Operationally Complete}.
+
+\section{Core Objects (brief)}
+\begin{definition}[Typed bounds]
+$B=(B_{\mathrm{inv}},B_{\mathrm{enc}},B_{\mathrm{soft}})$ with invariant (not agent-editable), enacted (editable with tariff), and soft (tie-order) components.
+\end{definition}
+\begin{definition}[Capacity]
+Per-step budget $C$ covering movement, verification, and coordination costs.
+\end{definition}
+\begin{definition}[Relational web]
+$G=(V,E,w,q)$ with edge quality $q\in[0,1]$ and trusted subgraph threshold $\tau$.
+\end{definition}
+\begin{definition}[Commit \& stickiness]
+Guarded mode change with stability $s\in[0,1]$; reversals pay tariff $g(s,\kappa)$.
+\end{definition}
+\begin{definition}[Layer handoff contract]
+$\mathcal{C}=(\mathcal{I},\mathcal{A},\Lambda,\mathcal{J})$ for adjacent layers.
+\end{definition}
+
+\section{Process (Focused Mode)}
+\begin{enumerate}[label=\textbf{F\arabic*.},leftmargin=1.4em]
+\item \textbf{Type bounds.} Enumerate $B_{\mathrm{inv}}$, $B_{\mathrm{enc}}$, $B_{\mathrm{soft}}$.
+\item \textbf{Set capacity.} Specify $C$; include verification/coordination overhead.
+\item \textbf{Feasible projection.} For proposal $\pi(x)$, compute $\mathrm{Proj}(x;\pi,B)$.
+\item \textbf{Evaluate.} Score $S(y)$; document assumptions.
+\item \textbf{Commit or iterate.} If guard $\Theta(y)$ holds, commit with stickiness $s$ and log tariff model $g$; else continue.
+\item \textbf{Record.} Save $(B,C,\Theta,s,g)$ and any handoff contracts used.
+\end{enumerate}
+
+\section{Process (Exploratory Mode)}
+\begin{enumerate}[label=\textbf{E\arabic*.},leftmargin=1.4em]
+\item \textbf{Type bounds} and \textbf{set capacity}.
+\item \textbf{Mid-distance sampling.} Sample proposals at domain-tuned mid-distance band $D^\star$.
+\item \textbf{Evaluate \& triage.} If stalled, compute $(R^{\mathrm{meas}},R^{\mathrm{model}},R^{\mathrm{edge}})$.
+\item \textbf{Targeted intervention.} Upgrade measurement, change closure/split regime, or repair edges / raise $\mathrm{TED}_\tau$.
+\item \textbf{Side-branch \& rejoin.} Maintain provenance; prefer improvements that respect $B_{\mathrm{inv}}$.
+\item \textbf{Commit when ready}; assign $s$ and log expected tariff.
+\end{enumerate}
+
+\section{Recursive Composition (Subparts $\rightarrow$ Whole)}
+\begin{enumerate}[label=\textbf{R\arabic*.},leftmargin=1.4em]
+\item \textbf{Profile subparts.} For each unit $U_j$, collect $(B_j,C_j,G_j,\Theta_j,s_j,\mathcal{C}_j)$.
+\item \textbf{Compose system.} Intersect invariants and enacted bounds; aggregate capacities (minus coordination); union graphs and compute cross-$\mathrm{TED}_\tau$; induce tariffs from $\{s_j\}$.
+\item \textbf{Compare \& fix.} Gaps are inconsistencies between $\{\mathcal{R}_j\}$ and $\mathcal{R}_{\mathrm{sys}}$; fix via retyping bounds, regime splits, measurement upgrades, or edge repair; add/repair handoff contracts.
+\end{enumerate}
+
+\section{Operational Checks}
+\begin{enumerate}[label=\textbf{C\arabic*.},leftmargin=1.4em]
+\item \textbf{Bound typing test.} Enacted edits move outcomes; soft changes mainly reorder ties.
+\item \textbf{Triage ablation.} Targeted fix lowers resistance more than a random fix.
+\item \textbf{Edge-health intervention.} Increasing $q$ on cut sets or raising $\mathrm{TED}_\tau$ improves downstream $S$.
+\item \textbf{Contract audit.} Missing latency or arbiter increases contradictions; filling them reduces paradox.
+\item \textbf{Stickiness probe.} Higher $s$ yields faster post-commit stabilization.
+\end{enumerate}
+
+\section{Minimal Reporting Template}
+\begin{verbatim}
+Bounds: inv=[...], enc=[...], soft=[...]
+Capacity: ...
+Proposal: ...
+Projection: y = Proj(x; pi, B)
+Evaluation: S(y)=..., guard Theta(y)=...
+Commit: stickiness s=..., tariff g(...)=...
+Web: TED_tau=..., interventions=[...]
+Handoffs: [...], Order notes: [...]
+Triage: meas=..., model=..., edge=...
+\end{verbatim}
+
+\section*{Notes}
+This handbook defines the process only; structure and prompts are in the Project Skeleton, and formal mathematics in the axioms sheet.
+
+\end{document}

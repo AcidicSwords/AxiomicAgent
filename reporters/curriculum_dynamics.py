@@ -61,6 +61,22 @@ class CurriculumDynamicsReporter:
         }
 
     def record(self, step: int, signals: Dict[str, Any], meta: Dict[str, Any], pred, regret: Optional[float] = None) -> None:
+        # derive a simple state label per Quick Reference
+        qv = signals.get("q") or 0.0
+        tv = signals.get("ted") or 0.0
+        contv = signals.get("continuity") or 0.0
+        state_label = None
+        if qv > 0.85 and tv < 0.15 and contv > 0.5:
+            state_label = "stuck"
+        elif qv < 0.5 and tv > 0.5 and contv < 0.2:
+            state_label = "scattered"
+        elif tv > 0.5 and 0.2 <= contv <= 0.4:
+            state_label = "pivot"
+        elif qv > 0.65 and tv < 0.25 and 0.2 < contv < 0.6:
+            state_label = "exploring"
+        else:
+            state_label = "mixed"
+
         entry = {
             "step": step,
             "step_id": meta.get("step_id", step),
@@ -70,6 +86,8 @@ class CurriculumDynamicsReporter:
             "spread": signals.get("spread"),
             "ted_delta": signals.get("ted_delta"),
             "continuity": signals.get("continuity"),
+            "ted_trusted": meta.get("ted_trusted"),
+            "state_label": state_label,
             "step_type": signals.get("step_type_inferred") or signals.get("step_type") or meta.get("step_type"),
             "next_step_type_pred": signals.get("next_step_type_pred"),
             "q_mc_std": signals.get("q_mc_std"),

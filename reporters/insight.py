@@ -63,6 +63,7 @@ class InsightReporter:
         delta_ted = signals.get("ted_delta")
         spread = signals.get("spread")
         locality_nodes = signals.get("locality_nodes")
+        continuity = signals.get("continuity")
 
         if isinstance(q, (int, float)):
             self._series_q.append(float(q))
@@ -88,6 +89,22 @@ class InsightReporter:
         if step_type:
             self._type_counts[step_type] = self._type_counts.get(step_type, 0) + 1
 
+        # derive a quick state label per Quick Reference
+        try:
+            qv = float(q or 0.0); tv = float(ted or 0.0); contv = float(continuity or 0.0)
+        except Exception:
+            qv = tv = contv = 0.0
+        if qv > 0.85 and tv < 0.15 and contv > 0.5:
+            state_label = "stuck"
+        elif qv < 0.5 and tv > 0.5 and contv < 0.2:
+            state_label = "scattered"
+        elif tv > 0.5 and 0.2 <= contv <= 0.4:
+            state_label = "pivot"
+        elif qv > 0.65 and tv < 0.25 and 0.2 < contv < 0.6:
+            state_label = "exploring"
+        else:
+            state_label = "mixed"
+
         entry = StepEntry(
             step=step,
             mean_q=q,
@@ -102,9 +119,14 @@ class InsightReporter:
             step_type=step_type,
             edge_count=meta.get("edge_count"),
             fractions=fractions,
-            continuity=signals.get("continuity"),
+            continuity=continuity,
         )
-        self.summary["steps"].append(entry.__dict__)
+        data = entry.__dict__
+        data["state_label"] = state_label
+        # include trusted TED if adapter provided it
+        if "ted_trusted" in meta:
+            data["ted_trusted"] = meta.get("ted_trusted")
+        self.summary["steps"].append(data)
 
     def finish(self):
         aggregates = {
@@ -114,6 +136,14 @@ class InsightReporter:
             "avg_spread": round(sum(self._series_spread) / len(self._series_spread), 3) if self._series_spread else None,
             "steps": len(self.summary["steps"]),
         }
+        # compute avg_ted_trusted if present in any step entries
+        ted_tr_vals = []
+        for s in self.summary.get("steps", []):
+            v = s.get("ted_trusted")
+            if isinstance(v, (int, float)):
+                ted_tr_vals.append(float(v))
+        if ted_tr_vals:
+            aggregates["avg_ted_trusted"] = round(sum(ted_tr_vals) / len(ted_tr_vals), 3)
         if self._type_counts:
             aggregates["step_types"] = dict(sorted(self._type_counts.items()))
         self.summary["aggregates"] = aggregates

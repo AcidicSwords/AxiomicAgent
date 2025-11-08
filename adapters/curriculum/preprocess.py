@@ -161,6 +161,20 @@ class CurriculumPreprocessor:
         )
         self.topk_per_node = int(topk_per_node if topk_per_node is not None else cfg.topk_per_node or DEFAULT_TOPK_PER_NODE)
 
+        # Trusted connectivity configuration (can be overridden via env)
+        # Components: verification (freq), authority (tags), recency (last seen), locality (node weight)
+        import os
+        def _env_float(name: str, default: float) -> float:
+            try:
+                return float(os.environ.get(name, default))
+            except Exception:
+                return default
+        self.trusted_alpha = _env_float("AXIOM_TRUST_ALPHA", 0.4)
+        self.trusted_beta  = _env_float("AXIOM_TRUST_BETA",  0.2)
+        self.trusted_gamma = _env_float("AXIOM_TRUST_GAMMA", 0.2)
+        self.trusted_delta = _env_float("AXIOM_TRUST_DELTA", 0.2)
+        self.trusted_tau   = _env_float("AXIOM_TRUST_TAU",   0.6)
+
     def process(self, raw: RawStream) -> ProcessedStream:
         nodes = {nid: dict(data) for nid, data in raw.nodes.items()}
         node_type: Dict[int, str] = {}
@@ -205,6 +219,62 @@ class CurriculumPreprocessor:
         step_features: Dict[int, Dict[str, object]] = {}
         for step, edges in obs_steps.items():
             step_features[step] = self._summarize_step(step, edges, node_tags, node_weights, nodes)
+
+        # --- Trusted connectivity (TED_tau) approximation ---
+        # Compose a per-edge quality score from verification (freq), authority (tags),
+        # recency (last seen distance), and locality (min node weight).
+        # Then compute trusted TED as Jaccard on edges with quality >= tau.
+        edge_freq: Dict[Edge, int] = {}
+        last_seen: Dict[Edge, int] = {}
+        for s in sorted(obs_steps.keys()):
+            for e in obs_steps[s]:
+                edge_freq[e] = edge_freq.get(e, 0) + 1
+                last_seen[e] = s
+
+        def authority(u: int, v: int) -> float:
+            tags_u = node_tags.get(u, set()); tags_v = node_tags.get(v, set())
+            def w(tags: Set[str]) -> float:
+                if 'theorem' in tags or 'definition' in tags:
+                    return 1.0
+                if 'assessment' in tags:
+                    return 0.8
+                if 'reading' in tags:
+                    return 0.6
+                if 'concept' in tags:
+                    return 0.7
+                return 0.5
+            return min(w(tags_u), w(tags_v))
+
+        # weights for components (configurable via env)
+        alpha, beta, gamma, delta = self.trusted_alpha, self.trusted_beta, self.trusted_gamma, self.trusted_delta
+        tau = self.trusted_tau
+
+        trusted_prev: Set[Edge] = set()
+        for s in sorted(obs_steps.keys()):
+            edges = obs_steps[s]
+            trusted_now: Set[Edge] = set()
+            for e in edges:
+                u, v = e
+                verif = min(1.0, edge_freq.get(e, 1) / 5.0)  # cap at 5 occurrences
+                auth = authority(u, v)
+                rec = 0.0
+                if e in last_seen:
+                    dist = max(0, s - last_seen[e])
+                    rec = 1.0 / (1.0 + dist)  # closer = higher recency
+                loc = min(float(node_weights.get(u, 0.5)), float(node_weights.get(v, 0.5)))
+                q_edge = alpha * verif + beta * auth + gamma * rec + delta * loc
+                if q_edge >= tau:
+                    trusted_now.add(e)
+
+            # compute trusted TED
+            inter = len(trusted_now & trusted_prev)
+            union = len(trusted_now | trusted_prev)
+            ted_trusted = 0.0 if union == 0 else round(1.0 - inter / union, 3)
+            feats = step_features.get(s, {})
+            feats["trusted_edge_count"] = len(trusted_now)
+            feats["ted_trusted"] = ted_trusted
+            step_features[s] = feats
+            trusted_prev = trusted_now
 
         # Compute continuity metric between consecutive steps (concept-node overlap Jaccard)
         steps_sorted = sorted(step_features.keys())

@@ -107,6 +107,9 @@ def main() -> None:
         steps = report.get("steps", [])
         cont_vals = [s.get("continuity") for s in steps if isinstance(s.get("continuity"), (int, float))]
         avg_continuity = round(sum(cont_vals)/len(cont_vals), 3) if cont_vals else None
+        # compute avg trusted TED if present
+        ted_tr_vals = [s.get("ted_trusted") for s in steps if isinstance(s.get("ted_trusted"), (int, float))]
+        avg_ted_trusted = round(sum(ted_tr_vals)/len(ted_tr_vals), 3) if ted_tr_vals else aggregates.get("avg_ted_trusted")
         summary.append(
             {
                 "course_id": course_id,
@@ -115,6 +118,7 @@ def main() -> None:
                 "avg_stability": aggregates.get("avg_stability"),
                 "avg_spread": aggregates.get("avg_spread"),
                 "avg_continuity": avg_continuity,
+                "avg_ted_trusted": avg_ted_trusted,
             }
         )
 

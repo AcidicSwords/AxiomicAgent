@@ -1,0 +1,85 @@
+
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=black,urlcolor=blue,citecolor=black}
+
+\title{Axioms v2 Project Skeleton (Structure)}
+\author{}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section*{Purpose}
+Provide the \emph{structure} for applying Axioms v2: operator checklists, prompt patterns, state schema, micro-tests, and defaults. This is a practical companion to the Handbook (process) and the Axioms (formal).
+
+\section{Operator Checklists}
+\subsection*{Focused}
+\begin{enumerate}[label=\arabic*.,nosep]
+\item Bounds: inv / enc / soft.
+\item Capacity: movement, verification, coordination.
+\item Projection: compute $\mathrm{Proj}(x;\pi,B)$.
+\item Evaluate $\&$ Commit: check $\Theta(y)$, set $s$, log tariff $g$.
+\end{enumerate}
+
+\subsection*{Exploratory}
+\begin{enumerate}[label=\arabic*.,nosep]
+\item Bounds and capacity.
+\item Mid-distance sampling $D^\star$.
+\item Triage $(R^{\mathrm{meas}},R^{\mathrm{model}},R^{\mathrm{edge}})$.
+\item Targeted intervention; side-branch $\rightarrow$ rejoin.
+\end{enumerate}
+
+\subsection*{Recursive (subparts $\rightarrow$ whole)}
+\begin{enumerate}[label=\arabic*.,nosep]
+\item Profile units $\{U_j\}$.
+\item Compose system report.
+\item Compare $\&$ fix gaps; update contracts.
+\end{enumerate}
+
+\section{Prompt Patterns}
+\begin{itemize}[nosep]
+\item \textbf{Use axioms (focused):} Goal: \_\_; Bounds: inv=\_\_, enc=\_\_, soft=\_\_; Capacity: \_\_; Layer: \_\_.
+\item \textbf{Use axioms (exploratory):} Goal: \_\_; Bounds: \_\_; Capacity: \_\_; Layer: \_\_; Target mid-distance.
+\item \textbf{Diagnose resistance} and provide $(R^{\mathrm{meas}},R^{\mathrm{model}},R^{\mathrm{edge}})$.
+\item \textbf{Edit bound (enacted)} and account for tariff; \textbf{specify handoff contract}.
+\end{itemize}
+
+\section{State Schema (JSON-like)}
+\begin{verbatim}
+{
+  "bounds": {"invariant":[], "enacted":[], "soft":[]},
+  "capacity": {"movement":null, "verification":null, "coordination":null},
+  "commit": {"guard":"", "stickiness":0.0, "tariff":"g(s, kappa)"},
+  "web": {"ted_tau":0.0, "edge_updates":[]},
+  "handoff": [{"to":"", "conserved":[], "may_change":[], "latency":null, "arbiter":""}],
+  "order": {"notes":"", "known_tariffs":[]},
+  "triage": {"measurement":0.0, "model":0.0, "edge":0.0}
+}
+\end{verbatim}
+
+\section{Micro-tests}
+\begin{itemize}[nosep]
+\item Bound-edit A/B (enacted vs soft).
+\item Triage ablation (targeted vs random).
+\item Edge-health intervention (cut-set $q\uparrow$ or $\mathrm{TED}_\tau\uparrow$).
+\item Stickiness/ringdown probe.
+\item Handoff contract audit (latency/arbiter).
+\end{itemize}
+
+\section{Parameter Defaults (suggested)}
+\begin{itemize}[nosep]
+\item Resistance threshold $R_{\mathrm{TH}}=0.6$.
+\item Mid-distance bands: symbolic 2--3 hops; embeddings moderate cosine band.
+\item Edge threshold $\tau$ domain-set (start at $0.7$ if unknown).
+\item Stickiness estimator $s=1-\frac{\mathrm{Var}_{\mathrm{post}}}{\mathrm{Var}_{\mathrm{pre}}}$ (clip $[0,1]$).
+\item Tariff model $g(s,\kappa)=\kappa_1s+\kappa_2s^2+\kappa_3$ (fit $\kappa$).
+\end{itemize}
+
+\section*{Notes}
+Keep this sheet near the operator; for mathematics and guarantees, refer to the Axioms.
+
+\end{document}

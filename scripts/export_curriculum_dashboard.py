@@ -24,11 +24,17 @@ def write_markdown(rows, out_md: Path):
         "avg_TED",
         "avg_spread",
         "avg_continuity",
+        "avg_ted_trusted",
         "q_slope",
         "TED_slope",
         "q_mc_std",
         "ted_mc_std",
         "phases",
+        "pct_stuck",
+        "pct_scattered",
+        "pct_pivot",
+        "pct_exploring",
+        "pct_mixed",
     ]
     with out_md.open("w", encoding="utf-8") as f:
         f.write("# Curriculum Summary\n\n")
@@ -47,11 +53,17 @@ def write_html(rows, out_html: Path):
         "avg_TED",
         "avg_spread",
         "avg_continuity",
+        "avg_ted_trusted",
         "q_slope",
         "TED_slope",
         "q_mc_std",
         "ted_mc_std",
         "phases",
+        "pct_stuck",
+        "pct_scattered",
+        "pct_pivot",
+        "pct_exploring",
+        "pct_mixed",
     ]
     with out_html.open("w", encoding="utf-8") as f:
         f.write("<html><head><meta charset='utf-8'><title>Curriculum Summary</title>\n")
@@ -77,4 +89,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

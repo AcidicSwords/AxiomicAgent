@@ -1,0 +1,132 @@
+
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=black,urlcolor=blue,citecolor=black}
+
+\title{Axioms v2: Operationally Complete}
+\author{}
+\date{\today}
+
+\newtheorem{definition}{Definition}
+\newtheorem{axiom}{Axiom}
+\newtheorem{proposition}{Proposition}
+\newtheorem{remark}{Remark}
+
+\begin{document}
+\maketitle
+
+\section*{Purpose}
+This document states an operationally complete version of the axioms. It integrates the refinement requirements: typed bounds, edge-quality dynamics, resistance decomposition, handoff contracts, quantified tariffs, mid-distance optimality, and explicit recursive composition rules. Language is neutral and suitable for mathematical or scientific use.
+
+\section{Preliminaries}
+State space $(\mathcal{X},\Sigma)$; time $t\in\mathbb{Z}_{\ge 0}$ (extendable); proposal $\pi:\mathcal{X}\to\mathcal{X}$; distance $d$ on $\mathcal{X}$; capacity budget $C_t\ge 0$. \\[2pt]
+Relational web $G=(V,E,w,q)$ with weights $w:E\to\mathbb{R}_{\ge 0}$ and edge quality $q:E\to[0,1]$; trusted subgraph \mbox{$G_\tau=(V,E_\tau)$} where $E_\tau=\{e\in E:q(e)\ge\tau\}$. \\[2pt]
+Typed bounds $B=(B_{\mathrm{inv}},B_{\mathrm{enc}},B_{\mathrm{soft}})$; repair operator $\mathcal{R}$; soft tie order $\trianglelefteq_{B_{\mathrm{soft}}}$. \\[2pt]
+Commit guard $\Theta$; stickiness $s\in[0,1]$; return tariff $g(s,\kappa)$; irreversibility $1$-form $\omega$. \\[2pt]
+Layers $L_0\to L_1\to\cdots$ with handoff contracts $\mathcal{C}=(\mathcal{I},\mathcal{A},\Lambda,\mathcal{J})$.
+
+\section{Core Axioms}
+
+\begin{axiom}[Typed Bounds and Feasible Projection]\label{ax:typedbounds}
+Given proposal $\pi(x)$, the admissible next state is the typed projection
+\begin{align*}
+\mathrm{Proj}(x;\pi,B)=\arg\min_{y\in\mathcal{X}} d\big(y,\pi(x)\big)\ \ \text{s.t.}\ \ 
+y\models B_{\mathrm{inv}},\ \ y=\mathcal{R}(y')\ \ \text{(to satisfy $B_{\mathrm{enc}}$)},
+\end{align*}
+with soft tie-breaking via $\trianglelefteq_{B_{\mathrm{soft}}}$.
+\end{axiom}
+
+\begin{axiom}[Capacity Budgeting]\label{ax:capacity}
+A trajectory $(x_t)$ is admissible iff
+\(
+\sum_{t=0}^{T-1}\mathrm{cost}(x_t\!\to\!x_{t+1})\le \sum_{t=0}^{T-1} C_t
+\)
+for all $T$. Verification and coordination costs are included in $\mathrm{cost}(\cdot)$.
+\end{axiom}
+
+\begin{axiom}[Enacted-Bound Editing with Tariff]\label{ax:edit}
+Editing an enacted bound $b\in B_{\mathrm{enc}}$ to $b'$ incurs tariff
+\(
+\mathrm{Tariff}_{\mathrm{enc}}(b\!\to\!b')=h(\Delta\mathrm{legitimacy},\Delta\mathrm{complexity},\Delta\mathrm{risk})\ge 0
+\)
+and yields updated projection under $B'$. Invariants $B_{\mathrm{inv}}$ are not editable by agents.
+\end{axiom}
+
+\begin{axiom}[Commit, Stickiness, and Hysteresis]\label{ax:commit}
+A commit to mode $m$ occurs when $\Theta_m(x_t)$ holds and $x_t\models B_{\mathrm{inv}}$, assigning stickiness $s(m)\in[0,1]$. Distinct enter/exit guards induce hysteresis; reversal pays return tariff $g(s(m),\kappa)$.
+\end{axiom}
+
+\begin{axiom}[Relational Existence with Edge-Quality Dynamics]\label{ax:edges}
+Existence and transfer are edge-mediated. The edge quality $q(e)\in[0,1]$ combines verification, authority, recency, and locality with domain-calibrated weights that sum to 1. Trusted-edge density at threshold $\tau$ is
+\(
+\mathrm{TED}_\tau(u\!\to\! z)=\frac{\#\{p:u\!\to\! z\ \text{simple};\ q(e)\ge\tau\ \forall e\in p\}}{\#\{p:u\!\to\! z\ \text{simple}\}}\in[0,1].
+\)
+Edge quality evolves by reinforcement/decay and evidence updates.
+\end{axiom}
+
+\begin{axiom}[Layering with Explicit Handoff Contracts]\label{ax:handoff}
+Adjacent layers $L_i\to L_{i+1}$ are connected by contracts \mbox{$\mathcal{C}_{i\to i+1}=(\mathcal{I},\mathcal{A},\Lambda,\mathcal{J})$} specifying conserved invariants $\mathcal{I}$, admissible changes $\mathcal{A}$, latency/capacity $\Lambda$, and arbitration $\mathcal{J}$. A cross-layer process is valid iff all handoffs satisfy their contracts.
+\end{axiom}
+
+\begin{axiom}[Order, Path Dependence, and Tariffs]\label{ax:order}
+For a control path $\gamma$ and its reverse $\gamma^{-1}$, the return tariff is
+\(
+\mathrm{RT}(\gamma)=\int_{\gamma}\omega-\int_{\gamma^{-1}}\omega\ge 0.
+\)
+At mode granularity, reversal cost is $g(s,\kappa)$; larger $s$ implies larger tariff.
+\end{axiom}
+
+\begin{axiom}[Resistance Decomposition and Targeted Intervention]\label{ax:resistance}
+Total resistance decomposes as
+\(
+R=R^{\mathrm{meas}}+R^{\mathrm{model}}+R^{\mathrm{edge}},
+\)
+diagnosed from observations. Interventions are matched: upgrade measurement (for $R^{\mathrm{meas}}$), change closure/split regime (for $R^{\mathrm{model}}$), and repair/build edges or raise $\mathrm{TED}_\tau$ (for $R^{\mathrm{edge}}$).
+\end{axiom}
+
+\begin{axiom}[Mid-Distance Optimality]\label{ax:mid}
+There exists a domain-tuned band $D^\star$ of proposal distances such that for kernels $K_r$ constrained to distance $r$,
+\(
+\exists r^\star\in D^\star:\ \mathbb{E}_{y\sim K_{r^\star}(x)}[S(y)-S(x)] \ge \mathbb{E}_{y\sim K_{r}(x)}[S(y)-S(x)]\ \forall r.
+\)
+\end{axiom}
+
+\begin{axiom}[Recursive Composition: Subparts to Whole]\label{ax:recursion}
+Given subunits $\{U_j\}$ with reports $\mathcal{R}_j=(B_j,C_j,G_j,s_j,\ldots)$, the system report is formed by: intersection of invariants and enacted bounds; aggregation of capacities with coordination overhead; union of graphs with cross-edges and computation of cross-$\mathrm{TED}_\tau$; and tariff induction from $\{s_j\}$. Gaps are inconsistencies between $\{\mathcal{R}_j\}$ and $\mathcal{R}_{\mathrm{sys}}$.
+\end{axiom}
+
+\section{Measurement and Estimation (Brief)}
+\begin{itemize}[leftmargin=1.2em]
+\item Edge quality: $q(e)=\alpha\,\mathrm{verif}+\beta\,\mathrm{authority}+\gamma\,\mathrm{recency}+\delta\,\mathrm{locality}$ (normalized).
+\item Stickiness: $s=1-\frac{\mathrm{Var}(x_{t:t+h}\mid m)}{\mathrm{Var}_{\mathrm{pre}}}\in[0,1]$.
+\item Resistance: $R^{\mathrm{meas}}$ via SNR/replicate variance; $R^{\mathrm{model}}$ via residual structure; $R^{\mathrm{edge}}=1-\mathrm{TED}_\tau$.
+\item Tariff: $g(s,\kappa)=\kappa_1 s + \kappa_2 s^2 + \kappa_3$; fit $\kappa$ to reversal data.
+\end{itemize}
+
+\section{Minimal Control Loop}
+\begin{align*}
+&y_t\leftarrow \mathrm{Proj}(x_t;\pi_t,B_t),\quad s_t\leftarrow S(y_t).\\
+&\text{If }\Theta(y_t)\text{ then commit }m\text{ with stickiness }s(m)\ \text{ else}\\
+&(R^{\mathrm{meas}},R^{\mathrm{model}},R^{\mathrm{edge}})\leftarrow \mathcal{D}(x_{t-k:t});\ \text{intervene on dominant component}.\\
+&\text{If stalled: sample }y'_t\sim K_{r^\star}\ \text{with }r^\star\in D^\star;\ \text{update state; respect } \mathcal{C}_{i\to i+1}.
+\end{align*}
+
+\section{Derived Properties (Sketch)}
+\begin{proposition}[Edge-Health Monotonicity]
+Increasing $q(e)$ on any cut set separating $u$ from $z$ weakly increases $\mathrm{TED}_\tau(u\!\to\!z)$ and any evaluator $S$ that is monotone in $\mathrm{TED}_\tau$.
+\end{proposition}
+
+\begin{proposition}[Commit Stability]
+If $s(m)\ge s_0>0$ and resistance is bounded, trajectories in mode $m$ converge to an $m$-attractor with perturbation decay rate increasing in $s_0$.
+\end{proposition}
+
+\begin{proposition}[Handoff Soundness]
+If all handoff contracts specify conserved invariants and evaluation respects them, paradox frequency is bounded by violations of admissible changes or latency limits.
+\end{proposition}
+
+\section*{Notes}
+These axioms are intended to be paired with a concise handbook and a project skeleton for operational usage, and with case studies that illustrate application. This document is self-contained for formal reference.
+\end{document}

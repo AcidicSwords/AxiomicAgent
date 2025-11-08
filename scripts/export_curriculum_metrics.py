@@ -18,6 +18,7 @@ def load_insight_comparison(insights_dir: Path) -> Dict[str, Dict[str, Any]]:
             "avg_TED": row.get("avg_ted"),
             "avg_spread": row.get("avg_spread"),
             "avg_continuity": row.get("avg_continuity"),
+            "avg_ted_trusted": row.get("avg_ted_trusted"),
         }
     return out
 
@@ -45,6 +46,13 @@ def main() -> None:
         # detect source type by heuristic
         source_type = "youtube" if any(k in course_id.lower() for k in ("essence", "crashcourse")) else "mit"
 
+        # state label distribution
+        steps = dyn.get("steps", [])
+        labels = [s.get("state_label") for s in steps if isinstance(s.get("state_label"), str)]
+        total = len(labels) or 1
+        def frac(name: str) -> float:
+            return round(sum(1 for l in labels if l == name) / total, 3)
+
         rows.append({
             "course_id": course_id,
             "source_type": source_type,
@@ -52,11 +60,17 @@ def main() -> None:
             "avg_TED": src.get("avg_TED"),
             "avg_spread": src.get("avg_spread"),
             "avg_continuity": src.get("avg_continuity"),
+            "avg_ted_trusted": src.get("avg_ted_trusted"),
             "q_slope": dyn.get("dynamics", {}).get("q_trend_slope"),
             "TED_slope": dyn.get("dynamics", {}).get("ted_trend_slope"),
             "q_mc_std": dyn.get("uncertainty", {}).get("avg_q_mc_std"),
             "ted_mc_std": dyn.get("uncertainty", {}).get("avg_ted_mc_std"),
             "phases": len(dyn.get("phases", [])),
+            "pct_stuck": frac("stuck"),
+            "pct_scattered": frac("scattered"),
+            "pct_pivot": frac("pivot"),
+            "pct_exploring": frac("exploring"),
+            "pct_mixed": frac("mixed"),
         })
 
     fields = [
@@ -66,11 +80,17 @@ def main() -> None:
         "avg_TED",
         "avg_spread",
         "avg_continuity",
+        "avg_ted_trusted",
         "q_slope",
         "TED_slope",
         "q_mc_std",
         "ted_mc_std",
         "phases",
+        "pct_stuck",
+        "pct_scattered",
+        "pct_pivot",
+        "pct_exploring",
+        "pct_mixed",
     ]
     with out_path.open("w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=fields)
@@ -83,4 +103,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
