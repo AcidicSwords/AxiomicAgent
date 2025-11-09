@@ -24,8 +24,8 @@ WEB_ARTIFACT_PATTERNS = [
 WEB_ARTIFACT_RE = [re.compile(p, re.IGNORECASE) for p in WEB_ARTIFACT_PATTERNS]
 
 
-SPEAKER_LINE_RE = re.compile(r"^(?P<speaker>[A-Z][A-Z .\-]{1,40}|[A-Z][a-z]+\s+[A-Z][a-z]+):\s*(?P<text>.*)$")
-TIMESTAMP_SPEAKER_RE = re.compile(r"^(?P<ts>\[?\d{1,2}:\d{2}(:\d{2})?\]?)\s*(?P<speaker>[A-Z][A-Za-z .\-]{1,40}):\s*(?P<text>.*)$")
+SPEAKER_LINE_RE = re.compile(r"^(?P<speaker>[A-Z][A-Z .\-\'\(\)]{1,60}|[A-Z][a-z]+(?:\s+[A-Z][a-z]+){0,3})\s*[:\-—]\s*(?P<text>.*)$")
+TIMESTAMP_SPEAKER_RE = re.compile(r"^(?P<ts>\[?\d{1,2}:\d{2}(:\d{2})?\]?)\s*(?P<speaker>[A-Z][A-Za-z .\-\'\(\)]{1,60})\s*[:\-—]\s*(?P<text>.*)$")
 
 
 def read_text(path: Path) -> str:
@@ -40,6 +40,10 @@ def clean_lines(text: str) -> List[str]:
     for ln in lines:
         if not ln:
             continue
+        # Normalize common punctuation/markdown
+        ln = ln.replace("**", " ").replace("*", " ")
+        ln = ln.replace("\u2014", " - ").replace("\u2013", " - ")  # em/en dash
+        ln = ln.strip("- ")
         if any(rx.match(ln) for rx in WEB_ARTIFACT_RE):
             continue
         if re.search(r"https?://\S+", ln):

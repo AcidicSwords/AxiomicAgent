@@ -163,12 +163,21 @@ def main() -> None:
 
     builder = ConversationDatasetBuilder(window_size=args.window_size)
     output_dir.mkdir(parents=True, exist_ok=True)
-    for transcript_path in sorted(input_dir.glob("*.json")):
+    files = sorted(input_dir.glob("*.json"))
+    total = len(files)
+    for idx, transcript_path in enumerate(files, 1):
         stem = transcript_path.stem
         course_id = f"{args.prefix}_{_slugify(stem)}"
         out_zip = output_dir / f"{course_id}.zip"
+        try:
+            if out_zip.exists() and out_zip.stat().st_mtime >= transcript_path.stat().st_mtime:
+                print(f"[{idx}/{total}] Skip up-to-date {out_zip}", flush=True)
+                continue
+        except Exception:
+            pass
+        print(f"[{idx}/{total}] Building {course_id} -> {out_zip} ...", flush=True)
         builder.build(transcript_path, out_zip, course_id)
-        print(f"Wrote conversation dataset {out_zip}")
+        print(f"[{idx}/{total}] Wrote conversation dataset {out_zip}", flush=True)
 
 
 if __name__ == "__main__":

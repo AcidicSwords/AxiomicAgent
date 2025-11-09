@@ -89,6 +89,14 @@ class SimpleNodeExtractor:
                 metadata={"entity_type": "TECH"}
             ))
 
+        # Fallback: if no nodes extracted, create minimal content nodes from longest words
+        if not nodes:
+            cleaned = re.sub(r"[^A-Za-z0-9\s]", " ", text)
+            toks = [t for t in cleaned.lower().split() if len(t) >= 4 and t not in self.stopwords]
+            # take top-2 distinct longest tokens as pseudo-concepts
+            toks = sorted(set(toks), key=lambda w: (-len(w), w))[:2]
+            for tk in toks:
+                nodes.append(self._create_node(text=tk, node_type="concept", role=role, turn_index=turn_index))
         return nodes
 
     def _extract_concepts(self, text: str) -> Set[str]:
@@ -272,6 +280,10 @@ class SimpleEdgeBuilder:
 
         # Keep only top-K by weight to avoid dense cliques on verbose turns
         if not candidates:
+            # Ensure at least one edge within turn if possible
+            if len(nodes) >= 2:
+                a, b = nodes[0], nodes[1]
+                return [ConversationEdge(source=a.id, target=b.id, type="co-mention", weight=0.3, quality=0.3, turn_index=turn_index)]
             return []
         candidates.sort(key=lambda e: e.weight, reverse=True)
         K = min(15, len(candidates))

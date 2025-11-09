@@ -1,4 +1,4 @@
-Reports Overview
+﻿Reports Overview
 
 This document summarizes the report artifacts and how to interpret the new sidecars.
 
@@ -23,21 +23,21 @@ Sidecars
 
 - Graph units: `reports/comprehensive/graph_units/*.units.json`
   - Per-step `unit_count` computed from step graphs (community count or connected components) with an `avg_unit_count` summary.
-  - Use this as a proxy for “substructure per lesson” (e.g., concept, example, assessment threads).
+  - Use this as a proxy for substructure per lesson (e.g., concept, example, assessment threads).
 
 - Topics + JS drift: `reports/comprehensive/topics_js/*.topics.json`
-  - Per-course topic models derived from TF‑IDF + NMF; provides `avg_ted_js` (semantic drift across steps) and top topic terms.
+  - Per-course topic models derived from TFâ€‘IDF + NMF; provides `avg_ted_js` (semantic drift across steps) and top topic terms.
   - On very small/imbalanced steps, JS is clamped and may return 0.0.
 
 Conversation-specific Fields
 
-- `summary.inflections`: list of inferred pivot points with `reasons` and a plain-language `summary` (e.g., “Shift toward apollo, spacecraft, technical”).
-- `summary.top_content_nodes`: TF‑IDF-like ranking of content terms (concept/entity/question weighted), with conversational fillers removed.
+- `summary.inflections`: list of inferred pivot points with `reasons` and a plain-language `summary` (e.g., â€œShift toward apollo, spacecraft, technicalâ€).
+- `summary.top_content_nodes`: TFâ€‘IDF-like ranking of content terms (concept/entity/question weighted), with conversational fillers removed.
 - `signals[].step_type`: per-step labels aligned with curriculum types: pivot, checkpoint, concept_dense, exploring, scattered, mixed.
 
 ANN Edges (Optional)
 
-- Enabling `AXIOM_FAISS_ENABLED=1` adds forward-only, top‑k thematic edges (YouTube/curriculum) via sentence‑transformers + FAISS. If dependencies are missing, it falls back to cosine similarity.
+- Enabling `AXIOM_FAISS_ENABLED=1` adds forward-only, topâ€‘k thematic edges (YouTube/curriculum) via sentenceâ€‘transformers + FAISS. If dependencies are missing, it falls back to cosine similarity.
 - Expect modest continuity improvements and limited spread increases, with bounded runtime.
 
 Regime Smoothing (Optional)
@@ -45,3 +45,9 @@ Regime Smoothing (Optional)
 - When the `smooth_regimes` sidecar runs, it writes smoothed label sequences to `reports/comprehensive/regime_smoothed/*.smoothed.json`.
 - If heavy dependencies are missing, a lightweight threshold + majority vote fallback is used.
 
+
+
+Addendum
+
+- Conversation insights include QA fields in summary.qa: 	otal_turns, zero_node_fraction, zero_edge_fraction.
+- Combined report maps conversation filenames to sidecar keys via canonical slugs (conversation_<slug>), so parsed variants (e.g., _parsed.metrics.json) align with sidecars.

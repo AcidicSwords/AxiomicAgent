@@ -15,6 +15,8 @@ Tiers
   - RAWDATA/ConversationClean
     - *.json (actors, context, transcript turns)
     - *.md   (human-readable transcript)
+  - RAWDATA/ConversationParsed
+    - *_parsed.json (turn-level JSON; optionally chunked sentences per turn)
 
 - datasets (final, core-ready)
   - datasets/mit_curriculum_datasets
@@ -33,6 +35,11 @@ Tiers
     - Domain summary variants (aggregated metrics across courses)
   - reports/conversation_insight_fs
     - Per-conversation *.metrics.json (conversation health and pivots)
+    - Includes QA: zero_node_fraction, zero_edge_fraction, total_turns
+  - reports/comprehensive
+    - combined.json / combined.md (merged curriculum + conversation summaries)
+    - graph_units/ (community/threads sidecars)
+    - topics_js/ (topic drift sidecars)
 
 Orchestrator
 
@@ -40,10 +47,11 @@ Orchestrator
 - Responsibilities:
   - Normalize YouTube playlists (RAWDATA/RawYT)
   - Build MIT and YouTube datasets (datasets/mit_curriculum_datasets)
-  - Scrub conversation transcripts (RAWDATA/ConversationClean)
+  - Prefer turn-parsed conversations if present (RAWDATA/ConversationParsed); otherwise scrub (RAWDATA/ConversationClean)
   - Build conversation datasets (datasets/conversation_datasets)
   - Run zipless curriculum reports (reports/*_fs)
   - Run conversation health reports (reports/conversation_insight_fs)
+  - Combine summaries and sidecars (reports/comprehensive)
 
 Adapter Contracts (high level)
 
@@ -62,4 +70,3 @@ Guidelines
 - Only datasets should contain canonical zips and zipless FS extracts.
 - Only reports should contain generated metrics/insights.
 - Never mix tiers; the orchestrator paths enforce this separation by default.
-

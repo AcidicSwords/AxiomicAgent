@@ -70,7 +70,7 @@
     }
   ],
   "conversation": {
-    "raw_dir": "RAWDATA/RawConversation/PositiveExample",
+    "raw_dir": "RAWDATA/ConversationParsed",
     "clean_out": "RAWDATA/ConversationClean",
     "metrics_out": "reports/conversation_insight_fs",
     "zip_dir": "datasets/conversation_datasets",

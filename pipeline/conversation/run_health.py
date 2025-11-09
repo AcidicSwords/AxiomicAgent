@@ -16,6 +16,7 @@ STOPWORDS = set(
     a an and are as at be by for from has have if in into is it of on or our out
     that the their there these they this to was were will with you your i he she we
     not no yes okay ok mm hmm uh um yeah right just really kind sort maybe could would should
+    transcript transcripts medium member access subscribe signin sign-in login log-in
     """.split()
 )
 
@@ -47,15 +48,16 @@ def _inflection_points(signals: list[dict], turns: list[dict], window: int = 2) 
         dq = abs(q - prev_q)
         dted = abs(ted - prev_ted)
         reason_flags = []
-        if ted > 0.48:
+        if ted > 0.55:
             reason_flags.append("high_TED")
-        if cont < 0.2:
+        if cont < 0.18:
             reason_flags.append("low_continuity")
-        if ted > 0.4 and dq > 0.3:
+        if ted > 0.42 and dq > 0.3:
             reason_flags.append("q_shift")
-        if dted > 0.25:
+        if dted > 0.3:
             reason_flags.append("TED_jump")
-        if not reason_flags:
+        # Require at least two corroborating reasons to reduce over-fire
+        if len(reason_flags) < 2:
             continue
 
         # Gather context text from a small window of turns around i
@@ -144,6 +146,16 @@ def process_file(path: Path, window: int) -> Dict:
     # Inflection analysis with plain-language content cues
     inflections = _inflection_points(signals, turns, window=2)
     summary["inflections"] = inflections
+    # QA: zero-node and zero-edge fractions
+    zero_nodes = sum(1 for s in signals if (s.get("node_count") or 0) == 0)
+    zero_edges = sum(1 for s in signals if (s.get("edge_count") or 0) == 0)
+    total = max(1, len(signals))
+    summary["qa"] = {
+        "total_turns": len(turns),
+        "analyzed_steps": len(signals),
+        "zero_node_fraction": round(zero_nodes / total, 3),
+        "zero_edge_fraction": round(zero_edges / total, 3)
+    }
     return {"file": str(path), "summary": summary, "signals": signals}
 
 
@@ -152,25 +164,41 @@ def main() -> None:
     ap.add_argument("--input-dir", default="reports/conversation_clean")
     ap.add_argument("--out-dir", default="reports/conversation_metrics")
     ap.add_argument("--window", type=int, default=6, help="Sliding window size for analysis")
+    ap.add_argument("--force", action="store_true", help="Recompute even if output is up-to-date")
     args = ap.parse_args()
 
     in_dir = Path(args.input_dir)
     out_dir = Path(args.out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    files = list(in_dir.glob("*.json")) + list((in_dir / "Bad").glob("*.json"))
+    files = list(in_dir.glob("*.json"))
+    bad_dir = in_dir / "Bad"
+    if bad_dir.exists():
+        files += list(bad_dir.glob("*.json"))
+    files = sorted(files, key=lambda p: p.name.lower())
+
+    print(f"[health] Scanning {in_dir} -> {out_dir} (files={len(files)})", flush=True)
     results_index = []
-    for fp in files:
+    for i, fp in enumerate(files, 1):
+        out_file = out_dir / (fp.stem + ".metrics.json")
         try:
+            if out_file.exists() and not args.force:
+                try:
+                    if out_file.stat().st_mtime >= fp.stat().st_mtime:
+                        print(f"[health] [{i}/{len(files)}] Skip up-to-date {out_file.name}", flush=True)
+                        continue
+                except Exception:
+                    pass
+            print(f"[health] [{i}/{len(files)}] Analyzing {fp.name} (window={args.window})...", flush=True)
             result = process_file(fp, args.window)
-            out_file = out_dir / (fp.stem + ".metrics.json")
             out_file.write_text(json.dumps(result, indent=2), encoding="utf-8")
             results_index.append({"file": str(fp), "out": str(out_file), **result["summary"]})
-            print(f"Analyzed {fp.name}")
+            print(f"[health] [{i}/{len(files)}] Wrote {out_file.name}", flush=True)
         except Exception as e:
-            print(f"Failed {fp}: {e}")
+            print(f"[health] [{i}/{len(files)}] Failed {fp.name}: {e}", flush=True)
 
     (out_dir / "index.json").write_text(json.dumps(results_index, indent=2), encoding="utf-8")
+    print(f"[health] Completed. Wrote index.json with {len(results_index)} entries.", flush=True)
 
 
 if __name__ == "__main__":

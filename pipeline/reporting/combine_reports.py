@@ -5,6 +5,29 @@ import argparse
 import json
 from pathlib import Path
 from typing import Dict, Any, List
+import re
+
+
+def _slugify(s: str) -> str:
+    s = s.strip().lower()
+    s = re.sub(r"[\s+/]+", "_", s)
+    s = re.sub(r"[^a-z0-9_]+", "", s)
+    s = re.sub(r"_+", "_", s).strip("_")
+    return s
+
+
+def _canonical_conversation_key(insight_name: str) -> str:
+    """Map a conversation insight filename stem to the sidecar key.
+
+    Example:
+      insight_name = "Oprah with ... _parsed.metrics" ->
+      sidecar key  = "conversation_oprah_with_prince_harry_and_meghan_markle_interview_transcript_by_kate_shaw_medium"
+    """
+    base = insight_name
+    base = base.replace("_parsed.metrics", "")
+    base = base.replace(".metrics", "")
+    slug = _slugify(base)
+    return f"conversation_{slug}"
 
 
 def _read_json_files(dir_path: Path) -> Dict[str, Any]:
@@ -15,7 +38,6 @@ def _read_json_files(dir_path: Path) -> Dict[str, Any]:
         try:
             out[fp.stem] = json.loads(fp.read_text(encoding="utf-8"))
         except Exception:
-            # skip non-JSON or large files we don't need here
             continue
     return out
 
@@ -25,21 +47,43 @@ def summarize_courses(insights: Dict[str, Any], units_map: Dict[str, Any] | None
     for name, rep in insights.items():
         if name == "comparison":
             continue
-        # Some entries (e.g., index) may be lists; skip those
         if isinstance(rep, list):
             continue
-        agg = (rep or {}).get("aggregates") or {}
-        row = {
-            "course": name,
-            "avg_q": agg.get("avg_q"),
-            "avg_ted": agg.get("avg_ted"),
-            "avg_spread": agg.get("avg_spread"),
-            "steps": agg.get("steps") or (rep.get("run_meta") or {}).get("steps"),
-        }
-        if units_map and name in units_map and isinstance(units_map[name], dict):
-            row["avg_unit_count"] = units_map[name].get("avg_unit_count")
-        if topics_map and name in topics_map and isinstance(topics_map[name], dict):
-            row["avg_ted_js"] = topics_map[name].get("avg_ted_js")
+        if isinstance(rep, dict) and rep.get("aggregates"):
+            agg = rep.get("aggregates") or {}
+            row = {
+                "course": name,
+                "avg_q": agg.get("avg_q"),
+                "avg_ted": agg.get("avg_ted"),
+                "avg_spread": agg.get("avg_spread"),
+                "steps": agg.get("steps") or (rep.get("run_meta") or {}).get("steps"),
+            }
+        elif isinstance(rep, dict) and rep.get("summary"):
+            summ = rep.get("summary") or {}
+            row = {
+                "course": name,
+                "avg_q": summ.get("avg_q"),
+                "avg_ted": summ.get("avg_TED") if summ.get("avg_TED") is not None else summ.get("avg_ted"),
+                "avg_spread": summ.get("avg_spread"),
+                "steps": summ.get("total_turns") or (len(rep.get("signals") or []) if rep.get("signals") is not None else None),
+            }
+        else:
+            row = {"course": name, "avg_q": None, "avg_ted": None, "avg_spread": None, "steps": None}
+        # Attach sidecars when names match exactly (curriculum) or via canonical mapping (conversation)
+        if units_map:
+            if name in units_map and isinstance(units_map[name], dict):
+                row["avg_unit_count"] = units_map[name].get("avg_unit_count")
+            else:
+                conv_key = _canonical_conversation_key(name)
+                if conv_key in units_map and isinstance(units_map[conv_key], dict):
+                    row["avg_unit_count"] = units_map[conv_key].get("avg_unit_count")
+        if topics_map:
+            if name in topics_map and isinstance(topics_map[name], dict):
+                row["avg_ted_js"] = topics_map[name].get("avg_ted_js")
+            else:
+                conv_key = _canonical_conversation_key(name)
+                if conv_key in topics_map and isinstance(topics_map[conv_key], dict):
+                    row["avg_ted_js"] = topics_map[conv_key].get("avg_ted_js")
         rows.append(row)
     return rows
 
@@ -64,27 +108,26 @@ def main() -> None:
     cur_ins = _read_json_files(cur_ins_dir)
     con_ins = _read_json_files(con_ins_dir)
 
-    # Optional sidecars
     units_dir = Path("reports/comprehensive/graph_units")
     topics_dir = Path("reports/comprehensive/topics_js")
     units = _read_json_files(units_dir) if units_dir.exists() else {}
     topics = _read_json_files(topics_dir) if topics_dir.exists() else {}
 
-    # Light summary tables
     cur_summary = summarize_courses(cur_ins, units, topics)
-    con_summary = summarize_courses(con_ins)
+    con_summary = summarize_courses(con_ins, units, topics)
 
     combined = {
         "curriculum": {
             "summary": cur_summary,
             "comparison": cur_ins.get("comparison"),
-            "units": {k: (v.get("avg_unit_count") if isinstance(v, dict) else None) for k, v in units.items()} if units else None,
-            "topics": {k: (v.get("avg_ted_js") if isinstance(v, dict) else None) for k, v in topics.items()} if topics else None,
+            "units": {k: v.get("avg_unit_count") for k, v in units.items() if isinstance(v, dict)} if units else None,
+            "topics": {k: v.get("avg_ted_js") for k, v in topics.items() if isinstance(v, dict)} if topics else None,
         },
         "conversation": {
             "summary": con_summary,
-            # conversation health index.json lives in conversation_insight_fs
             "index": con_ins.get("index"),
+            "units": {k: v.get("avg_unit_count") for k, v in units.items() if isinstance(v, dict) and k.startswith("conversation_")} if units else None,
+            "topics": {k: v.get("avg_ted_js") for k, v in topics.items() if isinstance(v, dict) and k.startswith("conversation_")} if topics else None,
         },
         "meta": {
             "curriculum_insights_dir": str(cur_ins_dir),
@@ -94,10 +137,8 @@ def main() -> None:
         }
     }
 
-    # Write JSON
     (out_dir / "combined.json").write_text(json.dumps(combined, indent=2), encoding="utf-8")
 
-    # Write a concise Markdown overview
     md_lines = [
         "# Comprehensive Report (Curriculum + Conversation)",
         "",
@@ -112,7 +153,12 @@ def main() -> None:
         md_lines.append(f"- {r['course']}: " + ", ".join(parts))
     md_lines += ["", "## Conversation Summary"]
     for r in con_summary:
-        md_lines.append(f"- {r['course']}: avg_q={r.get('avg_q')}, avg_ted={r.get('avg_ted')}, steps={r.get('steps')}")
+        parts = [f"avg_q={r.get('avg_q')}", f"avg_ted={r.get('avg_ted')}", f"steps={r.get('steps')}"]
+        if r.get("avg_unit_count") is not None:
+            parts.append(f"threads≈{round(r['avg_unit_count'],2)}")
+        if r.get("avg_ted_js") is not None:
+            parts.append(f"ted_js≈{round(r['avg_ted_js'],3)}")
+        md_lines.append(f"- {r['course']}: " + ", ".join(parts))
 
     (out_dir / "combined.md").write_text("\n".join(md_lines), encoding="utf-8")
 

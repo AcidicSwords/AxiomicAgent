@@ -22,7 +22,7 @@ def _read_manifest(path: Path) -> Dict[str, Any]:
 
 
 def _run(cmd: List[str], cwd: Optional[Path] = None, check: bool = True) -> subprocess.CompletedProcess:
-    print("$", " ".join(cmd))
+    print("$", " ".join(cmd), flush=True)
     return subprocess.run(cmd, check=check, cwd=str(cwd) if cwd else None)
 
 
@@ -108,8 +108,27 @@ def process_conversation(entry: Dict[str, Any], default_zip_dir: Path) -> Path:
     build_zip_dir = Path(entry.get("zip_dir") or default_zip_dir)
 
     ensure_dir(clean_out); ensure_dir(metrics_out)
-    if not entry.get("skip_scrub"):
+    # Prefer parsed turn-level JSON if present in raw_dir
+    use_parsed = False
+    try:
+        parsed_jsons = list(raw_dir.glob("*.json"))
+        for p in parsed_jsons:
+            try:
+                data = json.loads(p.read_text(encoding="utf-8"))
+                turns = data.get("turns") or data.get("transcript")
+                if isinstance(turns, list) and turns and isinstance(turns[0], dict):
+                    use_parsed = True
+                    break
+            except Exception:
+                continue
+    except Exception:
+        use_parsed = False
+
+    if not entry.get("skip_scrub") and not use_parsed:
         _run([sys.executable, "-m", "pipeline.conversation.scrub_transcripts", "--input-dir", str(raw_dir), "--out-dir", str(clean_out)])
+    else:
+        # Use parsed JSONs directly as cleaned input
+        clean_out = raw_dir
     if not entry.get("skip_build"):
         build_conversation_datasets(clean_out, build_zip_dir, window_size, prefix)
     _run([sys.executable, "-m", "pipeline.conversation.run_health", "--input-dir", str(clean_out), "--out-dir", str(metrics_out), "--window", str(window_size)])
@@ -165,6 +184,7 @@ def main() -> None:
     # Parallelize YouTube builds if requested
     yt_entries = manifest.get("youtube", []) or []
     par = int((manifest.get("orchestrator") or {}).get("parallel", 1))
+    print(f"[orchestrator] YouTube entries: {len(yt_entries)}", flush=True)
     if par > 1 and yt_entries:
         try:
             from joblib import Parallel, delayed  # type: ignore
@@ -189,10 +209,19 @@ def main() -> None:
         perf["timings"]["youtube_total"] = round(time.time() - t_y0, 3)
 
     if manifest.get("mit"):
+        print("[orchestrator] Building MIT datasets...", flush=True)
         process_mit_group(manifest["mit"])
+        print("[orchestrator] MIT build complete.", flush=True)
 
     if manifest.get("conversation"):
+        try:
+            raw_dir = Path(manifest["conversation"].get("raw_dir") or "RawConversation")
+            file_count = len(list(raw_dir.glob("*.json"))) if raw_dir.exists() else 0
+        except Exception:
+            raw_dir = Path("RawConversation"); file_count = 0
+        print(f"[orchestrator] Processing conversations from {raw_dir} (files~{file_count})...", flush=True)
         process_conversation(manifest["conversation"], zip_dir)
+        print("[orchestrator] Conversation processing complete.", flush=True)
 
     # Ensure YouTube datasets are visible to reporting by merging into the main zip_dir
     try:
@@ -200,6 +229,7 @@ def main() -> None:
     except Exception as e:
         print(f"[merge] Unable to merge YouTube zips into {zip_dir}: {e}")
 
+    print("[orchestrator] Running zipless curriculum reports...", flush=True)
     t_rep0 = time.time()
     run_zipless_curriculum(zip_dir, fs_dir, insights_out, dynamics_out, heads, compute_spread, compute_locality)
     perf["timings"]["reports_curriculum"] = round(time.time() - t_rep0, 3)
@@ -208,12 +238,15 @@ def main() -> None:
         _move_conversation_dynamics(dynamics_out, conversation_dynamics_out)
     except Exception as e:
         print(f"[split] Unable to split conversation dynamics: {e}")
+    print("[orchestrator] Running curriculum_insight reporter...", flush=True)
     run_core_report(zip_dir, fs_dir, curriculum_insight_out, "curriculum_insight", heads, compute_spread, compute_locality)
+    print("[orchestrator] Running conversation_insight reporter...", flush=True)
     run_core_report(zip_dir, fs_dir, conversation_insight_out, "conversation_insight", heads, compute_spread, compute_locality)
 
     # Build a combined comprehensive analysis (curriculum + conversation)
     try:
         t_comb0 = time.time()
+        print("[orchestrator] Combining reports (curriculum + conversation)...", flush=True)
         _run([sys.executable, "-m", "pipeline.reporting.combine_reports",
               "--curriculum-insights", str(insights_out),
               "--curriculum-dynamics", str(dynamics_out),
@@ -222,6 +255,7 @@ def main() -> None:
               "--out-dir", "reports/comprehensive" ])
         perf["timings"]["combine_reports"] = round(time.time() - t_comb0, 3)
         # Optional: regime smoothing sidecar
+        print("[orchestrator] Smoothing regimes...", flush=True)
         t_smooth0 = time.time()
         _run([sys.executable, "-m", "pipeline.reporting.smooth_regimes",
               "--dynamics-dir", str(dynamics_out),
