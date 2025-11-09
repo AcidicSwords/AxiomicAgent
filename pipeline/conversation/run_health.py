@@ -164,6 +164,7 @@ def main() -> None:
     ap.add_argument("--input-dir", default="reports/conversation_clean")
     ap.add_argument("--out-dir", default="reports/conversation_metrics")
     ap.add_argument("--window", type=int, default=6, help="Sliding window size for analysis")
+    ap.add_argument("--context-flags", action="store_true", help="Emit optional context flags using add-on tracker (no external deps required)")
     ap.add_argument("--force", action="store_true", help="Recompute even if output is up-to-date")
     args = ap.parse_args()
 
@@ -191,6 +192,35 @@ def main() -> None:
                     pass
             print(f"[health] [{i}/{len(files)}] Analyzing {fp.name} (window={args.window})...", flush=True)
             result = process_file(fp, args.window)
+
+            # Optional: attach context flags using the add-on tracker
+            if args.context_flags:
+                try:
+                    from tools.conversation_health.tracker import ConversationHealthTracker  # type: ignore
+                    tracker = ConversationHealthTracker()
+                    # Feed a lightweight sequence: alternate user/assistant by index
+                    turns = result.get("signals") or []
+                    raw_turns = []
+                    try:
+                        data = json.loads(Path(fp).read_text(encoding="utf-8"))
+                        raw_turns = data.get("turns") or data.get("transcript") or []
+                    except Exception:
+                        raw_turns = []
+                    # Prefer raw text if available, else synthesize from signals
+                    if raw_turns:
+                        for t in raw_turns[: min(500, len(raw_turns))]:  # cap for speed
+                            role = t.get("speaker") or t.get("role") or "user"
+                            sp = "user" if role.lower().startswith("u") else "assistant"
+                            tracker.add_turn(sp, t.get("text") or t.get("content") or "")
+                    else:
+                        for j, s in enumerate(turns[:500]):
+                            sp = "user" if (j % 2 == 0) else "assistant"
+                            tracker.add_turn(sp, s.get("text") or "")
+                    flags = tracker.compute_health()
+                    result.setdefault("summary", {}).setdefault("context_flags", flags)
+                except Exception:
+                    # Keep optional; never break main pipeline
+                    pass
             out_file.write_text(json.dumps(result, indent=2), encoding="utf-8")
             results_index.append({"file": str(fp), "out": str(out_file), **result["summary"]})
             print(f"[health] [{i}/{len(files)}] Wrote {out_file.name}", flush=True)
