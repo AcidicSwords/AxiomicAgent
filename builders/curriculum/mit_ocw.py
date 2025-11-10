@@ -6,8 +6,15 @@ from collections import defaultdict
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Dict, Iterable, List, Optional, Tuple
+from core.transcripts import extract_keywords
+from io import BytesIO
 from urllib.parse import urlparse
 from zipfile import ZipFile
+
+try:
+    from PyPDF2 import PdfReader  # type: ignore
+except ImportError:  # pragma: no cover
+    PdfReader = None  # type: ignore
 
 try:
     from bs4 import BeautifulSoup  # type: ignore
@@ -104,6 +111,7 @@ class CourseItem:
     chunk_index: Optional[int] = None
     week: Optional[int] = None
     order: int = 0
+    metrics: Dict[str, object] = field(default_factory=dict)
 
     def to_dict(self) -> Dict[str, object]:
         return {
@@ -117,6 +125,7 @@ class CourseItem:
             "week": self.week,
             "order": self.order,
             "source_path": self.source_path,
+            "metrics": self.metrics,
         }
 
 
@@ -125,6 +134,7 @@ class ResourceGuide:
     section_order: Dict[str, int]
     section_titles: Dict[str, str]
     resource_types: Dict[str, str]
+    resource_sections: Dict[str, str]
 
 
 def _iter_data_files(zf: ZipFile, profile: str) -> List[str]:
@@ -344,7 +354,116 @@ def _extract_course(
             )
         )
 
+    items.extend(
+        _collect_static_resources(
+            zf,
+            guide,
+            section_order,
+            section_titles,
+            starting_order=len(items),
+        )
+    )
     return _post_process_items(course_id, items, section_order, section_titles)
+
+
+def _collect_static_resources(
+    zf: ZipFile,
+    guide: ResourceGuide,
+    section_order: Dict[str, int],
+    section_titles: Dict[str, str],
+    starting_order: int,
+) -> List[CourseItem]:
+    resources: List[CourseItem] = []
+    order = starting_order
+    pdf_names = sorted(
+        name
+        for name in zf.namelist()
+        if name.lower().startswith("static_resources/") and name.lower().endswith(".pdf")
+    )
+    if not pdf_names:
+        return []
+    for name in pdf_names:
+        text = _extract_pdf_text(zf, name)
+        if not text:
+            continue
+        section_slug = guide.resource_sections.get(name) or _slug_from_path(name) or "resources"
+        section_index = section_order.get(section_slug)
+        if section_index is None:
+            section_index = max(section_order.values(), default=-1) + 1
+            section_order[section_slug] = section_index
+        section_title = (
+            section_titles.get(section_slug)
+            or guide.section_titles.get(section_slug)
+            or section_slug.replace("-", " ").title()
+        )
+        section_titles.setdefault(section_slug, section_title)
+
+        segments = _chunk_pdf_text(text)
+        if not segments:
+            segments = [text]
+        for seg_idx, segment_text in enumerate(segments):
+            metrics = {
+                "snippet": segment_text[:400],
+                "keywords": extract_keywords(segment_text, max_keywords=5),
+                "resource_label": guide.resource_types.get(name),
+            }
+            resources.append(
+                CourseItem(
+                    item_id=f"resource::{name}::seg{seg_idx}",
+                    title=f"{Path(name).stem} (notes)",
+                    kind="resource",
+                    section_index=section_index,
+                    section_slug=section_slug,
+                    section_title=section_title,
+                    source_path=name,
+                    week=section_index,
+                    order=order,
+                    metrics=metrics,
+                )
+            )
+            order += 1
+    return resources
+
+
+def _extract_pdf_text(zf: ZipFile, path: str) -> str:
+    if PdfReader is None:
+        return ""
+    try:
+        data = zf.read(path)
+    except KeyError:
+        return ""
+    try:
+        reader = PdfReader(BytesIO(data))
+    except Exception:
+        return ""
+    parts: List[str] = []
+    for page in getattr(reader, "pages", []):
+        try:
+            text = page.extract_text()
+        except Exception:
+            continue
+        if text:
+            parts.append(text.strip())
+    return "\n".join(parts)
+
+
+def _chunk_pdf_text(text: str, max_chars: int = 2000) -> List[str]:
+    paragraphs = [p.strip() for p in text.split("\n\n") if p.strip()]
+    if not paragraphs:
+        return []
+    segments: List[str] = []
+    current: List[str] = []
+    length = 0
+    for para in paragraphs:
+        if length and length + len(para) > max_chars:
+            segments.append(" ".join(current))
+            current = []
+            length = 0
+        current.append(para)
+        length += len(para)
+    if current:
+        segments.append(" ".join(current))
+    return segments
 
 
 def _post_process_items(
@@ -593,7 +712,7 @@ def _parse_resource_index(zf: ZipFile) -> ResourceGuide:
     try:
         html = zf.read("pages/resource-index/index.html")
     except KeyError:
-        return ResourceGuide({}, {}, {})
+        return ResourceGuide({}, {}, {}, {})
 
     soup = BeautifulSoup(html, "html.parser")
     main = soup.find("main") or soup
@@ -601,6 +720,7 @@ def _parse_resource_index(zf: ZipFile) -> ResourceGuide:
     section_order: Dict[str, int] = {}
     section_titles: Dict[str, str] = {}
     resource_types: Dict[str, str] = {}
+    resource_sections: Dict[str, str] = {}
     next_order = 1
 
     for heading in main.find_all("h3"):
@@ -635,8 +755,10 @@ def _parse_resource_index(zf: ZipFile) -> ResourceGuide:
                             slug_counts[slug] += 1
                         if column_label:
                             resource_types.setdefault(norm, column_label)
+                            resource_sections.setdefault(norm, slug)
                             base = norm.split("#", 1)[0]
                             resource_types.setdefault(base, column_label)
+                            resource_sections.setdefault(base, slug)
 
         if slug_counts:
             slug = max(slug_counts.items(), key=lambda kv: kv[1])[0]
@@ -645,7 +767,7 @@ def _parse_resource_index(zf: ZipFile) -> ResourceGuide:
                 section_titles[slug] = title
                 next_order += 1
 
-    return ResourceGuide(section_order, section_titles, resource_types)
+    return ResourceGuide(section_order, section_titles, resource_types, resource_sections)
 
 
 def _classify_kind(

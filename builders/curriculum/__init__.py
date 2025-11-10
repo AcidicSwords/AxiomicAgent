@@ -1,4 +1,4 @@
-"""
+﻿"""
 Curriculum builders (MIT + YouTube) to materialize canonical datasets.
 
 Responsibilities:
@@ -17,9 +17,16 @@ import math
 import zipfile
 from collections import defaultdict
 from dataclasses import dataclass
+from io import BytesIO
 from pathlib import Path
 from typing import Dict, List, Optional, Set, Tuple
-from pathlib import Path
+
+try:
+    from PyPDF2 import PdfReader  # type: ignore
+except ImportError:  # pragma: no cover
+    PdfReader = None  # type: ignore
+
+from core.transcripts import extract_keywords
 
 EdgeEntry = Dict[str, object]
 NodeEntry = Dict[str, object]
@@ -45,7 +52,7 @@ def build_from_items_json(
     """
 
     cfg = params or CurriculumBuilderParams()
-    data = json.loads(Path(items_json_path).read_text(encoding="utf-8"))
+    data = json.loads(Path(items_json_path).read_text(encoding="utf-8-sig"))
     course_id = data.get("course_id", items_json_path.stem)
     items: List[Dict[str, object]] = data.get("items", [])
     prereqs: List[Dict[str, object]] = data.get("prerequisites", [])
@@ -70,6 +77,8 @@ def build_from_items_json(
         )
     else:
         edges = _build_edges_from_prereqs(items, prereqs, id_map, cfg.step_semantics)
+
+    _attach_resource_edges(items, id_map, edges, cfg.step_semantics)
 
     # Optional: augment with transcript-derived nodes/edges if present
     try:
@@ -632,8 +641,8 @@ def _augment_with_transcripts(
     concept nodes, and wire them with edges assigned to the video's step.
 
     Also records short lists of per-video keywords for thin cross-step continuity
-    glue: concept→next-video edges (shared keywords) and a title-similarity
-    video→video link (when a content anchor overlaps).
+    glue: conceptâ†’next-video edges (shared keywords) and a title-similarity
+    videoâ†’video link (when a content anchor overlaps).
     """
     # Lazy import to avoid creating a hard builder->core cycle at import time
     from core.transcripts import coarse_segments, extract_keywords
@@ -665,15 +674,21 @@ def _augment_with_transcripts(
         transcript_rel = item.get("transcript_path")
         if not transcript_rel:
             continue
-        # Resolve path and load transcript JSON
+        # Resolve path and load transcript (JSON or VTT)
         tpath = (base_dir / str(transcript_rel)).resolve()
         if not tpath.exists():
             continue
+        transcript = None
         try:
-            transcript = json.loads(tpath.read_text(encoding="utf-8"))
+            if tpath.suffix.lower() == ".vtt":
+                from core.transcripts import parse_vtt_to_segments
+                transcript = parse_vtt_to_segments(str(item.get("item_id") or "video"), tpath)
+            else:
+                transcript = json.loads(tpath.read_text(encoding="utf-8-sig"))
         except Exception:
+            transcript = None
+        if not transcript:
             continue
-
         video_item_id = str(item.get("item_id"))
         video_node_id = id_map.get(video_item_id)
         if video_node_id is None:
@@ -934,6 +949,60 @@ def _add_edge(
     )
 
 
+def _attach_resource_edges(
+    items: List[Dict[str, object]],
+    id_map: Dict[str, int],
+    edges: List[EdgeEntry],
+    step_semantics: str,
+) -> None:
+    added: set[Tuple[int, int]] = {(edge["src"], edge["dst"]) for edge in edges}
+    resource_weight = 0.9
+    reverse_weight = 0.5
+    chunk_weight = 0.6
+    slug_targets: Dict[str, Optional[Dict[str, object]]] = {}
+    resource_groups: Dict[str, List[Dict[str, object]]] = {}
+    for item in items:
+        slug = item.get("section_slug")
+        if not slug:
+            continue
+        kind = (item.get("kind") or "").lower()
+        if kind in {"lecture", "session", "lecture-videos", "lecture_notes"}:
+            slug_targets.setdefault(slug, item)
+        if kind == "resource":
+            resource_groups.setdefault(slug, []).append(item)
+    slug_sequence = sorted(
+        (
+            slug,
+            (
+                slug_targets.get(slug) or {}
+            ).get("section_index") or 0,
+        )
+        for slug in slug_targets
+    )
+    slug_order = [slug for slug, _idx in slug_sequence]
+    slug_next: Dict[str, str] = {
+        slug_order[i]: slug_order[i + 1] for i in range(len(slug_order) - 1)
+    }
+
+    for slug, segments in resource_groups.items():
+        target = slug_targets.get(slug)
+        prev_seg: Optional[Dict[str, object]] = None
+        segments.sort(key=lambda it: it.get("order") or 0)
+        for seg in segments:
+            if prev_seg:
+                _add_edge(edges, added, prev_seg, seg, id_map, step_semantics, weight=chunk_weight)
+            if target:
+                _add_edge(edges, added, target, seg, id_map, step_semantics, weight=resource_weight)
+                _add_edge(edges, added, seg, target, id_map, step_semantics, weight=reverse_weight)
+            prev_seg = seg
+        next_slug = slug_next.get(slug)
+        next_target = slug_targets.get(next_slug) if next_slug else None
+        if next_target:
+            for seg in segments:
+                _add_edge(edges, added, seg, next_target, id_map, step_semantics, weight=reverse_weight)
+                _add_edge(edges, added, next_target, seg, id_map, step_semantics, weight=chunk_weight)
+
+
 def _add_ann_thematic_edges(
     items: List[Dict[str, object]],
     id_map: Dict[str, int],
@@ -999,3 +1068,8 @@ def _add_ann_thematic_edges(
             cnt += 1
             if cnt >= top_k:
                 break
+
+
+
+
+

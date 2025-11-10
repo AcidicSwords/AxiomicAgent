@@ -30,10 +30,16 @@ class ConversationDatasetBuilder:
 
     def build(self, transcript_path: Path, output_zip: Path, course_id: str) -> None:
         data = json.loads(transcript_path.read_text(encoding="utf-8"))
-        transcript = data.get("transcript") or data.get("turns") or []
-        clean_title = str(data.get("title") or transcript_path.stem)
-        nodes: List[Dict[str, object]] = []
-        edges: List[Dict[str, object]] = []
+        if isinstance(data, dict):
+            transcript = data.get("transcript") or data.get("turns") or []
+            profile = data.get("profile") or data.get("conversation_profile") or "general"
+            clean_title = str(data.get("title") or data.get("source") or transcript_path.stem)
+        else:
+            transcript = data
+            profile = "general"
+            clean_title = str(transcript_path.stem)
+        nodes: Dict[int, str] = {}
+        edges: List[tuple[int, int, int]] = []
         node_map: Dict[str, int] = {}
         node_counter = 0
         prev_nodes: List[ConversationNode] = []
@@ -69,17 +75,19 @@ class ConversationDatasetBuilder:
             for node in current_nodes:
                 if node.id not in node_map:
                     node_map[node.id] = node_counter
-                    node_entry = {
-                        "id": node_counter,
-                        "label": node.text,
-                        "kind": node.type,
-                        "role": node.role,
-                        "speaker": speaker,
-                        "turn_index": turn_index,
-                        "course_id": course_id,
-                        "source_file": str(transcript_path.name),
-                    }
-                    nodes.append(node_entry)
+                    safe_label = node.text.replace("\n", " ").replace("\r", " ").replace(",", ";")
+                    node_row = ",".join(
+                        [
+                            safe_label,
+                            node.type,
+                            node.role,
+                            speaker,
+                            str(turn_index),
+                            course_id,
+                            str(transcript_path.name),
+                        ]
+                    )
+                    nodes[node_counter] = node_row
                     node_counter += 1
                     if node.type == "question":
                         step_meta[step_id]["question_count"] += 1
@@ -100,7 +108,7 @@ class ConversationDatasetBuilder:
                     continue
                 if edge.type == "reply":
                     step_meta[step_id]["reply_edges"] += 1
-                edges.append({"step": step_id, "src": src, "dst": dst, "type": edge.type, "weight": round(edge.weight or edge.quality or 1.0, 3)})
+                edges.append((step_id, src, dst))
 
             prev_nodes = current_nodes
             prev_text = text
@@ -137,14 +145,14 @@ class ConversationDatasetBuilder:
             "step_features": {str(step): feats for step, feats in step_features.items()},
             "speakers": sorted(speakers_overall),
             "turns": len(transcript),
+            "profile": profile,
         }
         write_dataset_zip(
             output_zip,
             nodes=nodes,
             edges=edges,
             meta=meta,
-            node_fields=["id", "label", "kind", "role", "speaker", "turn_index", "course_id", "source_file"],
-            edge_fields=["step", "src", "dst", "type", "weight"],
+            node_header="label,kind,role,speaker,turn_index,course_id,source_file",
         )
 
 

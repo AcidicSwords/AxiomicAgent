@@ -1,8 +1,8 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import os
 from pathlib import Path
-from typing import Dict, Iterable, Optional, Set, Union
+from typing import Dict, Iterable, Optional, Set, Union, List
 
 from core.registry import register_adapter
 
@@ -48,17 +48,25 @@ class CurriculumStream:
         self.nodes: Dict[int, str] = processed.nodes
         self.obs_steps = processed.obs_steps
         self.true_steps = processed.true_steps
-        self.step_features = processed.step_features
-        self.node_tags = processed.node_tags
-        self.node_weights = processed.node_weights
         self._steps = sorted(set(self.obs_steps.keys()) | set(self.true_steps.keys()))
         self._idx = 0
-        self._last_step: Optional[int] = None
 
         self._meta = dict(processed.meta)
         self._meta.setdefault("steps", len(self._steps))
         self._meta.setdefault("nodes", len(self.nodes))
         self._meta.setdefault("adapter", "curriculum_stream")
+        # cache course_id if available for gating behavior
+        self.course_id: str = str(self._meta.get("course_id") or Path(str(path)).stem)
+
+        # Derived weights and per-step features so signals can incorporate resource influence
+        self._resource_features_enabled = self._feature_enabled_for_course(self.course_id)
+        self.node_weights: Dict[int, float] = (
+            self._compute_node_weights(self.nodes) if self._resource_features_enabled else {nid: 1.0 for nid in self.nodes}
+        )
+        self._step_nodes: Dict[int, Set[int]] = {
+            step: {n for (u, v) in edges for n in (u, v)} for step, edges in self.obs_steps.items()
+        }
+        self._step_features: Dict[int, Dict[str, float]] = self._compute_step_features() if self._resource_features_enabled else {}
 
     # ------------------------------------------------------------------
 
@@ -69,7 +77,6 @@ class CurriculumStream:
         obs = set(self.obs_steps.get(step, set()))
         if self.scramble and obs:
             obs = self._scramble(obs)
-        self._last_step = step
         self._idx += 1
         return obs
 
@@ -87,17 +94,26 @@ class CurriculumStream:
     def has_more(self) -> bool:
         return self._idx < len(self._steps)
 
-    def current_step(self) -> Optional[int]:
-        return self._last_step
-
-    def get_step_features(self, step: int) -> Dict[str, object]:
-        return self.step_features.get(step, {})
-
     def meta(self) -> Dict[str, object]:
         return dict(self._meta)
 
     def node_label(self, node_id: int) -> str:
         return self.nodes.get(node_id, str(node_id))
+
+    # Expose current step id for engine bookkeeping
+    def current_step(self) -> Optional[int]:
+        if not self._steps:
+            return None
+        # After next_obs() increments _idx, current step is the one just consumed
+        idx = max(0, min(len(self._steps) - 1, self._idx - 1))
+        return self._steps[idx]
+
+    # Provide per-step features so SignalComputer can use weighted mass and continuity
+    def get_step_features(self, step_id: int) -> Dict[str, float]:
+        # Only expose features if enabled for this course
+        if not self._resource_features_enabled:
+            return {}
+        return dict(self._step_features.get(step_id, {}))
 
     # ------------------------------------------------------------------
 
@@ -118,3 +134,75 @@ class CurriculumStream:
         if not isinstance(resolved, CurriculumDatasetConfig):
             raise ValueError(f"Config {config!r} is not a curriculum dataset config")
         return resolved
+
+    # ------------------------- internals -------------------------
+
+    @staticmethod
+    def _is_resource_label(label: str) -> bool:
+        lower = (label or "").lower()
+        return ("lecture notes" in lower) or ("notes" in lower) or ("resource::" in label)
+
+    def _feature_enabled_for_course(self, course_id: str) -> bool:
+        import os as _os
+        flag = _os.environ.get("AXIOM_RESOURCE_FEATURE_TEST", "0")
+        if flag in ("1", "true", "TRUE", "yes"):
+            return True
+        wl = _os.environ.get("AXIOM_RESOURCE_FEATURE_COURSES", "")
+        if not wl:
+            try:
+                has_segments = any("[segment" in (lbl or "").lower() for lbl in self.nodes.values())
+                if has_segments and len(self._steps) <= 30:
+                    return True
+            except Exception:
+                pass
+            return False
+        allow = {c.strip() for c in wl.split(",") if c.strip()}
+        return course_id in allow or "*" in allow or "all" in allow
+    def _compute_node_weights(self, nodes: Dict[int, str]) -> Dict[int, float]:
+        import os as _os
+        # Global scale for sweeps
+        g_scale = float(_os.environ.get("AXIOM_WEIGHT_SCALE", "1.0") or 1.0)
+        res_scale = float(_os.environ.get("AXIOM_RESOURCE_W_SCALE", str(g_scale)) or g_scale)
+        lec_scale = float(_os.environ.get("AXIOM_LECTURE_W_SCALE", str(g_scale)) or g_scale)
+        pset_scale = float(_os.environ.get("AXIOM_PSET_W_SCALE", "1.0") or 1.0)
+
+        weights: Dict[int, float] = {}
+        for nid, label in nodes.items():
+            text = (label or "").lower()
+            w = 1.0
+            if self._is_resource_label(label):
+                w = 5.0 * res_scale
+            elif ("lecture notes" in text) or ("lecture" in text and "part" in text):
+                w = 3.5 * lec_scale
+            elif "segment" in text:
+                w = 3.0 * res_scale
+            elif any(tok in text for tok in ("problem set", "pset", "exam", "quiz")):
+                w = 1.25 * pset_scale
+            weights[nid] = float(w)
+        return weights
+
+    def _compute_step_features(self) -> Dict[int, Dict[str, float]]:
+        features: Dict[int, Dict[str, float]] = {}
+        # Use per-step node sets (not cumulative) for a stable, adapter-local continuity signal
+        prev_nodes: Optional[Set[int]] = None
+        for step in self._steps:
+            nodes = self._step_nodes.get(step, set())
+            uniq = len(nodes)
+            mass = sum(self.node_weights.get(n, 1.0) for n in nodes)
+            # Weighted continuity (node-set Jaccard with previous step)
+            if prev_nodes is not None:
+                inter = sum(self.node_weights.get(n, 1.0) for n in (nodes & prev_nodes))
+                union = sum(self.node_weights.get(n, 1.0) for n in (nodes | prev_nodes)) or 1.0
+                ted = 1.0 - (inter / union)
+            else:
+                ted = 0.0
+            features[step] = {
+                "unique_node_count": float(uniq),
+                "weighted_node_mass": float(mass),
+                "ted": float(max(0.0, min(1.0, ted))),
+            }
+            prev_nodes = nodes
+        return features
+
+
+

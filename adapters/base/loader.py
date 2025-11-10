@@ -1,97 +1,69 @@
 from __future__ import annotations
 
 import csv
+import io
 import json
 import zipfile
 from pathlib import Path
-from typing import Any, Dict, List
+from typing import Dict
 
 from .types import Edge, Frame, RawStream
 
 
 def load_zip_stream(path: str | Path) -> RawStream:
+    """
+    Minimal zip loader. Expects nodes.csv, edges_obs.csv, optional edges_true.csv, meta.json.
+    """
     path = Path(path)
-    nodes: Dict[int, Dict[str, Any]] = {}
+    nodes: Dict[int, str] = {}
     obs_steps: Dict[int, Frame] = {}
     true_steps: Dict[int, Frame] = {}
     meta: Dict[str, object] = {}
 
-    with zipfile.ZipFile(path, "r") as zf:
-        with zf.open("nodes.csv") as f:
-            reader = csv.DictReader((line.decode("utf-8") for line in f))
-            for row in reader:
-                node_id = int(row["id"])
-                nodes[node_id] = {key: value for key, value in row.items()}
-
-        with zf.open("edges_obs.csv") as f:
-            reader = csv.DictReader((line.decode("utf-8") for line in f))
-            for row in reader:
-                step = int(row["step"])
-                edge: Edge = (int(row["src"]), int(row["dst"]))
-                obs_steps.setdefault(step, set()).add(edge)
-
-        if "edges_true.csv" in zf.namelist():
-            with zf.open("edges_true.csv") as f:
-                reader = csv.DictReader((line.decode("utf-8") for line in f))
-                for row in reader:
-                    step = int(row["step"])
-                    edge = (int(row["src"]), int(row["dst"]))
-                    true_steps.setdefault(step, set()).add(edge)
-
-        if "meta.json" in zf.namelist():
-            with zf.open("meta.json") as f:
-                meta = json.loads(f.read().decode("utf-8"))
-
-    meta.setdefault("dataset_path", str(path))
-    return RawStream(nodes=nodes, obs_steps=obs_steps, true_steps=true_steps, meta=meta)
-
-
-def load_fs_stream(dir_path: str | Path) -> RawStream:
-    """Load a RawStream from an unpacked dataset directory.
-
-    Expects files: nodes.csv, edges_obs.csv, optional edges_true.csv, optional meta.json
-    """
-    dir_path = Path(dir_path)
-    if not dir_path.exists() or not dir_path.is_dir():
-        raise FileNotFoundError(dir_path)
-
-    nodes: Dict[int, Dict[str, Any]] = {}
-    obs_steps: Dict[int, Frame] = {}
-    true_steps: Dict[int, Frame] = {}
-    meta: Dict[str, Any] = {}
-
-    nodes_csv = dir_path / "nodes.csv"
-    edges_obs_csv = dir_path / "edges_obs.csv"
-    edges_true_csv = dir_path / "edges_true.csv"
-    meta_json = dir_path / "meta.json"
-
-    if not nodes_csv.exists() or not edges_obs_csv.exists():
-        raise FileNotFoundError(f"Missing required dataset files in {dir_path}")
-
-    with nodes_csv.open("r", encoding="utf-8") as f:
-        reader = csv.DictReader(f)
+    def _read_nodes(reader):
         for row in reader:
-            node_id = int(row["id"])
-            nodes[node_id] = {key: value for key, value in row.items()}
+            nodes[int(row["id"])] = row[next(col for col in row if col != "id")]
 
-    with edges_obs_csv.open("r", encoding="utf-8") as f:
-        reader = csv.DictReader(f)
+    def _read_edges(reader, target):
         for row in reader:
             step = int(row["step"])
             edge: Edge = (int(row["src"]), int(row["dst"]))
-            obs_steps.setdefault(step, set()).add(edge)
+            target.setdefault(step, set()).add(edge)
 
-    if edges_true_csv.exists():
-        with edges_true_csv.open("r", encoding="utf-8") as f:
+    if path.is_dir():
+        with (path / "nodes.csv").open("r", encoding="utf-8") as f:
             reader = csv.DictReader(f)
-            for row in reader:
-                step = int(row["step"])
-                edge = (int(row["src"]), int(row["dst"]))
-                true_steps.setdefault(step, set()).add(edge)
+            _read_nodes(reader)
+        with (path / "edges_obs.csv").open("r", encoding="utf-8") as f:
+            reader = csv.DictReader(f)
+            _read_edges(reader, obs_steps)
+        true_file = path / "edges_true.csv"
+        if true_file.exists():
+            with true_file.open("r", encoding="utf-8") as f:
+                reader = csv.DictReader(f)
+                _read_edges(reader, true_steps)
+        meta_file = path / "meta.json"
+        if meta_file.exists():
+            with meta_file.open("r", encoding="utf-8") as f:
+                meta = json.loads(f.read())
+    else:
+        with zipfile.ZipFile(path, "r") as zf:
+            with zf.open("nodes.csv") as f:
+                reader = csv.DictReader(io.TextIOWrapper(f, encoding="utf-8"))
+                _read_nodes(reader)
 
-    if meta_json.exists():
-        with meta_json.open("r", encoding="utf-8") as f:
-            meta = json.load(f)
+            with zf.open("edges_obs.csv") as f:
+                reader = csv.DictReader(io.TextIOWrapper(f, encoding="utf-8"))
+                _read_edges(reader, obs_steps)
 
-    meta.setdefault("dataset_path", str(dir_path))
+            if "edges_true.csv" in zf.namelist():
+                with zf.open("edges_true.csv") as f:
+                    reader = csv.DictReader(io.TextIOWrapper(f, encoding="utf-8"))
+                    _read_edges(reader, true_steps)
+
+            if "meta.json" in zf.namelist():
+                with zf.open("meta.json") as f:
+                    meta = json.loads(io.TextIOWrapper(f, encoding="utf-8").read())
+
+    meta.setdefault("dataset_path", str(path))
     return RawStream(nodes=nodes, obs_steps=obs_steps, true_steps=true_steps, meta=meta)

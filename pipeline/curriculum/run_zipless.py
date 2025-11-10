@@ -96,7 +96,11 @@ def main() -> None:
         )
         engine.run()
 
-        report = json.loads(report_path.read_text(encoding="utf-8"))
+        if report_path.exists():
+            report = json.loads(report_path.read_text(encoding="utf-8"))
+        else:
+            print(f"[run_zipless] Reporter skipped output for {report_path}", flush=True)
+            report = {}
         aggregates = report.get("aggregates", {})
         steps = report.get("steps", [])
         def _avg_from_steps(key: str):

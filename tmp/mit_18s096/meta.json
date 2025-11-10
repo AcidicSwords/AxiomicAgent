@@ -1,0 +1,473 @@
+{
+  "adapter": "curriculum",
+  "course_id": "18.s096-iap-2023",
+  "title": "18.s096-iap-2023",
+  "num_items": 97,
+  "num_edges": 281,
+  "step_semantics": "section_chunk",
+  "sections": [
+    {
+      "slug": "instructor-insights",
+      "index": 1,
+      "title": "Instructor Insights",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "Instructor Insights",
+          "item_ids": []
+        }
+      ]
+    },
+    {
+      "slug": "lecture-notes",
+      "index": 2,
+      "title": "Lecture Notes and Readings",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "Lecture Notes and Readings",
+          "item_ids": []
+        }
+      ]
+    },
+    {
+      "slug": "problem-sets",
+      "index": 3,
+      "title": "Problem Sets",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "Problem Sets",
+          "item_ids": []
+        }
+      ]
+    },
+    {
+      "slug": "syllabus",
+      "index": 4,
+      "title": "Syllabus",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "Syllabus",
+          "item_ids": []
+        }
+      ]
+    },
+    {
+      "slug": "resources",
+      "index": 5,
+      "title": "Resources",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "Resources (Part 1)",
+          "item_ids": [
+            "mit18_s096iap23_lec01_pdf",
+            "mit18_s096iap23_lec02_pdf",
+            "mit18_s096iap23_lec03_pdf",
+            "mit18_s096iap23_lec04_pdf",
+            "mit18_s096iap23_lec05_pdf"
+          ]
+        },
+        {
+          "index": 1,
+          "label": "Resources (Part 2)",
+          "item_ids": [
+            "mit18_s096iap23_lec06_pdf",
+            "mit18_s096iap23_lec07_pdf",
+            "mit18_s096iap23_lec08_pdf",
+            "mit18_s096iap23_lec09_pdf",
+            "mit18_s096iap23_lec10_pdf"
+          ]
+        },
+        {
+          "index": 2,
+          "label": "Resources (Part 3)",
+          "item_ids": [
+            "mit18_s096iap23_lec11_pdf",
+            "mit18_s096iap23_lec12_pdf",
+            "mit18_s096iap23_lec13_pdf",
+            "mit18_s096iap23_lec14_pdf",
+            "mit18_s096iap23_lec1_pdf"
+          ]
+        },
+        {
+          "index": 3,
+          "label": "Resources (Part 4)",
+          "item_ids": [
+            "mit18_s096iap23_lec4_pdf",
+            "mit18_s096iap23_lec6_pdf",
+            "mit18_s096iap23_lec7_pdf",
+            "mit18_s096iap23_lec_full_pdf",
+            "ocw_18s096_lecture01-part2_2023jan18_mp4"
+          ]
+        },
+        {
+          "index": 4,
+          "label": "Resources (Part 5)",
+          "item_ids": [
+            "ocw_18s096_lecture01_part1_2023jan18_mp4",
+            "ocw_18s096_lecture02-part1_2023jan20_mp4",
+            "ocw_18s096_lecture02-part2_2023jan20_mp4",
+            "ocw_18s096_lecture03-part1_2023jan23_mp4",
+            "ocw_18s096_lecture03-part2_2023jan23_mp4"
+          ]
+        },
+        {
+          "index": 5,
+          "label": "Resources (Part 6)",
+          "item_ids": [
+            "ocw_18s096_lecture04-part1_2023jan26_mp4",
+            "ocw_18s096_lecture04-part2_2023jan26_mp4",
+            "ocw_18s096_lecture05-part1-new_2023jan27_mp4",
+            "ocw_18s096_lecture05-part2-new_2023jan27_mp4",
+            "ocw_18s096_lecture05-part3-new_2023jan27_mp4"
+          ]
+        },
+        {
+          "index": 6,
+          "label": "Resources (Part 7)",
+          "item_ids": [
+            "ocw_18s096_lecture06-part1_2023jan30_mp4",
+            "ocw_18s096_lecture06-part2_2023jan30_mp4",
+            "ocw_18s096_lecture07-part1_2023feb01_mp4",
+            "ocw_18s096_lecture07-part2_2023feb01_mp4",
+            "ocw_18s096_lecture08-part1_2023feb03_mp4"
+          ]
+        },
+        {
+          "index": 7,
+          "label": "Resources (Part 8)",
+          "item_ids": [
+            "ocw_18s096_lecture08-part2_2023feb03_mp4",
+            "2x2jacobians_jl",
+            "autodiff_ipynb",
+            "determinant_and_inverse_jl",
+            "fd_checks_ipynb"
+          ]
+        },
+        {
+          "index": 8,
+          "label": "Resources (Part 9)",
+          "item_ids": [
+            "symeig_jl",
+            "mit18_s096iap23_pset1_pdf",
+            "mit18_s096iap23_pset1_t_tex",
+            "mit18_s096iap23_pset1sol_pdf",
+            "mit18_s096iap23_pset1sol_t_tex"
+          ]
+        },
+        {
+          "index": 9,
+          "label": "Resources (Part 10)",
+          "item_ids": [
+            "mit18_s096iap23_pset2_pdf",
+            "mit18_s096iap23_pset2_t_tex",
+            "mit18_s096iap23_pset2sol_i_ipynb",
+            "mit18_s096iap23_pset2sol_pdf",
+            "mit18_s096iap23_pset2sol_t_tex"
+          ]
+        },
+        {
+          "index": 10,
+          "label": "Resources (Part 11)",
+          "item_ids": [
+            "resource::static_resources/18LJMhScijuU1N2nd5TsidHiGolkmnHpA_transcript.pdf::seg0",
+            "resource::static_resources/19_-b47PnGFbw50sEzpqpqBycmlTgPmpf_transcript.pdf::seg0",
+            "resource::static_resources/19fn4Quy6Akz0fP5-RDIHQp0dqMAl8mrH_transcript.pdf::seg0",
+            "resource::static_resources/1A065H99Yhsv0hU1C-wFftrck9xfhs31f_transcript.pdf::seg0",
+            "resource::static_resources/1BCmBU7TvgZ_F7ShXozkGA0p2m7MKzpyW_transcript.pdf::seg0"
+          ]
+        },
+        {
+          "index": 11,
+          "label": "Resources (Part 12)",
+          "item_ids": [
+            "resource::static_resources/1BZPcIy3JwKPgDcOSM-zp_293D_eKdPn3_transcript.pdf::seg0",
+            "resource::static_resources/1MUqxaVn3vCENDoyF7G9Dby6e1__MoKed_transcript.pdf::seg0",
+            "resource::static_resources/1MaSD7wRIORqNUBKpMSHiFc05ZoQJdz0d_transcript.pdf::seg0",
+            "resource::static_resources/1N_XGswpraIiuxsUUuS3yx1Pt82iTV0Nm_transcript.pdf::seg0",
+            "resource::static_resources/1Oqqwvuk1erjzkpYPF-Xvh94Jw2Xz1fQC_transcript.pdf::seg0"
+          ]
+        },
+        {
+          "index": 12,
+          "label": "Resources (Part 13)",
+          "item_ids": [
+            "resource::static_resources/1VwFjcMbHFwFssQo1Zt-V79u0RTzYctzq_transcript.pdf::seg0",
+            "resource::static_resources/1_XDieLWJP4p5DE7UXiXwBipmXi0ACNg8_transcript.pdf::seg0",
+            "resource::static_resources/1htxMS__1IWJEd7adujbPgMCJIUkYUS3Q_transcript.pdf::seg0",
+            "resource::static_resources/1m8U5Q3yI56uAUfpAwETeNaNlKVOJM8qp_transcript.pdf::seg0",
+            "resource::static_resources/mit18_s096iap23_lec01.pdf::seg0"
+          ]
+        },
+        {
+          "index": 13,
+          "label": "Resources (Part 14)",
+          "item_ids": [
+            "resource::static_resources/mit18_s096iap23_lec02.pdf::seg0",
+            "resource::static_resources/mit18_s096iap23_lec03.pdf::seg0",
+            "resource::static_resources/mit18_s096iap23_lec04.pdf::seg0",
+            "resource::static_resources/mit18_s096iap23_lec05.pdf::seg0",
+            "resource::static_resources/mit18_s096iap23_lec06.pdf::seg0"
+          ]
+        },
+        {
+          "index": 14,
+          "label": "Resources (Part 15)",
+          "item_ids": [
+            "resource::static_resources/mit18_s096iap23_lec07.pdf::seg0",
+            "resource::static_resources/mit18_s096iap23_lec08.pdf::seg0",
+            "resource::static_resources/mit18_s096iap23_lec09.pdf::seg0",
+            "resource::static_resources/mit18_s096iap23_lec1.pdf::seg0",
+            "resource::static_resources/mit18_s096iap23_lec10.pdf::seg0"
+          ]
+        },
+        {
+          "index": 15,
+          "label": "Resources (Part 16)",
+          "item_ids": [
+            "resource::static_resources/mit18_s096iap23_lec11.pdf::seg0",
+            "resource::static_resources/mit18_s096iap23_lec11.pdf::seg1",
+            "resource::static_resources/mit18_s096iap23_lec11.pdf::seg2",
+            "resource::static_resources/mit18_s096iap23_lec11.pdf::seg3",
+            "resource::static_resources/mit18_s096iap23_lec12.pdf::seg0"
+          ]
+        },
+        {
+          "index": 16,
+          "label": "Resources (Part 17)",
+          "item_ids": [
+            "resource::static_resources/mit18_s096iap23_lec13.pdf::seg0",
+            "resource::static_resources/mit18_s096iap23_lec14.pdf::seg0",
+            "resource::static_resources/mit18_s096iap23_lec4.pdf::seg0",
+            "resource::static_resources/mit18_s096iap23_lec6.pdf::seg0",
+            "resource::static_resources/mit18_s096iap23_lec7.pdf::seg0"
+          ]
+        },
+        {
+          "index": 17,
+          "label": "Resources (Part 18)",
+          "item_ids": [
+            "resource::static_resources/mit18_s096iap23_lec_full.pdf::seg0",
+            "resource::static_resources/mit18_s096iap23_lec_full.pdf::seg1",
+            "resource::static_resources/mit18_s096iap23_lec_full.pdf::seg2",
+            "resource::static_resources/mit18_s096iap23_lec_full.pdf::seg3",
+            "resource::static_resources/mit18_s096iap23_pset1.pdf::seg0"
+          ]
+        },
+        {
+          "index": 18,
+          "label": "Resources (Part 19)",
+          "item_ids": [
+            "resource::static_resources/mit18_s096iap23_pset1sol.pdf::seg0",
+            "resource::static_resources/mit18_s096iap23_pset2.pdf::seg0",
+            "resource::static_resources/mit18_s096iap23_pset2sol.pdf::seg0",
+            "resource::static_resources/ocw_18s096_lecture05-part1-new_2023jan27_transcript.pdf::seg0",
+            "resource::static_resources/ocw_18s096_lecture05-part2-new_2023jan27_transcript.pdf::seg0"
+          ]
+        },
+        {
+          "index": 19,
+          "label": "Resources (Part 20)",
+          "item_ids": [
+            "resource::static_resources/ocw_18s096_lecture05-part3-new_2023jan27_transcript.pdf::seg0"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "video_galleries",
+      "index": 6,
+      "title": "Video_Galleries",
+      "chunks": [
+        {
+          "index": 0,
+          "label": "Video_Galleries",
+          "item_ids": [
+            "lecture-videos"
+          ]
+        }
+      ]
+    }
+  ],
+  "step_lookup": [
+    {
+      "step": 100,
+      "section_index": 1,
+      "section_title": "Instructor Insights",
+      "chunk_index": 0,
+      "chunk_label": "Instructor Insights"
+    },
+    {
+      "step": 200,
+      "section_index": 2,
+      "section_title": "Lecture Notes and Readings",
+      "chunk_index": 0,
+      "chunk_label": "Lecture Notes and Readings"
+    },
+    {
+      "step": 300,
+      "section_index": 3,
+      "section_title": "Problem Sets",
+      "chunk_index": 0,
+      "chunk_label": "Problem Sets"
+    },
+    {
+      "step": 400,
+      "section_index": 4,
+      "section_title": "Syllabus",
+      "chunk_index": 0,
+      "chunk_label": "Syllabus"
+    },
+    {
+      "step": 500,
+      "section_index": 5,
+      "section_title": "Resources",
+      "chunk_index": 0,
+      "chunk_label": "Resources (Part 1)"
+    },
+    {
+      "step": 501,
+      "section_index": 5,
+      "section_title": "Resources",
+      "chunk_index": 1,
+      "chunk_label": "Resources (Part 2)"
+    },
+    {
+      "step": 502,
+      "section_index": 5,
+      "section_title": "Resources",
+      "chunk_index": 2,
+      "chunk_label": "Resources (Part 3)"
+    },
+    {
+      "step": 503,
+      "section_index": 5,
+      "section_title": "Resources",
+      "chunk_index": 3,
+      "chunk_label": "Resources (Part 4)"
+    },
+    {
+      "step": 504,
+      "section_index": 5,
+      "section_title": "Resources",
+      "chunk_index": 4,
+      "chunk_label": "Resources (Part 5)"
+    },
+    {
+      "step": 505,
+      "section_index": 5,
+      "section_title": "Resources",
+      "chunk_index": 5,
+      "chunk_label": "Resources (Part 6)"
+    },
+    {
+      "step": 506,
+      "section_index": 5,
+      "section_title": "Resources",
+      "chunk_index": 6,
+      "chunk_label": "Resources (Part 7)"
+    },
+    {
+      "step": 507,
+      "section_index": 5,
+      "section_title": "Resources",
+      "chunk_index": 7,
+      "chunk_label": "Resources (Part 8)"
+    },
+    {
+      "step": 508,
+      "section_index": 5,
+      "section_title": "Resources",
+      "chunk_index": 8,
+      "chunk_label": "Resources (Part 9)"
+    },
+    {
+      "step": 509,
+      "section_index": 5,
+      "section_title": "Resources",
+      "chunk_index": 9,
+      "chunk_label": "Resources (Part 10)"
+    },
+    {
+      "step": 510,
+      "section_index": 5,
+      "section_title": "Resources",
+      "chunk_index": 10,
+      "chunk_label": "Resources (Part 11)"
+    },
+    {
+      "step": 511,
+      "section_index": 5,
+      "section_title": "Resources",
+      "chunk_index": 11,
+      "chunk_label": "Resources (Part 12)"
+    },
+    {
+      "step": 512,
+      "section_index": 5,
+      "section_title": "Resources",
+      "chunk_index": 12,
+      "chunk_label": "Resources (Part 13)"
+    },
+    {
+      "step": 513,
+      "section_index": 5,
+      "section_title": "Resources",
+      "chunk_index": 13,
+      "chunk_label": "Resources (Part 14)"
+    },
+    {
+      "step": 514,
+      "section_index": 5,
+      "section_title": "Resources",
+      "chunk_index": 14,
+      "chunk_label": "Resources (Part 15)"
+    },
+    {
+      "step": 515,
+      "section_index": 5,
+      "section_title": "Resources",
+      "chunk_index": 15,
+      "chunk_label": "Resources (Part 16)"
+    },
+    {
+      "step": 516,
+      "section_index": 5,
+      "section_title": "Resources",
+      "chunk_index": 16,
+      "chunk_label": "Resources (Part 17)"
+    },
+    {
+      "step": 517,
+      "section_index": 5,
+      "section_title": "Resources",
+      "chunk_index": 17,
+      "chunk_label": "Resources (Part 18)"
+    },
+    {
+      "step": 518,
+      "section_index": 5,
+      "section_title": "Resources",
+      "chunk_index": 18,
+      "chunk_label": "Resources (Part 19)"
+    },
+    {
+      "step": 519,
+      "section_index": 5,
+      "section_title": "Resources",
+      "chunk_index": 19,
+      "chunk_label": "Resources (Part 20)"
+    },
+    {
+      "step": 600,
+      "section_index": 6,
+      "section_title": "Video_Galleries",
+      "chunk_index": 0,
+      "chunk_label": "Video_Galleries"
+    }
+  ],
+  "profile": "stem"
+}

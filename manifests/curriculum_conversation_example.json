@@ -68,6 +68,21 @@
       "videos_per_step": 1,
       "output_zip": "datasets/youtube_curriculum_datasets/statquest_statistics_fundamentals.zip"
     }
+    ,
+    {
+      "course_id": "khan_academy_ai",
+      "playlist_url": "https://www.youtube.com/playlist?list=PLSQl0a2vh4HDgW9TkGULy1EWRE7rpEwjY",
+      "profile": "youtube_khan_ai",
+      "videos_per_step": 1,
+      "output_zip": "datasets/youtube_curriculum_datasets/khan_academy_ai.zip"
+    },
+    {
+      "course_id": "khan_academy_cosmology",
+      "playlist_url": "https://www.youtube.com/playlist?list=PLSQl0a2vh4HD-pTNMfHlOjw8TXTpWWalH",
+      "profile": "youtube_khan_cosmology",
+      "videos_per_step": 1,
+      "output_zip": "datasets/youtube_curriculum_datasets/khan_academy_cosmology.zip"
+    }
   ],
   "conversation": {
     "raw_dir": "RAWDATA/ConversationParsed",
